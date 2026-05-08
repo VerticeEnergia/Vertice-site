@@ -1,0 +1,7 @@
+{
+  "rewrites": [
+    { "source": "/agropecuaria", "destination": "/agropecuaria/index.html" },
+    { "source": "/industria", "destination": "/industria/index.html" },
+    { "source": "/saneamento", "destination": "/saneamento/index.html" }
+  ]
+}
