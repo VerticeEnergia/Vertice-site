@@ -2,6 +2,7 @@
   "routes": [
     { "src": "/agropecuaria", "dest": "/agropecuaria/index.html" },
     { "src": "/industria", "dest": "/industria/index.html" },
-    { "src": "/saneamento", "dest": "/saneamento/index.html" }
+    { "src": "/saneamento", "dest": "/saneamento/index.html" },
+    { "src": "/agroindustria", "dest": "/agroindustria/index.html" }
   ]
 }
