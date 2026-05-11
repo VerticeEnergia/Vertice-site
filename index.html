@@ -1,793 +1,408 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vértice Consultoria Energética | Estudo de Viabilidade de Biogás e Biomethane</title>
-<meta name="description" content="Consultoria especializada em biogás e biomethane. Realizamos estudos de viabilidade técnica e econômica (EVTE) personalizados para agropecuária, indústria, agroindústria e saneamento. Descubra o potencial energético do seu resíduo orgânico.">
-<meta name="keywords" content="consultoria biogás, biomethane, estudo de viabilidade biogás, EVTE biogás, biodigestor, digestão anaeróbia, viabilidade técnica econômica, energia renovável, biogás agropecuária, biogás indústria, biogás saneamento, vinhaça biogás, suinocultura biogás">
-<meta name="author" content="Vértice Consultoria Energética">
+<meta name="description" content="Consultoria especializada em biogás e biomethane. EVTEs personalizados para agropecuária, indústria, agroindústria e saneamento.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://verticebiogas.com.br/">
-
-<!-- Open Graph (compartilhamento em redes sociais) -->
 <meta property="og:title" content="Vértice Consultoria Energética | Biogás e Biomethane">
 <meta property="og:description" content="Seu resíduo orgânico tem potencial de substituir GLP, diesel e eletricidade. Descubra com um EVTE personalizado.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://verticebiogas.com.br/">
-<meta property="og:locale" content="pt_BR">
-
-<!-- Schema.org (ajuda o Google a entender o negócio) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Vértice Consultoria Energética",
-  "description": "Consultoria especializada em estudos de viabilidade técnica e econômica para projetos de biogás e biomethane",
-  "url": "https://verticebiogas.com.br",
-  "areaServed": "BR",
-  "serviceType": ["Consultoria de Biogás", "Estudo de Viabilidade Técnico-Econômica", "Biomethane"],
-  "knowsAbout": ["biogás", "biomethane", "digestão anaeróbia", "biodigestor", "energia renovável"]
-}
-</script>
+<meta property="og:type" content="website"><meta property="og:url" content="https://verticebiogas.com.br/"><meta property="og:locale" content="pt_BR">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --green: #2d6a4f;
-    --green-light: #40916c;
-    --green-pale: #d8f3dc;
-    --amber: #e9c46a;
-    --red-warn: #e76f51;
-    --dark: #0d1b12;
-    --dark-2: #162218;
-    --dark-3: #1e2e22;
-    --dark-4: #243329;
-    --text: #e8f0ea;
-    --text-muted: #8aab92;
-    --border: rgba(64,145,108,0.2);
-  }
+:root{--green:#2d6a4f;--green-light:#40916c;--green-pale:#d8f3dc;--amber:#e9c46a;--dark:#0d1b12;--dark-2:#162218;--dark-3:#1e2e22;--text:#e8f0ea;--text-muted:#8aab92;--border:rgba(64,145,108,0.2);}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{background:var(--dark);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:0.4;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;background:rgba(13,27,18,0.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);}
+.logo{font-family:'DM Serif Display',serif;font-size:1.25rem;letter-spacing:0.02em;text-decoration:none;color:var(--text);}
+.logo span{color:var(--amber);}
+.nav-cta{background:var(--amber);color:var(--dark);padding:0.55rem 1.3rem;border-radius:3px;font-size:0.82rem;font-weight:600;text-decoration:none;letter-spacing:0.04em;transition:background 0.2s;}
+.nav-cta:hover{background:#f5d585;}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:8rem 2.5rem 5rem;position:relative;overflow:hidden;}
+.hero-img{position:absolute;top:0;right:0;width:55%;height:100%;object-fit:cover;opacity:0.15;-webkit-mask-image:linear-gradient(to left,rgba(0,0,0,1) 0%,transparent 100%);mask-image:linear-gradient(to left,rgba(0,0,0,1) 0%,transparent 100%);pointer-events:none;z-index:0;}
+.hero::after{content:'';position:absolute;top:-20%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(45,106,79,0.25) 0%,transparent 70%);pointer-events:none;}
+.hero-eyebrow{font-size:0.75rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--amber);margin-bottom:1.5rem;opacity:0;animation:fadeUp 0.8s 0.2s forwards;}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2.8rem,7vw,5.5rem);line-height:1.05;max-width:800px;margin-bottom:1.8rem;opacity:0;animation:fadeUp 0.8s 0.4s forwards;}
+.hero h1 em{font-style:italic;color:var(--green-light);}
+.hero-sub{font-size:1.05rem;color:var(--text-muted);max-width:560px;line-height:1.7;margin-bottom:1.2rem;opacity:0;animation:fadeUp 0.8s 0.6s forwards;}
+.hero-sub strong{color:var(--text);font-weight:500;}
+.hero-proof{font-size:0.82rem;color:var(--green-light);max-width:560px;margin-bottom:2.5rem;padding:0.7rem 1rem;border-left:2px solid var(--green-light);background:rgba(64,145,108,0.07);border-radius:0 4px 4px 0;opacity:0;animation:fadeUp 0.8s 0.7s forwards;}
+.hero-cta{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:fadeUp 0.8s 0.8s forwards;}
+.btn-primary{background:var(--amber);color:var(--dark);padding:0.9rem 2rem;border-radius:4px;font-size:0.9rem;font-weight:600;text-decoration:none;letter-spacing:0.03em;transition:all 0.2s;display:inline-flex;align-items:center;gap:0.5rem;}
+.btn-primary:hover{background:#f5d585;transform:translateY(-2px);}
+.btn-secondary{border:1px solid var(--border);color:var(--text-muted);padding:0.9rem 2rem;border-radius:4px;font-size:0.9rem;text-decoration:none;transition:all 0.2s;}
+.btn-secondary:hover{border-color:var(--green-light);color:var(--text);}
+.section-label{font-size:0.7rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--green-light);margin-bottom:0.8rem;}
+.section-title{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,4vw,3rem);line-height:1.15;margin-bottom:1.2rem;}
+.section-body{font-size:1rem;color:var(--text-muted);line-height:1.75;max-width:600px;}
+.divider{width:48px;height:2px;background:var(--amber);margin:1.5rem 0;}
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+/* PROBLEMA */
+.problema{background:var(--dark-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:6rem 2.5rem;}
+.problema-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1100px;margin:0 auto;}
+@media(max-width:768px){.problema-grid{grid-template-columns:1fr;gap:2.5rem;}}
+.stat-block{display:flex;flex-direction:column;gap:1.2rem;}
+.stat{padding:1.5rem;background:var(--dark-3);border:1px solid var(--border);border-radius:6px;position:relative;overflow:hidden;transition:border-color 0.3s,transform 0.3s;}
+.stat:hover{border-color:rgba(233,196,106,0.4);transform:translateY(-3px);}
+.stat::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--amber);}
+.stat-num{font-family:'DM Serif Display',serif;font-size:1.1rem;margin-bottom:0.4rem;}
+.stat-desc{font-size:0.83rem;color:var(--text-muted);line-height:1.6;}
+.stat-desc strong{color:var(--text);}
 
-  body {
-    background: var(--dark);
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 300;
-    overflow-x: hidden;
-  }
+/* CONSULTOR */
+.consultor{padding:6rem 2.5rem;border-bottom:1px solid var(--border);}
+.consultor-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1.4fr;gap:5rem;align-items:center;}
+@media(max-width:900px){.consultor-inner{grid-template-columns:1fr;gap:3rem;}}
+.consultor-foto{position:relative;}
+.consultor-foto-placeholder{width:100%;aspect-ratio:3/4;max-width:320px;background:var(--dark-3);border:1px solid var(--border);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;color:var(--text-muted);font-size:0.8rem;text-align:center;padding:2rem;}
+.consultor-foto-placeholder svg{opacity:0.3;}
+.consultor-foto-badge{position:absolute;bottom:-1rem;right:-1rem;background:var(--amber);color:var(--dark);padding:0.7rem 1.2rem;border-radius:4px;font-size:0.75rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;box-shadow:0 4px 20px rgba(233,196,106,0.3);}
+.consultor-cargo{font-size:0.78rem;color:var(--green-light);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.5rem;font-weight:500;}
+.consultor-bio{font-size:0.95rem;color:var(--text-muted);line-height:1.8;margin-bottom:1.2rem;}
+.consultor-bio strong{color:var(--text);font-weight:500;}
+.consultor-creds{display:flex;flex-direction:column;gap:0.75rem;margin-bottom:1.5rem;}
+.cred-item{display:flex;gap:0.8rem;align-items:flex-start;font-size:0.83rem;color:var(--text-muted);line-height:1.5;}
+.cred-icon{color:var(--amber);flex-shrink:0;}
+.case-box{background:var(--dark-3);border:1px solid rgba(64,145,108,0.3);border-radius:8px;padding:1.4rem;}
+.case-label{font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--green-light);margin-bottom:0.5rem;font-weight:500;}
+.case-title{font-size:0.82rem;font-weight:500;color:var(--text);margin-bottom:1rem;line-height:1.5;}
+.case-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:0.8rem;margin-bottom:1rem;}
+@media(max-width:480px){.case-metrics{grid-template-columns:1fr 1fr;}}
+.case-metric-num{font-family:'DM Serif Display',serif;font-size:1.25rem;color:var(--amber);line-height:1;margin-bottom:0.2rem;}
+.case-metric-label{font-size:0.64rem;color:var(--text-muted);line-height:1.4;}
+.case-conclusion{font-size:0.74rem;color:var(--green-light);padding-top:0.8rem;border-top:1px solid var(--border);font-style:italic;}
 
-  body::before {
-    content: '';
-    position: fixed; inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-    pointer-events: none; z-index: 0; opacity: 0.4;
-  }
+/* SETORES — CARDS COMPACTOS */
+.setores{padding:6rem 2.5rem;}
+.setores-inner{max-width:1100px;margin:0 auto;}
+.setores-header{margin-bottom:3rem;}
+.setor-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;}
+@media(max-width:768px){.setor-cards{grid-template-columns:1fr;}}
+.setor-card{background:var(--dark-2);border:1px solid var(--border);border-radius:8px;padding:1.8rem;display:flex;flex-direction:column;gap:0.8rem;transition:border-color 0.25s,transform 0.25s;text-decoration:none;color:inherit;}
+.setor-card:hover{border-color:rgba(233,196,106,0.4);transform:translateY(-3px);}
+.setor-card-icon{font-size:1.5rem;margin-bottom:0.2rem;}
+.setor-card-title{font-family:'DM Serif Display',serif;font-size:1.3rem;}
+.setor-card-desc{font-size:0.85rem;color:var(--text-muted);line-height:1.65;}
+.setor-card-link{font-size:0.8rem;color:var(--amber);font-weight:500;margin-top:auto;display:flex;align-items:center;gap:0.3rem;}
+.setor-tags-mini{display:flex;flex-wrap:wrap;gap:0.4rem;}
+.tag-mini{font-size:0.65rem;padding:0.15rem 0.6rem;background:rgba(45,106,79,0.2);border:1px solid rgba(64,145,108,0.2);border-radius:20px;color:var(--green-light);}
 
-  /* NAV */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    padding: 1.2rem 2.5rem;
-    display: flex; justify-content: space-between; align-items: center;
-    background: rgba(13,27,18,0.88);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid var(--border);
-  }
-  .logo { font-family: 'DM Serif Display', serif; font-size: 1.25rem; letter-spacing: 0.02em; }
-  .logo span { color: var(--amber); }
-  .nav-cta {
-    background: var(--amber); color: var(--dark);
-    padding: 0.55rem 1.3rem; border-radius: 3px;
-    font-size: 0.82rem; font-weight: 600;
-    text-decoration: none; letter-spacing: 0.04em;
-    transition: background 0.2s;
-  }
-  .nav-cta:hover { background: #f5d585; }
+/* CALCULADORA */
+.calc-section{background:var(--dark-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:6rem 2.5rem;position:relative;overflow:hidden;}
+.calc-section::before{content:'';position:absolute;bottom:-10%;left:-5%;width:500px;height:500px;background:radial-gradient(circle,rgba(45,106,79,0.1) 0%,transparent 65%);pointer-events:none;}
+.calc-inner{max-width:1100px;margin:0 auto;}
+.calc-header{margin-bottom:2.5rem;}
+.calc-header p{font-size:0.95rem;color:var(--text-muted);line-height:1.7;max-width:560px;margin-top:0.8rem;}
+.calc-card{background:var(--dark-3);border:1px solid var(--border);border-radius:10px;padding:2.5rem;}
+.calc-row{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem;}
+@media(max-width:640px){.calc-row{grid-template-columns:1fr;}}
+.calc-field label{display:block;font-size:0.72rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.5rem;}
+.calc-field select,.calc-field input{width:100%;background:var(--dark-2);border:1px solid var(--border);border-radius:4px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:300;padding:0.75rem 1rem;transition:border-color 0.2s;appearance:none;-webkit-appearance:none;}
+.calc-field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238aab92' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem;cursor:pointer;}
+.calc-field select option{background:#1e2e22;}
+.calc-field input:focus,.calc-field select:focus{outline:none;border-color:var(--green-light);background:rgba(64,145,108,0.05);}
+.calc-field input::placeholder{color:rgba(138,171,146,0.4);}
+.btn-calc{background:var(--green-light);color:#fff;border:none;cursor:pointer;padding:0.85rem 2rem;border-radius:4px;font-size:0.9rem;font-weight:600;font-family:'DM Sans',sans-serif;letter-spacing:0.03em;transition:all 0.2s;width:100%;}
+.btn-calc:hover{background:var(--green);transform:translateY(-1px);}
+.calc-results{display:none;margin-top:2rem;padding-top:2rem;border-top:1px solid var(--border);}
+.calc-results.show{display:block;}
+.results-label{font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--green-light);margin-bottom:1.2rem;}
+.results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:1rem;}
+@media(max-width:700px){.results-grid{grid-template-columns:1fr 1fr;}}
+.result-card{background:var(--dark-2);border:1px solid var(--border);border-radius:6px;padding:1.2rem;text-align:center;position:relative;}
+.result-card.has-info{cursor:pointer;}
+.result-card.has-info:hover{border-color:rgba(233,196,106,0.3);}
+.result-num{font-family:'DM Serif Display',serif;font-size:1.6rem;color:var(--amber);line-height:1;margin-bottom:0.3rem;}
+.result-unit{font-size:0.72rem;color:var(--text-muted);margin-bottom:0.3rem;}
+.result-label{font-size:0.7rem;font-weight:600;color:var(--text);letter-spacing:0.03em;}
+.result-info-icon{position:absolute;top:0.5rem;right:0.6rem;font-size:0.7rem;color:var(--text-muted);opacity:0.5;}
+.calc-disclaimer{font-size:0.73rem;color:var(--text-muted);line-height:1.6;padding:1rem;background:rgba(233,196,106,0.05);border:1px solid rgba(233,196,106,0.12);border-radius:4px;margin-top:1rem;}
+.calc-disclaimer strong{color:var(--amber);}
+.calc-cta-box{margin-top:1.5rem;padding:1.5rem;background:linear-gradient(135deg,var(--dark-3) 0%,rgba(45,106,79,0.12) 100%);border:1px solid rgba(64,145,108,0.3);border-radius:6px;display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap;}
+.calc-cta-box p{font-size:0.85rem;color:var(--text-muted);line-height:1.6;max-width:480px;}
+.calc-cta-box p strong{color:var(--text);}
 
-  /* ══ HERO (v1) ══ */
-  .hero {
-    min-height: 100vh;
-    display: flex; flex-direction: column; justify-content: center;
-    padding: 8rem 2.5rem 5rem;
-    position: relative; overflow: hidden;
-  }
-  .hero-img {
-    position: absolute; top: 0; right: 0;
-    width: 55%; height: 100%;
-    object-fit: cover;
-    opacity: 0.15;
-    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, transparent 100%);
-    mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, transparent 100%);
-    pointer-events: none; z-index: 0;
-  }
-  .hero::after {
-    content: '';
-    position: absolute; top: -20%; right: -10%;
-    width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(45,106,79,0.25) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .hero-eyebrow {
-    font-size: 0.75rem; font-weight: 500;
-    letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--amber); margin-bottom: 1.5rem;
-    opacity: 0; animation: fadeUp 0.8s 0.2s forwards;
-  }
-  .hero h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(2.8rem, 7vw, 5.5rem);
-    line-height: 1.05; max-width: 800px; margin-bottom: 1.8rem;
-    opacity: 0; animation: fadeUp 0.8s 0.4s forwards;
-  }
-  .hero h1 em { font-style: italic; color: var(--green-light); }
-  .hero-sub {
-    font-size: 1.05rem; color: var(--text-muted);
-    max-width: 520px; line-height: 1.7; margin-bottom: 3rem;
-    opacity: 0; animation: fadeUp 0.8s 0.6s forwards;
-  }
-  .hero-sub strong { color: var(--text); font-weight: 500; }
-  .hero-cta {
-    display: flex; gap: 1rem; flex-wrap: wrap;
-    opacity: 0; animation: fadeUp 0.8s 0.8s forwards;
-  }
-  .btn-primary {
-    background: var(--amber); color: var(--dark);
-    padding: 0.9rem 2rem; border-radius: 4px;
-    font-size: 0.9rem; font-weight: 600;
-    text-decoration: none; letter-spacing: 0.03em;
-    transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem;
-  }
-  .btn-primary:hover { background: #f5d585; transform: translateY(-2px); }
-  .btn-secondary {
-    border: 1px solid var(--border); color: var(--text-muted);
-    padding: 0.9rem 2rem; border-radius: 4px;
-    font-size: 0.9rem; text-decoration: none; transition: all 0.2s;
-  }
-  .btn-secondary:hover { border-color: var(--green-light); color: var(--text); }
+/* POPUP */
+.popup-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:500;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.2s;}
+.popup-overlay.show{opacity:1;pointer-events:all;}
+.popup-box{background:var(--dark-3);border:1px solid var(--border);border-radius:10px;padding:2rem;max-width:420px;width:90%;position:relative;}
+.popup-close{position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:1.1rem;line-height:1;}
+.popup-close:hover{color:var(--text);}
+.popup-title{font-family:'DM Serif Display',serif;font-size:1.2rem;margin-bottom:1rem;color:var(--text);}
+.popup-item{display:flex;justify-content:space-between;align-items:center;padding:0.7rem 0;border-bottom:1px solid var(--border);font-size:0.85rem;}
+.popup-item:last-child{border-bottom:none;}
+.popup-val{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--amber);}
+.popup-desc{color:var(--text-muted);font-size:0.78rem;margin-top:0.2rem;}
+.popup-note{font-size:0.72rem;color:var(--text-muted);margin-top:1rem;line-height:1.5;padding-top:0.8rem;border-top:1px solid var(--border);}
 
-  /* ══ PROBLEMA (v1 cards atualizados) ══ */
-  .problema {
-    background: var(--dark-2);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    padding: 6rem 2.5rem;
-  }
-  .problema-grid {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 4rem; align-items: center;
-    max-width: 1100px; margin: 0 auto;
-  }
-  @media (max-width: 768px) { .problema-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+/* VIABILIDADE */
+.viab-section{padding:4rem 2.5rem;}
+.viab-inner{max-width:1100px;margin:0 auto;}
+.viab-box{background:linear-gradient(135deg,var(--dark-3) 0%,rgba(45,106,79,0.12) 100%);border:1px solid rgba(64,145,108,0.3);border-radius:10px;padding:2.5rem;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;}
+@media(max-width:640px){.viab-box{grid-template-columns:1fr;}}
+.viab-box h3{font-family:'DM Serif Display',serif;font-size:clamp(1.3rem,3vw,2rem);line-height:1.25;margin-bottom:0.8rem;}
+.viab-box h3 em{font-style:italic;color:var(--green-light);}
+.viab-box p{font-size:0.88rem;color:var(--text-muted);line-height:1.7;}
+.viab-box p strong{color:var(--amber);}
 
-  .section-label {
-    font-size: 0.7rem; font-weight: 500;
-    letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--green-light); margin-bottom: 0.8rem;
-  }
-  .section-title {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(1.8rem, 4vw, 3rem);
-    line-height: 1.15; margin-bottom: 1.2rem;
-  }
-  .section-body { font-size: 1rem; color: var(--text-muted); line-height: 1.75; max-width: 600px; }
-  .divider { width: 48px; height: 2px; background: var(--amber); margin: 1.5rem 0; }
+/* EVTE */
+.evte{padding:6rem 2.5rem;}
+.evte-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.1fr 1fr;gap:5rem;align-items:start;}
+@media(max-width:900px){.evte-inner{grid-template-columns:1fr;gap:3rem;}}
+.evte-steps{margin-top:2rem;}
+.step{display:flex;gap:1.5rem;padding:1.4rem 0;border-bottom:1px solid var(--border);}
+.step:last-child{border-bottom:none;}
+.step-n{font-family:'DM Serif Display',serif;font-size:2rem;color:rgba(233,196,106,0.2);min-width:1.8rem;line-height:1;padding-top:0.2rem;}
+.step h4{font-size:0.9rem;font-weight:600;margin-bottom:0.3rem;}
+.step p{font-size:0.81rem;color:var(--text-muted);line-height:1.6;}
+.evte-right{position:sticky;top:7rem;}
+.evte-box{background:var(--dark-2);border:1px solid var(--border);border-radius:8px;padding:2rem;}
+.evte-box h3{font-family:'DM Serif Display',serif;font-size:1.2rem;margin-bottom:1.2rem;}
+.evte-item{display:flex;gap:0.8rem;margin-bottom:1rem;align-items:flex-start;}
+.evte-check{color:var(--green-light);flex-shrink:0;margin-top:2px;}
+.evte-item p{font-size:0.82rem;color:var(--text-muted);line-height:1.6;}
+.evte-item p strong{color:var(--text);}
+.evte-separator{border:none;border-top:1px solid var(--border);margin:1.5rem 0;}
+.evte-prazo{font-size:0.78rem;color:var(--text-muted);display:flex;align-items:center;gap:0.5rem;}
+.evte-prazo span{color:var(--amber);font-weight:600;}
 
-  .stat-block { display: flex; flex-direction: column; gap: 1.2rem; }
-  .stat {
-    padding: 1.5rem;
-    background: var(--dark-3);
-    border: 1px solid var(--border); border-radius: 6px;
-    position: relative; overflow: hidden;
-    transition: border-color 0.3s, transform 0.3s;
-  }
-  .stat:hover { border-color: rgba(233,196,106,0.4); transform: translateY(-3px); }
-  .stat::before {
-    content: ''; position: absolute;
-    left: 0; top: 0; bottom: 0; width: 3px;
-    background: var(--amber);
-  }
-  .stat-num {
-    font-family: 'DM Serif Display', serif;
-    font-size: 2rem; color: var(--amber); margin-bottom: 0.4rem;
-  }
-  .stat-desc { font-size: 0.83rem; color: var(--text-muted); line-height: 1.6; }
-  .stat-desc strong { color: var(--text); }
-
-  /* ══ SETORES ══ */
-  .setores { padding: 6rem 2.5rem; }
-  .setores-inner { max-width: 1100px; margin: 0 auto; }
-  .setores-header { margin-bottom: 3.5rem; }
-
-  .contas-tabs {
-    display: flex; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap;
-  }
-  .tab-btn {
-    font-size: 0.78rem; font-weight: 500; letter-spacing: 0.05em;
-    padding: 0.5rem 1.2rem; border-radius: 3px;
-    border: 1px solid var(--border); background: transparent;
-    color: var(--text-muted); cursor: pointer; transition: all 0.2s;
-  }
-  .tab-btn.active { background: var(--amber); color: var(--dark); border-color: var(--amber); }
-  .tab-btn:hover:not(.active) { border-color: var(--green-light); color: var(--text); }
-
-  .setor-panel { display: none; }
-  .setor-panel.active {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 3rem; align-items: start;
-  }
-  @media (max-width: 768px) { .setor-panel.active { grid-template-columns: 1fr; } }
-
-  .setor-info h3 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.6rem; margin-bottom: 1rem;
-  }
-  .setor-info p {
-    font-size: 0.88rem; color: var(--text-muted);
-    line-height: 1.75; margin-bottom: 0.8rem;
-  }
-  .setor-info p strong { color: var(--text); }
-
-  .setor-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.2rem; }
-  .tag {
-    font-size: 0.7rem; padding: 0.2rem 0.7rem;
-    background: rgba(45,106,79,0.2);
-    border: 1px solid rgba(64,145,108,0.25);
-    border-radius: 20px; color: var(--green-light);
-  }
-
-  .setor-box {
-    background: var(--dark-2);
-    border: 1px solid var(--border); border-radius: 8px; padding: 1.8rem;
-  }
-  .setor-box h4 {
-    font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
-    color: var(--green-light); margin-bottom: 1.2rem;
-  }
-  .setor-item {
-    display: flex; gap: 0.8rem; margin-bottom: 1rem; align-items: flex-start;
-  }
-  .setor-check { color: var(--amber); flex-shrink: 0; margin-top: 2px; }
-  .setor-item p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
-  .setor-item p strong { color: var(--text); }
-  .setor-punch {
-    margin-top: 1.2rem; padding: 1rem;
-    background: rgba(233,196,106,0.07);
-    border: 1px solid rgba(233,196,106,0.18);
-    border-radius: 4px;
-    font-size: 0.8rem; color: var(--amber); font-style: italic;
-  }
-
-  /* ══ EQUIVALÊNCIAS ══ */
-  .equiv {
-    background: var(--dark-2);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    padding: 6rem 2.5rem; position: relative; overflow: hidden;
-  }
-  .equiv::before {
-    content: ''; position: absolute; bottom: -10%; left: -5%;
-    width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(45,106,79,0.1) 0%, transparent 65%);
-    pointer-events: none;
-  }
-  .equiv-inner { max-width: 1100px; margin: 0 auto; }
-  .equiv-header { margin-bottom: 3.5rem; }
-  .equiv-header p { font-size: 1rem; color: var(--text-muted); line-height: 1.7; max-width: 560px; margin-top: 1rem; }
-
-  .equiv-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem; margin-bottom: 2.5rem;
-  }
-  @media (max-width: 768px) { .equiv-grid { grid-template-columns: 1fr; } }
-
-  .equiv-card {
-    background: var(--dark-3);
-    border: 1px solid var(--border); border-radius: 6px;
-    padding: 2rem 1.5rem; text-align: center; position: relative;
-  }
-  .equiv-card::after {
-    content: ''; position: absolute;
-    bottom: 0; left: 0; right: 0; height: 3px;
-    background: var(--amber); border-radius: 0 0 6px 6px;
-  }
-  .equiv-from { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.5rem; }
-  .equiv-num {
-    font-family: 'DM Serif Display', serif;
-    font-size: 3rem; color: var(--amber);
-    line-height: 1; margin-bottom: 0.3rem;
-  }
-  .equiv-unit { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem; }
-  .equiv-label { font-size: 0.8rem; font-weight: 600; color: var(--text); letter-spacing: 0.03em; }
-  .equiv-context { margin-top: 0.8rem; font-size: 0.75rem; color: var(--text-muted); line-height: 1.55; }
-
-  .equiv-provocacao {
-    background: linear-gradient(135deg, var(--dark-3) 0%, rgba(45,106,79,0.15) 100%);
-    border: 1px solid rgba(64,145,108,0.3);
-    border-radius: 6px; padding: 2.5rem;
-    display: grid; grid-template-columns: 1fr auto;
-    gap: 2rem; align-items: center;
-  }
-  @media (max-width: 640px) { .equiv-provocacao { grid-template-columns: 1fr; } }
-  .equiv-provocacao h3 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.4rem; line-height: 1.3; margin-bottom: 0.6rem;
-  }
-  .equiv-provocacao p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.65; }
-  .equiv-provocacao p strong { color: var(--amber); }
-
-  /* ══ EVTE ══ */
-  .evte { padding: 6rem 2.5rem; }
-  .evte-inner {
-    max-width: 1100px; margin: 0 auto;
-    display: grid; grid-template-columns: 1.1fr 1fr;
-    gap: 5rem; align-items: start;
-  }
-  @media (max-width: 900px) { .evte-inner { grid-template-columns: 1fr; gap: 3rem; } }
-
-  .evte-steps { margin-top: 2rem; }
-  .step {
-    display: flex; gap: 1.5rem; padding: 1.4rem 0;
-    border-bottom: 1px solid var(--border);
-  }
-  .step:last-child { border-bottom: none; }
-  .step-n {
-    font-family: 'DM Serif Display', serif;
-    font-size: 2rem; color: rgba(233,196,106,0.2);
-    min-width: 1.8rem; line-height: 1; padding-top: 0.2rem;
-  }
-  .step h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.3rem; }
-  .step p { font-size: 0.81rem; color: var(--text-muted); line-height: 1.6; }
-
-  .evte-right { position: sticky; top: 7rem; }
-  .evte-box {
-    background: var(--dark-2);
-    border: 1px solid var(--border); border-radius: 8px; padding: 2rem;
-  }
-  .evte-box h3 { font-family: 'DM Serif Display', serif; font-size: 1.2rem; margin-bottom: 1.2rem; }
-  .evte-item { display: flex; gap: 0.8rem; margin-bottom: 1rem; align-items: flex-start; }
-  .evte-check { color: var(--green-light); flex-shrink: 0; margin-top: 2px; }
-  .evte-item p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
-  .evte-item p strong { color: var(--text); }
-  .evte-separator { border: none; border-top: 1px solid var(--border); margin: 1.5rem 0; }
-  .evte-prazo { font-size: 0.78rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.5rem; }
-  .evte-prazo span { color: var(--amber); font-weight: 600; }
-
-  /* ══ CTA FINAL ══ */
-  .cta-final {
-    background: var(--dark-2);
-    border-top: 1px solid var(--border);
-    padding: 8rem 2.5rem; text-align: center;
-    position: relative; overflow: hidden;
-  }
-  .cta-final::before {
-    content: ''; position: absolute; top: -20%; left: 50%;
-    transform: translateX(-50%);
-    width: 600px; height: 400px;
-    background: radial-gradient(ellipse, rgba(45,106,79,0.18) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .cta-final-inner { max-width: 680px; margin: 0 auto; position: relative; z-index: 1; }
-  .cta-final h2 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(2.2rem, 5vw, 3.6rem);
-    line-height: 1.1; margin-bottom: 1.2rem;
-  }
-  .cta-final h2 em { font-style: italic; color: var(--green-light); }
-  .cta-final p { font-size: 1rem; color: var(--text-muted); line-height: 1.75; margin-bottom: 3rem; }
-  .cta-final p strong { color: var(--text); }
-
-  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-  .btn-wpp {
-    background: #25d366; color: #fff;
-    padding: 1rem 2.2rem; border-radius: 4px;
-    font-size: 0.9rem; font-weight: 700;
-    text-decoration: none; letter-spacing: 0.04em;
-    transition: all 0.25s; display: flex; align-items: center; gap: 0.6rem;
-  }
-  .btn-wpp:hover { background: #1ebe5d; transform: translateY(-2px); }
-  .cta-nota { margin-top: 1.5rem; font-size: 0.78rem; color: var(--text-muted); }
-
-  /* FOOTER */
-  footer {
-    padding: 2rem 2.5rem;
-    border-top: 1px solid var(--border);
-    display: flex; justify-content: space-between;
-    align-items: center; flex-wrap: wrap; gap: 1rem;
-  }
-  footer p { font-size: 0.78rem; color: var(--text-muted); }
-
-  /* ANIMAÇÕES */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  .fi {
-    opacity: 0; transform: translateY(20px);
-    transition: opacity 0.75s ease, transform 0.75s ease;
-  }
-  .fi.vis { opacity: 1; transform: translateY(0); }
-  .fi-d2 { transition-delay: 0.15s; }
-  .fi-d3 { transition-delay: 0.28s; }
-
-  @media (max-width: 600px) {
-    nav, .hero, .problema, .setores, .equiv, .evte, .cta-final, footer { padding-left: 1.2rem; padding-right: 1.2rem; }
-  }
+/* CONTATO */
+.contato-section{background:var(--dark-2);border-top:1px solid var(--border);padding:8rem 2.5rem;position:relative;overflow:hidden;}
+.contato-section::before{content:'';position:absolute;top:-20%;left:50%;transform:translateX(-50%);width:600px;height:400px;background:radial-gradient(ellipse,rgba(45,106,79,0.18) 0%,transparent 70%);pointer-events:none;}
+.contato-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+@media(max-width:900px){.contato-inner{grid-template-columns:1fr;gap:3rem;}}
+.contato-h2{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4.5vw,3.2rem);line-height:1.1;margin-bottom:1rem;}
+.contato-h2 em{font-style:italic;color:var(--green-light);}
+.contato-items{display:flex;flex-direction:column;gap:1rem;margin-bottom:2rem;}
+.contato-item{display:flex;gap:0.8rem;align-items:center;font-size:0.83rem;color:var(--text-muted);}
+.contato-dot{width:6px;height:6px;background:var(--amber);border-radius:50%;flex-shrink:0;}
+.contato-direto{margin-top:2rem;}
+.contato-direto p{font-size:0.75rem;color:var(--text-muted);margin-bottom:0.8rem;letter-spacing:0.05em;text-transform:uppercase;}
+.btn-wpp{background:#25d366;color:#fff;padding:0.85rem 1.6rem;border-radius:4px;font-size:0.88rem;font-weight:700;text-decoration:none;letter-spacing:0.04em;transition:all 0.25s;display:inline-flex;align-items:center;gap:0.6rem;}
+.btn-wpp:hover{background:#1ebe5d;transform:translateY(-2px);}
+.form-card{background:var(--dark-3);border:1px solid var(--border);border-radius:10px;padding:2.5rem;}
+.form-card h3{font-family:'DM Serif Display',serif;font-size:1.3rem;margin-bottom:0.4rem;}
+.form-card>p{font-size:0.8rem;color:var(--text-muted);margin-bottom:2rem;line-height:1.5;}
+.form-group{margin-bottom:1.2rem;}
+.form-group label{display:block;font-size:0.75rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.5rem;}
+.form-group input,.form-group select,.form-group textarea{width:100%;background:var(--dark-2);border:1px solid var(--border);border-radius:4px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:300;padding:0.75rem 1rem;transition:border-color 0.2s;appearance:none;-webkit-appearance:none;}
+.form-group select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238aab92' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem;cursor:pointer;}
+.form-group select option{background:#1e2e22;}
+.form-group textarea{resize:vertical;min-height:100px;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--green-light);background:rgba(64,145,108,0.05);}
+.form-group input::placeholder,.form-group textarea::placeholder{color:rgba(138,171,146,0.5);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:480px){.form-row{grid-template-columns:1fr;}}
+.btn-submit{width:100%;background:var(--amber);color:var(--dark);border:none;cursor:pointer;padding:1rem 2rem;border-radius:4px;font-size:0.9rem;font-weight:700;font-family:'DM Sans',sans-serif;letter-spacing:0.04em;transition:all 0.2s;margin-top:0.5rem;}
+.btn-submit:hover{background:#f5d585;transform:translateY(-2px);}
+.form-success{display:none;text-align:center;padding:2rem;}
+.form-success .success-icon{font-size:2.5rem;margin-bottom:1rem;}
+.form-success h4{font-family:'DM Serif Display',serif;font-size:1.3rem;margin-bottom:0.5rem;}
+.form-success p{font-size:0.85rem;color:var(--text-muted);line-height:1.6;}
+.form-nota{margin-top:1rem;font-size:0.73rem;color:var(--text-muted);text-align:center;}
+footer{padding:2rem 2.5rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+footer p{font-size:0.78rem;color:var(--text-muted);}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+.fi{opacity:0;transform:translateY(20px);transition:opacity 0.75s ease,transform 0.75s ease;}
+.fi.vis{opacity:1;transform:translateY(0);}
+.fi-d2{transition-delay:0.15s;}.fi-d3{transition-delay:0.28s;}
+@media(max-width:600px){nav,.hero,.problema,.setores,.calc-section,.viab-section,.evte,.contato-section,footer,.consultor{padding-left:1.2rem;padding-right:1.2rem;}}
 </style>
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18148435351"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'AW-18148435351');
-</script>
-<!-- Event snippet for conversão WhatsApp -->
-<script>
-function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
-  };
-  gtag('event', 'conversion', {
-      'send_to': 'AW-18148435351/ikWACKnw0akcEJfL7M1D',
-      'value': 1.0,
-      'currency': 'BRL',
-      'event_callback': callback
-  });
-  return false;
-}
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-18148435351');
+function gtag_report_conversion(url){var cb=function(){if(typeof url!='undefined')window.location=url;};gtag('event','conversion',{'send_to':'AW-18148435351/ikWACKnw0akcEJfL7M1D','value':1.0,'currency':'BRL','event_callback':cb});return false;}
+function gtag_report_form_conversion(){gtag('event','conversion',{'send_to':'AW-18148435351/ikWACKnw0akcEJfL7M1D','value':1.0,'currency':'BRL'});gtag('event','form_submit_evte',{'event_category':'lead','event_label':'formulario_contato'});}
 </script>
 </head>
 <body>
-
-<!-- NAV -->
 <nav>
-  <div class="logo">Vértice<span>.</span></div>
+  <a href="/" class="logo">Vértice<span>.</span></a>
   <a href="#contato" class="nav-cta">Quero meu EVTE →</a>
 </nav>
 
-<!-- ═══ HERO (v1) ═══ -->
+<!-- HERO -->
 <section class="hero">
   <img class="hero-img" src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1400&q=80&fit=crop" alt="Vista aérea de propriedade rural">
   <div class="hero-eyebrow">Consultoria Energética · Biogás & Biomethane</div>
   <h1>Você já produz energia.<br>Só ainda não <em>captura.</em></h1>
-  <p class="hero-sub">
-    O resíduo orgânico que você descarta hoje tem potencial de substituir GLP, diesel e eletricidade comprada — com energia gerada dentro do próprio empreendimento. <strong>O EVTE mostra, com números, se a escala do seu processo torna isso viável.</strong>
-  </p>
+  <p class="hero-sub">Uma granja com 500 matrizes suínas gera resíduo suficiente pra substituir mais de 100 kg de GLP por mês — com energia produzida dentro da própria propriedade. <strong>O EVTE calcula, com os dados do seu processo, se o seu caso fecha.</strong></p>
+  <div class="hero-proof">↳ Projeto analisado: RU/UNESP Rio Claro · 43 kg de resíduo orgânico/dia · ~25 m³ CH₄/lote · equivalente a ~1 botijão P13 substituído a cada 14 dias · viabilidade confirmada.</div>
   <div class="hero-cta">
     <a href="#contato" class="btn-primary">Quero saber meu potencial</a>
     <a href="#setores" class="btn-secondary">Ver por setor</a>
   </div>
 </section>
 
-<!-- ═══ PROBLEMA (v1 + cards atualizados) ═══ -->
+<!-- PROBLEMA -->
 <section class="problema">
   <div class="problema-grid">
     <div class="fi">
       <div class="section-label">O problema</div>
       <h2 class="section-title">GLP, energia elétrica e diesel custam caro. O resíduo que os substituiria já está lá.</h2>
       <div class="divider"></div>
-      <p class="section-body">
-        Todo empreendimento que gera resíduo orgânico em escala e consome energia de fonte fóssil está, na prática, pagando duas vezes: uma pra descartar o resíduo, outra pra comprar a energia que ele poderia ter gerado.
-      </p>
-      <br>
-      <p class="section-body">
-        O biogás não é uma promessa futura — é uma substituição direta. GLP, eletricidade e diesel podem ser parcial ou totalmente trocados por energia gerada dentro do próprio empreendimento. A única questão é saber, com números, se a escala do seu processo torna isso viável. É isso que o EVTE responde.
-      </p>
+      <p class="section-body">Todo empreendimento que gera resíduo orgânico em escala e consome energia de fonte fóssil está pagando duas vezes: uma pra descartar o resíduo, outra pra comprar a energia que ele poderia ter gerado. O EVTE responde, com os números do seu processo, se essa equação fecha.</p>
     </div>
     <div class="stat-block fi fi-d2">
-      <div class="stat">
-        <div class="stat-num" style="font-size:1.1rem;color:#e76f51;">O Problema</div>
-        <div class="stat-desc" style="margin-top:0.5rem;">Você compra energia fóssil todo mês — GLP, diesel, eletricidade — enquanto descarta matéria orgânica que poderia gerar essa mesma energia dentro do seu empreendimento. <strong>Dois custos onde poderia haver um só.</strong></div>
+      <div class="stat"><div class="stat-num" style="color:#e76f51;">O Problema</div><div class="stat-desc" style="margin-top:0.5rem;">Você compra energia fóssil todo mês enquanto descarta matéria orgânica que poderia gerá-la internamente. <strong>Dois custos onde poderia haver um só.</strong></div></div>
+      <div class="stat" style="border-left-color:#40916c;"><div class="stat-num" style="color:#40916c;">A Solução</div><div class="stat-desc" style="margin-top:0.5rem;">A digestão anaeróbia converte o resíduo em biogás — que substitui GLP, diesel e eletricidade. <strong>O biodigestor não cria energia nova. Ele captura a que já estava no seu resíduo.</strong></div></div>
+      <div class="stat" style="border-left-color:#e9c46a;"><div class="stat-num" style="color:#e9c46a;">Os Benefícios</div><div class="stat-desc" style="margin-top:0.5rem;">Redução do custo energético. Eliminação do passivo ambiental. <strong>Digestato com valor agronômico como biofertilizante</strong> — especialmente relevante para produtores que hoje compram insumos químicos. E clareza sobre o retorno antes de investir.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONSULTOR -->
+<section class="consultor">
+  <div class="consultor-inner">
+    <div class="consultor-foto fi">
+      <div class="consultor-foto-placeholder">
+        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span>Substitua pela sua foto aqui.<br>Retrato 3×4, fundo neutro.</span>
       </div>
-      <div class="stat" style="border-left-color:#40916c;">
-        <div class="stat-num" style="font-size:1.1rem;color:#40916c;">A Solução</div>
-        <div class="stat-desc" style="margin-top:0.5rem;">A digestão anaeróbia converte o resíduo orgânico em biogás — que substitui diretamente as fontes fósseis que você já usa. <strong>O biodigestor não cria energia nova. Ele captura a que já estava no seu resíduo.</strong></div>
+      <div class="consultor-foto-badge">Eng. Ambiental · UNESP</div>
+    </div>
+    <div class="fi fi-d2">
+      <div class="section-label">Quem está por trás disso</div>
+      <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.15;margin-bottom:0.5rem;">Vinicius Amadeu Zacatei</h2>
+      <div class="consultor-cargo">Engenheiro Ambiental · Especialista em Digestão Anaeróbia e Viabilidade de Biogás</div>
+      <p class="consultor-bio">Formado em Engenharia Ambiental pela <strong>UNESP Rio Claro</strong>, com foco em digestão anaeróbia, biodigestão e viabilidade técnico-econômica de projetos de biogás. Cada EVTE é construído com os dados reais do seu processo — <strong>identificando as dores específicas do seu empreendimento e propondo soluções disponíveis no mercado de biogás</strong> para cada caso.</p>
+      <div class="consultor-creds">
+        <div class="cred-item"><span class="cred-icon">◆</span>Engenharia Ambiental — UNESP Rio Claro (2026)</div>
+        <div class="cred-item"><span class="cred-icon">◆</span>Modelagem cinética de Gompertz para biorreatores anaeróbios</div>
+        <div class="cred-item"><span class="cred-icon">◆</span>CREA-SP em processo de registro</div>
       </div>
-      <div class="stat" style="border-left-color:#e9c46a;">
-        <div class="stat-num" style="font-size:1.1rem;color:#e9c46a;">Os Benefícios</div>
-        <div class="stat-desc" style="margin-top:0.5rem;">Redução direta do custo energético operacional. Eliminação ou redução do passivo ambiental do resíduo. Digestato com valor agronômico. <strong>E clareza sobre o retorno antes de investir um centavo.</strong></div>
+      <div class="case-box">
+        <div class="case-label">TCC — projeto analisado</div>
+        <div class="case-title">"Estudo de viabilidade técnico-econômica para implantação de biodigestores no Restaurante Universitário da UNESP Rio Claro" · Prof. Dr. Marcus Cesar Avezum Alves de Castro</div>
+        <div class="case-metrics">
+          <div class="case-metric"><div class="case-metric-num">~43 kg</div><div class="case-metric-label">resíduo orgânico<br>gerado por dia no RU</div></div>
+          <div class="case-metric"><div class="case-metric-num">~25 m³</div><div class="case-metric-label">CH₄ produzidos<br>por lote (14 dias)</div></div>
+          <div class="case-metric"><div class="case-metric-num">~1 botijão</div><div class="case-metric-label">P13 substituído<br>a cada 14 dias</div></div>
+        </div>
+        <div class="case-conclusion">✓ Viabilidade técnica e econômica confirmada · payback &lt; 5 anos · TDH 20 dias · operação semicontínua em batelada</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ SETORES ═══ -->
+<!-- SETORES — CARDS COMPACTOS -->
 <section class="setores" id="setores">
   <div class="setores-inner">
     <div class="fi setores-header">
       <div class="section-label">Para quem é</div>
       <h2 class="section-title">Se gera resíduo orgânico<br>e paga conta de energia,<br>precisa ler isso.</h2>
       <div class="divider"></div>
-      <p class="section-body">Selecione seu setor e entenda por que a substituição direta de fontes fósseis pode estar mais próxima do que parece.</p>
+      <p class="section-body">Selecione seu setor e entenda se a substituição de fontes fósseis pelo biogás do seu próprio resíduo é viável para o seu caso.</p>
     </div>
-
-    <div class="contas-tabs fi fi-d2">
-      <button class="tab-btn active" onclick="showTab('suino', this)">Agropecuária</button>
-      <button class="tab-btn" onclick="showTab('industria', this)">Indústria</button>
-      <button class="tab-btn" onclick="showTab('agroindustria', this)">Agroindústria</button>
-      <button class="tab-btn" onclick="showTab('saneamento', this)">Saneamento</button>
+    <div class="setor-cards fi fi-d2">
+      <a href="/agropecuaria" class="setor-card">
+        <div class="setor-card-icon">🐷</div>
+        <div class="setor-card-title">Agropecuária</div>
+        <div class="setor-card-desc">Suinocultura, bovinocultura e avicultura geram dejeto contínuo com alto potencial biometanogênico — e uma demanda energética que o próprio resíduo pode cobrir.</div>
+        <div class="setor-tags-mini"><span class="tag-mini">Suinocultura</span><span class="tag-mini">Bovinocultura</span><span class="tag-mini">Avicultura</span></div>
+        <div class="setor-card-link">Ver análise completa →</div>
+      </a>
+      <a href="/industria" class="setor-card">
+        <div class="setor-card-icon">🏭</div>
+        <div class="setor-card-title">Indústria alimentícia</div>
+        <div class="setor-card-desc">Laticínios, frigoríficos e processadoras pagam para tratar efluentes orgânicos e compram energia separadamente. O biogás resolve os dois ao mesmo tempo.</div>
+        <div class="setor-tags-mini"><span class="tag-mini">Laticínios</span><span class="tag-mini">Frigoríficos</span><span class="tag-mini">Processadoras</span></div>
+        <div class="setor-card-link">Ver análise completa →</div>
+      </a>
+      <a href="/agroindustria" class="setor-card">
+        <div class="setor-card-icon">🌾</div>
+        <div class="setor-card-title">Agroindústria</div>
+        <div class="setor-card-desc">Usinas de cana, fecularias e produtores de etanol geram efluentes em volumes industriais — com potencial biometanogênico comprovado e poucos projetos implementados.</div>
+        <div class="setor-tags-mini"><span class="tag-mini">Vinhaça</span><span class="tag-mini">Etanol</span><span class="tag-mini">Manipueira</span></div>
+        <div class="setor-card-link">Ver análise completa →</div>
+      </a>
+      <a href="/saneamento" class="setor-card">
+        <div class="setor-card-icon">💧</div>
+        <div class="setor-card-title">Saneamento</div>
+        <div class="setor-card-desc">ETEs com reatores anaeróbios já produzem biogás hoje — a maioria queima ou descarta sem aproveitamento. Capturar esse gás pode cobrir parte do custo elétrico da própria estação.</div>
+        <div class="setor-tags-mini"><span class="tag-mini">ETEs</span><span class="tag-mini">Aterros</span><span class="tag-mini">Concessões</span></div>
+        <div class="setor-card-link">Ver análise completa →</div>
+      </a>
     </div>
+  </div>
+</section>
 
-    <!-- AGROPECUÁRIA -->
-    <div class="setor-panel active" id="tab-suino">
-      <div class="setor-info">
-        <h3>Agropecuária</h3>
-        <p>Criações animais em escala geram <strong>volumes expressivos de dejeto orgânico de forma contínua</strong> — independente de safra, estação ou mercado. Essa constância é exatamente o que um biodigestor precisa pra operar de forma estável e eficiente.</p>
-        <p>O biogás gerado pode atender aquecimento de instalações, substituir GLP e movimentar geradores — reduzindo custos operacionais de forma direta e recorrente.</p>
-        <p>O digestato resultante ainda tem valor agronômico como biofertilizante, podendo substituir parte dos insumos comprados.</p>
-        <div class="setor-tags">
-          <span class="tag">Suinocultura</span>
-          <span class="tag">Bovinocultura</span>
-          <span class="tag">Avicultura</span>
-          <span class="tag">Confinamentos</span>
-        </div>
-      </div>
-      <div class="setor-box">
-        <h4>Por que faz sentido</h4>
-        <div class="setor-item">
-          <div class="setor-check">→</div>
-          <p><strong>Geração contínua de resíduo</strong> garante alimentação estável do biodigestor ao longo de todo o ano.</p>
-        </div>
-        <div class="setor-item">
-          <div class="setor-check">→</div>
-          <p><strong>Alta demanda térmica e elétrica</strong> nas instalações cria oportunidade direta de substituição de combustível fóssil.</p>
-        </div>
-        <div class="setor-item">
-          <div class="setor-check">→</div>
-          <p><strong>Passivo ambiental existente</strong> — o dejeto já precisa ser manejado. O biodigestor resolve o problema e ainda gera energia.</p>
-        </div>
-        <div class="setor-item">
-          <div class="setor-check">→</div>
-          <p><strong>Digestato como biofertilizante</strong> pode reduzir custo com adubação química nas lavouras adjacentes.</p>
-        </div>
-        <div class="setor-punch">
-          "Tenho o resíduo, tenho o custo de energia — e ainda não sei quanto um está pagando o outro."
-        </div>
-        <a href="https://verticebiogas.com.br/agropecuaria" class="btn-primary" style="display:inline-block;margin-top:1.2rem;font-size:0.82rem;">Desbrave seu setor →</a>
-      </div>
+<!-- FOTO -->
+<div style="width:100%;overflow:hidden;max-height:420px;position:relative;">
+  <img src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=1600&q=80&fit=crop" alt="Biodigestor industrial" style="width:100%;height:420px;object-fit:cover;display:block;filter:brightness(0.55) saturate(0.8);">
+  <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:2rem;">
+    <p style="font-family:'DM Serif Display',serif;font-size:clamp(1.5rem,3.5vw,2.6rem);color:#e8f0ea;line-height:1.2;max-width:700px;text-shadow:0 2px 24px rgba(0,0,0,0.7);">O biodigestor não gera energia nova.<br><em style="color:#d8f3dc;">Ele captura a que já estava no seu resíduo.</em></p>
+  </div>
+</div>
+
+<!-- CALCULADORA -->
+<section class="calc-section" id="calculadora">
+  <div class="calc-inner">
+    <div class="calc-header fi">
+      <div class="section-label">Estimativa de potencial</div>
+      <h2 class="section-title">Quanto biogás o seu<br>resíduo pode gerar?</h2>
+      <div class="divider"></div>
+      <p>Selecione seu setor, informe o volume de resíduo gerado por dia e veja a estimativa de produção e equivalência energética — com parâmetros médios da literatura científica. <span style="color:var(--green-light);cursor:pointer;text-decoration:underline;text-underline-offset:3px;" onclick="abrirPopup()">Ver equivalências energéticas do m³ de biogás →</span></p>
     </div>
-
-    <!-- INDÚSTRIA -->
-    <div class="setor-panel" id="tab-industria">
-      <div class="setor-info">
-        <h3>Indústria alimentícia</h3>
-        <p>Laticínios, frigoríficos e processadoras de alimentos geram efluentes com <strong>alta carga orgânica</strong> — e hoje arcam com o custo do tratamento desses efluentes sem nenhum retorno energético.</p>
-        <p>A digestão anaeróbia transforma esse passivo em ativo: o efluente que você paga pra tratar passa a gerar energia térmica pra uso interno, reduzindo a conta de GLP diretamente.</p>
-        <p>Em muitos casos, o projeto paga parte de si mesmo pela redução dos custos de tratamento de efluentes — o que melhora significativamente a viabilidade econômica.</p>
-        <div class="setor-tags">
-          <span class="tag">Laticínios</span>
-          <span class="tag">Frigoríficos</span>
-          <span class="tag">Processadoras</span>
-          <span class="tag">Bebidas</span>
+    <div class="calc-card fi fi-d2">
+      <div class="calc-row">
+        <div class="calc-field">
+          <label for="c-setor">Setor do empreendimento</label>
+          <select id="c-setor" onchange="calcular()">
+            <option value="" disabled selected>Selecione seu setor</option>
+            <option value="suino">Suinocultura</option>
+            <option value="bovino">Bovinocultura (confinamento)</option>
+            <option value="aves">Avicultura</option>
+            <option value="laticinios">Laticínios (soro/efluente)</option>
+            <option value="frigorifico">Frigorífico</option>
+            <option value="agroindustria">Agroindústria / Vinhaça</option>
+            <option value="saneamento">Saneamento / Lodo de ETE</option>
+          </select>
+        </div>
+        <div class="calc-field">
+          <label for="c-residuo">Resíduo gerado por dia (kg)</label>
+          <input type="number" id="c-residuo" placeholder="Ex: 5000" min="1" oninput="calcular()">
         </div>
       </div>
-      <div class="setor-box">
-        <h4>Por que faz sentido</h4>
-        <div class="setor-item">
-          <div class="setor-check">→</div>
-          <p><strong>Efluente com alto potencial biometanogênico</strong> — soro de leite, sangue e água de lavagem são substratos ricos em matéria orgânica degradável.</p>
+      <button class="btn-calc" onclick="calcular()">Estimar potencial →</button>
+      <div class="calc-results" id="calc-results">
+        <div class="results-label">Estimativa de produção diária</div>
+        <div class="results-grid">
+          <div class="result-card"><div class="result-num" id="r-biogas">—</div><div class="result-unit">m³/dia</div><div class="result-label">Biogás total</div></div>
+          <div class="result-card"><div class="result-num" id="r-ch4">—</div><div class="result-unit">m³/dia</div><div class="result-label">Metano (CH₄)</div></div>
+          <div class="result-card"><div class="result-num" id="r-glp">—</div><div class="result-unit">kg/dia</div><div class="result-label">Equiv. GLP</div></div>
+          <div class="result-card"><div class="result-num" id="r-kwh">—</div><div class="result-unit">kWh/dia</div><div class="result-label">Equiv. elétrico</div></div>
         </div>
-        <div class="setor-item">
-          <div class="setor-check">→</div>
-          <p><strong>Custo duplo evitado</strong> — reduz gastos com tratamento de efluente e com energia ao mesmo tempo.</p>
+        <div class="results-grid" style="grid-template-columns:1fr 1fr;margin-top:0;">
+          <div class="result-card"><div class="result-num" id="r-diesel">—</div><div class="result-unit">L/dia</div><div class="result-label">Equiv. diesel</div></div>
+          <div class="result-card"><div class="result-num" id="r-biofert">—</div><div class="result-unit">L/dia (estimado)</div><div class="result-label">Biofertilizante líquido</div></div>
         </div>
-        <div class="setor-item">
-          <div class="setor-check">→</div>
-          <p><strong>Demanda térmica alta e contínua</strong> em processos como pasteurização, cozimento e aquecimento — ideal pra uso direto do biogás.</p>
+        <div class="calc-disclaimer"><strong>⚠ Estimativa orientativa.</strong> Valores calculados com parâmetros médios da literatura: fração de sólidos voláteis (SV) e potencial metanogênico (B₀) típicos por substrato (Hamilton/Iowa State Univ.; meta-análise ResearchGate 2020; IPCC 2006; Labatut et al. 2011). Biogás considerado com 60% CH₄. Biofertilizante estimado como 90–95% do volume de entrada. Sua realidade pode variar conforme dieta, diluição e condições operacionais. O EVTE usa os dados reais do seu processo.</div>
+        <div class="calc-cta-box">
+          <p><strong>Esses números fazem sentido para o seu caso?</strong> O EVTE transforma essa estimativa em análise com dados reais — incluindo viabilidade econômica, tecnologia recomendada e fornecedores disponíveis no mercado.</p>
+          <a href="#contato" class="btn-primary">Quero o EVTE completo →</a>
         </div>
-        <div class="setor-item">
-          <div class="setor-check">→</div>
-          <p><strong>Melhora no desempenho ambiental</strong> da empresa — relevante pra certificações e relações com clientes exigentes.</p>
-        </div>
-        <div class="setor-punch">
-          "Pago pra tratar o efluente e pago pra comprar energia. O EVTE vai mostrar se posso parar de fazer os dois."
-        </div>
-        <a href="https://verticebiogas.com.br/industria" class="btn-primary" style="display:inline-block;margin-top:1.2rem;font-size:0.82rem;">Desbrave seu setor →</a>
-      </div>
-    </div>
-
-    <!-- AGROINDÚSTRIA -->
-    <div class="setor-panel" id="tab-agroindustria">
-      <div class="setor-info">
-        <h3>Agroindústria</h3>
-        <p>Usinas de cana, processadoras de oleaginosas e produtores de etanol geram <strong>efluentes em volumes industriais</strong> com potencial biometanogênico comprovado e amplamente documentado na literatura técnica.</p>
-        <p>A vinhaça, por exemplo, já percorre longas distâncias pra fertirrigação — com biodigestão prévia, agrega valor energético antes de seguir pro campo, sem comprometer o uso agronômico do digestato.</p>
-        <p>A escala da agroindústria cria oportunidades tanto pra uso interno quanto pra venda de biometano comprimido ao mercado.</p>
-        <div class="setor-tags">
-          <span class="tag">Usinas de cana</span>
-          <span class="tag">Etanol</span>
-          <span class="tag">Oleaginosas</span>
-          <span class="tag">Amido</span>
-        </div>
-      </div>
-      <div class="setor-box">
-        <h4>Por que faz sentido</h4>
-        <div class="setor-item">
-          <div class="setor-check">→</div>
-          <p><strong>Volume de efluente em escala industrial</strong> garante produção de biogás em quantidade suficiente pra projetos de grande porte.</p>
-        </div>
-        <div class="setor-item">
-          <div class="setor-check">→</div>
-          <p><strong>Potencial biometanogênico comprovado</strong> — vinhaça, soro e outros efluentes agroindustriais são substratos bem caracterizados tecnicamente.</p>
-        </div>
-        <div class="setor-item">
-          <div class="setor-check">→</div>
-          <p><strong>Dupla destinação possível</strong> — uso interno pra energia ou venda de biometano ao mercado, dependendo da escala e da logística.</p>
-        </div>
-        <div class="setor-item">
-          <div class="setor-check">→</div>
-          <p><strong>Compatível com fertirrigação existente</strong> — o digestato mantém valor agronômico e pode seguir pra aplicação no campo normalmente.</p>
-        </div>
-        <div class="setor-punch">
-          "Tenho volume de efluente suficiente pra um projeto relevante. Falta saber se os números fecham no meu caso."
-        </div>
-        <a href="https://verticebiogas.com.br/agroindustria" class="btn-primary" style="display:inline-block;margin-top:1.2rem;font-size:0.82rem;">Desbrave seu setor →</a>
-    <div class="setor-panel" id="tab-saneamento">
-      <div class="setor-info">
-        <h3>Saneamento</h3>
-        <p>Estações de tratamento de esgoto com reatores anaeróbios <strong>já produzem biogás hoje</strong> — a maioria simplesmente queima ou lança na atmosfera sem nenhum aproveitamento. Capturar e usar esse gás é a oportunidade mais direta do setor.</p>
-        <p>Com gerador a biogás, a ETE pode reduzir significativamente sua dependência da rede elétrica — o que representa economia operacional real pra municípios e concessionárias.</p>
-        <p>Aterros sanitários têm dinâmica diferente, mas potencial igualmente relevante — com biogás gerado pela decomposição do resíduo sólido urbano ao longo de décadas.</p>
-        <div class="setor-tags">
-          <span class="tag">ETEs</span>
-          <span class="tag">Aterros sanitários</span>
-          <span class="tag">Concessões municipais</span>
-          <span class="tag">RSU</span>
-        </div>
-      </div>
-      <div class="setor-box">
-        <h4>Por que faz sentido</h4>
-        <div class="setor-item">
-          <div class="setor-check">→</div>
-          <p><strong>Biogás já está sendo produzido</strong> em ETEs com tratamento anaeróbio — o aproveitamento é uma decisão operacional, não um projeto do zero.</p>
-        </div>
-        <div class="setor-item">
-          <div class="setor-check">→</div>
-          <p><strong>Redução do custo elétrico operacional</strong> da própria ETE — relevante pra municípios e concessionárias com contratos de concessão.</p>
-        </div>
-        <div class="setor-item">
-          <div class="setor-check">→</div>
-          <p><strong>Redução de emissões de metano</strong> — o biogás que hoje vai pra atmosfera é GEE potente. Capturar e queimar gera crédito de carbono.</p>
-        </div>
-        <div class="setor-item">
-          <div class="setor-check">→</div>
-          <p><strong>Aterros têm produção de longo prazo</strong> — o biogás de aterro é gerado por décadas, criando base pra projetos com retorno sustentado.</p>
-        </div>
-        <div class="setor-punch">
-          "O biogás já está sendo gerado. A única decisão pendente é se vamos continuar descartando ou começar a usar."
-        </div>
-        <a href="https://verticebiogas.com.br/saneamento" class="btn-primary" style="display:inline-block;margin-top:1.2rem;font-size:0.82rem;">Desbrave seu setor →</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ FOTO BIODIGESTOR ═══ -->
-<div style="width:100%;overflow:hidden;max-height:420px;position:relative;">
-  <img
-    src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=1600&q=80&fit=crop"
-    alt="Biodigestor industrial instalado"
-    style="width:100%;height:420px;object-fit:cover;display:block;filter:brightness(0.55) saturate(0.8);"
-  >
-  <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:2rem;">
-    <p style="font-family:'DM Serif Display',serif;font-size:clamp(1.5rem,3.5vw,2.6rem);color:#e8f0ea;line-height:1.2;max-width:700px;text-shadow:0 2px 24px rgba(0,0,0,0.7);">
-      O biodigestor não gera energia nova.<br>
-      <em style="color:#d8f3dc;">Ele captura a que já estava no seu resíduo.</em>
-    </p>
-  </div>
-</div>
-
-<!-- ═══ EQUIVALÊNCIAS ═══ -->
-<section class="equiv">
-  <div class="equiv-inner">
-    <div class="equiv-header fi">
-      <div class="section-label">A substituição em números</div>
-      <h2 class="section-title">Cada m³ de biogás é uma fatura<br>que você não precisa pagar.</h2>
-      <div class="divider"></div>
-      <p>O biogás substitui fontes fósseis de forma direta — não como complemento, mas como troca. Veja o que 1 metro cúbico representa em cada fonte de energia que você compra hoje.</p>
-    </div>
-    <div class="equiv-grid">
-      <div class="equiv-card fi">
-        <div class="equiv-from">1 m³ de biogás equivale a</div>
-        <div class="equiv-num">0,45</div>
-        <div class="equiv-unit">kg de GLP</div>
-        <div class="equiv-label">Substituição de botijão</div>
-        <div class="equiv-context">Se você queima GLP pra aquecimento de processo, cada metro cúbico de biogás que você descarta vale dinheiro direto no bolso.</div>
-      </div>
-      <div class="equiv-card fi fi-d2">
-        <div class="equiv-from">1 m³ de biogás equivale a</div>
-        <div class="equiv-num">1,7</div>
-        <div class="equiv-unit">kWh elétrico</div>
-        <div class="equiv-label">Geração de energia elétrica</div>
-        <div class="equiv-context">Num motor de cogeração. Quanto você paga de energia elétrica por mês? É a pergunta mais rápida pra ter noção do potencial de retorno.</div>
-      </div>
-      <div class="equiv-card fi fi-d3">
-        <div class="equiv-from">1 m³ de biogás equivale a</div>
-        <div class="equiv-num">0,65</div>
-        <div class="equiv-unit">litros de diesel</div>
-        <div class="equiv-label">Substituição em motor/gerador</div>
-        <div class="equiv-context">Se você opera gerador a diesel, o biogás substitui diretamente. É uma das conversões com retorno mais rápido de enxergar.</div>
-      </div>
-    </div>
-    <!-- DIAGRAMA DE FLUXO -->
-    <div class="fi" style="margin-bottom:2.5rem;">
-      <svg viewBox="0 0 900 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:900px;display:block;margin:0 auto;">
-        <defs>
-          <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-            <path d="M0,0 L0,6 L8,3 z" fill="#40916c"/>
-          </marker>
-        </defs>
-
-        <!-- BLOCO 1: RESÍDUO -->
-        <rect x="10" y="40" width="180" height="80" rx="6" fill="#1e2e22" stroke="#40916c" stroke-width="1.2"/>
-        <text x="100" y="72" text-anchor="middle" font-family="DM Serif Display,serif" font-size="13" fill="#e8f0ea">Resíduo Orgânico</text>
-        <text x="100" y="91" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#8aab92">Dejeto · Efluente · Vinhaça</text>
-        <text x="100" y="107" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#8aab92">Lodo · RSU</text>
-
-        <!-- SETA 1 -->
-        <line x1="192" y1="80" x2="248" y2="80" stroke="#40916c" stroke-width="1.5" marker-end="url(#arr)"/>
-        <text x="220" y="70" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#40916c">digestão</text>
-        <text x="220" y="97" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#40916c">anaeróbia</text>
-
-        <!-- BLOCO 2: BIODIGESTOR -->
-        <rect x="250" y="30" width="180" height="100" rx="6" fill="#162218" stroke="#e9c46a" stroke-width="1.5"/>
-        <text x="340" y="62" text-anchor="middle" font-family="DM Serif Display,serif" font-size="14" fill="#e9c46a">Biodigestor</text>
-        <text x="340" y="82" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#8aab92">Conversão da matéria</text>
-        <text x="340" y="97" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#8aab92">orgânica em biogás</text>
-        <text x="340" y="116" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#40916c">CH₄ · CO₂</text>
-
-        <!-- BLOCO 3: ENERGIA (dividido) -->
-        <!-- GLP -->
-        <rect x="490" y="20" width="120" height="38" rx="5" fill="#1e2e22" stroke="#40916c" stroke-width="1"/>
-        <text x="550" y="36" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" font-weight="600" fill="#d8f3dc">Substitui GLP</text>
-        <text x="550" y="51" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#8aab92">0,45 kg / m³</text>
-
-        <!-- Elétrica -->
-        <rect x="490" y="65" width="120" height="38" rx="5" fill="#1e2e22" stroke="#40916c" stroke-width="1"/>
-        <text x="550" y="81" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" font-weight="600" fill="#d8f3dc">Gera Eletricidade</text>
-        <text x="550" y="96" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#8aab92">1,7 kWh / m³</text>
-
-        <!-- Diesel -->
-        <rect x="490" y="110" width="120" height="38" rx="5" fill="#1e2e22" stroke="#40916c" stroke-width="1"/>
-        <text x="550" y="126" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" font-weight="600" fill="#d8f3dc">Substitui Diesel</text>
-        <text x="550" y="141" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#8aab92">0,65 L / m³</text>
-
-        <!-- linhas saindo pra 3 blocos -->
-        <line x1="432" y1="60" x2="455" y2="39" stroke="#40916c" stroke-width="1" stroke-dasharray="3,2"/>
-        <line x1="455" y1="39" x2="488" y2="39" stroke="#40916c" stroke-width="1" marker-end="url(#arr)"/>
-        <line x1="432" y1="80" x2="488" y2="84" stroke="#40916c" stroke-width="1" marker-end="url(#arr)"/>
-        <line x1="432" y1="100" x2="455" y2="129" stroke="#40916c" stroke-width="1" stroke-dasharray="3,2"/>
-        <line x1="455" y1="129" x2="488" y2="129" stroke="#40916c" stroke-width="1" marker-end="url(#arr)"/>
-
-        <!-- SETA FINAL -->
-        <line x1="612" y1="39" x2="660" y2="39" stroke="#40916c" stroke-width="1" marker-end="url(#arr)"/>
-        <line x1="612" y1="84" x2="660" y2="84" stroke="#40916c" stroke-width="1" marker-end="url(#arr)"/>
-        <line x1="612" y1="129" x2="660" y2="129" stroke="#40916c" stroke-width="1" marker-end="url(#arr)"/>
-
-        <!-- BLOCO 4: ECONOMIA -->
-        <rect x="662" y="20" width="220" height="130" rx="6" fill="#0f1a0f" stroke="#e9c46a" stroke-width="1.5"/>
-        <text x="772" y="50" text-anchor="middle" font-family="DM Serif Display,serif" font-size="14" fill="#e9c46a">Economia Operacional</text>
-        <text x="772" y="72" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#8aab92">Redução direta de custos</text>
-        <text x="772" y="89" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#8aab92">com insumos energéticos</text>
-        <text x="772" y="110" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#d8f3dc">+ Digestato como</text>
-        <text x="772" y="126" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#d8f3dc">biofertilizante</text>
-      </svg>
-    </div>
-
-    <div class="equiv-provocacao fi">
+<!-- VIABILIDADE -->
+<section class="viab-section">
+  <div class="viab-inner fi">
+    <div class="viab-box">
       <div>
-        <h3>Quanto biogás o seu resíduo<br>tem potencial de produzir?</h3>
-        <p>Essa é a pergunta que define se existe um projeto viável no seu empreendimento. O EVTE responde com os dados do seu processo — não com médias de setor. <strong>Quem já fez as contas raramente fica indiferente ao resultado.</strong></p>
+        <h3>Sua propriedade gera matéria orgânica suficiente para<br><em>subsidiar um projeto de biogás?</em></h3>
+        <p>Existe um ponto de equilíbrio entre o volume de resíduo disponível e o investimento necessário. Abaixo dele, o retorno não compensa. Acima, o projeto se paga. <strong>O EVTE calcula onde você está nessa curva — com os dados reais do seu empreendimento.</strong></p>
       </div>
       <a href="#contato" class="btn-primary" style="white-space:nowrap;">Quero saber o meu →</a>
     </div>
   </div>
 </section>
 
-<!-- ═══ EVTE ═══ -->
+<!-- EVTE -->
 <section class="evte" id="evte">
   <div class="evte-inner">
     <div>
@@ -795,51 +410,23 @@ function gtag_report_conversion(url) {
         <div class="section-label">O serviço</div>
         <h2 class="section-title">O que está dentro<br>do seu EVTE.</h2>
         <div class="divider"></div>
-        <p class="section-body">Um estudo personalizado — construído com os dados do seu empreendimento, não com médias genéricas. O resultado é uma resposta clara: <strong>vale investir ou não?</strong></p>
+        <p class="section-body">Um estudo personalizado — construído com os dados do seu empreendimento. O resultado é uma resposta clara: <strong>vale investir ou não?</strong></p>
       </div>
       <div class="evte-steps fi fi-d2">
-        <div class="step">
-          <div class="step-n">01</div>
-          <div><h4>Caracterização do resíduo</h4><p>Tipo de substrato, volume gerado, sazonalidade, composição orgânica. A base de tudo.</p></div>
-        </div>
-        <div class="step">
-          <div class="step-n">02</div>
-          <div><h4>Potencial de produção de biogás</h4><p>Estimativa de m³ de biogás e metano produzíveis por dia e por mês, com base em parâmetros técnicos do processo.</p></div>
-        </div>
-        <div class="step">
-          <div class="step-n">03</div>
-          <div><h4>Análise da demanda energética</h4><p>Quanto você gasta com GLP, diesel e energia elétrica — e quanto o biogás pode substituir.</p></div>
-        </div>
-        <div class="step">
-          <div class="step-n">04</div>
-          <div><h4>Tecnologia recomendada</h4><p>Qual tipo de biodigestor se encaixa no seu perfil, escala e condições operacionais.</p></div>
-        </div>
-        <div class="step">
-          <div class="step-n">05</div>
-          <div><h4>Viabilidade econômica</h4><p>TIR, VPL, payback simples e descontado. Análise de sensibilidade. Recomendação objetiva.</p></div>
-        </div>
+        <div class="step"><div class="step-n">01</div><div><h4>Caracterização do resíduo</h4><p>Tipo de substrato, volume gerado, sazonalidade, composição orgânica. A base de tudo.</p></div></div>
+        <div class="step"><div class="step-n">02</div><div><h4>Potencial de produção de biogás</h4><p>Estimativa de m³ de biogás e metano produzíveis por dia e mês, com base nos parâmetros do seu processo.</p></div></div>
+        <div class="step"><div class="step-n">03</div><div><h4>Análise da demanda energética</h4><p>Quanto você gasta com GLP, diesel e eletricidade — e quanto o biogás pode substituir.</p></div></div>
+        <div class="step"><div class="step-n">04</div><div><h4>Tecnologia recomendada</h4><p>Qual tipo de biodigestor se encaixa no seu perfil — com fornecedores disponíveis no mercado.</p></div></div>
+        <div class="step"><div class="step-n">05</div><div><h4>Viabilidade econômica</h4><p>TIR, VPL, payback simples e descontado. Análise de sensibilidade. Recomendação objetiva.</p></div></div>
       </div>
     </div>
-
     <div class="evte-right">
       <div class="evte-box fi fi-d2">
         <h3>O que você recebe</h3>
-        <div class="evte-item">
-          <div class="evte-check">✓</div>
-          <p><strong>Relatório técnico completo</strong> com todos os cálculos, premissas e resultados documentados.</p>
-        </div>
-        <div class="evte-item">
-          <div class="evte-check">✓</div>
-          <p><strong>Estimativa de produção de biogás</strong> em m³/dia e equivalência energética calculada pro seu caso.</p>
-        </div>
-        <div class="evte-item">
-          <div class="evte-check">✓</div>
-          <p><strong>Análise financeira</strong> com projeção de retorno e recomendação clara de avanço ou não.</p>
-        </div>
-        <div class="evte-item">
-          <div class="evte-check">✓</div>
-          <p><strong>Apresentação dos resultados</strong> por videochamada com o consultor responsável.</p>
-        </div>
+        <div class="evte-item"><div class="evte-check">✓</div><p><strong>Relatório técnico completo</strong> com cálculos preliminares, resultados, tecnologias recomendadas e fornecedores.</p></div>
+        <div class="evte-item"><div class="evte-check">✓</div><p><strong>Estimativa de produção de biogás</strong> em m³/dia e equivalência energética calculada para o seu caso.</p></div>
+        <div class="evte-item"><div class="evte-check">✓</div><p><strong>Análise financeira completa</strong> — VPL, TIR e payback — com recomendação clara de avanço ou não.</p></div>
+        <div class="evte-item"><div class="evte-check">✓</div><p><strong>Apresentação por videochamada</strong> com o consultor responsável e conclusão objetiva sobre viabilidade.</p></div>
         <hr class="evte-separator">
         <div class="evte-prazo">⏱ Prazo médio: <span>20 a 35 dias</span> após coleta dos dados.</div>
         <hr class="evte-separator">
@@ -849,40 +436,126 @@ function gtag_report_conversion(url) {
   </div>
 </section>
 
-<!-- ═══ CTA FINAL ═══ -->
-<section class="cta-final" id="contato">
-  <div class="cta-final-inner fi">
-    <div class="section-label">Próximo passo</div>
-    <h2>A energia que você compra<br>pode vir do que<br><em>você já descarta.</em></h2>
-    <p>Se você tem resíduo orgânico e gasto energético recorrente, <strong>o ponto de partida já existe.</strong> A conversa inicial é gratuita — me manda uma mensagem e te oriento sobre o que precisamos pra avaliar o potencial do seu empreendimento.</p>
-    <div class="cta-buttons">
-      <a href="https://wa.me/5519971315434?text=Olá!%20Tenho%20interesse%20em%20um%20EVTE%20de%20biogás.%20Meu%20empreendimento%20é..." class="btn-wpp" target="_blank" onclick="gtag_report_conversion('https://wa.me/5519971315434')">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Falar no WhatsApp
-      </a>
-      <a href="mailto:contato@verticebiogas.com.br" class="btn-secondary">Enviar e-mail</a>
+<!-- CONTATO -->
+<section class="contato-section" id="contato">
+  <div class="contato-inner">
+    <div class="fi">
+      <div class="section-label">Próximo passo</div>
+      <h2 class="contato-h2">A energia que você compra<br>pode vir do que<br><em>você já descarta.</em></h2>
+      <br>
+      <p style="font-size:0.95rem;color:var(--text-muted);line-height:1.75;margin-bottom:1.5rem;">Se você tem resíduo orgânico e gasto energético recorrente, <strong style="color:var(--text);">o ponto de partida já existe.</strong> A conversa inicial é gratuita.</p>
+      <div class="contato-items">
+        <div class="contato-item"><div class="contato-dot"></div>Conversa inicial gratuita · sem compromisso</div>
+        <div class="contato-item"><div class="contato-dot"></div>Resposta em até 24 horas</div>
+        <div class="contato-item"><div class="contato-dot"></div>EVTE entregue em 20 a 35 dias após coleta de dados</div>
+      </div>
+      <div class="contato-direto">
+        <p>Prefere falar direto?</p>
+        <a href="https://wa.me/5519971315434?text=Olá!%20Tenho%20interesse%20em%20um%20EVTE%20de%20biogás.%20Meu%20empreendimento%20é..." class="btn-wpp" target="_blank" onclick="gtag_report_conversion('https://wa.me/5519971315434')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Falar no WhatsApp
+        </a>
+      </div>
     </div>
-    <p class="cta-nota">Conversa inicial gratuita · Sem compromisso · Resposta em até 24h</p>
+    <div class="fi fi-d2">
+      <div class="form-card">
+        <h3>Solicitar pré-análise gratuita</h3>
+        <p>Preencha os dados abaixo e retorno em até 24h para conversar sobre o potencial do seu empreendimento.</p>
+        <div id="form-content">
+          <div class="form-row">
+            <div class="form-group"><label for="f-nome">Nome</label><input type="text" id="f-nome" placeholder="Seu nome" required></div>
+            <div class="form-group"><label for="f-tel">Telefone</label><input type="tel" id="f-tel" placeholder="(XX) XXXXX-XXXX" required></div>
+          </div>
+          <div class="form-group"><label for="f-email">E-mail</label><input type="email" id="f-email" placeholder="seu@email.com.br"></div>
+          <div class="form-group">
+            <label for="f-setor">Setor</label>
+            <select id="f-setor" required>
+              <option value="" disabled selected>Selecione seu setor</option>
+              <option>Suinocultura</option><option>Bovinocultura</option><option>Avicultura</option>
+              <option>Laticínios</option><option>Frigorífico</option><option>Agroindústria / Usina</option>
+              <option>Saneamento / ETE</option><option>Outro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="f-msg">Descreva brevemente seu empreendimento <span style="color:var(--text-muted);font-weight:300;">(opcional)</span></label>
+            <textarea id="f-msg" placeholder="Ex.: Granja com 800 matrizes suínas, consumo de GLP para aquecimento de leitões..."></textarea>
+          </div>
+          <button type="button" class="btn-submit" onclick="enviarFormulario()">Solicitar pré-análise gratuita →</button>
+          <p class="form-nota">Ao enviar, você será redirecionado para o WhatsApp com seus dados preenchidos automaticamente.</p>
+        </div>
+        <div class="form-success" id="form-success">
+          <div class="success-icon">✓</div>
+          <h4>Mensagem enviada!</h4>
+          <p>Retorno em até 24 horas para conversar sobre o potencial do seu empreendimento.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <footer>
-  <div class="logo">Vértice<span>.</span></div>
+  <a href="/" class="logo">Vértice<span>.</span></a>
   <p>© 2026 Vértice Consultoria Energética · verticebiogas.com.br</p>
 </footer>
 
-<script>
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); } });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.fi').forEach(el => obs.observe(el));
+<!-- POPUP EQUIVALÊNCIAS -->
+<div class="popup-overlay" id="popup" onclick="fecharPopup(event)">
+  <div class="popup-box">
+    <button class="popup-close" onclick="fecharPopupBtn()">✕</button>
+    <div class="popup-title">Equivalências energéticas do biogás</div>
+    <div class="popup-item"><div><div style="font-size:0.85rem;color:var(--text);">GLP (botijão)</div><div class="popup-desc">Aquecimento de processo, caldeiras</div></div><div class="popup-val">0,45 kg/m³</div></div>
+    <div class="popup-item"><div><div style="font-size:0.85rem;color:var(--text);">Energia elétrica</div><div class="popup-desc">Motor de cogeração</div></div><div class="popup-val">1,7 kWh/m³</div></div>
+    <div class="popup-item"><div><div style="font-size:0.85rem;color:var(--text);">Diesel</div><div class="popup-desc">Substituto em motor/gerador</div></div><div class="popup-val">0,65 L/m³</div></div>
+    <div class="popup-item"><div><div style="font-size:0.85rem;color:var(--text);">Energia térmica direta</div><div class="popup-desc">Queima direta em queimador</div></div><div class="popup-val">~6.000 kcal/m³</div></div>
+    <div class="popup-note">Valores baseados em biogás com 60% de CH₄. Variam conforme concentração real de metano do substrato. Fontes: UNIDO & CIBiogás — Guia Prático para Projetos de Biogás (2022).</div>
+  </div>
+</div>
 
-  function showTab(id, btn) {
-    document.querySelectorAll('.setor-panel').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    document.getElementById('tab-' + id).classList.add('active');
-    btn.classList.add('active');
-  }
+<script>
+const SETORES={suino:{sv:0.08,b0:290},bovino:{sv:0.11,b0:180},aves:{sv:0.27,b0:250},laticinios:{sv:0.07,b0:380},frigorifico:{sv:0.12,b0:430},agroindustria:{sv:0.03,b0:320},saneamento:{sv:0.55,b0:250}};
+function fmt(n){if(n>=10000)return (n/1000).toFixed(0)+'k';if(n>=1000)return (n/1000).toFixed(1)+'k';if(n>=10)return Math.round(n).toLocaleString('pt-BR');if(n>=1)return n.toFixed(1);return n.toFixed(2);}
+function calcular(){
+  const setor=document.getElementById('c-setor').value;
+  const residuo=parseFloat(document.getElementById('c-residuo').value);
+  const res=document.getElementById('calc-results');
+  if(!setor||!residuo||residuo<=0){res.classList.remove('show');return;}
+  const p=SETORES[setor];
+  const sv_kg=residuo*p.sv;
+  const ch4_m3=(sv_kg*1000*p.b0)/1000000;
+  const biogas_m3=ch4_m3/0.60;
+  const glp=ch4_m3*0.45;
+  const kwh=ch4_m3*1.7;
+  const diesel=ch4_m3*0.65;
+  const biofert=residuo*0.92;
+  document.getElementById('r-biogas').textContent=fmt(biogas_m3);
+  document.getElementById('r-ch4').textContent=fmt(ch4_m3);
+  document.getElementById('r-glp').textContent=fmt(glp);
+  document.getElementById('r-kwh').textContent=fmt(kwh);
+  document.getElementById('r-diesel').textContent=fmt(diesel);
+  document.getElementById('r-biofert').textContent=fmt(biofert);
+  res.classList.add('show');
+}
+function abrirPopup(){document.getElementById('popup').classList.add('show');}
+function fecharPopupBtn(){document.getElementById('popup').classList.remove('show');}
+function fecharPopup(e){if(e.target===document.getElementById('popup'))fecharPopupBtn();}
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}});},{threshold:0.1});
+document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
+function enviarFormulario(){
+  const nome=document.getElementById('f-nome').value.trim();
+  const tel=document.getElementById('f-tel').value.trim();
+  const setor=document.getElementById('f-setor').value;
+  if(!nome||!tel||!setor){alert('Por favor, preencha nome, telefone e setor.');return;}
+  const email=document.getElementById('f-email').value.trim();
+  const msg=document.getElementById('f-msg').value.trim();
+  gtag_report_form_conversion();
+  let txt=`Olá! Tenho interesse em um EVTE de biogás.\n\n*Nome:* ${nome}\n*Telefone:* ${tel}\n`;
+  if(email)txt+=`*E-mail:* ${email}\n`;
+  txt+=`*Setor:* ${setor}\n`;
+  if(msg)txt+=`*Empreendimento:* ${msg}\n`;
+  document.getElementById('form-content').style.display='none';
+  document.getElementById('form-success').style.display='block';
+  setTimeout(()=>window.open(`https://wa.me/5519971315434?text=${encodeURIComponent(txt)}`,'_blank'),800);
+}
 </script>
 </body>
 </html>
