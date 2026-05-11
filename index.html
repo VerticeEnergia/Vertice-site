@@ -229,7 +229,6 @@ function gtag_report_form_conversion(){gtag('event','conversion',{'send_to':'AW-
   <div class="hero-eyebrow">Consultoria Energética · Biogás & Biomethane</div>
   <h1>Você já produz energia.<br>Só ainda não <em>captura.</em></h1>
   <p class="hero-sub">Uma granja com 500 matrizes suínas gera resíduo suficiente pra substituir mais de 100 kg de GLP por mês — com energia produzida dentro da própria propriedade. <strong>O EVTE calcula, com os dados do seu processo, se o seu caso fecha.</strong></p>
-  <div class="hero-proof">↳ Projeto analisado: RU/UNESP Rio Claro · 43 kg de resíduo orgânico/dia · ~25 m³ CH₄/lote · equivalente a ~1 botijão P13 substituído a cada 14 dias · viabilidade confirmada.</div>
   <div class="hero-cta">
     <a href="#contato" class="btn-primary">Quero saber meu potencial</a>
     <a href="#setores" class="btn-secondary">Ver por setor</a>
@@ -270,6 +269,7 @@ function gtag_report_form_conversion(){gtag('event','conversion',{'send_to':'AW-
       <p class="consultor-bio">Formado em Engenharia Ambiental pela <strong>UNESP Rio Claro</strong>, com foco em digestão anaeróbia, biodigestão e viabilidade técnico-econômica de projetos de biogás. Cada EVTE é construído com os dados reais do seu processo — <strong>identificando as dores específicas do seu empreendimento e propondo soluções disponíveis no mercado de biogás</strong> para cada caso.</p>
       <div class="consultor-creds">
         <div class="cred-item"><span class="cred-icon">◆</span>Engenharia Ambiental — UNESP Rio Claro (2026)</div>
+        <div class="cred-item"><span class="cred-icon">◆</span>Elaboração de estudos de viabilidade técnico-econômica (EVTE) para sistemas de biogás</div>
         <div class="cred-item"><span class="cred-icon">◆</span>Modelagem cinética de Gompertz para biorreatores anaeróbios</div>
         <div class="cred-item"><span class="cred-icon">◆</span>CREA-SP em processo de registro</div>
       </div>
@@ -362,8 +362,14 @@ function gtag_report_form_conversion(){gtag('event','conversion',{'send_to':'AW-
           </select>
         </div>
         <div class="calc-field">
-          <label for="c-residuo">Resíduo gerado por dia (kg)</label>
-          <input type="number" id="c-residuo" placeholder="Ex: 5000" min="1" oninput="calcular()">
+          <label for="c-residuo">Resíduo gerado por dia</label>
+          <div style="display:flex;gap:0.5rem;">
+            <input type="number" id="c-residuo" placeholder="Ex: 5000" min="1" oninput="calcular()" style="flex:1;">
+            <select id="c-unidade" onchange="calcular()" style="width:80px;flex-shrink:0;background:var(--dark-2);border:1px solid var(--border);border-radius:4px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.9rem;padding:0.75rem 0.5rem;appearance:none;-webkit-appearance:none;text-align:center;cursor:pointer;">
+              <option value="kg">kg</option>
+              <option value="m3">m³</option>
+            </select>
+          </div>
         </div>
       </div>
       <button class="btn-calc" onclick="calcular()">Estimar potencial →</button>
@@ -379,7 +385,7 @@ function gtag_report_form_conversion(){gtag('event','conversion',{'send_to':'AW-
           <div class="result-card"><div class="result-num" id="r-diesel">—</div><div class="result-unit">L/dia</div><div class="result-label">Equiv. diesel</div></div>
           <div class="result-card"><div class="result-num" id="r-biofert">—</div><div class="result-unit">L/dia (estimado)</div><div class="result-label">Biofertilizante líquido</div></div>
         </div>
-        <div class="calc-disclaimer"><strong>⚠ Estimativa orientativa.</strong> Valores calculados com parâmetros médios da literatura: fração de sólidos voláteis (SV) e potencial metanogênico (B₀) típicos por substrato (Hamilton/Iowa State Univ.; meta-análise ResearchGate 2020; IPCC 2006; Labatut et al. 2011). Biogás considerado com 60% CH₄. Biofertilizante estimado como 90–95% do volume de entrada. Sua realidade pode variar conforme dieta, diluição e condições operacionais. O EVTE usa os dados reais do seu processo.</div>
+        <div class="calc-disclaimer"><strong>⚠ Estimativa orientativa.</strong> Valores calculados com parâmetros médios da literatura: fração de sólidos voláteis (SV) e potencial metanogênico (B₀) típicos por substrato (Hamilton/Iowa State Univ.; meta-análise ResearchGate 2020; IPCC 2006; Labatut et al. 2011). Biogás considerado com 60% CH₄. Quando informado em m³, o volume é convertido para kg usando densidade típica do substrato. Biofertilizante estimado como ~92% da massa de entrada. Sua realidade pode variar conforme dieta, diluição e condições operacionais. O EVTE usa os dados reais do seu processo.</div>
         <div class="calc-cta-box">
           <p><strong>Esses números fazem sentido para o seu caso?</strong> O EVTE transforma essa estimativa em análise com dados reais — incluindo viabilidade econômica, tecnologia recomendada e fornecedores disponíveis no mercado.</p>
           <a href="#contato" class="btn-primary">Quero o EVTE completo →</a>
@@ -512,21 +518,33 @@ function gtag_report_form_conversion(){gtag('event','conversion',{'send_to':'AW-
 </div>
 
 <script>
-const SETORES={suino:{sv:0.08,b0:290},bovino:{sv:0.11,b0:180},aves:{sv:0.27,b0:250},laticinios:{sv:0.07,b0:380},frigorifico:{sv:0.12,b0:430},agroindustria:{sv:0.03,b0:320},saneamento:{sv:0.55,b0:250}};
+// sv=fração SV, b0=potencial metanogênico (mL CH4/g SV), dens=densidade típica (kg/m³) para conversão m³→kg
+const SETORES={
+  suino:       {sv:0.08, b0:290, dens:1020}, // dejeto suíno líquido
+  bovino:      {sv:0.11, b0:180, dens:1010}, // dejeto bovino
+  aves:        {sv:0.27, b0:250, dens:650},  // cama de frango (sólido)
+  laticinios:  {sv:0.07, b0:380, dens:1025}, // soro/efluente laticínio
+  frigorifico: {sv:0.12, b0:430, dens:1030}, // efluente frigorífico
+  agroindustria:{sv:0.03,b0:320, dens:1010}, // vinhaça / efluente agroindústria
+  saneamento:  {sv:0.55, b0:250, dens:1005}, // lodo de ETE
+};
 function fmt(n){if(n>=10000)return (n/1000).toFixed(0)+'k';if(n>=1000)return (n/1000).toFixed(1)+'k';if(n>=10)return Math.round(n).toLocaleString('pt-BR');if(n>=1)return n.toFixed(1);return n.toFixed(2);}
 function calcular(){
   const setor=document.getElementById('c-setor').value;
-  const residuo=parseFloat(document.getElementById('c-residuo').value);
+  const valorInput=parseFloat(document.getElementById('c-residuo').value);
+  const unidade=document.getElementById('c-unidade').value;
   const res=document.getElementById('calc-results');
-  if(!setor||!residuo||residuo<=0){res.classList.remove('show');return;}
+  if(!setor||!valorInput||valorInput<=0){res.classList.remove('show');return;}
   const p=SETORES[setor];
-  const sv_kg=residuo*p.sv;
+  // Converte para kg se necessário
+  const residuo_kg = unidade==='m3' ? valorInput*p.dens : valorInput;
+  const sv_kg=residuo_kg*p.sv;
   const ch4_m3=(sv_kg*1000*p.b0)/1000000;
   const biogas_m3=ch4_m3/0.60;
   const glp=ch4_m3*0.45;
   const kwh=ch4_m3*1.7;
   const diesel=ch4_m3*0.65;
-  const biofert=residuo*0.92;
+  const biofert=residuo_kg*0.92;
   document.getElementById('r-biogas').textContent=fmt(biogas_m3);
   document.getElementById('r-ch4').textContent=fmt(ch4_m3);
   document.getElementById('r-glp').textContent=fmt(glp);
