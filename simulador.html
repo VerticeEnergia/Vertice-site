@@ -318,8 +318,29 @@ footer.site-footer{padding:3.5rem 2.5rem 2rem;border-top:1px solid var(--border)
 .back-site-link:hover{color:#f5d585;transform:translateX(-2px);}
 @media(max-width:700px){.back-site-link{margin-bottom:1rem;font-size:0.78rem;}}
 
+
+/* BOTÃO FLUTUANTE DE VOLTAR */
+.btn-voltar-flutuante{position:fixed;left:1.2rem;bottom:1.2rem;z-index:301;background:rgba(13,27,18,0.92);color:var(--text);border:1px solid rgba(233,196,106,0.35);border-radius:999px;padding:0.85rem 1.15rem;font-size:0.82rem;font-weight:700;letter-spacing:0.02em;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;box-shadow:0 8px 30px rgba(0,0,0,0.35);backdrop-filter:blur(10px);transition:transform 0.2s,border-color 0.2s,color 0.2s;}
+.btn-voltar-flutuante:hover{transform:translateY(-2px);border-color:var(--amber);color:var(--amber);}
+@media(max-width:520px){.btn-voltar-flutuante{left:1rem;right:1rem;bottom:4.7rem;justify-content:center;}}
+
 </style>
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18148435351"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18148435351">
+function voltarParaOrigem(event) {
+  if (event) event.preventDefault();
+
+  const mesmaOrigem = document.referrer && new URL(document.referrer).origin === window.location.origin;
+
+  if (mesmaOrigem && window.history.length > 1) {
+    window.history.back();
+  } else {
+    window.location.href = "/#calculadora";
+  }
+
+  return false;
+}
+
+</script>
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-18148435351');
 function gtag_report_conversion(url){var cb=function(){if(typeof url!='undefined')window.location=url;};gtag('event','conversion',{'send_to':'AW-18148435351/ikWACKnw0akcEJfL7M1D','value':1.0,'currency':'BRL','event_callback':cb});return false;}
@@ -340,7 +361,7 @@ function gtag_report_form_conversion(){gtag('event','conversion',{'send_to':'AW-
 <section class="calc-section" id="calculadora">
   <div class="calc-inner">
     <div class="calc-header fi">
-      <a href="/" class="back-site-link">← Voltar ao site principal</a>
+      <a href="/" class="back-site-link" onclick="return voltarParaOrigem(event)">← Voltar ao site principal</a>
       <div class="section-label">Simulador de potencial</div>
       <h1 class="section-title">Seu resíduo ainda carrega energia. Vamos estimar o potencial inicial?</h1>
       <div class="divider"></div>
