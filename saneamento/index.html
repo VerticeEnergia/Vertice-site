@@ -3,10 +3,11 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Biogás para Saneamento | Vértice Consultoria Energética</title>
-<meta name="description" content="ETEs com reatores UASB já produzem biogás hoje. Aterros sanitários geram metano por décadas. Descubra como capturar e usar esse potencial energético.">
+<meta name="description" content="Avaliação de aproveitamento de biogás em ETEs, aterros sanitários, operações com FORSU, concessões e PPPs de saneamento.">
 <link rel="canonical" href="https://verticebiogas.com.br/saneamento">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
+
 :root{--green:#2d6a4f;--green-light:#40916c;--amber:#e9c46a;--dark:#0d1b12;--dark-2:#162218;--dark-3:#1e2e22;--text:#e8f0ea;--text-muted:#8aab92;--border:rgba(64,145,108,0.2);}
 *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
 body{background:var(--dark);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
@@ -79,11 +80,26 @@ h1 em{font-style:italic;color:var(--green-light);}
 .btn-wpp:hover{background:#1ebe5d;transform:translateY(-2px);}
 footer{padding:2rem 2.5rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
 footer p{font-size:0.78rem;color:var(--text-muted);}
+
+.tb-wrap{overflow-x:auto;margin-top:2rem;border:1px solid var(--border);border-radius:8px;background:var(--dark-3);}
+.potencial-table{width:100%;border-collapse:collapse;min-width:760px;}
+.potencial-table th,.potencial-table td{text-align:left;padding:1rem;border-bottom:1px solid var(--border);vertical-align:top;}
+.potencial-table th{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--green-light);font-weight:600;background:rgba(45,106,79,0.16);}
+.potencial-table td{font-size:0.84rem;color:var(--text-muted);line-height:1.6;}
+.potencial-table td strong{color:var(--text);font-weight:500;}
+.note-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem;}
+@media(max-width:760px){.note-grid{grid-template-columns:1fr;}}
+.note{background:rgba(233,196,106,0.06);border:1px solid rgba(233,196,106,0.16);border-radius:8px;padding:1.1rem;font-size:0.82rem;color:var(--text-muted);line-height:1.65;}
+.note strong{color:var(--amber);}
+.faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;margin-top:2rem;}
+@media(max-width:768px){.faq-grid{grid-template-columns:1fr;}}
+
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
 .fi{opacity:0;transform:translateY(20px);transition:opacity 0.75s ease,transform 0.75s ease;}
 .fi.vis{opacity:1;transform:translateY(0);}
 .fi-d2{transition-delay:0.15s;}.fi-d3{transition-delay:0.28s;}
 @media(max-width:600px){nav,.hero-sp,.cs,.ctastrip,footer{padding-left:1.2rem;padding-right:1.2rem;}}
+
 </style>
 </head>
 <body>
@@ -94,11 +110,11 @@ footer p{font-size:0.78rem;color:var(--text-muted);}
 </nav>
 
 <section class="hero-sp">
-  <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1400&q=80&fit=crop" alt="Estação de tratamento de esgoto">
+  <img src="https://images.unsplash.com/photo-1581093458791-9d09a5df1433?w=1400&q=80&fit=crop" alt="Estação de tratamento de esgoto">
   <div class="hero-sp-inner">
     <div class="eyebrow">Biogás para Saneamento</div>
-    <h1>Sua ETE já produz<br>biogás. A decisão é<br><em>o que fazer com ele.</em></h1>
-    <p class="lead">ETEs com tratamento anaeróbio geram biogás continuamente — a maioria queima ou lança na atmosfera sem aproveitamento. <strong>Capturar e usar esse gás pode cobrir parte significativa do custo elétrico da própria estação.</strong></p>
+    <h1>Sua operação pode gerar biogás.<br>A decisão é<br><em>como aproveitá-lo.</em></h1>
+    <p class="lead">ETEs, aterros e operações com fração orgânica podem gerar biogás, mas o aproveitamento depende de captação, qualidade do gás, escala, tratamento, demanda energética e arranjo institucional.</p>
     <div class="hero-btns">
       <a href="/#contato" class="btn-primary">Quero minha pré-análise gratuita</a>
       <a href="#operacoes" class="btn-ghost">Ver tipos de operação</a>
@@ -106,137 +122,96 @@ footer p{font-size:0.78rem;color:var(--text-muted);}
   </div>
 </section>
 
+
 <!-- PROBLEMA -->
-<section class="cs bg2" id="problema">
-  <div class="ci">
-    <div class="two">
-      <div class="fi">
-        <div class="sl">O problema do setor</div>
-        <h2 class="st">O saneamento descarta energia todos os dias sem perceber.</h2>
-        <div class="dv"></div>
-        <p class="sb">ETEs com reatores UASB produzem biogás como subproduto do tratamento anaeróbio do esgoto. Esse gás é gerado continuamente — 24 horas por dia, todos os dias — e na maioria das estações é simplesmente queimado ou lançado sem aproveitamento energético.</p>
-        <br>
-        <p class="sb">Ao mesmo tempo, a ETE é uma grande consumidora de energia elétrica — bombas, aeradores, sistemas de controle. São dois fluxos que poderiam se compensar e hoje funcionam de forma completamente separada.</p>
-        <div class="pq">"O biogás já está sendo gerado. A única decisão pendente é se vamos continuar descartando ou começar a usar."</div>
-      </div>
-      <div class="fi fi-d2">
-        <div class="hb">
-          <h3>Por que esse potencial é desperdiçado</h3>
-          <div class="ci-item"><span class="ci-icon">→</span><div><strong>O metano é 28× mais potente que o CO₂.</strong> Queimar ou descartar sem aproveitamento é desperdício energético e ambiental simultâneo — e passivo regulatório crescente.</div></div>
-          <div class="ci-item"><span class="ci-icon">→</span><div><strong>Alto custo elétrico operacional.</strong> O custo elétrico representa parcela significativa do orçamento operacional de municípios e concessionárias — e sobe todo ano.</div></div>
-          <div class="ci-item"><span class="ci-icon">→</span><div><strong>Oportunidade de receita não explorada.</strong> Biometano, créditos de carbono e redução de OPEX são receitas e economias disponíveis que a maioria das ETEs ainda não acessa.</div></div>
-          <div class="ci-item"><span class="ci-icon">→</span><div><strong>Aterros têm produção de longo prazo.</strong> O biogás de aterro é gerado por décadas — produção previsível e sustentada que poucas operações modelaram adequadamente.</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<section class="cs bg2" id="problema"><div class="ci"><div class="two"><div class="fi"><div class="sl">O problema do setor</div><h2 class="st">O saneamento pode estar gerando biogás sem aproveitar seu valor energético.</h2><div class="dv"></div><p class="sb">ETEs com tratamento anaeróbio, aterros sanitários e operações com fração orgânica podem gerar metano como parte do próprio processo. Em muitos casos, o gás é queimado, subaproveitado ou tratado apenas como exigência operacional.</p><br><p class="sb">O aproveitamento energético só faz sentido quando há captação segura, tratamento do gás, escala, qualidade e rota de uso compatíveis com a operação. O EVTE organiza essa decisão antes de qualquer investimento.</p><div class="pq">"O biogás pode já estar sendo gerado. A questão é saber se existe condição técnica e econômica para capturar, tratar e usar."</div></div><div class="fi fi-d2"><div class="hb"><h3>Por que o potencial é perdido</h3><div class="ci-item"><span class="ci-icon">→</span><div><strong>Gás visto como subproduto.</strong> Em muitas operações, o biogás é tratado apenas como algo a queimar ou controlar, não como insumo energético.</div></div><div class="ci-item"><span class="ci-icon">→</span><div><strong>Qualidade variável.</strong> Umidade, H₂S, siloxanos, CO₂ e impurezas podem exigir tratamento antes do uso.</div></div><div class="ci-item"><span class="ci-icon">→</span><div><strong>Demanda e escala.</strong> ETEs, aterros e concessões têm perfis diferentes de produção e consumo, o que muda a rota mais adequada.</div></div><div class="ci-item"><span class="ci-icon">→</span><div><strong>Contratos e regulação.</strong> Concessões, PPPs e municípios precisam avaliar OPEX, metas, operação e responsabilidade técnica.</div></div></div></div></div></div></section>
 
 <!-- O QUE RESOLVE -->
-<section class="cs">
-  <div class="ci">
-    <div class="fi" style="margin-bottom:3rem;">
-      <div class="sl">O que o biogás resolve</div>
-      <h2 class="st">Capturar o biogás que já existe<br>é o primeiro passo.</h2>
-      <div class="dv"></div>
-      <p class="sb" style="max-width:640px;">O aproveitamento do biogás de ETE não começa do zero — o gás já está sendo produzido. O projeto de aproveitamento define como capturar, tratar e usar esse gás da forma mais eficiente e economicamente viável pra cada estação.</p>
-    </div>
-
-    <div style="display:flex;flex-direction:column;gap:1rem;margin-bottom:3rem;">
-      <div class="stat-bar fi">
-        <div class="stat-bar-num">30–80%</div>
-        <div class="stat-bar-desc"><strong>Potencial de autossuficiência elétrica</strong> — dependendo do porte da ETE e do volume de biogás gerado, é possível cobrir entre 30% e 80% do consumo elétrico da própria estação com o biogás produzido internamente.</div>
-      </div>
-      <div class="stat-bar fi fi-d2">
-        <div class="stat-bar-num">28×</div>
-        <div class="stat-bar-desc"><strong>Potência de GEE do metano vs CO₂</strong> — cada m³ de metano capturado e utilizado em vez de lançado na atmosfera equivale a 28 m³ de CO₂ não emitido. Base direta para geração de créditos de carbono.</div>
-      </div>
-      <div class="stat-bar fi fi-d3">
-        <div class="stat-bar-num">20+ anos</div>
-        <div class="stat-bar-desc"><strong>Duração da produção de biogás em aterros</strong> — a decomposição do RSU gera metano por décadas, criando base para projetos com retorno sustentado e previsível ao longo de contratos longos de concessão.</div>
-      </div>
-    </div>
-
-    <div class="three">
-      <div class="fc fi">
-        <div class="fi-icon">⚡</div>
-        <div class="ft">Geração de energia elétrica</div>
-        <div class="fd">Com motor de cogeração, o biogás gera eletricidade pra uso interno da ETE — reduzindo a dependência da rede e o custo elétrico operacional.</div>
-      </div>
-      <div class="fc fi fi-d2">
-        <div class="fi-icon">🌡️</div>
-        <div class="ft">Cogeração térmica</div>
-        <div class="fd">O calor recuperado do motor de cogeração pode ser usado para aquecimento do reator anaeróbio — melhorando a eficiência do tratamento e a produção de biogás.</div>
-      </div>
-      <div class="fc fi fi-d3">
-        <div class="fi-icon">🌱</div>
-        <div class="ft">Créditos de carbono</div>
-        <div class="fd">Capturar e usar o metano que seria lançado na atmosfera gera créditos de carbono — receita adicional disponível via mercado voluntário ou regulado (Lei 15.042/2024).</div>
-      </div>
-      <div class="fc fi">
-        <div class="fi-icon">📈</div>
-        <div class="ft">Biometano para rede</div>
-        <div class="fd">ETEs de maior porte podem purificar o biogás até biometano e injetá-lo na rede de gás natural — gerando receita recorrente da venda do energético.</div>
-      </div>
-      <div class="fc fi fi-d2">
-        <div class="fi-icon">📊</div>
-        <div class="ft">Redução de OPEX</div>
-        <div class="fd">Menor dependência da rede elétrica melhora os indicadores de sustentabilidade operacional de concessões — relevante para renovações e renegociações de contrato.</div>
-      </div>
-      <div class="fc fi fi-d3">
-        <div class="fi-icon">♻️</div>
-        <div class="ft">Lodo como biofertilizante</div>
-        <div class="fd">O lodo digerido tem potencial de aproveitamento agrícola após higienização — transformando um passivo de destinação em subproduto com valor comercial.</div>
-      </div>
-    </div>
-  </div>
-</section>
+<section class="cs"><div class="ci"><div class="fi" style="margin-bottom:3rem;"><div class="sl">O que o biogás pode resolver</div><h2 class="st">Capturar o biogás é só o começo da decisão.</h2><div class="dv"></div><p class="sb" style="max-width:720px;">O aproveitamento energético no saneamento depende de captação, tratamento, segurança, regularidade de produção, demanda interna e arranjo institucional da operação.</p></div><div class="three"><div class="fc fi"><div class="fi-icon">⚡</div><div class="ft">Energia elétrica</div><div class="fd">Pode ser avaliada em operações com produção regular de biogás e consumo elétrico interno compatível.</div></div><div class="fc fi fi-d2"><div class="fi-icon">♨️</div><div class="ft">Uso térmico</div><div class="fd">O calor pode ser considerado em processos específicos, incluindo aquecimento ou apoio operacional quando fizer sentido.</div></div><div class="fc fi fi-d3"><div class="fi-icon">🌫️</div><div class="ft">Controle de emissões</div><div class="fd">Captar e tratar metano reduz desperdício energético e pode apoiar metas ambientais, desde que mensurado corretamente.</div></div><div class="fc fi"><div class="fi-icon">🧪</div><div class="ft">Tratamento do gás</div><div class="fd">H₂S, umidade, siloxanos e corrosividade precisam ser avaliados antes de motores, caldeiras ou purificação.</div></div><div class="fc fi fi-d2"><div class="fi-icon">📉</div><div class="ft">Redução de OPEX</div><div class="fd">O biogás pode reduzir custos operacionais quando a energia gerada ou substituída compensa investimento e manutenção.</div></div><div class="fc fi fi-d3"><div class="fi-icon">📋</div><div class="ft">Base para concessões</div><div class="fd">O EVTE pode apoiar decisões em contratos, metas ESG, indicadores de sustentabilidade e planejamento de longo prazo.</div></div></div></div></section>
 
 <!-- OPERAÇÕES -->
-<section class="cs bg2" id="operacoes">
+<section class="cs bg2" id="operacoes"><div class="ci"><div class="fi" style="margin-bottom:3rem;"><div class="sl">Tipos de operação atendidos</div><h2 class="st">Qual é o seu tipo de operação?</h2><div class="dv"></div></div><div class="grid-sub"><div class="hb fi"><h3>ETEs com UASB</h3><p>Estações com reatores anaeróbios podem gerar biogás como subproduto do tratamento. O EVTE avalia captação, vazão, qualidade do gás e uso interno.</p><div class="tags"><span class="tag">UASB</span><span class="tag">ETE</span><span class="tag">Municipal</span></div></div><div class="hb fi fi-d2"><h3>Aterros sanitários</h3><p>A produção de biogás depende da massa disposta, idade dos resíduos, sistema de drenos, umidade e curva de geração ao longo do tempo.</p><div class="tags"><span class="tag">RSU</span><span class="tag">Aterro</span><span class="tag">Drenos</span></div></div><div class="hb fi"><h3>Centrais com fração orgânica</h3><p>Triagem, compostagem e manejo de FORSU podem ser integrados à digestão anaeróbia quando a fração orgânica é separada e adequada.</p><div class="tags"><span class="tag">FORSU</span><span class="tag">Triagem</span><span class="tag">Compostagem</span></div></div><div class="hb fi fi-d2"><h3>Concessões e PPPs</h3><p>Operadores podem avaliar biogás como estratégia de redução de OPEX, metas ambientais e melhoria de indicadores de desempenho.</p><div class="tags"><span class="tag">Concessão</span><span class="tag">PPP</span><span class="tag">OPEX</span></div></div></div></div></section>
+
+<!-- REFERÊNCIAS TÉCNICAS -->
+<section class="cs" id="potencial">
   <div class="ci">
-    <div class="fi" style="margin-bottom:3rem;">
-      <div class="sl">Tipos de operação atendidos</div>
-      <h2 class="st">Qual é o seu tipo de operação?</h2>
+    <div class="fi" style="margin-bottom:2rem;">
+      <div class="sl">Referências de potencial</div>
+      <h2 class="st">Potencial metanogênico no saneamento.</h2>
       <div class="dv"></div>
+      <p class="sb" style="max-width:720px;">
+        No saneamento, o potencial pode ser expresso como BMP/B₀ para lodo e fração orgânica, como conversão por DQO removida em ETEs ou como L₀ em aterros sanitários. A tabela abaixo traz valores de referência, mas a decisão real depende de medição de vazão, composição do gás, eficiência de captação, contaminantes e uso pretendido.
+      </p>
     </div>
-    <div class="grid-sub">
-      <div class="hb fi">
-        <h3>💧 ETEs municipais com UASB</h3>
-        <p>Estações com reator UASB já produzem biogás. O aproveitamento energético pode ser implementado com <strong>adaptação do sistema existente</strong> — sem necessidade de reformulação completa do processo de tratamento.</p>
-        <div class="tags"><span class="tag">UASB</span><span class="tag">Municipal</span><span class="tag">Concessionária</span><span class="tag">PPP</span></div>
-        <div class="hb-note">O gás já está sendo gerado — a decisão é apenas sobre o aproveitamento.</div>
+
+    <div class="tb-wrap fi fi-d2">
+      <table class="potencial-table">
+        <thead>
+          <tr>
+            <th>Operação</th>
+            <th>Origem do substrato ou gás</th>
+            <th>B₀/BMP/L₀ de referência</th>
+            <th>Observação técnica</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>ETE com UASB</strong></td>
+            <td>Esgoto sanitário tratado em reator anaeróbio.</td>
+            <td>Referência teórica: ~350 a 395 mL CH₄/g DQO removida</td>
+            <td>Na prática, perdas de metano dissolvido, vazamentos, H₂S, umidade e baixa captação podem reduzir muito o aproveitamento energético.</td>
+          </tr>
+          <tr>
+            <td><strong>Aterro sanitário</strong></td>
+            <td>Decomposição anaeróbia da fração orgânica dos resíduos sólidos urbanos.</td>
+            <td>L₀ típico: ~60 a 100 m³ CH₄/t RSU; cenários com alta fração orgânica podem usar valores até ~180 m³ CH₄/t RSU</td>
+            <td>Não é BMP de bancada, é potencial de geração em aterro. Depende de idade do resíduo, umidade, cobertura, drenos e eficiência de captura.</td>
+          </tr>
+          <tr>
+            <td><strong>FORSU separada</strong></td>
+            <td>Fração orgânica de resíduos sólidos urbanos coletada separadamente.</td>
+            <td>~300 a 400 mL CH₄/g SV em digestão úmida termofílica; BMP laboratorial próximo de ~400 mL CH₄/g SV</td>
+            <td>Contaminação por rejeitos, plástico, areia e variação da coleta alteram pré-tratamento, operação e qualidade do digestato.</td>
+          </tr>
+          <tr>
+            <td><strong>Lodo de ETE e codigestão</strong></td>
+            <td>Lodo biológico, lodo espessado, escuma, gordura e resíduos orgânicos complementares.</td>
+            <td>Lodo espessado: ~22 a 76 mL CH₄/g SV em ensaios; lodos e misturas podem variar de ~20 a 400 mL CH₄/g SV</td>
+            <td>O lodo isolado pode ter potencial menor. Codigestão com resíduos mais biodegradáveis pode aumentar produção, mas exige controle operacional.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note-grid fi fi-d3">
+      <div class="note">
+        <strong>O que é B₀/BMP/L₀?</strong><br>
+        B₀ ou BMP indica o potencial de metano de um substrato em ensaio controlado. L₀ é usado em aterros para estimar o potencial de geração de metano por tonelada de resíduo disposto.
       </div>
-      <div class="hb fi fi-d2">
-        <h3>🏗️ Aterros sanitários</h3>
-        <p>Aterros geram biogás por décadas a partir da decomposição do RSU. A produção é <strong>sustentada e previsível</strong> — base sólida pra projetos de longo prazo com receita estável. Modelagem da curva de produção é parte do EVTE.</p>
-        <div class="tags"><span class="tag">RSU</span><span class="tag">Biogás de aterro</span><span class="tag">Longo prazo</span><span class="tag">Drenos</span></div>
-        <div class="hb-note">Produção sustentada por 20+ anos — base para projetos com contratos longos.</div>
-      </div>
-      <div class="hb fi">
-        <h3>🌱 Centrais de compostagem e triagem</h3>
-        <p>Centrais de triagem e compostagem com fração orgânica relevante podem <strong>integrar digestão anaeróbia ao processo existente</strong> — gerando biogás antes da destinação final da fração orgânica.</p>
-        <div class="tags"><span class="tag">FORSU</span><span class="tag">Triagem</span><span class="tag">Compostagem</span><span class="tag">RSU</span></div>
-        <div class="hb-note">Biodigestão complementar à compostagem — maior aproveitamento energético da fração orgânica.</div>
-      </div>
-      <div class="hb fi fi-d2">
-        <h3>🏛️ Concessões e PPPs de saneamento</h3>
-        <p>Operadores de concessões de saneamento têm no aproveitamento do biogás uma <strong>alavanca de redução de OPEX e melhora de indicadores de sustentabilidade</strong> — relevante para renovações e avaliações regulatórias.</p>
-        <div class="tags"><span class="tag">Concessão</span><span class="tag">PPP</span><span class="tag">OPEX</span><span class="tag">Regulatório</span></div>
-        <div class="hb-note">Biogás como diferencial competitivo em processos de renovação de concessão.</div>
+
+      <div class="note">
+        <strong>Por que saneamento exige cuidado extra?</strong><br>
+        Porque ETEs e aterros podem já produzir biogás, mas o aproveitamento depende de captação, tratamento, concentração de metano, H₂S, umidade, segurança e demanda energética local.
       </div>
     </div>
   </div>
 </section>
+
+<!-- EVTE SANEAMENTO -->
+<section class="cs bg2" id="evte-saneamento"><div class="ci"><div class="fi" style="margin-bottom:3rem;"><div class="sl">EVTE para saneamento</div><h2 class="st">O estudo parte da operação existente e da rota institucional possível.</h2><div class="dv"></div><p class="sb" style="max-width:720px;">No saneamento, o projeto precisa respeitar a estrutura da ETE, do aterro, da concessão, dos contratos, dos indicadores operacionais e das exigências regulatórias.</p></div><div class="three"><div class="fc fi"><div class="fi-icon">01</div><div class="ft">Diagnóstico da operação</div><div class="fd">Tipo de tratamento, porte, vazões, geração de lodo, sistema de captação e rotina operacional.</div></div><div class="fc fi fi-d2"><div class="fi-icon">02</div><div class="ft">Produção de biogás</div><div class="fd">Estimativa ou medição de vazão, composição, variação temporal e contaminantes.</div></div><div class="fc fi fi-d3"><div class="fi-icon">03</div><div class="ft">Tratamento do gás</div><div class="fd">Avaliação de dessulfurização, remoção de umidade, siloxanos e requisitos para uso seguro.</div></div><div class="fc fi"><div class="fi-icon">04</div><div class="ft">Rota de uso</div><div class="fd">Comparação entre geração elétrica, uso térmico, queima controlada, purificação ou outra rota aplicável.</div></div><div class="fc fi fi-d2"><div class="fi-icon">05</div><div class="ft">Arranjo institucional</div><div class="fd">Análise de concessionária, município, PPP, contratos, metas e responsabilidades operacionais.</div></div><div class="fc fi fi-d3"><div class="fi-icon">06</div><div class="ft">Viabilidade econômica</div><div class="fd">CAPEX, OPEX, economia potencial, riscos, sensibilidade e recomendação de avanço.</div></div></div></div></section>
+
+<!-- FAQ SANEAMENTO -->
+<section class="cs" id="faq-saneamento"><div class="ci"><div class="fi" style="margin-bottom:2rem;"><div class="sl">Perguntas do setor</div><h2 class="st">Dúvidas específicas do saneamento.</h2><div class="dv"></div><p class="sb" style="max-width:720px;">Aqui o foco é biogás já produzido, UASB, aterros, qualidade do gás, OPEX e operação em concessões.</p></div><div class="faq-grid"><div class="hb fi"><h3>Toda ETE com UASB consegue aproveitar biogás?</h3><p class="sb">Não automaticamente. É preciso avaliar captação, vazão, composição, segurança e consumo energético compatível.</p></div><div class="hb fi fi-d2"><h3>O biogás de aterro é constante?</h3><p class="sb">Não. Ele segue uma curva de geração ao longo do tempo, influenciada por massa disposta, idade dos resíduos, umidade e sistema de drenos.</p></div><div class="hb fi"><h3>O H₂S é um problema?</h3><p class="sb">Sim. Pode causar corrosão e danos em motores ou tubulações. Por isso, o tratamento do gás deve ser considerado.</p></div><div class="hb fi fi-d2"><h3>O projeto reduz OPEX da operação?</h3><p class="sb">Pode reduzir, mas depende da produção de gás, do consumo interno, do investimento, da manutenção e da rota escolhida.</p></div><div class="hb fi"><h3>Biometano faz sentido em ETE?</h3><p class="sb">Pode fazer sentido em operações de maior escala, mas exige purificação, controle de qualidade e mercado ou uso definido.</p></div><div class="hb fi fi-d2"><h3>O EVTE substitui projeto executivo?</h3><p class="sb">Não. Ele define a viabilidade e o caminho técnico inicial. Projeto executivo e licenciamento vêm depois, se o estudo recomendar avanço.</p></div></div></div></section>
+
 
 <!-- CTA -->
 <section class="ctastrip" id="contato">
   <div class="ctasi fi">
     <div class="sl">Próximo passo</div>
-    <h2>O biogás já está sendo<br>gerado. <em>A escolha é<br>o que fazer com ele.</em></h2>
-    <p>A pré-análise é gratuita. Com as informações básicas da sua ETE ou aterro — porte, tipo de tratamento e consumo elétrico — já consigo avaliar o potencial de aproveitamento energético e se um EVTE completo faz sentido pra sua operação. <strong>Sem compromisso.</strong></p>
+    <h2>O biogás pode já estar sendo gerado.<br><em>Agora falta avaliar a melhor rota.</em></h2>
+    <p>A pré-análise é gratuita. Com informações básicas sobre a ETE, aterro ou operação de saneamento, já é possível avaliar se existe base para um EVTE completo. <strong>Sem compromisso.</strong></p>
     <div class="ctabtns">
-      <a href="https://wa.me/5519971315434?text=Olá!%20Tenho%20interesse%20em%20uma%20pré-análise%20gratuita%20de%20biogás%20para%20minha%20operação%20de%20saneamento." class="btn-wpp" target="_blank">
+      <a href="https://wa.me/5519971315434?text=Ol%C3%A1!%20Tenho%20interesse%20em%20uma%20pr%C3%A9-an%C3%A1lise%20gratuita%20de%20biog%C3%A1s%20para%20saneamento." class="btn-wpp" target="_blank">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Falar no WhatsApp
       </a>
