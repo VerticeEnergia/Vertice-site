@@ -195,6 +195,28 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 2.5rem;displa
 .evte-prazo{font-size:0.78rem;color:var(--text-muted);display:flex;align-items:center;gap:0.5rem;}
 .evte-prazo span{color:var(--amber);font-weight:600;}
 
+/* MOCKUP DO RELATÓRIO EVTE */
+.report-mockup{margin:0 0 1.4rem;background:linear-gradient(135deg,rgba(233,196,106,0.08),rgba(64,145,108,0.08));border:1px solid rgba(233,196,106,0.18);border-radius:10px;padding:1rem;display:grid;grid-template-columns:92px 1fr;gap:1rem;align-items:center;}
+.report-page{background:#edf3ee;color:#162218;border-radius:6px;padding:0.75rem;min-height:118px;box-shadow:0 12px 28px rgba(0,0,0,0.22);display:flex;flex-direction:column;justify-content:space-between;}
+.report-page-top{display:flex;justify-content:space-between;align-items:center;font-size:0.48rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#2d6a4f;}
+.report-page-title{font-family:'DM Serif Display',serif;font-size:0.92rem;line-height:1.05;margin-top:0.7rem;color:#0d1b12;}
+.report-page-lines{display:flex;flex-direction:column;gap:0.22rem;margin-top:0.6rem;}
+.report-page-lines span{display:block;height:4px;border-radius:999px;background:rgba(45,106,79,0.22);}
+.report-page-lines span:nth-child(1){width:82%;}
+.report-page-lines span:nth-child(2){width:64%;}
+.report-page-lines span:nth-child(3){width:72%;}
+.report-bars{display:flex;align-items:end;gap:0.18rem;height:26px;margin-top:0.7rem;}
+.report-bars span{width:100%;border-radius:2px 2px 0 0;background:#40916c;}
+.report-bars span:nth-child(1){height:45%;}
+.report-bars span:nth-child(2){height:70%;}
+.report-bars span:nth-child(3){height:55%;}
+.report-bars span:nth-child(4){height:90%;background:#e9c46a;}
+.report-mockup-text strong{display:block;font-size:0.9rem;color:var(--text);margin-bottom:0.35rem;}
+.report-mockup-text p{font-size:0.78rem;color:var(--text-muted);line-height:1.55;margin-bottom:0.65rem;}
+.report-pill-row{display:flex;flex-wrap:wrap;gap:0.35rem;}
+.report-pill{font-size:0.62rem;color:var(--amber);border:1px solid rgba(233,196,106,0.22);background:rgba(233,196,106,0.06);border-radius:999px;padding:0.18rem 0.5rem;}
+@media(max-width:520px){.report-mockup{grid-template-columns:1fr;padding:0.9rem;}.report-page{min-height:104px;}.report-mockup-text strong{font-size:0.86rem;}.report-mockup-text p{font-size:0.74rem;}}
+
 /* CONTATO */
 .contato-section{background:var(--dark-2);border-top:1px solid var(--border);padding:8rem 2.5rem;position:relative;overflow:hidden;}
 .contato-section::before{content:'';position:absolute;top:-20%;left:50%;transform:translateX(-50%);width:600px;height:400px;background:radial-gradient(ellipse,rgba(45,106,79,0.18) 0%,transparent 70%);pointer-events:none;}
@@ -462,9 +484,29 @@ function gtag_report_form_conversion(){gtag('event','conversion',{'send_to':'AW-
     <div class="evte-right">
       <div class="evte-box fi fi-d2">
         <h3>O que você recebe</h3>
-        <div class="evte-item"><div class="evte-check">✓</div><p><strong>Relatório técnico completo</strong> com cálculos preliminares, resultados, tecnologias recomendadas e fornecedores.</p></div>
+        <div class="report-mockup" aria-label="Exemplo visual do relatório técnico de EVTE">
+          <div class="report-page">
+            <div class="report-page-top"><span>Vértice</span><span>EVTE</span></div>
+            <div>
+              <div class="report-page-title">Relatório técnico de viabilidade</div>
+              <div class="report-page-lines"><span></span><span></span><span></span></div>
+              <div class="report-bars"><span></span><span></span><span></span><span></span></div>
+            </div>
+          </div>
+          <div class="report-mockup-text">
+            <strong>Um entregável para decidir antes de investir.</strong>
+            <p>O estudo organiza produção estimada, equivalência energética, tecnologia indicada, indicadores econômicos e próximos passos.</p>
+            <div class="report-pill-row">
+              <span class="report-pill">Biogás</span>
+              <span class="report-pill">Payback</span>
+              <span class="report-pill">VPL/TIR</span>
+              <span class="report-pill">Tecnologia</span>
+            </div>
+          </div>
+        </div>
+        <div class="evte-item"><div class="evte-check">✓</div><p><strong>Relatório técnico de EVTE</strong> com cálculos preliminares, resultados, tecnologias recomendadas e próximos passos.</p></div>
         <div class="evte-item"><div class="evte-check">✓</div><p><strong>Estimativa de produção de biogás</strong> em m³/dia e equivalência energética calculada para o seu caso.</p></div>
-        <div class="evte-item"><div class="evte-check">✓</div><p><strong>Análise financeira completa</strong> — VPL, TIR e payback — com recomendação clara de avanço ou não.</p></div>
+        <div class="evte-item"><div class="evte-check">✓</div><p><strong>Análise financeira</strong> — VPL, TIR e payback — com recomendação clara de avanço ou não.</p></div>
         <div class="evte-item"><div class="evte-check">✓</div><p><strong>Apresentação por videochamada</strong> com o consultor responsável e conclusão objetiva sobre viabilidade.</p></div>
         <hr class="evte-separator">
         <div class="evte-prazo">⏱ Prazo médio: <span>20 a 35 dias</span> após coleta dos dados.</div>
