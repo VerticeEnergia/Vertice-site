@@ -2,11 +2,11 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vértice Consultoria Energética | Estudo de Viabilidade de Biogás e Biomethane</title>
-<meta name="description" content="Consultoria especializada em biogás e biomethane. EVTEs personalizados para agropecuária, indústria, agroindústria e saneamento.">
+<title>Vértice Consultoria Energética | Estudo de Viabilidade de Biogás e Biometano</title>
+<meta name="description" content="Consultoria especializada em biogás e biometano. EVTEs personalizados para agropecuária, indústria, agroindústria e saneamento.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://verticebiogas.com.br/">
-<meta property="og:title" content="Vértice Consultoria Energética | Biogás e Biomethane">
+<meta property="og:title" content="Vértice Consultoria Energética | Biogás e Biometano">
 <meta property="og:description" content="Seu resíduo orgânico tem potencial de substituir GLP, diesel e eletricidade. Descubra com um EVTE personalizado.">
 <meta property="og:type" content="website"><meta property="og:url" content="https://verticebiogas.com.br/"><meta property="og:locale" content="pt_BR">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -148,6 +148,25 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 2.5rem;displa
 .viab-box p{font-size:0.88rem;color:var(--text-muted);line-height:1.7;}
 .viab-box p strong{color:var(--amber);}
 
+
+
+/* COMO FUNCIONA */
+.como-funciona{padding:5rem 2.5rem;background:var(--dark-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.como-inner{max-width:1100px;margin:0 auto;}
+.como-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:4rem;align-items:start;}
+@media(max-width:900px){.como-grid{grid-template-columns:1fr;gap:2.5rem;}}
+.como-passos{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:700px){.como-passos{grid-template-columns:1fr;}}
+.como-card{background:var(--dark-3);border:1px solid var(--border);border-radius:8px;padding:1.4rem;}
+.como-num{font-family:'DM Serif Display',serif;font-size:1.6rem;color:var(--amber);line-height:1;margin-bottom:0.8rem;opacity:0.9;}
+.como-card h4{font-size:0.9rem;font-weight:600;margin-bottom:0.4rem;color:var(--text);}
+.como-card p{font-size:0.8rem;color:var(--text-muted);line-height:1.6;}
+
+/* WHATSAPP FIXO */
+.wpp-fixo{position:fixed;right:1.2rem;bottom:1.2rem;z-index:300;background:#25d366;color:#fff;text-decoration:none;border-radius:999px;padding:0.85rem 1.15rem;font-size:0.84rem;font-weight:700;letter-spacing:0.02em;display:flex;align-items:center;gap:0.55rem;box-shadow:0 8px 30px rgba(0,0,0,0.35);transition:transform 0.2s,background 0.2s;}
+.wpp-fixo:hover{background:#1ebe5d;transform:translateY(-2px);}
+@media(max-width:520px){.wpp-fixo{left:1rem;right:1rem;justify-content:center;bottom:0.9rem;}.contato-section{padding-bottom:6rem;}footer{padding-bottom:5.5rem;}}
+
 /* EVTE */
 .evte{padding:6rem 2.5rem;}
 .evte-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.1fr 1fr;gap:5rem;align-items:start;}
@@ -221,17 +240,21 @@ function gtag_report_form_conversion(){gtag('event','conversion',{'send_to':'AW-
 <body>
 <nav>
   <a href="/" class="logo">Vértice<span>.</span></a>
-  <a href="#contato" class="nav-cta">Quero meu EVTE →</a>
+  <a href="#contato" class="nav-cta">Pré-análise gratuita →</a>
 </nav>
+<a href="https://wa.me/5519971315434?text=Ol%C3%A1%2C%20Vinicius.%20Quero%20fazer%20uma%20pr%C3%A9-an%C3%A1lise%20gratuita%20de%20biog%C3%A1s." class="wpp-fixo" target="_blank" onclick="gtag_report_conversion('https://wa.me/5519971315434')">
+  <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  Pré-análise gratuita
+</a>
 
 <!-- HERO -->
 <section class="hero">
   <img class="hero-img" src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1400&q=80&fit=crop" alt="Vista aérea de propriedade rural">
-  <div class="hero-eyebrow">Consultoria Energética · Biogás & Biomethane</div>
+  <div class="hero-eyebrow">Consultoria Energética · Biogás e Biometano</div>
   <h1>Você já produz energia.<br>Só ainda não <em>captura.</em></h1>
-  <p class="hero-sub">Uma granja com 500 matrizes suínas gera resíduo suficiente pra substituir mais de 100 kg de GLP por mês — com energia produzida dentro da própria propriedade. <strong>O EVTE calcula, com os dados do seu processo, se o seu caso fecha.</strong></p>
+  <p class="hero-sub">Empreendimentos que geram resíduo orgânico podem reduzir custos com GLP, diesel ou energia elétrica por meio do biogás. <strong>O EVTE calcula, com os dados do seu processo, se essa oportunidade realmente fecha.</strong></p>
   <div class="hero-cta">
-    <a href="#contato" class="btn-primary">Quero saber meu potencial</a>
+    <a href="#contato" class="btn-primary">Receber pré-análise gratuita</a>
     <a href="#setores" class="btn-secondary">Ver por setor</a>
   </div>
 </section>
@@ -243,11 +266,11 @@ function gtag_report_form_conversion(){gtag('event','conversion',{'send_to':'AW-
       <div class="section-label">O problema</div>
       <h2 class="section-title">GLP, energia elétrica e diesel custam caro. O resíduo que os substituiria já está lá.</h2>
       <div class="divider"></div>
-      <p class="section-body">Todo empreendimento que gera resíduo orgânico em escala e consome energia de fonte fóssil está pagando duas vezes: uma pra descartar o resíduo, outra pra comprar a energia que ele poderia ter gerado. O EVTE responde, com os números do seu processo, se essa equação fecha.</p>
+      <p class="section-body">Todo empreendimento que gera resíduo orgânico em escala e consome energia de fonte fóssil pode estar pagando duas vezes: uma para tratar ou descartar o resíduo, outra para comprar a energia que ele poderia ajudar a gerar. O EVTE responde, com os números do seu processo, se essa equação fecha.</p>
     </div>
     <div class="stat-block fi fi-d2">
       <div class="stat"><div class="stat-num" style="color:#e76f51;">O Problema</div><div class="stat-desc" style="margin-top:0.5rem;">Você compra energia fóssil todo mês enquanto descarta matéria orgânica que poderia gerá-la internamente. <strong>Dois custos onde poderia haver um só.</strong></div></div>
-      <div class="stat" style="border-left-color:#40916c;"><div class="stat-num" style="color:#40916c;">A Solução</div><div class="stat-desc" style="margin-top:0.5rem;">A digestão anaeróbia converte o resíduo em biogás — que substitui GLP, diesel e eletricidade. <strong>O biodigestor não cria energia nova. Ele captura a que já estava no seu resíduo.</strong></div></div>
+      <div class="stat" style="border-left-color:#40916c;"><div class="stat-num" style="color:#40916c;">A Solução</div><div class="stat-desc" style="margin-top:0.5rem;">A digestão anaeróbia pode converter o resíduo em biogás, com potencial para substituir parte do GLP, diesel ou da energia elétrica. <strong>O biodigestor não cria energia nova. Ele captura a que já estava no seu resíduo.</strong></div></div>
       <div class="stat" style="border-left-color:#e9c46a;"><div class="stat-num" style="color:#e9c46a;">Os Benefícios</div><div class="stat-desc" style="margin-top:0.5rem;">Redução do custo energético. Eliminação do passivo ambiental. <strong>Digestato com valor agronômico como biofertilizante</strong> — especialmente relevante para produtores que hoje compram insumos químicos. E clareza sobre o retorno antes de investir.</div></div>
     </div>
   </div>
@@ -269,7 +292,7 @@ function gtag_report_form_conversion(){gtag('event','conversion',{'send_to':'AW-
         <div class="cred-item"><span class="cred-icon">◆</span>Engenharia Ambiental — UNESP Rio Claro (2026)</div>
         <div class="cred-item"><span class="cred-icon">◆</span>Elaboração de estudos de viabilidade técnico-econômica (EVTE) para sistemas de biogás</div>
         <div class="cred-item"><span class="cred-icon">◆</span>Modelagem cinética de Gompertz para biorreatores anaeróbios</div>
-        <div class="cred-item"><span class="cred-icon">◆</span>CREA-SP em processo de registro</div>
+        <div class="cred-item"><span class="cred-icon">◆</span>Atuação técnica em estudos preliminares de viabilidade para sistemas de biogás</div>
       </div>
       <div class="case-box">
         <div class="case-label">TCC — projeto analisado</div>
@@ -305,7 +328,7 @@ function gtag_report_form_conversion(){gtag('event','conversion',{'send_to':'AW-
       <a href="/industria" class="setor-card">
         <div class="setor-card-icon">🏭</div>
         <div class="setor-card-title">Indústria alimentícia</div>
-        <div class="setor-card-desc">Laticínios, frigoríficos e processadoras pagam para tratar efluentes orgânicos e compram energia separadamente. O biogás resolve os dois ao mesmo tempo.</div>
+        <div class="setor-card-desc">Laticínios, frigoríficos e processadoras pagam para tratar efluentes orgânicos e compram energia separadamente. O biogás pode reduzir os dois custos ao mesmo tempo.</div>
         <div class="setor-tags-mini"><span class="tag-mini">Laticínios</span><span class="tag-mini">Frigoríficos</span><span class="tag-mini">Processadoras</span></div>
         <div class="setor-card-link">Ver análise completa →</div>
       </a>
@@ -386,7 +409,7 @@ function gtag_report_form_conversion(){gtag('event','conversion',{'send_to':'AW-
         <div class="calc-disclaimer"><strong>⚠ Estimativa orientativa.</strong> Valores calculados com parâmetros médios da literatura: fração de sólidos voláteis (SV) e potencial metanogênico (B₀) típicos por substrato (Hamilton/Iowa State Univ.; meta-análise ResearchGate 2020; IPCC 2006; Labatut et al. 2011). Biogás considerado com 60% CH₄. Quando informado em m³, o volume é convertido para kg usando densidade típica do substrato. Biofertilizante estimado como ~92% da massa de entrada. Sua realidade pode variar conforme dieta, diluição e condições operacionais. O EVTE usa os dados reais do seu processo.</div>
         <div class="calc-cta-box">
           <p><strong>Esses números fazem sentido para o seu caso?</strong> O EVTE transforma essa estimativa em análise com dados reais — incluindo viabilidade econômica, tecnologia recomendada e fornecedores disponíveis no mercado.</p>
-          <a href="#contato" class="btn-primary">Quero o EVTE completo →</a>
+          <a href="https://wa.me/5519971315434?text=Ol%C3%A1%2C%20Vinicius.%20Fiz%20uma%20simula%C3%A7%C3%A3o%20no%20site%20da%20V%C3%A9rtice%20e%20quero%20entender%20se%20o%20meu%20caso%20tem%20viabilidade." class="btn-primary" target="_blank" onclick="gtag_report_conversion('https://wa.me/5519971315434')">Falar sobre minha simulação →</a>
         </div>
       </div>
     </div>
@@ -412,7 +435,7 @@ function gtag_report_form_conversion(){gtag('event','conversion',{'send_to':'AW-
     <div>
       <div class="fi">
         <div class="section-label">O serviço</div>
-        <h2 class="section-title">O que está dentro<br>do seu EVTE.</h2>
+        <h2 class="section-title">O que você descobre<br>com o EVTE.</h2>
         <div class="divider"></div>
         <p class="section-body">Um estudo personalizado — construído com os dados do seu empreendimento. O resultado é uma resposta clara: <strong>vale investir ou não?</strong></p>
       </div>
@@ -434,7 +457,28 @@ function gtag_report_form_conversion(){gtag('event','conversion',{'send_to':'AW-
         <hr class="evte-separator">
         <div class="evte-prazo">⏱ Prazo médio: <span>20 a 35 dias</span> após coleta dos dados.</div>
         <hr class="evte-separator">
-        <a href="#contato" class="btn-primary" style="display:block;text-align:center;">Solicitar meu EVTE</a>
+        <a href="#contato" class="btn-primary" style="display:block;text-align:center;">Solicitar pré-análise gratuita</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- COMO FUNCIONA -->
+<section class="como-funciona" id="como-funciona">
+  <div class="como-inner">
+    <div class="como-grid">
+      <div class="fi">
+        <div class="section-label">Como funciona</div>
+        <h2 class="section-title">A pré-análise gratuita mostra se vale avançar.</h2>
+        <div class="divider"></div>
+        <p class="section-body">Você não precisa chegar com todos os dados prontos. Uma estimativa inicial de resíduo e gasto energético já permite entender se existe potencial para um estudo completo.</p>
+      </div>
+      <div class="como-passos fi fi-d2">
+        <div class="como-card"><div class="como-num">01</div><h4>Você envia os dados básicos</h4><p>Tipo de resíduo, quantidade aproximada, cidade e principal gasto energético.</p></div>
+        <div class="como-card"><div class="como-num">02</div><h4>Faço uma leitura inicial</h4><p>Comparo seu caso com parâmetros técnicos de produção de biogás e metano.</p></div>
+        <div class="como-card"><div class="como-num">03</div><h4>Cruzamos com sua demanda</h4><p>A análise inicial verifica se o biogás poderia reduzir GLP, diesel ou energia elétrica.</p></div>
+        <div class="como-card"><div class="como-num">04</div><h4>Você recebe uma direção clara</h4><p>Avançar para EVTE completo, ajustar dados ou descartar a ideia por enquanto.</p></div>
       </div>
     </div>
   </div>
@@ -471,6 +515,7 @@ function gtag_report_form_conversion(){gtag('event','conversion',{'send_to':'AW-
             <div class="form-group"><label for="f-tel">Telefone</label><input type="tel" id="f-tel" placeholder="(XX) XXXXX-XXXX" required></div>
           </div>
           <div class="form-group"><label for="f-email">E-mail</label><input type="email" id="f-email" placeholder="seu@email.com.br"></div>
+          <div class="form-group"><label for="f-cidade">Cidade/Estado</label><input type="text" id="f-cidade" placeholder="Ex.: Leme/SP"></div>
           <div class="form-group">
             <label for="f-setor">Setor</label>
             <select id="f-setor" required>
@@ -479,6 +524,16 @@ function gtag_report_form_conversion(){gtag('event','conversion',{'send_to':'AW-
               <option>Laticínios</option><option>Frigorífico</option><option>Agroindústria / Usina</option>
               <option>Saneamento / ETE</option><option>Outro</option>
             </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label for="f-residuo">Resíduo por dia</label><input type="text" id="f-residuo" placeholder="Ex.: 500 kg/dia ou 20 m³/dia"></div>
+            <div class="form-group">
+              <label for="f-energia">Principal gasto energético</label>
+              <select id="f-energia">
+                <option value="" disabled selected>Selecione</option>
+                <option>GLP</option><option>Diesel</option><option>Energia elétrica</option><option>Lenha/biomassa</option><option>Mais de uma fonte</option><option>Não sei informar</option>
+              </select>
+            </div>
           </div>
           <div class="form-group">
             <label for="f-msg">Descreva brevemente seu empreendimento <span style="color:var(--text-muted);font-weight:300;">(opcional)</span></label>
@@ -562,12 +617,28 @@ function enviarFormulario(){
   const setor=document.getElementById('f-setor').value;
   if(!nome||!tel||!setor){alert('Por favor, preencha nome, telefone e setor.');return;}
   const email=document.getElementById('f-email').value.trim();
+  const cidade=document.getElementById('f-cidade').value.trim();
+  const residuo=document.getElementById('f-residuo').value.trim();
+  const energia=document.getElementById('f-energia').value;
   const msg=document.getElementById('f-msg').value.trim();
   gtag_report_form_conversion();
-  let txt=`Olá! Tenho interesse em um EVTE de biogás.\n\n*Nome:* ${nome}\n*Telefone:* ${tel}\n`;
-  if(email)txt+=`*E-mail:* ${email}\n`;
-  txt+=`*Setor:* ${setor}\n`;
-  if(msg)txt+=`*Empreendimento:* ${msg}\n`;
+  let txt=`Olá! Tenho interesse em uma pré-análise gratuita de biogás.
+
+*Nome:* ${nome}
+*Telefone:* ${tel}
+`;
+  if(email)txt+=`*E-mail:* ${email}
+`;
+  if(cidade)txt+=`*Cidade/Estado:* ${cidade}
+`;
+  txt+=`*Setor:* ${setor}
+`;
+  if(residuo)txt+=`*Resíduo por dia:* ${residuo}
+`;
+  if(energia)txt+=`*Principal gasto energético:* ${energia}
+`;
+  if(msg)txt+=`*Empreendimento:* ${msg}
+`;
   document.getElementById('form-content').style.display='none';
   document.getElementById('form-success').style.display='block';
   setTimeout(()=>window.open(`https://wa.me/5519971315434?text=${encodeURIComponent(txt)}`,'_blank'),800);
