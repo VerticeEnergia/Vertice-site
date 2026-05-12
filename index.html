@@ -235,6 +235,30 @@ footer p{font-size:0.78rem;color:var(--text-muted);}
 .fi{opacity:0;transform:translateY(20px);transition:opacity 0.75s ease,transform 0.75s ease;}
 .fi.vis{opacity:1;transform:translateY(0);}
 .fi-d2{transition-delay:0.15s;}.fi-d3{transition-delay:0.28s;}
+
+
+/* CONSULTOR — layout compacto */
+.consultor-inner-novo{grid-template-columns:1.45fr 0.75fr;gap:2rem;align-items:stretch;}
+.consultor-main,.consultor-profile,.case-box-novo{background:var(--dark-2);border:1px solid var(--border);border-radius:10px;padding:2rem;}
+.consultor-title-novo{font-family:'DM Serif Display',serif;font-size:clamp(1.75rem,3.4vw,2.8rem);line-height:1.12;margin-bottom:1rem;max-width:760px;}
+.consultor-bio-novo{max-width:740px;margin-bottom:1.4rem;}
+.consultor-points{display:grid;grid-template-columns:repeat(3,1fr);gap:0.8rem;}
+.consultor-point{background:var(--dark-3);border:1px solid var(--border);border-radius:8px;padding:1rem;}
+.consultor-point span{display:block;font-family:'DM Serif Display',serif;color:var(--amber);font-size:1.1rem;margin-bottom:0.35rem;}
+.consultor-point strong{display:block;font-size:0.82rem;color:var(--text);margin-bottom:0.35rem;}
+.consultor-point p{font-size:0.74rem;color:var(--text-muted);line-height:1.45;}
+.consultor-profile{display:flex;flex-direction:column;justify-content:space-between;gap:1rem;}
+.consultor-profile .consultor-foto-img{width:100%;max-width:none;aspect-ratio:1/1;}
+.consultor-profile-text{border-top:1px solid var(--border);padding-top:1rem;}
+.consultor-profile-text strong{display:block;font-size:0.95rem;color:var(--text);margin-bottom:0.35rem;}
+.consultor-profile-text span{display:block;font-size:0.72rem;color:var(--green-light);letter-spacing:0.08em;text-transform:uppercase;line-height:1.45;}
+.case-box-novo{grid-column:1 / -1;}
+.case-box-novo .case-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:1rem;}
+.case-box-novo .case-title{max-width:760px;margin-bottom:0;}
+.case-box-novo .case-metrics{margin-bottom:0.9rem;}
+@media(max-width:900px){.consultor-inner-novo{grid-template-columns:1fr;}.consultor-profile{display:grid;grid-template-columns:96px 1fr;align-items:center;}.consultor-profile .consultor-foto-img{aspect-ratio:1/1;}.consultor-profile-text{border-top:none;border-left:1px solid var(--border);padding-top:0;padding-left:1rem;}}
+@media(max-width:640px){.consultor-main,.consultor-profile,.case-box-novo{padding:1.2rem;}.consultor-title-novo{font-size:clamp(1.55rem,7vw,2rem);}.consultor-bio-novo{font-size:0.86rem;line-height:1.6;}.consultor-points{grid-template-columns:1fr;gap:0.65rem;}.consultor-point{padding:0.85rem;}.consultor-profile{grid-template-columns:76px 1fr;gap:0.85rem;}.consultor-profile-text strong{font-size:0.86rem;}.consultor-profile-text span{font-size:0.64rem;}.case-box-novo .case-metrics{grid-template-columns:repeat(3,1fr);gap:0.45rem;}.case-box-novo .case-metric{min-width:0;}.case-box-novo .case-metric-num{font-size:0.98rem;}.case-box-novo .case-metric-label{font-size:0.56rem;}}
+@media(max-width:600px){.consultor{padding-top:4rem;padding-bottom:4rem;}.consultor-inner{gap:2rem;}.consultor-foto{display:flex;justify-content:center;}.consultor-foto-img{max-width:240px;}.consultor-foto-badge{right:50%;transform:translateX(50%);bottom:-0.75rem;font-size:0.65rem;padding:0.55rem 0.9rem;white-space:nowrap;}.consultor-cargo{font-size:0.7rem;line-height:1.5;margin-bottom:1rem;}.consultor-bio{font-size:0.88rem;line-height:1.65;margin-bottom:1rem;}.consultor-creds{gap:0.65rem;margin-bottom:1.1rem;}.cred-item{font-size:0.78rem;line-height:1.45;}.case-box{padding:1.1rem;}.case-title{font-size:0.78rem;line-height:1.5;}.case-metric-num{font-size:1.05rem;}.case-metric-label{font-size:0.6rem;}.case-conclusion{font-size:0.7rem;line-height:1.45;}}
 @media(max-width:600px){nav,.hero,.problema,.setores,.calc-section,.viab-section,.evte,.contato-section,footer,.consultor{padding-left:1.2rem;padding-right:1.2rem;}}
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18148435351"></script>
@@ -488,33 +512,41 @@ function gtag_report_form_conversion(){gtag('event','conversion',{'send_to':'AW-
 </section>
 
 <!-- CONSULTOR -->
-<section class="consultor">
-  <div class="consultor-inner">
-    <div class="consultor-foto fi">
-      <img class="consultor-foto-img" src="/foto-vinicius.jpg" alt="Foto de Vinicius Amadeu Zacatei">
-      <div class="consultor-foto-badge">Eng. Ambiental · UNESP</div>
+<section class="consultor" id="sobre">
+  <div class="consultor-inner consultor-inner-novo">
+    <div class="consultor-main fi">
+      <div class="section-label">Quem conduz a análise</div>
+      <h2 class="consultor-title-novo">Valide o potencial do biogás antes de investir em equipamento.</h2>
+      <p class="consultor-bio consultor-bio-novo">A Vértice realiza pré-análises e EVTEs para transformar dados de resíduo, operação e consumo energético em uma decisão objetiva: avançar, ajustar premissas ou descartar por enquanto.</p>
+
+      <div class="consultor-points">
+        <div class="consultor-point"><span>01</span><strong>Dados reais</strong><p>Volume de resíduo, rotina operacional e demanda energética.</p></div>
+        <div class="consultor-point"><span>02</span><strong>Viabilidade</strong><p>Potencial de biogás, uso energético, tecnologia e retorno.</p></div>
+        <div class="consultor-point"><span>03</span><strong>Decisão</strong><p>Recomendação clara antes de buscar fornecedor ou investir.</p></div>
+      </div>
     </div>
-    <div class="fi fi-d2">
-      <div class="section-label">Quem está por trás disso</div>
-      <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.15;margin-bottom:0.5rem;">Vinicius Amadeu Zacatei</h2>
-      <div class="consultor-cargo">Engenheiro Ambiental · Especialista em Digestão Anaeróbia e Viabilidade de Biogás</div>
-      <p class="consultor-bio">Formado em Engenharia Ambiental pela <strong>UNESP Rio Claro</strong>, com foco em digestão anaeróbia, biodigestão e viabilidade técnico-econômica de projetos de biogás. Cada EVTE é construído com os dados reais do seu processo — <strong>identificando as dores específicas do seu empreendimento e propondo soluções disponíveis no mercado de biogás</strong> para cada caso.</p>
-      <div class="consultor-creds">
-        <div class="cred-item"><span class="cred-icon">◆</span>Engenharia Ambiental — UNESP Rio Claro (2026)</div>
-        <div class="cred-item"><span class="cred-icon">◆</span>Elaboração de estudos de viabilidade técnico-econômica (EVTE) para sistemas de biogás</div>
-        <div class="cred-item"><span class="cred-icon">◆</span>Modelagem cinética de Gompertz para biorreatores anaeróbios</div>
-        <div class="cred-item"><span class="cred-icon">◆</span>Atuação técnica em estudos preliminares de viabilidade para sistemas de biogás</div>
+
+    <aside class="consultor-profile fi fi-d2">
+      <img class="consultor-foto-img" src="/foto-vinicius.jpg" alt="Foto de Vinicius Amadeu Zacatei">
+      <div class="consultor-profile-text">
+        <strong>Vinicius Amadeu Zacatei</strong>
+        <span>Eng. Ambiental · UNESP Rio Claro</span>
       </div>
-      <div class="case-box">
-        <div class="case-label">TCC — projeto analisado</div>
-        <div class="case-title">"Estudo de viabilidade técnico-econômica para implantação de biodigestores no Restaurante Universitário da UNESP Rio Claro" · Prof. Dr. Marcus Cesar Avezum Alves de Castro</div>
-        <div class="case-metrics">
-          <div class="case-metric"><div class="case-metric-num">~43 kg</div><div class="case-metric-label">resíduo orgânico<br>gerado por dia no RU</div></div>
-          <div class="case-metric"><div class="case-metric-num">~25 m³</div><div class="case-metric-label">CH₄ produzidos<br>por lote (14 dias)</div></div>
-          <div class="case-metric"><div class="case-metric-num">~1 botijão</div><div class="case-metric-label">P13 substituído<br>a cada 14 dias</div></div>
+    </aside>
+
+    <div class="case-box case-box-novo fi fi-d3">
+      <div class="case-head">
+        <div>
+          <div class="case-label">Base aplicada</div>
+          <div class="case-title">Estudo no RU da UNESP Rio Claro usado como referência técnica para modelagem de produção, equivalência energética e análise econômica.</div>
         </div>
-        <div class="case-conclusion">✓ Viabilidade técnica e econômica confirmada · payback &lt; 5 anos · TDH 20 dias · operação semicontínua em batelada</div>
       </div>
+      <div class="case-metrics">
+        <div class="case-metric"><div class="case-metric-num">~43 kg</div><div class="case-metric-label">resíduo orgânico<br>por dia</div></div>
+        <div class="case-metric"><div class="case-metric-num">~25 m³</div><div class="case-metric-label">CH₄ em<br>14 dias</div></div>
+        <div class="case-metric"><div class="case-metric-num">~1 P13</div><div class="case-metric-label">equivalente<br>a cada 14 dias</div></div>
+      </div>
+      <div class="case-conclusion">✓ Estudo aplicado · base para estruturação dos EVTEs da Vértice</div>
     </div>
   </div>
 </section>
