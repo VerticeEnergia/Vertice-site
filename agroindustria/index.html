@@ -3,10 +3,11 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Biogás para Agroindústria | Vértice Consultoria Energética</title>
-<meta name="description" content="Usinas de cana, fecularias, cervejarias e culturas energéticas como capim-elefante e soja. Descubra o potencial biometanogênico do seu resíduo agroindustrial.">
+<meta name="description" content="Avaliação de potencial de biogás para usinas, fecularias, cervejarias, processadoras de frutas e resíduos agroindustriais.">
 <link rel="canonical" href="https://verticebiogas.com.br/agroindustria">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
+
 :root{--green:#2d6a4f;--green-light:#40916c;--amber:#e9c46a;--dark:#0d1b12;--dark-2:#162218;--dark-3:#1e2e22;--text:#e8f0ea;--text-muted:#8aab92;--border:rgba(64,145,108,0.2);}
 *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
 body{background:var(--dark);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
@@ -64,10 +65,10 @@ h1 em{font-style:italic;color:var(--green-light);}
 .tag{font-size:0.68rem;padding:0.2rem 0.7rem;background:rgba(45,106,79,0.2);border:1px solid rgba(64,145,108,0.25);border-radius:20px;color:var(--green-light);}
 .grid-sub{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;}
 @media(max-width:640px){.grid-sub{grid-template-columns:1fr;}}
-.alert-box{background:rgba(233,196,106,0.07);border:1px solid rgba(233,196,106,0.2);border-radius:8px;padding:1.8rem;margin-top:2rem;}
-.alert-box h3{font-family:'DM Serif Display',serif;font-size:1.2rem;margin-bottom:0.8rem;color:var(--amber);}
-.alert-box p{font-size:0.85rem;color:var(--text-muted);line-height:1.7;}
-.alert-box p strong{color:var(--text);}
+.stat-bar{background:var(--dark-3);border:1px solid var(--border);border-radius:8px;padding:1.5rem;display:flex;gap:1.5rem;align-items:center;}
+.stat-bar-num{font-family:'DM Serif Display',serif;font-size:2rem;color:var(--amber);line-height:1;flex-shrink:0;}
+.stat-bar-desc{font-size:0.82rem;color:var(--text-muted);line-height:1.55;}
+.stat-bar-desc strong{color:var(--text);}
 .ctastrip{padding:5rem 2.5rem;background:var(--dark-2);border-top:1px solid var(--border);}
 .ctasi{max-width:700px;margin:0 auto;text-align:center;}
 .ctasi h2{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.15;margin-bottom:1rem;}
@@ -79,11 +80,26 @@ h1 em{font-style:italic;color:var(--green-light);}
 .btn-wpp:hover{background:#1ebe5d;transform:translateY(-2px);}
 footer{padding:2rem 2.5rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
 footer p{font-size:0.78rem;color:var(--text-muted);}
+
+.tb-wrap{overflow-x:auto;margin-top:2rem;border:1px solid var(--border);border-radius:8px;background:var(--dark-3);}
+.potencial-table{width:100%;border-collapse:collapse;min-width:760px;}
+.potencial-table th,.potencial-table td{text-align:left;padding:1rem;border-bottom:1px solid var(--border);vertical-align:top;}
+.potencial-table th{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--green-light);font-weight:600;background:rgba(45,106,79,0.16);}
+.potencial-table td{font-size:0.84rem;color:var(--text-muted);line-height:1.6;}
+.potencial-table td strong{color:var(--text);font-weight:500;}
+.note-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem;}
+@media(max-width:760px){.note-grid{grid-template-columns:1fr;}}
+.note{background:rgba(233,196,106,0.06);border:1px solid rgba(233,196,106,0.16);border-radius:8px;padding:1.1rem;font-size:0.82rem;color:var(--text-muted);line-height:1.65;}
+.note strong{color:var(--amber);}
+.faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;margin-top:2rem;}
+@media(max-width:768px){.faq-grid{grid-template-columns:1fr;}}
+
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
 .fi{opacity:0;transform:translateY(20px);transition:opacity 0.75s ease,transform 0.75s ease;}
 .fi.vis{opacity:1;transform:translateY(0);}
 .fi-d2{transition-delay:0.15s;}.fi-d3{transition-delay:0.28s;}
 @media(max-width:600px){nav,.hero-sp,.cs,.ctastrip,footer{padding-left:1.2rem;padding-right:1.2rem;}}
+
 </style>
 </head>
 <body>
@@ -97,8 +113,8 @@ footer p{font-size:0.78rem;color:var(--text-muted);}
   <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1400&q=80&fit=crop" alt="Agroindústria">
   <div class="hero-sp-inner">
     <div class="eyebrow">Biogás para Agroindústria</div>
-    <h1>Seu resíduo tem potencial.<br>A maioria ainda<br><em>não calculou o seu.</em></h1>
-    <p class="lead">Fecularias, usinas de cana, cervejarias e culturas energéticas geram resíduos orgânicos com alto potencial biometanogênico — e quase nenhuma ainda aproveitou. <strong>O setor está atrasado. A pergunta é: você vai descobrir o seu potencial antes ou depois da concorrência?</strong></p>
+    <h1>Seu resíduo tem potencial.<br>Agora falta<br><em>calcular com segurança.</em></h1>
+    <p class="lead">Fecularias, usinas de cana, cervejarias e processadoras geram resíduos orgânicos com potencial para produção de biogás. Mas o resultado depende da safra, da composição do substrato, da rota de uso e da demanda real do empreendimento.</p>
     <div class="hero-btns">
       <a href="/#contato" class="btn-primary">Quero minha pré-análise gratuita</a>
       <a href="#substratos" class="btn-ghost">Ver substratos do setor</a>
@@ -106,137 +122,96 @@ footer p{font-size:0.78rem;color:var(--text-muted);}
   </div>
 </section>
 
+
 <!-- PROBLEMA -->
-<section class="cs bg2" id="problema">
-  <div class="ci">
-    <div class="two">
-      <div class="fi">
-        <div class="sl">O problema do setor</div>
-        <h2 class="st">A agroindústria gera resíduos que a maioria ainda não sabe precificar.</h2>
-        <div class="dv"></div>
-        <p class="sb">Fecularias de mandioca, processadoras de frutas, cervejarias e usinas de etanol compartilham um problema comum: geram volumes expressivos de resíduo orgânico com alto potencial de geração de biogás — e continuam pagando por energia externa como se esse resíduo não existisse.</p>
-        <br>
-        <p class="sb">O agravante é que esses substratos têm <strong>menos projetos implementados no Brasil</strong> — o que significa que há menos concorrência e, paradoxalmente, mais oportunidade pra quem agir primeiro.</p>
-        <div class="pq">"Tenho volume de efluente suficiente pra um projeto relevante. Falta saber se os números fecham no meu caso."</div>
-      </div>
-      <div class="fi fi-d2">
-        <div class="hb">
-          <h3>Por que esse potencial fica parado</h3>
-          <div class="ci-item"><span class="ci-icon">→</span><div><strong>Resíduo tratado como custo.</strong> Manipueira, bagaço de frutas e vinhaça são vistos como problema operacional — quando têm potencial direto de geração de energia.</div></div>
-          <div class="ci-item"><span class="ci-icon">→</span><div><strong>Setor pouco mapeado.</strong> Ao contrário de suinocultura e grandes usinas, substratos como mandioca e frutas têm poucos EVTEs feitos no Brasil — criando vantagem pra quem estudar primeiro.</div></div>
-          <div class="ci-item"><span class="ci-icon">→</span><div><strong>Custo energético crescente.</strong> GLP pra caldeiras, diesel pra geradores — todos em alta. E o resíduo que poderia resolver parte disso está sendo descartado todo dia.</div></div>
-          <div class="ci-item"><span class="ci-icon">→</span><div><strong>Culturas energéticas subutilizadas.</strong> Capim-elefante, soja e outras culturas com potencial biometanogênico comprovado raramente são consideradas como substrato principal ou complementar.</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<section class="cs bg2" id="problema"><div class="ci"><div class="two"><div class="fi"><div class="sl">O problema do setor</div><h2 class="st">A agroindústria gera volumes relevantes, mas nem sempre conhece a rota energética possível.</h2><div class="dv"></div><p class="sb">Fecularias, usinas de cana, cervejarias, processadoras de frutas e outras agroindústrias lidam com resíduos e efluentes orgânicos de composição muito diferente. Alguns têm grande volume, outros têm alta concentração; em ambos os casos, o projeto depende de caracterização e não de fórmula pronta.</p><br><p class="sb">O potencial existe quando há substrato, regularidade, manejo, tecnologia compatível e uso real para o biogás. A função do EVTE é separar oportunidade técnica de promessa comercial.</p><div class="pq">"Tenho resíduo e escala. Agora preciso saber qual rota faz sentido para o meu processo e para a minha demanda."</div></div><div class="fi fi-d2"><div class="hb"><h3>Por que o potencial fica parado</h3><div class="ci-item"><span class="ci-icon">→</span><div><strong>Sazonalidade de safra.</strong> Algumas agroindústrias concentram geração em períodos específicos, exigindo estratégia de armazenamento ou codigestão.</div></div><div class="ci-item"><span class="ci-icon">→</span><div><strong>Substratos muito diferentes.</strong> Vinhaça, manipueira, bagaço, lodo e efluentes de lavagem não se comportam da mesma forma no biodigestor.</div></div><div class="ci-item"><span class="ci-icon">→</span><div><strong>Uso agronômico do digestato.</strong> Em muitos casos, a rota de fertirrigação ou aplicação agrícola é tão importante quanto o uso do biogás.</div></div><div class="ci-item"><span class="ci-icon">→</span><div><strong>Escala e logística.</strong> O volume gerado pode ser atrativo, mas precisa caber na operação, no espaço, no transporte e no manejo do empreendimento.</div></div></div></div></div></div></section>
 
 <!-- SUBSTRATOS -->
-<section class="cs" id="substratos">
-  <div class="ci">
-    <div class="fi" style="margin-bottom:3rem;">
-      <div class="sl">Substratos do setor</div>
-      <h2 class="st">Resíduos e culturas com alto potencial<br>que quase ninguém ainda aproveitou.</h2>
-      <div class="dv"></div>
-    </div>
-    <div class="grid-sub fi">
-      <div class="hb">
-        <h3>🌾 Vinhaça — usinas de cana e etanol</h3>
-        <p>A vinhaça é o efluente com maior geração volumétrica do setor sucroenergético. <strong>Potencial biometanogênico comprovado em escala industrial</strong> — e ainda há usinas que não aproveitaram ou aproveitaram apenas parcialmente. Biodigestão prévia à fertirrigação mantém o valor agronômico do digestato.</p>
-        <div class="tags"><span class="tag">Cana</span><span class="tag">Etanol</span><span class="tag">Vinhaça</span><span class="tag">Biometano</span></div>
-        <div class="hb-note">Escala industrial — projetos com potencial de receita adicional via venda de biometano.</div>
-      </div>
-      <div class="hb">
-        <h3>🌿 Manipueira — fecularias de mandioca</h3>
-        <p>A manipueira é o efluente líquido da extração do amido de mandioca. Tem <strong>altíssima carga orgânica e potencial biometanogênico elevado</strong> — e a maioria das fecularias ainda lança em lagoas sem aproveitamento energético.</p>
-        <div class="tags"><span class="tag">Fecularia</span><span class="tag">Amido</span><span class="tag">Polvilho</span><span class="tag">Mandioca</span></div>
-        <div class="hb-note">Substrato pouco explorado no Brasil — janela de oportunidade ainda aberta.</div>
-      </div>
-      <div class="hb">
-        <h3>🌱 Capim-elefante — cultura energética</h3>
-        <p>O capim-elefante (<em>Pennisetum purpureum</em>) é a principal cultura energética dedicada à biogás no Brasil. <strong>Alta produtividade de biomassa por hectare</strong>, boa digestibilidade e uso consolidado em projetos europeus e crescente no Brasil. Pode ser usado como substrato único ou em codigestão.</p>
-        <div class="tags"><span class="tag">Pennisetum purpureum</span><span class="tag">Biomassa</span><span class="tag">Cultura energética</span></div>
-        <div class="hb-note">Produção de 40–80 t MS/ha/ano — um dos maiores potenciais por área cultivável no Brasil.</div>
-      </div>
-      <div class="hb">
-        <h3>🫘 Soja — resíduos de processamento</h3>
-        <p>O processamento de soja gera efluentes, cascas e tortas com <strong>bom potencial de codigestão anaeróbia</strong>. A produção em escala industrial e a demanda energética elevada das plantas criam condições favoráveis pra projetos de biogás integrado ao processo.</p>
-        <div class="tags"><span class="tag">Soja</span><span class="tag">Processamento</span><span class="tag">Codigestão</span><span class="tag">Torta</span></div>
-        <div class="hb-note">Potencial amplificado quando combinado com outros efluentes da planta.</div>
-      </div>
-      <div class="hb">
-        <h3>🍊 Bagaço e efluentes — processadoras de frutas</h3>
-        <p>Processadoras de laranja, maracujá, abacaxi e tomate geram bagaço e efluentes com <strong>alta concentração orgânica</strong>. Volume sazonal mas expressivo durante a safra — ideal pra projetos com armazenamento ou codigestão com outros substratos.</p>
-        <div class="tags"><span class="tag">Laranja</span><span class="tag">Maracujá</span><span class="tag">Tomate</span><span class="tag">Abacaxi</span></div>
-        <div class="hb-note">Sazonalidade é desafio — mas também vantagem competitiva pra quem souber projetar.</div>
-      </div>
-      <div class="hb">
-        <h3>🍺 Lodo e bagaço — cervejarias</h3>
-        <p>Cervejarias geram bagaço de malte, lodo de levedura e efluentes de lavagem com <strong>alto teor orgânico</strong>. O segmento artesanal cresceu muito no Brasil — e a grande maioria ainda não calculou o potencial energético do próprio resíduo.</p>
-        <div class="tags"><span class="tag">Cerveja artesanal</span><span class="tag">Malte</span><span class="tag">Levedura</span><span class="tag">Craft</span></div>
-        <div class="hb-note">Setor em expansão com resíduo crescente — momento ideal pra dimensionar.</div>
-      </div>
-    </div>
-
-    <div class="alert-box fi" style="margin-top:2.5rem;">
-      <h3>O setor está atrasado. Isso é uma vantagem — por enquanto.</h3>
-      <p>Enquanto suinocultura e grandes usinas já têm consultores disputando projeto, a agroindústria de médio porte ainda está descobrindo o potencial do próprio resíduo. <strong>Quem fizer o estudo agora chega ao mercado com vantagem real de custo energético sobre a concorrência que ainda não fez.</strong> Essa janela não fica aberta para sempre.</p>
-    </div>
-  </div>
-</section>
+<section class="cs" id="substratos"><div class="ci"><div class="fi" style="margin-bottom:3rem;"><div class="sl">Substratos do setor</div><h2 class="st">Cada resíduo agroindustrial exige uma leitura própria.</h2><div class="dv"></div></div><div class="grid-sub"><div class="hb fi"><h3>Vinhaça</h3><p>Gerada em usinas de cana e etanol, costuma envolver grande volume e integração com fertirrigação. A biodigestão precisa ser avaliada junto ao manejo agrícola posterior.</p><div class="tags"><span class="tag">Cana</span><span class="tag">Etanol</span><span class="tag">Fertirrigação</span></div></div><div class="hb fi fi-d2"><h3>Manipueira</h3><p>Efluente da extração de amido de mandioca, com carga orgânica relevante e necessidade de cuidado ambiental. A viabilidade depende de volume, concentração e tratamento existente.</p><div class="tags"><span class="tag">Fecularia</span><span class="tag">Mandioca</span><span class="tag">Amido</span></div></div><div class="hb fi"><h3>Resíduos de frutas</h3><p>Bagaços e efluentes de processadoras podem ter boa biodegradabilidade, mas sofrem influência da safra, da umidade e da mistura com outros fluxos.</p><div class="tags"><span class="tag">Laranja</span><span class="tag">Tomate</span><span class="tag">Maracujá</span></div></div><div class="hb fi fi-d2"><h3>Cervejarias</h3><p>Bagaço de malte, lodo de levedura e efluentes de lavagem podem ser avaliados para biodigestão ou codigestão, conforme escala e regularidade.</p><div class="tags"><span class="tag">Malte</span><span class="tag">Levedura</span><span class="tag">Efluente</span></div></div></div></div></section>
 
 <!-- O QUE RESOLVE -->
-<section class="cs bg2">
+<section class="cs bg2"><div class="ci"><div class="fi" style="margin-bottom:3rem;"><div class="sl">O que o biogás pode resolver</div><h2 class="st">Do resíduo agroindustrial para uma decisão energética e ambiental mais clara.</h2><div class="dv"></div><p class="sb" style="max-width:720px;">A biodigestão pode reduzir carga orgânica, gerar biogás e produzir digestato, mas a rota final depende do substrato, do período de geração, da infraestrutura existente e da demanda do empreendimento.</p></div><div class="three"><div class="fc fi"><div class="fi-icon">♨️</div><div class="ft">Energia térmica</div><div class="fd">Pode ser avaliada para caldeiras, aquecimento, secagem ou processos térmicos, quando houver demanda compatível.</div></div><div class="fc fi fi-d2"><div class="fi-icon">⚡</div><div class="ft">Geração elétrica</div><div class="fd">A cogeração pode ser considerada em plantas com volume e regularidade suficientes para justificar o equipamento.</div></div><div class="fc fi fi-d3"><div class="fi-icon">🌱</div><div class="ft">Digestato e fertirrigação</div><div class="fd">O uso agronômico precisa considerar composição, área, logística, época de aplicação e exigências ambientais.</div></div><div class="fc fi"><div class="fi-icon">🧪</div><div class="ft">Codigestão</div><div class="fd">Misturas de substratos podem ser úteis, mas precisam ser calculadas para evitar desequilíbrio e sobrecarga.</div></div><div class="fc fi fi-d2"><div class="fi-icon">📦</div><div class="ft">Gestão de sazonalidade</div><div class="fd">Safra, entressafra e armazenamento influenciam diretamente o dimensionamento e a viabilidade.</div></div><div class="fc fi fi-d3"><div class="fi-icon">📊</div><div class="ft">Decisão econômica</div><div class="fd">O EVTE compara rotas e define se faz sentido avançar, ajustar ou descartar a implantação.</div></div></div></div></section>
+
+<!-- REFERÊNCIAS TÉCNICAS -->
+<section class="cs" id="potencial">
   <div class="ci">
-    <div class="fi" style="margin-bottom:3rem;">
-      <div class="sl">O que o biogás resolve</div>
-      <h2 class="st">Do resíduo que você descarta<br>pra energia que você compra.</h2>
+    <div class="fi" style="margin-bottom:2rem;">
+      <div class="sl">Referências de potencial</div>
+      <h2 class="st">Potencial metanogênico por substrato agroindustrial.</h2>
       <div class="dv"></div>
+      <p class="sb" style="max-width:720px;">
+        A tabela abaixo replica o padrão da agropecuária: valores numéricos de BMP/B₀ por substrato. Eles funcionam como referência inicial de triagem. No EVTE, cada valor precisa ser recalculado conforme composição, diluição, sazonalidade, armazenamento, rota tecnológica e destino do digestato.
+      </p>
     </div>
-    <div class="three">
-      <div class="fc fi">
-        <div class="fi-icon">🔥</div>
-        <div class="ft">Substitui GLP de caldeira</div>
-        <div class="fd">Processadoras com demanda térmica contínua podem substituir GLP por biogás diretamente — pasteurização, cozimento, aquecimento — sem troca complexa de equipamento.</div>
+
+    <div class="tb-wrap fi fi-d2">
+      <table class="potencial-table">
+        <thead>
+          <tr>
+            <th>Substrato</th>
+            <th>Origem típica</th>
+            <th>B₀/BMP de referência</th>
+            <th>Observação técnica</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Vinhaça</strong></td>
+            <td>Usinas de cana, etanol e destilarias.</td>
+            <td>~240 a 296 mL CH₄/g DQO; também há referências de ~215 a 324 L CH₄/kg de matéria orgânica</td>
+            <td>Volume alto não significa viabilidade automática. Sulfato, temperatura, concentração, fertirrigação e logística alteram o projeto.</td>
+          </tr>
+          <tr>
+            <td><strong>Manipueira e efluente de mandioca</strong></td>
+            <td>Fecularias, casas de farinha e processamento de mandioca.</td>
+            <td>~180 a 290 mL CH₄/g DQO; em condições de codigestão/otimização, estudos reportam até ~293 a 343 mL CH₄/g</td>
+            <td>Tem carga orgânica relevante, mas exige controle de pH, equalização, segurança operacional e atenção à composição do efluente.</td>
+          </tr>
+          <tr>
+            <td><strong>Bagaços, polpas e resíduos de frutas</strong></td>
+            <td>Processadoras de frutas, vegetais, sucos, polpas e alimentos.</td>
+            <td>~288 a 516 mL CH₄/g SV</td>
+            <td>Resíduos de frutas e vegetais podem ter bom potencial, mas acidez, lignina, umidade e sazonalidade influenciam a biodigestão.</td>
+          </tr>
+          <tr>
+            <td><strong>Malte, levedura e efluentes de bebidas</strong></td>
+            <td>Cervejarias, bebidas fermentadas e processos agroindustriais com fermentação.</td>
+            <td>~264 a 387 mL CH₄/g SV para bagaço de malte; resíduos de cervejaria podem atingir ~462 mL CH₄/g SV</td>
+            <td>A mistura entre bagaço, levedura, lodo e efluente líquido precisa ser calculada. Cada fluxo separado pode ter comportamento diferente.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note-grid fi fi-d3">
+      <div class="note">
+        <strong>O que é B₀/BMP?</strong><br>
+        B₀, ou BMP, é o potencial metanogênico: a quantidade de metano que um substrato pode gerar em condição controlada, normalmente expressa em mL CH₄/g SV, mL CH₄/g DQO ou L CH₄/kg de matéria orgânica.
       </div>
-      <div class="fc fi fi-d2">
-        <div class="fi-icon">⚡</div>
-        <div class="ft">Gera energia elétrica</div>
-        <div class="fd">Com motor gerador a biogás, a energia produzida vai direto pra processo — reduzindo a conta da concessionária e a dependência de tarifas que só sobem.</div>
-      </div>
-      <div class="fc fi fi-d3">
-        <div class="fi-icon">💧</div>
-        <div class="ft">Resolve o passivo do efluente</div>
-        <div class="fd">O biodigestor trata o efluente antes do descarte — reduzindo carga orgânica, odor e risco de autuação ambiental que cresce a cada renovação de licença.</div>
-      </div>
-      <div class="fc fi">
-        <div class="fi-icon">📈</div>
-        <div class="ft">Abre receita com biometano</div>
-        <div class="fd">Plantas de maior escala podem purificar o biogás até biometano e comercializar — gerando receita adicional além da substituição de insumos internos.</div>
-      </div>
-      <div class="fc fi fi-d2">
-        <div class="fi-icon">🌱</div>
-        <div class="ft">Digestato como biofertilizante</div>
-        <div class="fd">Compatível com fertirrigação existente — o digestato mantém valor agronômico e pode seguir pra aplicação no campo. A biodigestão da vinhaça, por exemplo, não compromete o uso agrícola posterior.</div>
-      </div>
-      <div class="fc fi fi-d3">
-        <div class="fi-icon">🏆</div>
-        <div class="ft">Créditos de carbono</div>
-        <div class="fd">O aproveitamento do biogás gera créditos de carbono via mercado voluntário ou regulado (Lei 15.042/2024). Receita adicional sobre o mesmo projeto.</div>
+
+      <div class="note">
+        <strong>Por que há unidades diferentes?</strong><br>
+        Substratos sólidos costumam ser expressos por sólidos voláteis. Efluentes líquidos, como vinhaça e manipueira, muitas vezes são expressos por DQO. No EVTE, tudo é convertido para uma mesma base de cálculo.
       </div>
     </div>
   </div>
 </section>
+
+<!-- EVTE AGROINDÚSTRIA -->
+<section class="cs bg2" id="evte-agroindustria"><div class="ci"><div class="fi" style="margin-bottom:3rem;"><div class="sl">EVTE para agroindústria</div><h2 class="st">O estudo precisa respeitar safra, substrato e uso final.</h2><div class="dv"></div><p class="sb" style="max-width:720px;">Na agroindústria, a decisão passa por volume, concentração, sazonalidade, rota de fertirrigação, tratamento existente e demanda energética.</p></div><div class="three"><div class="fc fi"><div class="fi-icon">01</div><div class="ft">Mapeamento dos resíduos</div><div class="fd">Identificação de efluentes líquidos, bagaços, lodos, períodos de geração e pontos de mistura.</div></div><div class="fc fi fi-d2"><div class="fi-icon">02</div><div class="ft">Sazonalidade</div><div class="fd">Análise de safra, entressafra, armazenamento, regularidade e necessidade de codigestão.</div></div><div class="fc fi fi-d3"><div class="fi-icon">03</div><div class="ft">Pré-tratamento</div><div class="fd">Verificação de diluição, homogeneização, separação de sólidos, bombeamento e controle operacional.</div></div><div class="fc fi"><div class="fi-icon">04</div><div class="ft">Rota do biogás</div><div class="fd">Comparação entre uso térmico, cogeração, purificação ou uso combinado conforme a demanda.</div></div><div class="fc fi fi-d2"><div class="fi-icon">05</div><div class="ft">Digestato</div><div class="fd">Avaliação de fertirrigação, aplicação agrícola, armazenamento e exigências ambientais.</div></div><div class="fc fi fi-d3"><div class="fi-icon">06</div><div class="ft">Viabilidade econômica</div><div class="fd">Estimativa de investimento, OPEX, economia potencial, riscos e recomendação de avanço.</div></div></div></div></section>
+
+<!-- FAQ AGROINDÚSTRIA -->
+<section class="cs" id="faq-agroindustria"><div class="ci"><div class="fi" style="margin-bottom:2rem;"><div class="sl">Perguntas do setor</div><h2 class="st">Dúvidas específicas da agroindústria.</h2><div class="dv"></div><p class="sb" style="max-width:720px;">Aqui o foco é sazonalidade, vinhaça, manipueira, fertirrigação, codigestão e compatibilidade com a rotina produtiva.</p></div><div class="faq-grid"><div class="hb fi"><h3>Resíduo de safra curta pode virar biogás?</h3><p class="sb">Pode, mas a sazonalidade muda o projeto. É preciso avaliar armazenamento, codigestão ou operação por campanha.</p></div><div class="hb fi fi-d2"><h3>A biodigestão atrapalha a fertirrigação?</h3><p class="sb">Não necessariamente. O digestato pode manter valor agronômico, mas a aplicação depende de composição, área, dose e regras ambientais.</p></div><div class="hb fi"><h3>Vinhaça sempre justifica biodigestor?</h3><p class="sb">Não. A escala ajuda, mas a decisão depende de logística, concentração, temperatura, distância, uso do biogás e manejo agrícola.</p></div><div class="hb fi fi-d2"><h3>Manipueira precisa de cuidado especial?</h3><p class="sb">Sim. É um efluente relevante para tratamento, mas exige caracterização e solução adequada ao processo da fecularia.</p></div><div class="hb fi"><h3>Codigestão é sempre vantajosa?</h3><p class="sb">Não. Ela pode equilibrar substratos, mas também pode gerar instabilidade se a mistura não for calculada.</p></div><div class="hb fi fi-d2"><h3>Biometano faz sentido para toda agroindústria?</h3><p class="sb">Não. Purificar biogás exige escala, investimento e mercado. O EVTE compara se vale mais usar internamente ou purificar.</p></div></div></div></section>
+
 
 <!-- CTA -->
 <section class="ctastrip" id="contato">
   <div class="ctasi fi">
     <div class="sl">Próximo passo</div>
-    <h2>O seu resíduo tem potencial.<br><em>A questão é quanto — e se você vai calcular.</em></h2>
-    <p>A pré-análise é gratuita e sem compromisso. Com as informações básicas do seu processo — tipo de resíduo, volume gerado e consumo energético — já consigo dizer se existe potencial real pra um projeto de biogás no seu caso. <strong>Quem calcula antes decide melhor. Quem decide melhor chega na frente.</strong></p>
+    <h2>O seu resíduo pode ter potencial.<br><em>A questão é medir antes de investir.</em></h2>
+    <p>A pré-análise é gratuita e sem compromisso. Com informações básicas sobre tipo de resíduo, volume gerado, sazonalidade e consumo energético, já é possível indicar se vale avançar para um EVTE completo.</p>
     <div class="ctabtns">
-      <a href="https://wa.me/5519971315434?text=Olá!%20Tenho%20interesse%20em%20uma%20pré-análise%20gratuita%20de%20biogás%20para%20minha%20agroindústria." class="btn-wpp" target="_blank">
+      <a href="https://wa.me/5519971315434?text=Ol%C3%A1!%20Tenho%20interesse%20em%20uma%20pr%C3%A9-an%C3%A1lise%20gratuita%20de%20biog%C3%A1s%20para%20minha%20agroind%C3%BAstria." class="btn-wpp" target="_blank">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Falar no WhatsApp
       </a>
