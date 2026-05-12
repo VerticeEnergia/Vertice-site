@@ -294,6 +294,19 @@ footer.site-footer{padding:3.5rem 2.5rem 2rem;border-top:1px solid var(--border)
 @media(max-width:640px){.consultor-main,.consultor-profile,.case-box-novo{padding:1.2rem;}.consultor-title-novo{font-size:clamp(1.55rem,7vw,2rem);}.consultor-bio-novo{font-size:0.86rem;line-height:1.6;}.consultor-points{grid-template-columns:1fr;gap:0.65rem;}.consultor-point{padding:0.85rem;}.consultor-profile{grid-template-columns:88px 1fr;gap:0.85rem;}.consultor-profile .consultor-foto-img{aspect-ratio:4/5;object-position:center 16%;}.consultor-profile-text strong{font-size:0.86rem;}.consultor-profile-text span{font-size:0.64rem;}.case-box-novo .case-metrics{grid-template-columns:repeat(3,1fr);gap:0.45rem;}.case-box-novo .case-metric{min-width:0;}.case-box-novo .case-metric-num{font-size:0.98rem;}.case-box-novo .case-metric-label{font-size:0.56rem;}}
 @media(max-width:600px){.consultor{padding-top:4rem;padding-bottom:4rem;}.consultor-inner{gap:2rem;}.consultor-foto{display:flex;justify-content:center;}.consultor-foto-img{max-width:240px;}.consultor-foto-badge{right:50%;transform:translateX(50%);bottom:-0.75rem;font-size:0.65rem;padding:0.55rem 0.9rem;white-space:nowrap;}.consultor-cargo{font-size:0.7rem;line-height:1.5;margin-bottom:1rem;}.consultor-bio{font-size:0.88rem;line-height:1.65;margin-bottom:1rem;}.consultor-creds{gap:0.65rem;margin-bottom:1.1rem;}.cred-item{font-size:0.78rem;line-height:1.45;}.case-box{padding:1.1rem;}.case-title{font-size:0.78rem;line-height:1.5;}.case-metric-num{font-size:1.05rem;}.case-metric-label{font-size:0.6rem;}.case-conclusion{font-size:0.7rem;line-height:1.45;}}
 @media(max-width:600px){nav,.hero,.problema,.setores,.calc-section,.viab-section,.evte,.contato-section,footer,.consultor{padding-left:1.2rem;padding-right:1.2rem;}}
+
+/* TEASER DO SIMULADOR NA HOME */
+.simulator-teaser-card{max-width:1100px;margin:0 auto;background:linear-gradient(135deg,var(--dark-3) 0%,rgba(45,106,79,0.18) 100%);border:1px solid rgba(233,196,106,0.18);border-radius:12px;padding:2.6rem;display:grid;grid-template-columns:1.25fr 0.75fr;gap:2rem;align-items:center;position:relative;overflow:hidden;}
+.simulator-teaser-card::before{content:'';position:absolute;right:-12%;top:-30%;width:420px;height:420px;background:radial-gradient(circle,rgba(233,196,106,0.14) 0%,transparent 68%);pointer-events:none;}
+.simulator-teaser-card>*{position:relative;z-index:1;}
+.simulator-teaser-card p{font-size:0.94rem;color:var(--text-muted);line-height:1.75;max-width:680px;}
+.simulator-teaser-actions{display:flex;flex-direction:column;gap:0.8rem;align-items:stretch;}
+.simulator-teaser-actions a{justify-content:center;text-align:center;}
+.simulator-teaser-note{margin-top:1rem;font-size:0.76rem;color:var(--text-muted);line-height:1.55;padding-left:1rem;border-left:2px solid rgba(233,196,106,0.45);}
+.simulator-teaser-phrase{font-family:'DM Serif Display',serif;font-size:clamp(1.35rem,3vw,2rem);line-height:1.15;color:var(--text);margin-bottom:1rem;max-width:680px;}
+.simulator-teaser-phrase em{font-style:italic;color:var(--amber);}
+.simulador-page .calc-section{padding-top:9rem;}
+@media(max-width:760px){.simulator-teaser-card{grid-template-columns:1fr;padding:1.6rem;}.simulator-teaser-actions{justify-content:flex-start;}.simulator-teaser-actions a{width:100%;justify-content:center;}.simulator-teaser-card p{font-size:0.88rem;}}
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18148435351"></script>
 <script>
@@ -392,60 +405,19 @@ function gtag_report_form_conversion(){gtag('event','conversion',{'send_to':'AW-
   </div>
 </div>
 
-<!-- CALCULADORA -->
-<section class="calc-section" id="calculadora">
-  <div class="calc-inner">
-    <div class="calc-header fi">
-      <div class="section-label">Estimativa de potencial</div>
-      <h2 class="section-title">Quanto biogás o seu<br>resíduo pode gerar?</h2>
+<!-- SIMULADOR — TEASER -->
+<section class="calc-section simulator-teaser" id="calculadora">
+  <div class="simulator-teaser-card fi">
+    <div>
+      <div class="section-label">Estimativa inicial</div>
+      <h2 class="section-title">Seu resíduo ainda carrega energia. A dúvida é se vale capturar.</h2>
       <div class="divider"></div>
-      <p>Selecione seu setor, informe o volume de resíduo gerado por dia e veja a estimativa de produção e equivalência energética — com parâmetros médios da literatura científica. <span style="color:var(--green-light);cursor:pointer;text-decoration:underline;text-underline-offset:3px;" onclick="abrirPopup()">Ver equivalências energéticas do m³ de biogás →</span></p>
+      <p class="simulator-teaser-phrase">O simulador mostra uma <em>estimativa inicial</em>, não uma resposta final.</p>
+      <p>Os resultados usam valores médios da literatura para estimar biogás, metano e equivalência energética. Eles ajudam a enxergar se existe potencial, mas não representam especificamente o cenário real do seu empreendimento.</p>
     </div>
-    <div class="calc-card fi fi-d2">
-      <div class="calc-row">
-        <div class="calc-field">
-          <label for="c-setor">Setor do empreendimento</label>
-          <select id="c-setor" onchange="calcular()">
-            <option value="" disabled selected>Selecione seu setor</option>
-            <option value="suino">Suinocultura</option>
-            <option value="bovino">Bovinocultura (confinamento)</option>
-            <option value="aves">Avicultura</option>
-            <option value="laticinios">Laticínios (soro/efluente)</option>
-            <option value="frigorifico">Frigorífico</option>
-            <option value="agroindustria">Agroindústria / Vinhaça</option>
-            <option value="saneamento">Saneamento / Lodo de ETE</option>
-          </select>
-        </div>
-        <div class="calc-field">
-          <label for="c-residuo">Resíduo gerado por dia</label>
-          <div style="display:flex;gap:0.5rem;">
-            <input type="number" id="c-residuo" placeholder="Ex: 5000" min="1" oninput="calcular()" style="flex:1;">
-            <select id="c-unidade" onchange="calcular()" style="width:80px;flex-shrink:0;background:var(--dark-2);border:1px solid var(--border);border-radius:4px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.9rem;padding:0.75rem 0.5rem;appearance:none;-webkit-appearance:none;text-align:center;cursor:pointer;">
-              <option value="kg">kg</option>
-              <option value="m3">m³</option>
-            </select>
-          </div>
-        </div>
-      </div>
-      <button class="btn-calc" onclick="calcular()">Estimar potencial →</button>
-      <div class="calc-results" id="calc-results">
-        <div class="results-label">Estimativa de produção diária</div>
-        <div class="results-grid">
-          <div class="result-card"><div class="result-num" id="r-biogas">—</div><div class="result-unit">m³/dia</div><div class="result-label">Biogás total</div></div>
-          <div class="result-card"><div class="result-num" id="r-ch4">—</div><div class="result-unit">m³/dia</div><div class="result-label">Metano (CH₄)</div></div>
-          <div class="result-card"><div class="result-num" id="r-glp">—</div><div class="result-unit">kg/dia</div><div class="result-label">Equiv. GLP</div></div>
-          <div class="result-card"><div class="result-num" id="r-kwh">—</div><div class="result-unit">kWh/dia</div><div class="result-label">Equiv. elétrico</div></div>
-        </div>
-        <div class="results-grid" style="grid-template-columns:1fr 1fr;margin-top:0;">
-          <div class="result-card"><div class="result-num" id="r-diesel">—</div><div class="result-unit">L/dia</div><div class="result-label">Equiv. diesel</div></div>
-          <div class="result-card"><div class="result-num" id="r-biofert">—</div><div class="result-unit">L/dia (estimado)</div><div class="result-label">Biofertilizante líquido</div></div>
-        </div>
-        <div class="calc-disclaimer"><strong>⚠ Estimativa orientativa.</strong> Valores calculados com parâmetros médios da literatura: fração de sólidos voláteis (SV) e potencial metanogênico (B₀) típicos por substrato (Hamilton/Iowa State Univ.; meta-análise ResearchGate 2020; IPCC 2006; Labatut et al. 2011). Biogás considerado com 60% CH₄. Quando informado em m³, o volume é convertido para kg usando densidade típica do substrato. Biofertilizante estimado como ~92% da massa de entrada. Sua realidade pode variar conforme dieta, diluição e condições operacionais. O EVTE usa os dados reais do seu processo.</div>
-        <div class="calc-cta-box">
-          <p><strong>Esses números são uma estimativa inicial.</strong> Quer que eu valide se eles fazem sentido para o seu caso real? O EVTE transforma essa simulação em análise com dados do seu processo, tecnologia recomendada e decisão de avanço.</p>
-          <a href="https://wa.me/5519971315434" class="btn-primary" data-whatsapp-origin="simulador">Enviar minha simulação para análise →</a>
-        </div>
-      </div>
+    <div class="simulator-teaser-actions">
+      <a href="/simulador.html" class="btn-primary">Fazer uma estimativa inicial →</a>
+      <a href="#" class="btn-secondary" data-whatsapp-origin="contato">Avaliar meu caso no WhatsApp</a>
     </div>
   </div>
 </section>
@@ -776,6 +748,8 @@ const SETORES={
   saneamento:  {sv:0.55, b0:250, dens:1005}, // lodo de ETE
 };
 function fmt(n){if(n>=10000)return (n/1000).toFixed(0)+'k';if(n>=1000)return (n/1000).toFixed(1)+'k';if(n>=10)return Math.round(n).toLocaleString('pt-BR');if(n>=1)return n.toFixed(1);return n.toFixed(2);}
+let simulacaoConcluidaRegistrada = false;
+
 function calcular(){
   const setor=document.getElementById('c-setor').value;
   const valorInput=parseFloat(document.getElementById('c-residuo').value);
@@ -799,6 +773,16 @@ function calcular(){
   document.getElementById('r-diesel').textContent=fmt(diesel);
   document.getElementById('r-biofert').textContent=fmt(biofert);
   res.classList.add('show');
+
+  if (!simulacaoConcluidaRegistrada) {
+    simulacaoConcluidaRegistrada = true;
+    trackSiteEvent('simulacao_concluida', {
+      event_category: 'engajamento',
+      event_label: 'simulador',
+      setor: setor,
+      unidade: unidade
+    });
+  }
 }
 function abrirPopup(){document.getElementById('popup').classList.add('show');}
 function fecharPopupBtn(){document.getElementById('popup').classList.remove('show');}
