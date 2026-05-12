@@ -24,11 +24,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 2.5rem;displa
 .hero-img{position:absolute;top:0;right:0;width:55%;height:100%;object-fit:cover;opacity:0.15;-webkit-mask-image:linear-gradient(to left,rgba(0,0,0,1) 0%,transparent 100%);mask-image:linear-gradient(to left,rgba(0,0,0,1) 0%,transparent 100%);pointer-events:none;z-index:0;}
 .hero::after{content:'';position:absolute;top:-20%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(45,106,79,0.25) 0%,transparent 70%);pointer-events:none;}
 .hero-eyebrow{font-size:0.75rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--amber);margin-bottom:1.5rem;opacity:0;animation:fadeUp 0.8s 0.2s forwards;}
-.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2.8rem,7vw,5.5rem);line-height:1.05;max-width:800px;margin-bottom:1.8rem;opacity:0;animation:fadeUp 0.8s 0.4s forwards;}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2.25rem,5.4vw,4.45rem);line-height:1.08;max-width:860px;margin-bottom:1.6rem;opacity:0;animation:fadeUp 0.8s 0.4s forwards;}
 .hero h1 em{font-style:italic;color:var(--green-light);}
 .hero-sub{font-size:1.05rem;color:var(--text-muted);max-width:560px;line-height:1.7;margin-bottom:1.2rem;opacity:0;animation:fadeUp 0.8s 0.6s forwards;}
 .hero-sub strong{color:var(--text);font-weight:500;}
-.hero-proof{font-size:0.82rem;color:var(--green-light);max-width:560px;margin-bottom:2.5rem;padding:0.7rem 1rem;border-left:2px solid var(--green-light);background:rgba(64,145,108,0.07);border-radius:0 4px 4px 0;opacity:0;animation:fadeUp 0.8s 0.7s forwards;}
+.hero-proof{font-size:0.96rem;color:var(--text);font-weight:500;max-width:620px;margin-bottom:2.6rem;padding:0.85rem 1.1rem;border-left:3px solid var(--amber);background:rgba(233,196,106,0.09);border-radius:0 5px 5px 0;opacity:0;animation:fadeUp 0.8s 0.7s forwards;}
 .hero-cta{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:fadeUp 0.8s 0.8s forwards;}
 .btn-primary{background:var(--amber);color:var(--dark);padding:0.9rem 2rem;border-radius:4px;font-size:0.9rem;font-weight:600;text-decoration:none;letter-spacing:0.03em;transition:all 0.2s;display:inline-flex;align-items:center;gap:0.5rem;}
 .btn-primary:hover{background:#f5d585;transform:translateY(-2px);}
@@ -251,11 +251,12 @@ function gtag_report_form_conversion(){gtag('event','conversion',{'send_to':'AW-
 <section class="hero">
   <img class="hero-img" src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1400&q=80&fit=crop" alt="Vista aérea de propriedade rural">
   <div class="hero-eyebrow">Consultoria Energética · Biogás e Biometano</div>
-  <h1>Você já produz energia.<br>Só ainda não <em>captura.</em></h1>
-  <p class="hero-sub">Empreendimentos que geram resíduo orgânico podem ter potencial para reduzir custos com GLP, diesel ou energia elétrica por meio do biogás. <strong>O EVTE calcula, com os dados do seu processo, se essa oportunidade realmente fecha.</strong></p>
+  <h1>Descubra se o resíduo do seu empreendimento pode virar biogás<br>— e se o projeto <em>realmente paga.</em></h1>
+  <p class="hero-sub">A Vértice desenvolve Estudos de Viabilidade Técnico-Econômica para projetos de biogás em agropecuária, indústria, agroindústria e saneamento, usando os dados reais do seu processo para estimar potencial energético, economia e retorno financeiro.</p>
+  <p class="hero-proof">Você já produz energia. Só ainda não captura.</p>
   <div class="hero-cta">
-    <a href="#contato" class="btn-primary">Ver se meu resíduo pode virar biogás</a>
-    <a href="#setores" class="btn-secondary">Ver por setor</a>
+    <a href="#" class="btn-primary" data-whatsapp-origin="hero">Falar agora no WhatsApp →</a>
+    <a href="#setores" class="btn-secondary">Ver setores atendidos</a>
   </div>
 </section>
 
@@ -598,6 +599,7 @@ const WHATSAPP_NUMBER = '5519971315434';
 
 const WHATSAPP_MESSAGES = {
   flutuante: 'Olá! Vim do site da Vértice e quero entender se meu empreendimento tem potencial para biogás.',
+  hero: 'Olá! Vim do site da Vértice e quero entender se meu empreendimento tem potencial para biogás.',
   home: 'Olá! Vim do site da Vértice e quero entender se meu empreendimento tem potencial para biogás.',
   contato: 'Olá! Vim do site da Vértice e quero iniciar uma pré-análise sobre o potencial de biogás do meu empreendimento.',
   simulador: 'Olá! Acabei de simular meu potencial no site da Vértice e quero validar se os números fazem sentido para o meu caso real.'
