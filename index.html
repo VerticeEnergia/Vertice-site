@@ -161,6 +161,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 2.5rem;displa
 .como-num{font-family:'DM Serif Display',serif;font-size:1.6rem;color:var(--amber);line-height:1;margin-bottom:0.8rem;opacity:0.9;}
 .como-card h4{font-size:0.9rem;font-weight:600;margin-bottom:0.4rem;color:var(--text);}
 .como-card p{font-size:0.8rem;color:var(--text-muted);line-height:1.6;}
+.price-note{margin-top:1.2rem;padding:1rem;background:rgba(233,196,106,0.06);border:1px solid rgba(233,196,106,0.16);border-radius:6px;font-size:0.78rem;color:var(--text-muted);line-height:1.65;}
+.price-note strong{color:var(--amber);font-weight:600;}
+.honesty-box{margin-top:1.2rem;padding:1.2rem;background:linear-gradient(135deg,rgba(233,196,106,0.1) 0%,rgba(45,106,79,0.12) 100%);border:1px solid rgba(233,196,106,0.24);border-radius:8px;}
+.honesty-box strong{display:block;color:var(--amber);font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.45rem;}
+.honesty-box p{font-size:0.85rem;color:var(--text-muted);line-height:1.65;}
+.honesty-box p span{color:var(--text);font-weight:500;}
+
 
 /* WHATSAPP FIXO */
 .wpp-fixo{position:fixed;right:1.2rem;bottom:1.2rem;z-index:300;background:#25d366;color:#fff;text-decoration:none;border-radius:999px;padding:0.85rem 1.15rem;font-size:0.84rem;font-weight:700;letter-spacing:0.02em;display:flex;align-items:center;gap:0.55rem;box-shadow:0 8px 30px rgba(0,0,0,0.35);transition:transform 0.2s,background 0.2s;}
@@ -459,18 +466,23 @@ function gtag_report_form_conversion(){gtag('event','conversion',{'send_to':'AW-
     <div class="como-grid">
       <div class="fi">
         <div class="section-label">Perguntas frequentes</div>
-        <h2 class="section-title">Dúvidas gerais antes de pedir um EVTE.</h2>
+        <h2 class="section-title">Dúvidas comerciais antes de pedir um EVTE.</h2>
         <div class="divider"></div>
-        <p class="section-body">Essas perguntas valem para qualquer setor. A ideia é deixar claro que o projeto precisa se adaptar ao resíduo, à tecnologia e à demanda energética do cliente, nunca o contrário.</p>
+        <p class="section-body">Antes de avançar para um estudo técnico, é normal querer entender custo, confidencialidade, prazo e o que acontece se o projeto não fizer sentido. A pré-análise existe justamente para separar oportunidade real de ideia que ainda não fecha.</p>
+        <div class="price-note"><strong>Âncora de preço:</strong> o valor do EVTE depende do porte do empreendimento, da qualidade dos dados disponíveis e do nível de detalhamento necessário. A pré-análise gratuita ajuda a entender se faz sentido avançar para uma proposta técnica.</div>
       </div>
       <div class="como-passos fi fi-d2">
-        <div class="como-card"><div class="como-num">01</div><h4>Como saber se meu empreendimento tem potencial?</h4><p>O ponto de partida é ter geração recorrente de resíduo orgânico e alguma demanda energética ou ambiental associada. A pré-análise verifica se vale aprofundar.</p></div>
-        <div class="como-card"><div class="como-num">02</div><h4>Do que depende o custo do sistema?</h4><p>Depende do pré-tratamento da biomassa, tipo de biodigestor, escala, tratamento do biogás, automação e uso final escolhido para a demanda do cliente.</p></div>
-        <div class="como-card"><div class="como-num">03</div><h4>Biogás e biometano são a mesma coisa?</h4><p>Não. Biogás é o gás bruto da digestão anaeróbia. Biometano é o biogás purificado até padrão de combustível, o que exige etapa adicional.</p></div>
-        <div class="como-card"><div class="como-num">04</div><h4>O EVTE já define a tecnologia?</h4><p>Ele compara alternativas compatíveis com o resíduo e a operação. A tecnologia se adapta ao contexto do cliente, não o contrário.</p></div>
-        <div class="como-card"><div class="como-num">05</div><h4>O digestato entra na análise?</h4><p>Sim. O digestato pode ter valor agronômico, mas sua utilização depende de composição, manejo, área disponível e exigências ambientais.</p></div>
-        <div class="como-card"><div class="como-num">06</div><h4>O estudo substitui licenciamento?</h4><p>Não. O EVTE organiza o caminho técnico e pode indicar pontos de atenção, mas o licenciamento depende do órgão competente e do projeto final.</p></div>
+        <div class="como-card"><div class="como-num">01</div><h4>A pré-análise é realmente gratuita?</h4><p>Sim. A primeira conversa serve para entender o tipo de resíduo, a escala do empreendimento e o gasto energético principal. Se não houver potencial mínimo, isso já fica claro antes de qualquer proposta paga.</p></div>
+        <div class="como-card"><div class="como-num">02</div><h4>Quanto custa um EVTE?</h4><p>O investimento varia conforme porte, complexidade dos dados e profundidade da análise. Após a pré-análise, a proposta é enviada com escopo, prazo e valor definidos, sem surpresa no meio do processo.</p></div>
+        <div class="como-card"><div class="como-num">03</div><h4>E se o projeto não for viável?</h4><p>A recomendação também pode ser não avançar. O objetivo do estudo é evitar investimento mal direcionado antes da compra de equipamentos, contratação de fornecedores ou abertura de um projeto maior.</p></div>
+        <div class="como-card"><div class="como-num">04</div><h4>Meus dados ficam protegidos?</h4><p>Sim. As informações enviadas são usadas apenas para avaliação técnica inicial. Quando necessário, a Vértice pode trabalhar com termo de confidencialidade antes do envio de dados sensíveis.</p></div>
+        <div class="como-card"><div class="como-num">05</div><h4>O EVTE já substitui projeto executivo?</h4><p>Não. O EVTE orienta a decisão de investimento, compara rotas tecnológicas e estima viabilidade. Projeto executivo, licenciamento e implantação vêm depois, se a análise indicar que vale avançar.</p></div>
+        <div class="como-card"><div class="como-num">06</div><h4>O estudo serve para conversar com fornecedores?</h4><p>Sim. O relatório organiza dados de resíduo, demanda energética, estimativas de produção e indicadores econômicos, facilitando conversas com fornecedores, parceiros, bancos ou tomadores de decisão.</p></div>
       </div>
+    </div>
+    <div class="honesty-box fi">
+      <strong>Compromisso técnico</strong>
+      <p>Quando os dados iniciais não indicarem viabilidade mínima, a recomendação técnica será não avançar para um EVTE pago naquele momento. A pré-análise serve para qualificar a decisão, não para forçar a contratação.</p>
     </div>
   </div>
 </section>
@@ -520,6 +532,7 @@ function gtag_report_form_conversion(){gtag('event','conversion',{'send_to':'AW-
         <div class="contato-item"><div class="contato-dot"></div>Conversa inicial gratuita · sem compromisso</div>
         <div class="contato-item"><div class="contato-dot"></div>Resposta em horário comercial</div>
         <div class="contato-item"><div class="contato-dot"></div>EVTE entregue em 20 a 35 dias após coleta de dados</div>
+        <div class="contato-item"><div class="contato-dot"></div>Recomendação objetiva: avançar, ajustar dados ou descartar por enquanto</div>
       </div>
       <div class="contato-direto">
         <p>Prefere falar direto?</p>
@@ -532,7 +545,7 @@ function gtag_report_form_conversion(){gtag('event','conversion',{'send_to':'AW-
     <div class="fi fi-d2">
       <div class="form-card">
         <h3>Solicitar pré-análise gratuita</h3>
-        <p>Preencha nome, WhatsApp e setor. A conversa inicial é gratuita e o WhatsApp será aberto com uma mensagem pronta para iniciar a pré-análise.</p>
+        <p>Preencha nome, WhatsApp e setor. A conversa inicial é gratuita e serve para entender se há potencial antes de qualquer proposta paga.</p>
         <div id="form-content">
           <div class="form-row">
             <div class="form-group"><label for="f-nome">Nome</label><input type="text" id="f-nome" placeholder="Seu nome" required></div>
