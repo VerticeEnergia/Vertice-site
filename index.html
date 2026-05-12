@@ -172,7 +172,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 2.5rem;displa
 /* WHATSAPP FIXO */
 .wpp-fixo{position:fixed;right:1.2rem;bottom:1.2rem;z-index:300;background:#25d366;color:#fff;text-decoration:none;border-radius:999px;padding:0.85rem 1.15rem;font-size:0.84rem;font-weight:700;letter-spacing:0.02em;display:flex;align-items:center;gap:0.55rem;box-shadow:0 8px 30px rgba(0,0,0,0.35);transition:transform 0.2s,background 0.2s;}
 .wpp-fixo:hover{background:#1ebe5d;transform:translateY(-2px);}
-@media(max-width:520px){.wpp-fixo{left:1rem;right:1rem;justify-content:center;bottom:0.9rem;}.contato-section{padding-bottom:6rem;}footer{padding-bottom:5.5rem;}}
+@media(max-width:520px){.wpp-fixo{left:1rem;right:1rem;justify-content:center;bottom:0.9rem;}.contato-section{padding-bottom:6rem;}footer.site-footer{padding-bottom:6rem;}}
 
 /* EVTE */
 .evte{padding:6rem 2.5rem;}
@@ -229,8 +229,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 2.5rem;displa
 .form-success h4{font-family:'DM Serif Display',serif;font-size:1.3rem;margin-bottom:0.5rem;}
 .form-success p{font-size:0.85rem;color:var(--text-muted);line-height:1.6;}
 .form-nota{margin-top:1rem;font-size:0.73rem;color:var(--text-muted);text-align:center;}
-footer{padding:2rem 2.5rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
-footer p{font-size:0.78rem;color:var(--text-muted);}
+/* RODAPÉ PROFISSIONAL */
+footer.site-footer{padding:3.5rem 2.5rem 2rem;border-top:1px solid var(--border);background:var(--dark);display:block;}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:2rem;align-items:start;}
+.footer-brand p,.footer-col p,.footer-small{font-size:0.78rem;color:var(--text-muted);line-height:1.65;}
+.footer-brand .logo{display:inline-block;margin-bottom:0.8rem;}
+.footer-col h4{font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--green-light);margin-bottom:0.8rem;}
+.footer-col a{display:inline-block;color:var(--text-muted);font-size:0.82rem;text-decoration:none;margin-bottom:0.45rem;transition:color 0.2s;}
+.footer-col a:hover{color:var(--amber);}
+.footer-lgpd{margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border);}
+.footer-bottom{max-width:1100px;margin:2rem auto 0;padding-top:1.2rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;}
+.footer-bottom p{font-size:0.74rem;color:var(--text-muted);line-height:1.5;}
+.footer-bottom a{color:var(--text-muted);text-decoration:none;}
+.footer-bottom a:hover{color:var(--amber);}
+@media(max-width:760px){.footer-inner{grid-template-columns:1fr;gap:1.6rem;}footer.site-footer{padding:3rem 1.2rem 6rem;}.footer-bottom{align-items:flex-start;flex-direction:column;gap:0.6rem;}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
 .fi{opacity:0;transform:translateY(20px);transition:opacity 0.75s ease,transform 0.75s ease;}
 .fi.vis{opacity:1;transform:translateY(0);}
@@ -607,9 +619,35 @@ function gtag_report_form_conversion(){gtag('event','conversion',{'send_to':'AW-
   </div>
 </section>
 
-<footer>
-  <a href="/" class="logo">Vértice<span>.</span></a>
-  <p>© 2026 Vértice Consultoria Energética · verticebiogas.com.br</p>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="logo">Vértice<span>.</span></a>
+      <p>Consultoria técnica em biogás, biometano e viabilidade energética de resíduos orgânicos.</p>
+      <div class="footer-lgpd">
+        <p class="footer-small">As informações enviadas pelo site são utilizadas apenas para contato e pré-análise técnica inicial.</p>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contato</h4>
+      <p>E-mail: biogasvertice@gmail.com</p>
+      <p>WhatsApp: disponível pelos botões do site</p>
+      <p>Atendimento técnico a empreendimentos no Brasil.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Canais e informações</h4>
+      <a href="https://instagram.com/verticebionews" target="_blank" rel="noopener noreferrer">@verticebionews</a>
+      <a href="/politica-de-privacidade.html">Política de Privacidade</a>
+      <a href="#contato">Solicitar pré-análise gratuita</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Vértice Consultoria Energética · verticebiogas.com.br</p>
+    <p>Biogás · Biometano · EVTE · Resíduos orgânicos</p>
+  </div>
 </footer>
 
 <!-- POPUP EQUIVALÊNCIAS -->
