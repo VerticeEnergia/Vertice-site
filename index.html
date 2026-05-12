@@ -265,7 +265,7 @@ function gtag_report_form_conversion(){gtag('event','conversion',{'send_to':'AW-
   <div class="problema-grid">
     <div class="fi">
       <div class="section-label">O problema</div>
-      <h2 class="section-title">GLP, energia elétrica e diesel custam caro. O resíduo que pode reduzir essa dependência já está lá.</h2>
+      <h2 class="section-title">GLP, energia elétrica e diesel custam caro. O resíduo <em style="color:var(--green-light);font-style:italic;">já está lá</em> e pode reduzir essa dependência.</h2>
       <div class="divider"></div>
       <p class="section-body">Todo empreendimento que gera resíduo orgânico em escala e consome energia de fonte fóssil pode estar pagando duas vezes: uma para tratar ou descartar o resíduo, outra para comprar uma energia que, em alguns casos, poderia ser parcialmente suprida pelo próprio biogás. O EVTE responde, com os números do seu processo, se essa equação fecha.</p>
     </div>
@@ -518,7 +518,7 @@ function gtag_report_form_conversion(){gtag('event','conversion',{'send_to':'AW-
       <p style="font-size:0.95rem;color:var(--text-muted);line-height:1.75;margin-bottom:1.5rem;">Se você tem resíduo orgânico e gasto energético recorrente, <strong style="color:var(--text);">o ponto de partida já existe.</strong> A conversa inicial é gratuita.</p>
       <div class="contato-items">
         <div class="contato-item"><div class="contato-dot"></div>Conversa inicial gratuita · sem compromisso</div>
-        <div class="contato-item"><div class="contato-dot"></div>Resposta em até 24 horas</div>
+        <div class="contato-item"><div class="contato-dot"></div>Resposta em horário comercial</div>
         <div class="contato-item"><div class="contato-dot"></div>EVTE entregue em 20 a 35 dias após coleta de dados</div>
       </div>
       <div class="contato-direto">
@@ -532,44 +532,30 @@ function gtag_report_form_conversion(){gtag('event','conversion',{'send_to':'AW-
     <div class="fi fi-d2">
       <div class="form-card">
         <h3>Solicitar pré-análise gratuita</h3>
-        <p>Preencha os dados abaixo e retorno em até 24h para conversar sobre o potencial do seu empreendimento.</p>
+        <p>Preencha nome, WhatsApp e setor. A conversa inicial é gratuita e o WhatsApp será aberto com uma mensagem pronta para iniciar a pré-análise.</p>
         <div id="form-content">
           <div class="form-row">
             <div class="form-group"><label for="f-nome">Nome</label><input type="text" id="f-nome" placeholder="Seu nome" required></div>
-            <div class="form-group"><label for="f-tel">Telefone</label><input type="tel" id="f-tel" placeholder="(XX) XXXXX-XXXX" required></div>
+            <div class="form-group"><label for="f-tel">WhatsApp</label><input type="tel" id="f-tel" placeholder="(XX) XXXXX-XXXX" required></div>
           </div>
-          <div class="form-group"><label for="f-email">E-mail</label><input type="email" id="f-email" placeholder="seu@email.com.br"></div>
-          <div class="form-group"><label for="f-cidade">Cidade/Estado</label><input type="text" id="f-cidade" placeholder="Ex.: Leme/SP"></div>
           <div class="form-group">
             <label for="f-setor">Setor</label>
             <select id="f-setor" required>
               <option value="" disabled selected>Selecione seu setor</option>
-              <option>Suinocultura</option><option>Bovinocultura</option><option>Avicultura</option>
-              <option>Laticínios</option><option>Frigorífico</option><option>Agroindústria / Usina</option>
-              <option>Saneamento / ETE</option><option>Outro</option>
+              <option>Agropecuária</option>
+              <option>Indústria alimentícia</option>
+              <option>Agroindústria</option>
+              <option>Saneamento</option>
+              <option>Outro</option>
             </select>
           </div>
-          <div class="form-row">
-            <div class="form-group"><label for="f-residuo">Resíduo por dia</label><input type="text" id="f-residuo" placeholder="Ex.: 500 kg/dia ou 20 m³/dia"></div>
-            <div class="form-group">
-              <label for="f-energia">Principal gasto energético</label>
-              <select id="f-energia">
-                <option value="" disabled selected>Selecione</option>
-                <option>GLP</option><option>Diesel</option><option>Energia elétrica</option><option>Lenha/biomassa</option><option>Mais de uma fonte</option><option>Não sei informar</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="f-msg">Descreva brevemente seu empreendimento <span style="color:var(--text-muted);font-weight:300;">(opcional)</span></label>
-            <textarea id="f-msg" placeholder="Ex.: Granja com 800 matrizes suínas, consumo de GLP para aquecimento de leitões..."></textarea>
-          </div>
-          <button type="button" class="btn-submit" onclick="enviarFormulario()">Solicitar pré-análise gratuita →</button>
-          <p class="form-nota">Ao enviar, você será redirecionado para o WhatsApp com seus dados preenchidos automaticamente.</p>
+          <button type="button" class="btn-submit" onclick="enviarFormulario()">Iniciar pré-análise pelo WhatsApp →</button>
+          <p class="form-nota">Conversa inicial gratuita · sem compromisso · resposta em horário comercial.</p>
         </div>
         <div class="form-success" id="form-success">
           <div class="success-icon">✓</div>
           <h4>Mensagem enviada!</h4>
-          <p>Retorno em até 24 horas para conversar sobre o potencial do seu empreendimento.</p>
+          <p>O WhatsApp foi aberto com sua mensagem preenchida para iniciar a pré-análise.</p>
         </div>
       </div>
     </div>
@@ -602,6 +588,7 @@ const WHATSAPP_MESSAGES = {
   hero: 'Olá! Vim do site da Vértice e quero entender se meu empreendimento tem potencial para biogás.',
   home: 'Olá! Vim do site da Vértice e quero entender se meu empreendimento tem potencial para biogás.',
   contato: 'Olá! Vim do site da Vértice e quero iniciar uma pré-análise sobre o potencial de biogás do meu empreendimento.',
+  formulario: 'Olá! Preenchi o formulário no site da Vértice e quero conversar sobre o potencial de biogás do meu empreendimento.',
   simulador: 'Olá! Acabei de simular meu potencial no site da Vértice e quero validar se os números fazem sentido para o meu caso real.'
 };
 
@@ -697,33 +684,26 @@ function enviarFormulario(){
   const nome=document.getElementById('f-nome').value.trim();
   const tel=document.getElementById('f-tel').value.trim();
   const setor=document.getElementById('f-setor').value;
-  if(!nome||!tel||!setor){alert('Por favor, preencha nome, telefone e setor.');return;}
-  const email=document.getElementById('f-email').value.trim();
-  const cidade=document.getElementById('f-cidade').value.trim();
-  const residuo=document.getElementById('f-residuo').value.trim();
-  const energia=document.getElementById('f-energia').value;
-  const msg=document.getElementById('f-msg').value.trim();
+  if(!nome||!tel||!setor){alert('Por favor, preencha nome, WhatsApp e setor.');return;}
+
   gtag_report_form_conversion();
-  let txt=`Olá! Preenchi o formulário no site da Vértice e quero iniciar uma pré-análise gratuita de biogás.
+  trackSiteEvent('formulario_enviado', {
+    event_category: 'lead',
+    event_label: 'formulario_contato',
+    setor: setor
+  });
+
+  const txt=`Olá! Preenchi o formulário no site da Vértice e quero iniciar uma pré-análise gratuita de biogás.
 
 *Nome:* ${nome}
-*Telefone:* ${tel}
-`;
-  if(email)txt+=`*E-mail:* ${email}
-`;
-  if(cidade)txt+=`*Cidade/Estado:* ${cidade}
-`;
-  txt+=`*Setor:* ${setor}
-`;
-  if(residuo)txt+=`*Resíduo por dia:* ${residuo}
-`;
-  if(energia)txt+=`*Principal gasto energético:* ${energia}
-`;
-  if(msg)txt+=`*Empreendimento:* ${msg}
-`;
+*WhatsApp:* ${tel}
+*Setor:* ${setor}
+
+Quero entender se meu empreendimento tem potencial para biogás.`;
+
   document.getElementById('form-content').style.display='none';
   document.getElementById('form-success').style.display='block';
-  setTimeout(()=>window.open(buildWhatsappLink('formulario', txt),'_blank'),800);
+  setTimeout(()=>window.open(buildWhatsappLink('formulario', txt),'_blank'),500);
 }
 </script>
 </body>
