@@ -250,5 +250,28 @@ footer p{font-size:0.78rem;color:var(--text-muted);}
 const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('vis');obs.unobserve(el.target);}});},{threshold:0.1});
 document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
 </script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var btnSim = document.querySelector('a[href*="simulador.html"]');
+  if(btnSim){
+    btnSim.addEventListener('click', function(){
+      sessionStorage.setItem('vertice_scroll_origem', window.scrollY);
+      sessionStorage.setItem('vertice_scroll_page', window.location.pathname);
+    });
+  }
+
+// Restaura scroll ao voltar do simulador
+(function(){
+  var y = sessionStorage.getItem('vertice_restore_scroll');
+  if(y){
+    sessionStorage.removeItem('vertice_restore_scroll');
+    window.addEventListener('load', function(){
+      setTimeout(function(){ window.scrollTo({top: parseInt(y), behavior:'instant'}); }, 80);
+    });
+  }
+})();
+});
+</script>
 </body>
 </html>
