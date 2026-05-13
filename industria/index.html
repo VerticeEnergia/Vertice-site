@@ -2,8 +2,8 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Biogás para Indústria | Vértice Consultoria Energética</title>
-<meta name="description" content="Você paga para tratar o efluente e ainda compra energia. Avalie se o biogás faz sentido para sua indústria.">
+<title>Biogás para Indústria Alimentícia | Vértice Consultoria Energética</title>
+<meta name="description" content="Laticínios, frigoríficos e processadoras podem transformar efluentes e resíduos orgânicos em biogás. Avalie se existe viabilidade técnica e econômica.">
 <link rel="canonical" href="https://verticebiogas.com.br/industria">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -25,7 +25,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 2.5rem;displa
 .eyebrow{font-size:0.72rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--amber);margin-bottom:1rem;opacity:0;animation:fadeUp 0.7s 0.2s forwards;}
 h1{font-family:'DM Serif Display',serif;font-size:clamp(2.4rem,5vw,4.2rem);line-height:1.05;margin-bottom:1.2rem;opacity:0;animation:fadeUp 0.7s 0.4s forwards;}
 h1 em{font-style:italic;color:var(--green-light);}
-.lead{font-size:1rem;color:var(--text-muted);max-width:560px;line-height:1.75;margin-bottom:2rem;opacity:0;animation:fadeUp 0.7s 0.6s forwards;}
+.lead{font-size:1rem;color:var(--text-muted);max-width:600px;line-height:1.75;margin-bottom:2rem;opacity:0;animation:fadeUp 0.7s 0.6s forwards;}
 .lead strong{color:var(--text);font-weight:500;}
 .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:fadeUp 0.7s 0.7s forwards;}
 .btn-primary{background:var(--amber);color:var(--dark);padding:0.9rem 2rem;border-radius:4px;font-size:0.9rem;font-weight:600;text-decoration:none;transition:all 0.2s;display:inline-flex;align-items:center;}
@@ -91,24 +91,72 @@ footer p{font-size:0.78rem;color:var(--text-muted);}
 .fi.vis{opacity:1;transform:translateY(0);}
 .fi-d2{transition-delay:0.15s;}.fi-d3{transition-delay:0.28s;}
 @media(max-width:600px){nav,.hero-sp,.cs,.ctastrip,footer{padding-left:1.2rem;padding-right:1.2rem;}}
+
+/* MENU GLOBAL FIXO */
+.nav-actions{display:flex;align-items:center;gap:0.9rem;}
+.menu-toggle{width:42px;height:38px;border:1px solid var(--border);background:rgba(22,34,24,0.92);border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer;transition:all 0.2s;z-index:1002;}
+.menu-toggle:hover{border-color:var(--green-light);}
+.menu-toggle span{width:20px;height:2px;background:var(--text);border-radius:999px;transition:all 0.25s;}
+.menu-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.menu-toggle.active span:nth-child(2){opacity:0;}
+.menu-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.menu-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:998;opacity:0;pointer-events:none;transition:opacity 0.25s;}
+.menu-overlay.active{opacity:1;pointer-events:auto;}
+.menu-panel{position:fixed;top:0;right:0;width:min(380px,88vw);height:100vh;background:rgba(13,27,18,0.98);border-left:1px solid var(--border);z-index:999;transform:translateX(100%);transition:transform 0.28s ease;box-shadow:-12px 0 40px rgba(0,0,0,0.42);padding:6.5rem 2rem 2rem;overflow-y:auto;}
+.menu-panel.active{transform:translateX(0);}
+.menu-kicker{font-size:0.68rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--green-light);margin-bottom:0.8rem;}
+.menu-title{font-family:'DM Serif Display',serif;font-size:1.8rem;line-height:1.1;margin-bottom:1.4rem;}
+.menu-title em{font-style:italic;color:var(--amber);}
+.menu-links{display:flex;flex-direction:column;gap:0.65rem;}
+.menu-links a{display:flex;justify-content:space-between;gap:1rem;align-items:center;text-decoration:none;color:var(--text-muted);padding:0.9rem 0;border-bottom:1px solid rgba(64,145,108,0.16);font-size:0.95rem;transition:color 0.2s,padding-left 0.2s;}
+.menu-links a:hover{color:var(--text);padding-left:0.25rem;}
+.menu-links a strong{color:var(--text);font-weight:500;}
+.menu-links a span{color:var(--amber);font-size:0.9rem;}
+.menu-foot{margin-top:2rem;padding:1rem;background:var(--dark-2);border:1px solid var(--border);border-radius:6px;font-size:0.78rem;line-height:1.6;color:var(--text-muted);}
+@media(max-width:900px){.nav-cta{display:none;}nav{padding:1rem 1.25rem;}}
+@media(max-width:560px){.menu-panel{padding-left:1.4rem;padding-right:1.4rem;}.logo{font-size:1.08rem;}}
 </style>
 </head>
 <body>
 <a href="#" class="back-btn" onclick="history.back();return false;">← Voltar</a>
 <nav>
   <a href="/" class="logo">Vértice<span>.</span></a>
-  <a href="/#contato" class="nav-cta">Pré-análise gratuita →</a>
+  <div class="nav-actions">
+    <a href="/#contato" class="nav-cta">Pré-análise gratuita →</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuPanel">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
 </nav>
 
+<div class="menu-overlay" id="menuOverlay"></div>
+<aside class="menu-panel" id="menuPanel" aria-hidden="true">
+  <div class="menu-kicker">Navegação</div>
+  <div class="menu-title">Todas as páginas da <em>Vértice</em></div>
+  <div class="menu-links">
+    <a href="/"><strong>Início</strong><span>→</span></a>
+    <a href="/#simulador"><strong>Simulador</strong><span>→</span></a>
+    <a href="/#contato"><strong>Contato</strong><span>→</span></a>
+    <a href="/agropecuaria"><strong>Agropecuária</strong><span>→</span></a>
+    <a href="/industria"><strong>Indústria</strong><span>→</span></a>
+    <a href="/agroindustria"><strong>Agroindústria</strong><span>→</span></a>
+    <a href="/saneamento"><strong>Saneamento</strong><span>→</span></a>
+    <a href="/politica-de-privacidade"><strong>Política de privacidade</strong><span>→</span></a>
+  </div>
+  <div class="menu-foot">Acesse rapidamente as áreas de atuação, o simulador e o contato da Vértice.</div>
+</aside>
+
 <section class="hero-sp">
-  <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1400&q=80&fit=crop" alt="Indústria alimentícia">
+  <img src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=1600&q=80&fit=crop" alt="Estrutura industrial com potencial para aproveitamento energético">
   <div class="hero-sp-inner">
-    <div class="eyebrow">Biogás para Indústria</div>
-    <h1>Você paga para tratar<br>o efluente. E ainda compra<br><em>energia por fora.</em></h1>
-    <p class="lead">Laticínios, frigoríficos, cervejarias e processadoras gastam duas vezes: uma para descartar o efluente, outra para pagar a conta de energia. O biodigestor pode conectar esses dois custos — mas só vale avançar se o seu processo fechar.</p>
+    <div class="eyebrow">Biogás para Indústria Alimentícia</div>
+    <h1>Seu efluente pode estar<br>carregando energia.<br><em>E custo operacional também.</em></h1>
+    <p class="lead">Laticínios, frigoríficos, abatedouros, fábricas de bebidas e processadoras de alimentos lidam com matéria orgânica, efluentes e consumo energético. O biogás pode conectar essas duas pontas — mas só faz sentido se a viabilidade fechar.</p>
     <div class="hero-btns">
       <a href="/#contato" class="btn-primary">Quero minha análise gratuita</a>
-      <a href="#potencial" class="btn-ghost">Ver potencial por efluente</a>
+      <a href="#operacoes" class="btn-ghost">Ver tipos de indústria</a>
     </div>
   </div>
 </section>
@@ -118,20 +166,20 @@ footer p{font-size:0.78rem;color:var(--text-muted);}
     <div class="two">
       <div class="fi">
         <div class="sl">O problema</div>
-        <h2 class="st">Dois custos separados que poderiam ser uma solução.</h2>
+        <h2 class="st">A indústria paga para tratar o efluente e para comprar energia.</h2>
         <div class="dv"></div>
-        <p class="sb">A indústria alimentícia gera efluente com alto teor orgânico todo turno. Esse efluente entra como custo de tratamento e adequação ambiental — enquanto a planta continua comprando vapor, água quente e eletricidade.</p>
+        <p class="sb">Quando o processo industrial gera alta carga orgânica, o efluente deixa de ser apenas um problema ambiental. Ele também pode representar uma fonte de energia química ainda não aproveitada.</p>
         <br>
-        <p class="sb">O biodigestor pode reduzir o custo do tratamento e gerar energia ao mesmo tempo. Mas o projeto precisa respeitar a variação de produção, a qualidade do efluente e o que a planta realmente consome.</p>
-        <div class="pq">"Pago para tratar o efluente e ainda compro energia. Quero saber se esses dois custos podem virar um projeto."</div>
+        <p class="sb">A questão não é simplesmente instalar um biodigestor. A questão é saber se o volume, a concentração orgânica, a rotina produtiva e a demanda energética justificam o investimento.</p>
+        <div class="pq">"Antes de comprar tecnologia, a indústria precisa saber se o resíduo fecha a conta energética e econômica."</div>
       </div>
       <div class="fi fi-d2">
         <div class="hb">
-          <h3>O que precisa ser avaliado</h3>
-          <div class="ci-item"><span class="ci-icon">→</span><div><strong>Carga orgânica do efluente.</strong> Quantidade de matéria orgânica, óleos, graxas e sólidos definem o potencial de geração de biogás.</div></div>
-          <div class="ci-item"><span class="ci-icon">→</span><div><strong>Variação operacional.</strong> Turnos, limpeza com produtos químicos, sazonalidade e picos de lavagem podem desestabilizar o biodigestor.</div></div>
-          <div class="ci-item"><span class="ci-icon">→</span><div><strong>Demanda energética real.</strong> Vapor, água quente, caldeira, motores e eletricidade precisam ser mapeados antes de escolher a rota de uso do biogás.</div></div>
-          <div class="ci-item"><span class="ci-icon">→</span><div><strong>Integração com o tratamento existente.</strong> O biodigestor entra na estação de tratamento — não a substitui. Precisa se encaixar no que já existe.</div></div>
+          <h3>Por que muitos projetos travam</h3>
+          <div class="ci-item"><span class="ci-icon">→</span><div><strong>O efluente varia.</strong> Produção, limpeza, turnos e sazonalidade mudam vazão e carga orgânica.</div></div>
+          <div class="ci-item"><span class="ci-icon">→</span><div><strong>Energia e resíduo são analisados separados.</strong> A viabilidade aparece quando os dois custos entram na mesma conta.</div></div>
+          <div class="ci-item"><span class="ci-icon">→</span><div><strong>A tecnologia é escolhida cedo demais.</strong> Biodigestor, tratamento do gás e uso energético dependem dos dados reais da operação.</div></div>
+          <div class="ci-item"><span class="ci-icon">→</span><div><strong>O digestato e o lodo são esquecidos.</strong> O projeto precisa prever o que entra, o que vira gás e o que continua precisando de manejo.</div></div>
         </div>
       </div>
     </div>
@@ -141,34 +189,34 @@ footer p{font-size:0.78rem;color:var(--text-muted);}
 <section class="cs">
   <div class="ci">
     <div class="fi" style="margin-bottom:3rem;">
-      <div class="sl">O que o biodigestor resolve</div>
-      <h2 class="st">O efluente para de ser só custo.</h2>
+      <div class="sl">O que o biogás pode resolver</div>
+      <h2 class="st">Menos custo energético, melhor gestão do efluente e decisão com número.</h2>
       <div class="dv"></div>
-      <p class="sb" style="max-width:720px;">A biodigestão reduz a carga orgânica do efluente e gera biogás para uso interno. Mas a rota certa depende do que sua planta gera, do que ela consome e de quanto a operação pode ser controlada.</p>
+      <p class="sb" style="max-width:720px;">O biogás industrial pode ser usado para calor, eletricidade ou, em escalas maiores, purificação. Mas a rota certa depende do perfil da indústria e do retorno esperado.</p>
     </div>
     <div class="three">
-      <div class="fc fi"><div class="fi-icon">♨️</div><div class="ft">Menos gasto com vapor e aquecimento</div><div class="fd">O biogás pode alimentar caldeiras, aquecedores e queimadores — quando a produção de gás é compatível com a demanda da planta.</div></div>
-      <div class="fc fi fi-d2"><div class="fi-icon">⚡</div><div class="ft">Geração de energia elétrica</div><div class="fd">Possível quando há volume de gás regular e consumo elétrico que justifique o investimento em geração.</div></div>
-      <div class="fc fi fi-d3"><div class="fi-icon">💧</div><div class="ft">Menos carga no tratamento</div><div class="fd">O biodigestor reduz a carga orgânica antes das etapas seguintes, aliviando o tratamento e podendo reduzir custos operacionais da estação.</div></div>
-      <div class="fc fi"><div class="fi-icon">🧪</div><div class="ft">Controle de variabilidade</div><div class="fd">O estudo mapeia óleos, graxas, produtos de limpeza e variações de vazão — e define como preparar o efluente antes do biodigestor.</div></div>
-      <div class="fc fi fi-d2"><div class="fi-icon">📋</div><div class="ft">Mais robustez ambiental</div><div class="fd">Um tratamento mais eficiente organiza a planta para exigências de licenciamento e pode reduzir risco de autuação.</div></div>
-      <div class="fc fi fi-d3"><div class="fi-icon">📊</div><div class="ft">Decisão com número na mão</div><div class="fd">O estudo de viabilidade mostra o que o projeto gera, o que custa e se o retorno justifica o investimento — antes de comprar qualquer equipamento.</div></div>
+      <div class="fc fi"><div class="fi-icon">🔥</div><div class="ft">Uso térmico no processo</div><div class="fd">Pode substituir parte do GLP, lenha, óleo ou gás natural em caldeiras, aquecimento de água e processos térmicos.</div></div>
+      <div class="fc fi fi-d2"><div class="fi-icon">⚡</div><div class="ft">Geração elétrica</div><div class="fd">Quando há produção regular de gás, o biogás pode alimentar motogeradores e reduzir parte do consumo da rede.</div></div>
+      <div class="fc fi fi-d3"><div class="fi-icon">🧪</div><div class="ft">Tratamento de efluente</div><div class="fd">A digestão anaeróbia pode reduzir parte da carga orgânica e integrar o sistema de tratamento existente.</div></div>
+      <div class="fc fi"><div class="fi-icon">📉</div><div class="ft">Redução de OPEX</div><div class="fd">O projeto só faz sentido quando reduz custos de energia e tratamento em proporção suficiente para pagar operação e investimento.</div></div>
+      <div class="fc fi fi-d2"><div class="fi-icon">📋</div><div class="ft">Base para decisão</div><div class="fd">O EVTE mostra potencial, rota tecnológica, CAPEX estimado, economia possível e tempo de retorno.</div></div>
+      <div class="fc fi fi-d3"><div class="fi-icon">🌱</div><div class="ft">Imagem e sustentabilidade</div><div class="fd">Além da economia, o projeto pode fortalecer indicadores ambientais e reduzir emissões associadas ao tratamento e à energia.</div></div>
     </div>
   </div>
 </section>
 
-<section class="cs bg2" id="cadeias">
+<section class="cs bg2" id="operacoes">
   <div class="ci">
-    <div class="fi" style="margin-bottom:3rem;"><div class="sl">Qual é o seu setor?</div><h2 class="st">Cada indústria tem um efluente diferente.</h2><div class="dv"></div></div>
-    <div class="two">
-      <div class="fi">
-        <div class="hb" style="margin-bottom:1.5rem;"><h3>Laticínios</h3><p>Soro de leite, água de lavagem e efluentes de processo têm alto potencial — mas o soro puro pode acidificar rápido. O estudo avalia volume, variação e demanda térmica.</p><div class="tags"><span class="tag">Queijo</span><span class="tag">Iogurte</span><span class="tag">UHT</span><span class="tag">Soro</span></div></div>
-        <div class="hb"><h3>Frigoríficos</h3><p>Efluente de abate tem alto potencial, mas óleos, graxas e proteínas exigem pré-tratamento cuidadoso antes do biodigestor.</p><div class="tags"><span class="tag">Bovinos</span><span class="tag">Suínos</span><span class="tag">Aves</span><span class="tag">Abate</span></div></div>
-      </div>
-      <div class="fi fi-d2">
-        <div class="hb" style="margin-bottom:1.5rem;"><h3>Bebidas e processadoras</h3><p>Cervejarias, sucos e alimentos processados têm composição variável. A estabilidade da operação é o que define se o projeto é viável.</p><div class="tags"><span class="tag">Cerveja</span><span class="tag">Suco</span><span class="tag">Conservas</span><span class="tag">Alimentos</span></div></div>
-        <div class="hb"><h3>Oleaginosas e ingredientes</h3><p>Processamento de soja, palma e girassol gera efluentes com potencial de codigestão, mas a composição real precisa ser avaliada.</p><div class="tags"><span class="tag">Soja</span><span class="tag">Palma</span><span class="tag">Girassol</span><span class="tag">Canola</span></div></div>
-      </div>
+    <div class="fi" style="margin-bottom:3rem;">
+      <div class="sl">Tipos de indústria</div>
+      <h2 class="st">Cada operação tem um resíduo, uma rotina e uma demanda energética.</h2>
+      <div class="dv"></div>
+    </div>
+    <div class="grid-sub">
+      <div class="hb fi"><h3>🥛 Laticínios</h3><p>Efluentes com carga orgânica relevante, variação por limpeza, soro, leite residual e rotina de produção. O potencial depende da separação e do tratamento existente.</p><div class="tags"><span class="tag">Leite</span><span class="tag">Soro</span><span class="tag">CIP</span></div></div>
+      <div class="hb fi fi-d2"><h3>🥩 Frigoríficos e abatedouros</h3><p>Geram efluentes e resíduos com alta carga orgânica. O projeto precisa considerar gordura, sangue, sólidos, odores e integração com a ETE.</p><div class="tags"><span class="tag">Frigorífico</span><span class="tag">Abate</span><span class="tag">Gordura</span></div></div>
+      <div class="hb fi"><h3>🥤 Bebidas e cervejarias</h3><p>Processos com lavagem, bagaços, leveduras, açúcares e efluentes orgânicos podem ter bom potencial, especialmente quando há demanda térmica constante.</p><div class="tags"><span class="tag">Cervejaria</span><span class="tag">Bebidas</span><span class="tag">Açúcares</span></div></div>
+      <div class="hb fi fi-d2"><h3>🍞 Processadoras de alimentos</h3><p>Indústrias de molhos, massas, conservas, vegetais e alimentos prontos podem gerar resíduos orgânicos com potencial, mas muito dependente da composição.</p><div class="tags"><span class="tag">Alimentos</span><span class="tag">Processamento</span><span class="tag">Efluente</span></div></div>
     </div>
   </div>
 </section>
@@ -177,17 +225,12 @@ footer p{font-size:0.78rem;color:var(--text-muted);}
   <div class="ci">
     <div class="fi" style="margin-bottom:2rem;">
       <div class="sl">Potencial por resíduo</div>
-      <h2 class="st">Quanto biogás o seu resíduo pode gerar?</h2>
+      <h2 class="st">Quanto biogás seu processo pode gerar?</h2>
       <div class="dv"></div>
-      <p class="sb" style="max-width:720px;">Você paga para tratar o efluente e ainda compra energia. O estudo de viabilidade calcula se dá para resolver os dois com um projeto só.</p>
+      <p class="sb" style="max-width:720px;">A simulação inicial ajuda a abrir a conversa. O estudo completo entra nos dados reais de vazão, carga orgânica, consumo energético e custos atuais.</p>
       <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;align-items:center;">
-        <a href="/simulador.html" class="btn-ghost" style="display:inline-flex;align-items:center;gap:0.5rem;">
-          Simular meu potencial →
-        </a>
-        <a href="https://wa.me/5519971315434?text=Ol%C3%A1!%20Tenho%20interesse%20em%20uma%20an%C3%A1lise%20gratuita%20de%20biog%C3%A1s%20para%20minha%20ind%C3%BAstria." class="btn-wpp" target="_blank" style="display:inline-flex;align-items:center;gap:0.6rem;background:#25d366;color:#fff;padding:0.9rem 1.8rem;border-radius:4px;font-size:0.9rem;font-weight:700;text-decoration:none;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Falar no WhatsApp
-        </a>
+        <a href="/simulador.html?origem=industria" class="btn-ghost" style="display:inline-flex;align-items:center;gap:0.5rem;">Simular meu potencial →</a>
+        <a href="https://wa.me/5519971315434?text=Ol%C3%A1!%20Tenho%20interesse%20em%20uma%20an%C3%A1lise%20gratuita%20de%20biog%C3%A1s%20para%20ind%C3%BAstria%20aliment%C3%ADcia." class="btn-wpp" target="_blank" style="display:inline-flex;align-items:center;gap:0.6rem;background:#25d366;color:#fff;padding:0.9rem 1.8rem;border-radius:4px;font-size:0.9rem;font-weight:700;text-decoration:none;"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Falar no WhatsApp</a>
       </div>
       <p style="margin-top:0.8rem;font-size:0.78rem;color:var(--text-muted);">A simulação dá uma ideia. O WhatsApp transforma número em projeto.</p>
     </div>
@@ -196,28 +239,28 @@ footer p{font-size:0.78rem;color:var(--text-muted);}
 
 <section class="cs bg2" id="como-avaliamos">
   <div class="ci">
-    <div class="fi" style="margin-bottom:3rem;"><div class="sl">Como avaliamos</div><h2 class="st">O estudo conecta efluente, processo e demanda de energia.</h2><div class="dv"></div><p class="sb" style="max-width:720px;">Na indústria, o projeto só funciona quando o biodigestor se encaixa na estação de tratamento, na rotina de produção e na forma como a planta consome energia.</p></div>
+    <div class="fi" style="margin-bottom:3rem;"><div class="sl">Como avaliamos</div><h2 class="st">O estudo parte dos dados reais da fábrica.</h2><div class="dv"></div><p class="sb" style="max-width:720px;">Na indústria, estimativa genérica quase sempre erra. É preciso olhar para vazão, DQO, sólidos, rotina de produção, consumo energético e restrições operacionais.</p></div>
     <div class="three">
-      <div class="fc fi"><div class="fi-icon">01</div><div class="ft">Mapeamento dos efluentes</div><div class="fd">Quais fluxos existem, em que volume, em que horário e onde se misturam ao longo do turno.</div></div>
-      <div class="fc fi fi-d2"><div class="fi-icon">02</div><div class="ft">Qualidade do efluente</div><div class="fd">Carga orgânica, óleos, graxas, pH, temperatura e o que pode inibir o processo biológico.</div></div>
-      <div class="fc fi fi-d3"><div class="fi-icon">03</div><div class="ft">Preparo antes do biodigestor</div><div class="fd">Equalização, separação de sólidos, flotação e ajustes necessários para estabilizar a alimentação.</div></div>
-      <div class="fc fi"><div class="fi-icon">04</div><div class="ft">Rota de uso do biogás</div><div class="fd">Caldeira, geração elétrica ou combinação — a rota depende do que a planta consome e do que o projeto gera.</div></div>
-      <div class="fc fi fi-d2"><div class="fi-icon">05</div><div class="ft">Integração com a ETE</div><div class="fd">Como o biodigestor entra nas etapas de tratamento existentes sem criar um problema operacional novo.</div></div>
-      <div class="fc fi fi-d3"><div class="fi-icon">06</div><div class="ft">A resposta final</div><div class="fd">Vale avançar ou não? O estudo mostra o investimento, a economia estimada e o tempo de retorno.</div></div>
+      <div class="fc fi"><div class="fi-icon">01</div><div class="ft">Diagnóstico do processo</div><div class="fd">Setor, linhas de produção, turnos, sazonalidade, limpeza, vazões e pontos de geração de resíduo.</div></div>
+      <div class="fc fi fi-d2"><div class="fi-icon">02</div><div class="ft">Caracterização do efluente</div><div class="fd">Carga orgânica, sólidos, gordura, variação diária e necessidade de pré-tratamento.</div></div>
+      <div class="fc fi fi-d3"><div class="fi-icon">03</div><div class="ft">Potencial de biogás</div><div class="fd">Estimativa da produção de biogás e metano com base na matéria orgânica disponível.</div></div>
+      <div class="fc fi"><div class="fi-icon">04</div><div class="ft">Rota de uso</div><div class="fd">Uso térmico, elétrico, combinado ou purificação, conforme consumo e escala da unidade.</div></div>
+      <div class="fc fi fi-d2"><div class="fi-icon">05</div><div class="ft">Integração com a ETE</div><div class="fd">Avaliação de compatibilidade com tratamento existente, lodo, digestato, odor e operação.</div></div>
+      <div class="fc fi fi-d3"><div class="fi-icon">06</div><div class="ft">A resposta final</div><div class="fd">O projeto fecha ou não? O estudo mostra investimento, economia estimada, riscos e tempo de retorno.</div></div>
     </div>
   </div>
 </section>
 
 <section class="cs" id="faq">
   <div class="ci">
-    <div class="fi" style="margin-bottom:2rem;"><div class="sl">Perguntas frequentes</div><h2 class="st">O que as indústrias mais perguntam.</h2><div class="dv"></div></div>
+    <div class="fi" style="margin-bottom:2rem;"><div class="sl">Perguntas frequentes</div><h2 class="st">O que a indústria costuma perguntar.</h2><div class="dv"></div></div>
     <div class="faq-grid">
-      <div class="hb fi"><h3>Todo efluente industrial serve para biodigestor?</h3><p class="sb">Não. É preciso avaliar a carga orgânica, óleos, graxas, produtos de limpeza e estabilidade da vazão. O estudo define se o seu efluente sustenta o projeto.</p></div>
-      <div class="hb fi fi-d2"><h3>O biodigestor substitui a estação de tratamento?</h3><p class="sb">Não. Ele entra como uma etapa anaeróbia dentro do tratamento, reduzindo a carga orgânica antes das etapas seguintes.</p></div>
-      <div class="hb fi"><h3>A limpeza química da planta atrapalha?</h3><p class="sb">Pode. Produtos de limpeza e variação de pH afetam o processo biológico. O projeto precisa prever equalização para absorver esses picos.</p></div>
-      <div class="hb fi fi-d2"><h3>Aquecimento ou geração elétrica — o que é melhor?</h3><p class="sb">Depende do que sua planta mais consome. O estudo compara as duas rotas antes de recomendar qualquer equipamento.</p></div>
-      <div class="hb fi"><h3>Precisa de análise laboratorial do efluente?</h3><p class="sb">Para um estudo mais confiável, sim. Dados de carga orgânica, óleos e graxas tornam a estimativa muito mais segura e evitam surpresas na implantação.</p></div>
-      <div class="hb fi fi-d2"><h3>O projeto ajuda no licenciamento?</h3><p class="sb">Pode organizar os dados e fortalecer a robustez técnica do tratamento, mas não substitui as exigências do órgão ambiental.</p></div>
+      <div class="hb fi"><h3>Todo efluente industrial serve para biogás?</h3><p class="sb">Não. Depende da carga orgânica, da biodegradabilidade, da presença de gordura, produtos químicos, temperatura e variação do processo.</p></div>
+      <div class="hb fi fi-d2"><h3>O biogás pode substituir gás natural ou GLP?</h3><p class="sb">Pode substituir parcialmente em alguns casos, principalmente em uso térmico. Mas a produção precisa ser suficiente e o gás precisa ser tratado.</p></div>
+      <div class="hb fi"><h3>Precisa parar a fábrica para instalar?</h3><p class="sb">Não necessariamente. Mas a implantação precisa ser planejada para não afetar a operação, a ETE e a rotina produtiva.</p></div>
+      <div class="hb fi fi-d2"><h3>O biodigestor substitui a ETE?</h3><p class="sb">Não. Normalmente ele integra o tratamento. A indústria ainda pode precisar de etapas complementares para atender aos padrões ambientais.</p></div>
+      <div class="hb fi"><h3>Qual setor industrial tem mais potencial?</h3><p class="sb">Indústrias alimentícias com alta carga orgânica tendem a ser boas candidatas, como laticínios, frigoríficos, bebidas e processadoras.</p></div>
+      <div class="hb fi fi-d2"><h3>O estudo já define o fornecedor do equipamento?</h3><p class="sb">Não. O estudo define se vale avançar, qual rota faz sentido e quais critérios técnicos devem orientar fornecedores e propostas.</p></div>
     </div>
   </div>
 </section>
@@ -225,10 +268,10 @@ footer p{font-size:0.78rem;color:var(--text-muted);}
 <section class="ctastrip" id="contato">
   <div class="ctasi fi">
     <div class="sl">Próximo passo</div>
-    <h2>Dois custos operacionais.<br><em>Uma decisão que precisa de número.</em></h2>
-    <p>A análise inicial é gratuita. Diga o tipo de efluente, o volume gerado, o tratamento atual e o que mais pesa na sua conta de energia. Com isso já dá para saber se vale avançar. <strong>Sem compromisso.</strong></p>
+    <h2>Seu efluente pode ser custo.<br><em>Ou pode virar parte da solução energética.</em></h2>
+    <p>A análise inicial é gratuita. Diga o tipo de indústria, cidade, consumo de energia e tipo de efluente ou resíduo gerado. Com isso já dá para saber se vale avançar para um estudo completo. <strong>Sem compromisso.</strong></p>
     <div class="ctabtns">
-      <a href="https://wa.me/5519971315434?text=Ol%C3%A1!%20Tenho%20interesse%20em%20uma%20an%C3%A1lise%20gratuita%20de%20biog%C3%A1s%20para%20minha%20ind%C3%BAstria." class="btn-wpp" target="_blank">
+      <a href="https://wa.me/5519971315434?text=Ol%C3%A1!%20Tenho%20interesse%20em%20uma%20an%C3%A1lise%20gratuita%20de%20biog%C3%A1s%20para%20ind%C3%BAstria%20aliment%C3%ADcia." class="btn-wpp" target="_blank">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Falar no WhatsApp
       </a>
@@ -246,5 +289,68 @@ footer p{font-size:0.78rem;color:var(--text-muted);}
 const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('vis');obs.unobserve(el.target);}});},{threshold:0.1});
 document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
 </script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var btnSim = document.querySelector('a[href*="simulador.html"]');
+  if(btnSim){
+    btnSim.addEventListener('click', function(){
+      sessionStorage.setItem('vertice_scroll_origem', window.scrollY);
+      sessionStorage.setItem('vertice_scroll_page', window.location.pathname);
+    });
+  }
+
+  var y = sessionStorage.getItem('vertice_restore_scroll');
+  if(y){
+    sessionStorage.removeItem('vertice_restore_scroll');
+    window.addEventListener('load', function(){
+      setTimeout(function(){ window.scrollTo({top: parseInt(y), behavior:'instant'}); }, 80);
+    });
+  }
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  const menuToggle = document.getElementById('menuToggle');
+  const menuPanel = document.getElementById('menuPanel');
+  const menuOverlay = document.getElementById('menuOverlay');
+
+  function openMenu(){
+    menuToggle.classList.add('active');
+    menuPanel.classList.add('active');
+    menuOverlay.classList.add('active');
+    menuToggle.setAttribute('aria-expanded','true');
+    menuPanel.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+  }
+
+  function closeMenu(){
+    menuToggle.classList.remove('active');
+    menuPanel.classList.remove('active');
+    menuOverlay.classList.remove('active');
+    menuToggle.setAttribute('aria-expanded','false');
+    menuPanel.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+  }
+
+  if(menuToggle && menuPanel && menuOverlay){
+    menuToggle.addEventListener('click', function(){
+      menuPanel.classList.contains('active') ? closeMenu() : openMenu();
+    });
+
+    menuOverlay.addEventListener('click', closeMenu);
+
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape') closeMenu();
+    });
+
+    document.querySelectorAll('.menu-links a').forEach(function(link){
+      link.addEventListener('click', closeMenu);
+    });
+  }
+});
+</script>
+
 </body>
 </html>
