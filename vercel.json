@@ -1,8 +1,24 @@
 {
   "routes": [
-    { "src": "/agropecuaria", "dest": "/agropecuaria.html" },
-    { "src": "/industria", "dest": "/industria.html" },
-    { "src": "/saneamento", "dest": "/saneamento.html" },
-    { "src": "/agroindustria", "dest": "/agroindustria.html" }
+    {
+      "src": "/agropecuaria",
+      "dest": "/agropecuaria.html"
+    },
+    {
+      "src": "/industria",
+      "dest": "/industria.html"
+    },
+    {
+      "src": "/saneamento",
+      "dest": "/saneamento.html"
+    },
+    {
+      "src": "/agroindustria",
+      "dest": "/agroindustria.html"
+    },
+    {
+      "src": "/politica-de-privacidade",
+      "dest": "/politica-de-privacidade.html"
+    }
   ]
 }
