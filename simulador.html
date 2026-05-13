@@ -1,282 +1,466 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Simulador de Potencial de Biogás | Vértice Consultoria Energética</title>
-<meta name="description" content="Simule uma estimativa inicial de produção de biogás, metano e equivalência energética a partir do seu resíduo orgânico.">
+<meta name="description" content="Simule uma estimativa inicial de potencial de biogás, metano e equivalência energética a partir de resíduos orgânicos.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://verticebiogas.com.br/simulador.html">
-<meta property="og:title" content="Simulador de Potencial de Biogás | Vértice">
-<meta property="og:description" content="Faça uma estimativa inicial do potencial de biogás do seu resíduo orgânico e valide os números com a Vértice.">
-<meta property="og:type" content="website"><meta property="og:url" content="https://verticebiogas.com.br/simulador.html"><meta property="og:locale" content="pt_BR">
+<link rel="canonical" href="https://verticebiogas.com.br/simulador">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{--green:#2d6a4f;--green-light:#40916c;--green-pale:#d8f3dc;--amber:#e9c46a;--dark:#0d1b12;--dark-2:#162218;--dark-3:#1e2e22;--text:#e8f0ea;--text-muted:#8aab92;--border:rgba(64,145,108,0.2);}
-*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
 body{background:var(--dark);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
 body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:0.4;}
+
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;background:rgba(13,27,18,0.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);}
 .logo{font-family:'DM Serif Display',serif;font-size:1.25rem;letter-spacing:0.02em;text-decoration:none;color:var(--text);}
 .logo span{color:var(--amber);}
-.nav-cta{background:var(--amber);color:var(--dark);padding:0.55rem 1.3rem;border-radius:3px;font-size:0.82rem;font-weight:600;text-decoration:none;letter-spacing:0.04em;transition:background 0.2s;}
+.nav-cta{background:var(--amber);color:var(--dark);padding:0.55rem 1.3rem;border-radius:3px;font-size:0.82rem;font-weight:600;text-decoration:none;letter-spacing:0.04em;transition:background 0.2s;white-space:nowrap;}
 .nav-cta:hover{background:#f5d585;}
-.section-label{font-size:0.7rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--green-light);margin-bottom:0.8rem;}
-.section-title{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,4vw,3rem);line-height:1.15;margin-bottom:1.2rem;}
-.divider{width:48px;height:2px;background:var(--amber);margin:1.5rem 0;}
-.calc-section{background:var(--dark-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:6rem 2.5rem;position:relative;overflow:hidden;}
-.calc-section::before{content:'';position:absolute;bottom:-10%;left:-5%;width:500px;height:500px;background:radial-gradient(circle,rgba(45,106,79,0.1) 0%,transparent 65%);pointer-events:none;}
-.calc-inner{max-width:1100px;margin:0 auto;}
-.calc-header{margin-bottom:2.5rem;}
-.calc-header p{font-size:0.95rem;color:var(--text-muted);line-height:1.7;max-width:560px;margin-top:0.8rem;}
-.calc-card{background:var(--dark-3);border:1px solid var(--border);border-radius:10px;padding:2.5rem;}
-.calc-row{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem;}
-@media(max-width:640px){.calc-row{grid-template-columns:1fr;}}
-.calc-field label{display:block;font-size:0.72rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.5rem;}
-.calc-field select,.calc-field input{width:100%;background:var(--dark-2);border:1px solid var(--border);border-radius:4px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:300;padding:0.75rem 1rem;transition:border-color 0.2s;appearance:none;-webkit-appearance:none;}
-.calc-field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238aab92' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem;cursor:pointer;}
-.calc-field select option{background:#1e2e22;}
-.calc-field input:focus,.calc-field select:focus{outline:none;border-color:var(--green-light);background:rgba(64,145,108,0.05);}
-.calc-field input::placeholder{color:rgba(138,171,146,0.4);}
-.btn-calc{background:var(--green-light);color:#fff;border:none;cursor:pointer;padding:0.85rem 2rem;border-radius:4px;font-size:0.9rem;font-weight:600;font-family:'DM Sans',sans-serif;letter-spacing:0.03em;transition:all 0.2s;width:100%;}
-.btn-calc:hover{background:var(--green);transform:translateY(-1px);}
-.calc-results{display:none;margin-top:2rem;padding-top:2rem;border-top:1px solid var(--border);}
-.calc-results.show{display:block;}
-.results-label{font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--green-light);margin-bottom:1.2rem;}
-.results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:1rem;}
-@media(max-width:700px){.results-grid{grid-template-columns:1fr 1fr;}}
-.result-card{background:var(--dark-2);border:1px solid var(--border);border-radius:6px;padding:1.2rem;text-align:center;}
-.result-num{font-family:'DM Serif Display',serif;font-size:1.6rem;color:var(--amber);line-height:1;margin-bottom:0.3rem;}
-.result-unit{font-size:0.72rem;color:var(--text-muted);margin-bottom:0.3rem;}
-.result-label{font-size:0.7rem;font-weight:600;color:var(--text);letter-spacing:0.03em;}
-.calc-disclaimer{font-size:0.73rem;color:var(--text-muted);line-height:1.6;padding:1rem;background:rgba(233,196,106,0.05);border:1px solid rgba(233,196,106,0.12);border-radius:4px;margin-top:1rem;}
-.calc-disclaimer strong{color:var(--amber);}
-.calc-cta-box{margin-top:1.5rem;padding:1.5rem;background:linear-gradient(135deg,var(--dark-3) 0%,rgba(45,106,79,0.12) 100%);border:1px solid rgba(64,145,108,0.3);border-radius:6px;display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap;}
-.calc-cta-box p{font-size:0.85rem;color:var(--text-muted);line-height:1.6;max-width:480px;}
-.calc-cta-box p strong{color:var(--text);}
-.btn-primary{background:var(--amber);color:var(--dark);padding:0.9rem 2rem;border-radius:4px;font-size:0.9rem;font-weight:600;text-decoration:none;letter-spacing:0.03em;transition:all 0.2s;display:inline-flex;align-items:center;gap:0.5rem;}
-.btn-primary:hover{background:#f5d585;transform:translateY(-2px);}
-.wpp-fixo{position:fixed;right:1.2rem;bottom:1.2rem;z-index:300;background:#25d366;color:#fff;text-decoration:none;border-radius:999px;padding:0.85rem 1.15rem;font-size:0.84rem;font-weight:700;letter-spacing:0.02em;display:flex;align-items:center;gap:0.55rem;box-shadow:0 8px 30px rgba(0,0,0,0.35);transition:transform 0.2s,background 0.2s;}
-.wpp-fixo:hover{background:#1ebe5d;transform:translateY(-2px);}
-.popup-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:500;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.2s;}
-.popup-overlay.show{opacity:1;pointer-events:all;}
-.popup-box{background:var(--dark-3);border:1px solid var(--border);border-radius:10px;padding:2rem;max-width:420px;width:90%;position:relative;}
-.popup-close{position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:1.1rem;line-height:1;}
-.popup-close:hover{color:var(--text);}
-.popup-title{font-family:'DM Serif Display',serif;font-size:1.2rem;margin-bottom:1rem;color:var(--text);}
-.popup-item{display:flex;justify-content:space-between;align-items:center;padding:0.7rem 0;border-bottom:1px solid var(--border);font-size:0.85rem;}
-.popup-item:last-child{border-bottom:none;}
-.popup-val{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--amber);}
-.popup-desc{color:var(--text-muted);font-size:0.78rem;margin-top:0.2rem;}
-.popup-note{font-size:0.72rem;color:var(--text-muted);margin-top:1rem;line-height:1.5;padding-top:0.8rem;border-top:1px solid var(--border);}
-.back-site-link{display:inline-flex;align-items:center;gap:0.45rem;margin-bottom:1.2rem;color:var(--amber);font-size:0.82rem;font-weight:600;text-decoration:none;letter-spacing:0.03em;transition:color 0.2s,transform 0.2s;}
-.back-site-link:hover{color:#f5d585;transform:translateX(-2px);}
-.simulador-page .calc-section{padding-top:9rem;position:relative;isolation:isolate;}
-.simulador-page .calc-section::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,27,18,0.95) 0%,rgba(13,27,18,0.82) 48%,rgba(13,27,18,0.5) 100%),url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1500&q=80&fit=crop');background-size:cover;background-position:center;opacity:0.22;z-index:-1;pointer-events:none;}
-.simulador-page .calc-inner{position:relative;z-index:1;}
-.simulador-page .calc-header .simulador-alerta{margin-top:1rem;padding:1rem 1.1rem;border-left:2px solid var(--amber);background:rgba(13,27,18,0.55);border-radius:0 6px 6px 0;font-size:0.82rem;color:var(--text-muted);line-height:1.65;}
-.simulador-page .calc-header .simulador-alerta strong{color:var(--amber);}
-footer.site-footer{padding:3.5rem 2.5rem 2rem;border-top:1px solid var(--border);background:var(--dark);display:block;}
-.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:2rem;align-items:start;}
-.footer-brand p,.footer-col p,.footer-small{font-size:0.78rem;color:var(--text-muted);line-height:1.65;}
-.footer-brand .logo{display:inline-block;margin-bottom:0.8rem;}
-.footer-col h4{font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--green-light);margin-bottom:0.8rem;}
-.footer-col a{display:inline-block;color:var(--text-muted);font-size:0.82rem;text-decoration:none;margin-bottom:0.45rem;transition:color 0.2s;}
-.footer-col a:hover{color:var(--amber);}
-.footer-lgpd{margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border);}
-.footer-bottom{max-width:1100px;margin:2rem auto 0;padding-top:1.2rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;}
-.footer-bottom p{font-size:0.74rem;color:var(--text-muted);}
-@media(max-width:760px){.footer-inner{grid-template-columns:1fr;gap:1.6rem;}footer.site-footer{padding:3rem 1.2rem 6rem;}}
-@media(max-width:600px){nav,.calc-section,footer{padding-left:1.2rem;padding-right:1.2rem;}}
-@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
-.fi{opacity:0;transform:translateY(20px);transition:opacity 0.75s ease,transform 0.75s ease;}
-.fi.vis{opacity:1;transform:translateY(0);}
-.fi-d2{transition-delay:0.15s;}
+.nav-actions{display:flex;align-items:center;gap:0.9rem;}
 
-.btn-voltar-flutuante{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);z-index:200;background:rgba(22,34,24,0.95);border:1px solid rgba(64,145,108,0.2);color:#8aab92;padding:0.6rem 1.4rem;border-radius:30px;font-size:0.8rem;text-decoration:none;display:flex;align-items:center;gap:0.5rem;backdrop-filter:blur(10px);transition:all 0.2s;white-space:nowrap;box-shadow:0 4px 20px rgba(0,0,0,0.4);}
-.btn-voltar-flutuante:hover{border-color:#40916c;color:#e8f0ea;}
-@media(max-width:520px){.wpp-fixo{right:1rem;}.btn-voltar-flutuante{font-size:0.75rem;padding:0.55rem 1.1rem;}}
+.menu-toggle{width:42px;height:38px;border:1px solid var(--border);background:rgba(22,34,24,0.92);border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer;transition:all 0.2s;z-index:1002;}
+.menu-toggle:hover{border-color:var(--green-light);}
+.menu-toggle span{width:20px;height:2px;background:var(--text);border-radius:999px;transition:all 0.25s;}
+.menu-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.menu-toggle.active span:nth-child(2){opacity:0;}
+.menu-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.menu-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:998;opacity:0;pointer-events:none;transition:opacity 0.25s;}
+.menu-overlay.active{opacity:1;pointer-events:auto;}
+.menu-panel{position:fixed;top:0;right:0;width:min(380px,88vw);height:100vh;background:rgba(13,27,18,0.98);border-left:1px solid var(--border);z-index:999;transform:translateX(100%);transition:transform 0.28s ease;box-shadow:-12px 0 40px rgba(0,0,0,0.42);padding:6.5rem 2rem 2rem;overflow-y:auto;}
+.menu-panel.active{transform:translateX(0);}
+.menu-kicker{font-size:0.68rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--green-light);margin-bottom:0.8rem;}
+.menu-title{font-family:'DM Serif Display',serif;font-size:1.8rem;line-height:1.1;margin-bottom:1.4rem;}
+.menu-title em{font-style:italic;color:var(--amber);}
+.menu-links{display:flex;flex-direction:column;gap:0.65rem;}
+.menu-links a{display:flex;justify-content:space-between;gap:1rem;align-items:center;text-decoration:none;color:var(--text-muted);padding:0.9rem 0;border-bottom:1px solid rgba(64,145,108,0.16);font-size:0.95rem;transition:color 0.2s,padding-left 0.2s;}
+.menu-links a:hover{color:var(--text);padding-left:0.25rem;}
+.menu-links a strong{color:var(--text);font-weight:500;}
+.menu-links a span{color:var(--amber);font-size:0.9rem;}
+.menu-foot{margin-top:2rem;padding:1rem;background:var(--dark-2);border:1px solid var(--border);border-radius:6px;font-size:0.78rem;line-height:1.6;color:var(--text-muted);}
+
+.back-floating{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);z-index:200;background:rgba(22,34,24,0.96);border:1px solid var(--border);color:var(--text-muted);padding:0.65rem 1.35rem;border-radius:30px;font-size:0.8rem;text-decoration:none;display:flex;align-items:center;gap:0.45rem;backdrop-filter:blur(10px);transition:all 0.2s;white-space:nowrap;box-shadow:0 4px 20px rgba(0,0,0,0.4);}
+.back-floating:hover{border-color:var(--green-light);color:var(--text);}
+
+.hero{min-height:68vh;display:flex;align-items:flex-end;padding:8rem 2.5rem 4rem;position:relative;overflow:hidden;}
+.hero::after{content:'';position:absolute;top:-25%;right:-12%;width:700px;height:700px;background:radial-gradient(circle,rgba(45,106,79,0.28) 0%,transparent 68%);pointer-events:none;}
+.hero-inner{position:relative;z-index:1;max-width:1100px;margin:0 auto;width:100%;}
+.eyebrow{font-size:0.75rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--amber);margin-bottom:1.4rem;opacity:0;animation:fadeUp 0.8s 0.2s forwards;}
+h1{font-family:'DM Serif Display',serif;font-size:clamp(2.45rem,5.6vw,4.8rem);line-height:1.05;max-width:880px;margin-bottom:1.5rem;opacity:0;animation:fadeUp 0.8s 0.4s forwards;}
+h1 em{font-style:italic;color:var(--green-light);}
+.lead{font-size:1.03rem;color:var(--text-muted);max-width:650px;line-height:1.75;margin-bottom:1.5rem;opacity:0;animation:fadeUp 0.8s 0.6s forwards;}
+.lead strong{color:var(--text);font-weight:500;}
+.warning{max-width:690px;background:rgba(233,196,106,0.08);border:1px solid rgba(233,196,106,0.2);border-left:3px solid var(--amber);border-radius:0 6px 6px 0;padding:1rem 1.15rem;color:var(--text-muted);font-size:0.88rem;line-height:1.65;opacity:0;animation:fadeUp 0.8s 0.8s forwards;}
+.warning strong{color:var(--amber);font-weight:600;}
+
+.calc-section{padding:5rem 2.5rem 6rem;background:var(--dark-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.calc-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:0.95fr 1.05fr;gap:2rem;align-items:start;}
+.calc-card,.results-card,.info-card{background:var(--dark-3);border:1px solid var(--border);border-radius:10px;padding:2rem;}
+.section-label{font-size:0.7rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--green-light);margin-bottom:0.8rem;}
+.section-title{font-family:'DM Serif Display',serif;font-size:clamp(1.7rem,3.5vw,2.6rem);line-height:1.15;margin-bottom:1rem;}
+.section-body{font-size:0.94rem;color:var(--text-muted);line-height:1.75;margin-bottom:1.5rem;}
+.divider{width:48px;height:2px;background:var(--amber);margin:1.2rem 0 1.5rem;}
+.form-grid{display:grid;grid-template-columns:1fr;gap:1rem;}
+.field label{display:block;font-size:0.72rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.5rem;}
+.field select,.field input{width:100%;background:var(--dark-2);border:1px solid var(--border);border-radius:4px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:300;padding:0.85rem 1rem;transition:border-color 0.2s;appearance:none;-webkit-appearance:none;}
+.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238aab92' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem;cursor:pointer;}
+.field select option{background:#1e2e22;}
+.field input:focus,.field select:focus{outline:none;border-color:var(--green-light);background:rgba(64,145,108,0.05);}
+.field small{display:block;margin-top:0.45rem;font-size:0.74rem;line-height:1.5;color:var(--text-muted);}
+.actions{display:flex;gap:0.85rem;flex-wrap:wrap;margin-top:1.4rem;}
+.btn-primary{background:var(--amber);color:var(--dark);padding:0.9rem 1.6rem;border:0;border-radius:4px;font-size:0.9rem;font-weight:700;text-decoration:none;letter-spacing:0.03em;transition:all 0.2s;display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;cursor:pointer;font-family:'DM Sans',sans-serif;}
+.btn-primary:hover{background:#f5d585;transform:translateY(-2px);}
+.btn-secondary{border:1px solid var(--border);background:transparent;color:var(--text-muted);padding:0.9rem 1.6rem;border-radius:4px;font-size:0.9rem;text-decoration:none;transition:all 0.2s;display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;cursor:pointer;font-family:'DM Sans',sans-serif;}
+.btn-secondary:hover{border-color:var(--green-light);color:var(--text);}
+.btn-wpp{background:#25d366;color:#fff;padding:0.9rem 1.6rem;border-radius:4px;font-size:0.9rem;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;transition:all 0.2s;}
+.btn-wpp:hover{background:#1ebe5d;transform:translateY(-2px);}
+.results-card{display:none;}
+.results-card.show{display:block;animation:fadeUp 0.45s ease forwards;}
+.result-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin:1.2rem 0 1.4rem;}
+.result-box{background:var(--dark-2);border:1px solid var(--border);border-radius:8px;padding:1.25rem;}
+.result-label{font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green-light);font-weight:600;margin-bottom:0.5rem;}
+.result-value{font-family:'DM Serif Display',serif;font-size:2rem;color:var(--amber);line-height:1;margin-bottom:0.35rem;}
+.result-unit{font-size:0.78rem;color:var(--text-muted);line-height:1.45;}
+.result-note{font-size:0.82rem;color:var(--text-muted);line-height:1.65;border-top:1px solid var(--border);padding-top:1rem;margin-top:1rem;}
+.result-note strong{color:var(--text);font-weight:500;}
+.info-card{margin-top:1rem;background:rgba(22,34,24,0.72);}
+.info-list{display:flex;flex-direction:column;gap:0.85rem;}
+.info-item{display:flex;gap:0.75rem;font-size:0.84rem;color:var(--text-muted);line-height:1.6;}
+.info-item span{color:var(--amber);flex-shrink:0;}
+.info-item strong{color:var(--text);font-weight:500;}
+.source-box{margin-top:1rem;background:rgba(233,196,106,0.06);border:1px solid rgba(233,196,106,0.18);border-radius:8px;padding:1rem;font-size:0.78rem;color:var(--text-muted);line-height:1.6;}
+.source-box strong{color:var(--amber);}
+
+.cta-section{padding:5rem 2.5rem 6rem;}
+.cta-inner{max-width:760px;margin:0 auto;text-align:center;}
+.cta-inner h2{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,4vw,3rem);line-height:1.15;margin-bottom:1rem;}
+.cta-inner h2 em{font-style:italic;color:var(--green-light);}
+.cta-inner p{font-size:0.95rem;color:var(--text-muted);line-height:1.75;margin-bottom:2rem;}
+.cta-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+footer{padding:2rem 2.5rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+footer p{font-size:0.78rem;color:var(--text-muted);}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+@media(max-width:900px){nav{padding:1rem 1.25rem;}.nav-cta{display:none;}.calc-inner{grid-template-columns:1fr;}.hero,.calc-section,.cta-section,footer{padding-left:1.3rem;padding-right:1.3rem;}.result-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.logo{font-size:1.08rem;}.menu-panel{padding-left:1.4rem;padding-right:1.4rem;}.hero{min-height:74vh;}h1{font-size:2.35rem;}.lead{font-size:0.96rem;}.calc-card,.results-card,.info-card{padding:1.35rem;}.result-grid{grid-template-columns:1fr;}.actions a,.actions button,.cta-actions a{width:100%;}.back-floating{font-size:0.76rem;padding:0.6rem 1.05rem;}}
 </style>
-<script>
-window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-18148435351');
-function gtag_report_conversion(url){var cb=function(){if(typeof url!='undefined')window.location=url;};gtag('event','conversion',{'send_to':'AW-18148435351/ikWACKnw0akcEJfL7M1D','value':1.0,'currency':'BRL','event_callback':cb});return false;}
-</script>
 </head>
-<body class="simulador-page">
+<body>
+<a href="/" class="back-floating" id="backToSite">← Voltar para o site principal</a>
+
 <nav>
   <a href="/" class="logo">Vértice<span>.</span></a>
-  <a href="https://wa.me/5519971315434" class="nav-cta" target="_blank">Falar no WhatsApp →</a>
+  <div class="nav-actions">
+    <a href="/#contato" class="nav-cta">Solicitar análise</a>
+    <button type="button" class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuPanel">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
-<a href="https://wa.me/5519971315434" class="wpp-fixo" target="_blank">
-  <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-  Analisar meu potencial
-</a>
 
-<section class="calc-section" id="calculadora">
+<div class="menu-overlay" id="menuOverlay"></div>
+<aside class="menu-panel" id="menuPanel" aria-hidden="true">
+  <div class="menu-kicker">Navegação</div>
+  <div class="menu-title">Todas as páginas da <em>Vértice</em></div>
+  <div class="menu-links">
+    <a href="/"><strong>Início</strong><span>→</span></a>
+    <a href="/simulador.html"><strong>Simulador</strong><span>→</span></a>
+    <a href="/#contato"><strong>Contato</strong><span>→</span></a>
+    <a href="/agropecuaria"><strong>Agropecuária</strong><span>→</span></a>
+    <a href="/industria"><strong>Indústria</strong><span>→</span></a>
+    <a href="/agroindustria"><strong>Agroindústria</strong><span>→</span></a>
+    <a href="/saneamento"><strong>Saneamento</strong><span>→</span></a>
+  </div>
+  <div class="menu-foot">Acesse rapidamente as áreas de atuação, o simulador e o contato da Vértice.</div>
+</aside>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Estimativa inicial</div>
+    <h1>Seu resíduo ainda carrega energia.<br><em>A dúvida é se vale capturar.</em></h1>
+    <p class="lead">Informe o tipo de resíduo e a quantidade gerada. O simulador estima biogás, metano e equivalências energéticas para abrir a conversa técnica.</p>
+    <div class="warning"><strong>Importante:</strong> este resultado é orientativo. Ele usa parâmetros médios para triagem inicial e não substitui um EVTE com dados reais do empreendimento.</div>
+  </div>
+</header>
+
+<main class="calc-section" id="simulador">
   <div class="calc-inner">
-    <div class="calc-header fi">
-      
-      <div class="section-label">Simulador de potencial</div>
-      <h1 class="section-title">Seu resíduo ainda carrega energia. Vamos estimar o potencial inicial?</h1>
+    <section class="calc-card">
+      <div class="section-label">Simulador</div>
+      <h2 class="section-title">Faça uma estimativa rápida.</h2>
       <div class="divider"></div>
-      <p>Informe o setor e a quantidade de resíduo gerada por dia. O simulador calcula uma estimativa inicial de biogás, metano e equivalência energética usando valores médios da literatura. Esses números ajudam a visualizar o potencial, mas não substituem uma análise com os dados reais do seu empreendimento. <span style="color:var(--green-light);cursor:pointer;text-decoration:underline;text-underline-offset:3px;" onclick="abrirPopup()">Ver equivalências energéticas do m³ de biogás →</span></p>
-      <p class="simulador-alerta"><strong>Importante:</strong> o resultado pode mudar bastante conforme composição do resíduo, diluição, sazonalidade, temperatura e forma de operação. A análise gratuita serve justamente para avaliar esses fatores no seu caso.</p>
-    </div>
-    <div class="calc-card fi fi-d2">
-      <div class="calc-row">
-        <div class="calc-field">
-          <label for="c-setor">Setor do empreendimento</label>
-          <select id="c-setor" onchange="calcular()">
-            <option value="" disabled selected>Selecione seu setor</option>
-            <option value="suino">Suinocultura</option>
-            <option value="bovino">Bovinocultura (confinamento)</option>
-            <option value="aves">Avicultura</option>
-            <option value="laticinios">Laticínios (soro/efluente)</option>
-            <option value="frigorifico">Frigorífico</option>
-            <option value="agroindustria">Agroindústria / Vinhaça</option>
-            <option value="saneamento">Saneamento / Lodo de ETE</option>
+      <p class="section-body">Preencha os campos abaixo. O resultado aparece na hora e pode ser enviado pelo WhatsApp para uma avaliação mais realista.</p>
+
+      <div class="form-grid">
+        <div class="field">
+          <label for="c-setor">Tipo de resíduo</label>
+          <select id="c-setor">
+            <option value="">Selecione uma opção</option>
+            <option value="suino">Dejeto suíno líquido</option>
+            <option value="bovino">Dejeto bovino</option>
+            <option value="aves">Cama de frango / aves</option>
+            <option value="laticinios">Laticínios / soro / efluente</option>
+            <option value="frigorifico">Frigorífico / abatedouro</option>
+            <option value="agroindustria">Vinhaça / agroindústria</option>
+            <option value="saneamento">Lodo de ETE / saneamento</option>
           </select>
+          <small>Escolha a opção mais próxima do seu caso.</small>
         </div>
-        <div class="calc-field">
-          <label for="c-residuo">Resíduo gerado por dia</label>
-          <div style="display:flex;gap:0.5rem;">
-            <input type="number" id="c-residuo" placeholder="Ex: 5000" min="1" oninput="calcular()" style="flex:1;">
-            <select id="c-unidade" onchange="calcular()" style="width:80px;flex-shrink:0;background:var(--dark-2);border:1px solid var(--border);border-radius:4px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.9rem;padding:0.75rem 0.5rem;appearance:none;-webkit-appearance:none;text-align:center;cursor:pointer;">
-              <option value="kg">kg</option>
-              <option value="m3">m³</option>
-            </select>
-          </div>
+
+        <div class="field">
+          <label for="c-residuo">Quantidade gerada por dia</label>
+          <input id="c-residuo" type="number" min="0" step="0.01" placeholder="Ex.: 5000">
+          <small>Use a quantidade diária média. Se tiver variação de safra, use um valor típico.</small>
         </div>
-      </div>
-      <button class="btn-calc" onclick="calcular()">Estimar potencial →</button>
-      <div class="calc-results" id="calc-results">
-        <div class="results-label">Estimativa de produção diária</div>
-        <div class="results-grid">
-          <div class="result-card"><div class="result-num" id="r-biogas">—</div><div class="result-unit">m³/dia</div><div class="result-label">Biogás total</div></div>
-          <div class="result-card"><div class="result-num" id="r-ch4">—</div><div class="result-unit">m³/dia</div><div class="result-label">Metano (CH₄)</div></div>
-          <div class="result-card"><div class="result-num" id="r-glp">—</div><div class="result-unit">kg/dia</div><div class="result-label">Equiv. GLP</div></div>
-          <div class="result-card"><div class="result-num" id="r-kwh">—</div><div class="result-unit">kWh/dia</div><div class="result-label">Equiv. elétrico</div></div>
-        </div>
-        <div class="results-grid" style="grid-template-columns:1fr 1fr;margin-top:0;">
-          <div class="result-card"><div class="result-num" id="r-diesel">—</div><div class="result-unit">L/dia</div><div class="result-label">Equiv. diesel</div></div>
-          <div class="result-card"><div class="result-num" id="r-biofert">—</div><div class="result-unit">L/dia (estimado)</div><div class="result-label">Biofertilizante líquido</div></div>
-        </div>
-        <div class="calc-disclaimer"><strong>Como ler esse resultado:</strong> a conta usa valores médios da literatura — potencial de metano, fração orgânica, densidade típica e biogás com 60% de CH₄. Na prática, o resultado real pode ser maior ou menor conforme composição, diluição, temperatura e rotina de operação.</div>
-        <div class="calc-cta-box">
-          <p><strong>A simulação dá uma ideia.</strong> Mas número sem contexto não vira projeto. Manda esses dados no WhatsApp e a gente avalia se o seu caso fecha.</p>
-          <div style="display:flex;flex-direction:column;gap:0.6rem;align-items:flex-start;">
-            <a href="https://wa.me/5519971315434?text=Ol%C3%A1!%20Acabei%20de%20simular%20meu%20potencial%20no%20site%20da%20V%C3%A9rtice%20e%20quero%20validar%20se%20os%20n%C3%BAmeros%20fazem%20sentido%20para%20o%20meu%20caso%20real." class="btn-primary" target="_blank" style="background:#25d366;white-space:nowrap;display:inline-flex;align-items:center;gap:0.5rem;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-              Falar no WhatsApp →
-            </a>
-            <span style="font-size:0.72rem;color:var(--text-muted);">Resposta em até 24h · Sem compromisso</span>
-          </div>
+
+        <div class="field">
+          <label for="c-unidade">Unidade</label>
+          <select id="c-unidade">
+            <option value="kg">kg/dia</option>
+            <option value="m3">m³/dia</option>
+          </select>
+          <small>Quando usar m³/dia, o simulador converte para kg usando densidade típica.</small>
         </div>
       </div>
+
+      <div class="actions">
+        <button type="button" class="btn-primary" id="btnCalcular">Calcular potencial →</button>
+        <button type="button" class="btn-secondary" id="btnLimpar">Limpar</button>
+      </div>
+
+      <div class="source-box">
+        <strong>Critério:</strong> os cálculos usam fração de sólidos voláteis, potencial metanogênico médio e equivalências energéticas simplificadas para triagem inicial.
+      </div>
+    </section>
+
+    <div>
+      <section class="results-card" id="calc-results">
+        <div class="section-label">Resultado estimado</div>
+        <h2 class="section-title">Potencial diário inicial</h2>
+        <p class="section-body" id="resultadoResumo">Preencha os dados para visualizar a estimativa.</p>
+
+        <div class="result-grid">
+          <div class="result-box">
+            <div class="result-label">Biogás</div>
+            <div class="result-value" id="r-biogas">0</div>
+            <div class="result-unit">m³/dia estimados</div>
+          </div>
+          <div class="result-box">
+            <div class="result-label">Metano</div>
+            <div class="result-value" id="r-ch4">0</div>
+            <div class="result-unit">m³ CH₄/dia estimados</div>
+          </div>
+          <div class="result-box">
+            <div class="result-label">GLP</div>
+            <div class="result-value" id="r-glp">0</div>
+            <div class="result-unit">kg GLP/dia equivalentes</div>
+          </div>
+          <div class="result-box">
+            <div class="result-label">Energia elétrica</div>
+            <div class="result-value" id="r-kwh">0</div>
+            <div class="result-unit">kWh/dia equivalentes</div>
+          </div>
+          <div class="result-box">
+            <div class="result-label">Diesel</div>
+            <div class="result-value" id="r-diesel">0</div>
+            <div class="result-unit">L/dia equivalentes</div>
+          </div>
+          <div class="result-box">
+            <div class="result-label">Digestato</div>
+            <div class="result-value" id="r-biofert">0</div>
+            <div class="result-unit">kg/dia aproximados</div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <a href="#" class="btn-wpp" id="btnWhatsappResultado">Enviar resultado no WhatsApp</a>
+          <a href="/#contato" class="btn-secondary">Solicitar EVTE</a>
+        </div>
+
+        <p class="result-note"><strong>Leitura correta:</strong> um número alto não significa projeto aprovado. Viabilidade depende de regularidade, qualidade do resíduo, tecnologia, segurança, uso do gás, licenciamento e custo de implantação.</p>
+      </section>
+
+      <section class="info-card">
+        <div class="section-label">Como interpretar</div>
+        <div class="info-list">
+          <div class="info-item"><span>→</span><div><strong>Biogás</strong> é o volume total de gás estimado, considerando uma mistura com metano e dióxido de carbono.</div></div>
+          <div class="info-item"><span>→</span><div><strong>Metano</strong> é a fração energética principal. É ele que sustenta o uso como combustível.</div></div>
+          <div class="info-item"><span>→</span><div><strong>Equivalências</strong> ajudam a entender ordem de grandeza, mas variam conforme equipamento e rendimento real.</div></div>
+          <div class="info-item"><span>→</span><div><strong>EVTE</strong> transforma essa estimativa em decisão: vale investir ou não?</div></div>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
+
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="section-label">Próximo passo</div>
+    <h2>A estimativa apareceu.<br><em>Agora falta saber se ela fecha na prática.</em></h2>
+    <p>Envie o resultado pelo WhatsApp e conte rapidamente seu tipo de operação, cidade, volume real, rotina de geração e principal gasto energético. A partir disso, a análise deixa de ser genérica.</p>
+    <div class="cta-actions">
+      <a href="#" class="btn-wpp" data-whatsapp-origin="simulador">Falar no WhatsApp</a>
+      <a href="/" class="btn-secondary">Voltar ao site</a>
     </div>
   </div>
 </section>
 
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <a href="/" class="logo">Vértice<span>.</span></a>
-      <p>Consultoria técnica em biogás, biometano e viabilidade energética de resíduos orgânicos.</p>
-      <div class="footer-lgpd"><p class="footer-small">As informações enviadas pelo site são utilizadas apenas para contato e análise técnica inicial.</p></div>
-    </div>
-    <div class="footer-col">
-      <h4>Contato</h4>
-      <p>E-mail: biogasvertice@gmail.com</p>
-      <p>WhatsApp: disponível pelos botões do site</p>
-    </div>
-    <div class="footer-col">
-      <h4>Canais</h4>
-      <a href="https://instagram.com/verticebionews" target="_blank" rel="noopener noreferrer">@verticebionews</a>
-      <a href="/politica-de-privacidade.html">Política de Privacidade</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2026 Vértice Consultoria Energética · verticebiogas.com.br</p>
-    <p>Biogás · Biometano · Estudo de Viabilidade · Resíduos orgânicos</p>
-  </div>
+<footer>
+  <a href="/" class="logo">Vértice<span>.</span></a>
+  <p>© 2026 Vértice Consultoria Energética · verticebiogas.com.br</p>
 </footer>
 
-<div class="popup-overlay" id="popup" onclick="fecharPopup(event)">
-  <div class="popup-box">
-    <button class="popup-close" onclick="fecharPopupBtn()">✕</button>
-    <div class="popup-title">Equivalências energéticas do biogás</div>
-    <div class="popup-item"><div><div style="font-size:0.85rem;color:var(--text);">GLP (botijão)</div><div class="popup-desc">Aquecimento de processo, caldeiras</div></div><div class="popup-val">0,45 kg/m³</div></div>
-    <div class="popup-item"><div><div style="font-size:0.85rem;color:var(--text);">Energia elétrica</div><div class="popup-desc">Motor de cogeração</div></div><div class="popup-val">1,7 kWh/m³</div></div>
-    <div class="popup-item"><div><div style="font-size:0.85rem;color:var(--text);">Diesel</div><div class="popup-desc">Substituto em motor/gerador</div></div><div class="popup-val">0,65 L/m³</div></div>
-    <div class="popup-item"><div><div style="font-size:0.85rem;color:var(--text);">Energia térmica direta</div><div class="popup-desc">Queima direta em queimador</div></div><div class="popup-val">~6.000 kcal/m³</div></div>
-    <div class="popup-note">Valores baseados em biogás com 60% de CH₄. Fontes: UNIDO & CIBiogás — Guia Prático para Projetos de Biogás (2022).</div>
-  </div>
-</div>
-
 <script>
-const SETORES={
-  suino:        {sv:0.08, b0:290, dens:1020},
-  bovino:       {sv:0.11, b0:180, dens:1010},
-  aves:         {sv:0.27, b0:250, dens:650},
-  laticinios:   {sv:0.07, b0:380, dens:1025},
-  frigorifico:  {sv:0.12, b0:430, dens:1030},
-  agroindustria:{sv:0.03, b0:320, dens:1010},
-  saneamento:   {sv:0.55, b0:250, dens:1005},
+const WHATSAPP_NUMBER = '5519971315434';
+let ultimoResultado = null;
+
+const SETORES = {
+  suino: {nome:'Dejeto suíno líquido', sv:0.08, b0:290, dens:1020},
+  bovino: {nome:'Dejeto bovino', sv:0.11, b0:180, dens:1010},
+  aves: {nome:'Cama de frango / aves', sv:0.27, b0:250, dens:650},
+  laticinios: {nome:'Laticínios / soro / efluente', sv:0.07, b0:380, dens:1025},
+  frigorifico: {nome:'Frigorífico / abatedouro', sv:0.12, b0:430, dens:1030},
+  agroindustria: {nome:'Vinhaça / agroindústria', sv:0.03, b0:320, dens:1010},
+  saneamento: {nome:'Lodo de ETE / saneamento', sv:0.55, b0:250, dens:1005}
 };
-function fmt(n){if(n>=10000)return (n/1000).toFixed(0)+'k';if(n>=1000)return (n/1000).toFixed(1)+'k';if(n>=10)return Math.round(n).toLocaleString('pt-BR');if(n>=1)return n.toFixed(1);return n.toFixed(2);}
-function calcular(){
-  const setor=document.getElementById('c-setor').value;
-  const valorInput=parseFloat(document.getElementById('c-residuo').value);
-  const unidade=document.getElementById('c-unidade').value;
-  const res=document.getElementById('calc-results');
-  if(!setor||!valorInput||valorInput<=0){res.classList.remove('show');return;}
-  const p=SETORES[setor];
-  const residuo_kg=unidade==='m3'?valorInput*p.dens:valorInput;
-  const sv_kg=residuo_kg*p.sv;
-  const ch4_m3=(sv_kg*1000*p.b0)/1000000;
-  const biogas_m3=ch4_m3/0.60;
-  const glp=ch4_m3*0.45;
-  const kwh=ch4_m3*1.7;
-  const diesel=ch4_m3*0.65;
-  const biofert=residuo_kg*0.92;
-  document.getElementById('r-biogas').textContent=fmt(biogas_m3);
-  document.getElementById('r-ch4').textContent=fmt(ch4_m3);
-  document.getElementById('r-glp').textContent=fmt(glp);
-  document.getElementById('r-kwh').textContent=fmt(kwh);
-  document.getElementById('r-diesel').textContent=fmt(diesel);
-  document.getElementById('r-biofert').textContent=fmt(biofert);
-  res.classList.add('show');
+
+function fmt(n){
+  if(!Number.isFinite(n)) return '0';
+  if(n >= 10000) return (n/1000).toFixed(0).replace('.', ',') + 'k';
+  if(n >= 1000) return (n/1000).toFixed(1).replace('.', ',') + 'k';
+  if(n >= 10) return Math.round(n).toLocaleString('pt-BR');
+  if(n >= 1) return n.toFixed(1).replace('.', ',');
+  return n.toFixed(2).replace('.', ',');
 }
-function abrirPopup(){document.getElementById('popup').classList.add('show');}
-function fecharPopupBtn(){document.getElementById('popup').classList.remove('show');}
-function fecharPopup(e){if(e.target===document.getElementById('popup'))fecharPopupBtn();}
 
-// Dynamic back button — lê ?origem= e restaura scroll
-document.addEventListener('DOMContentLoaded', function(){
-  var btn=document.getElementById('btn-voltar-origin');
-  if(!btn)return;
-  var validos=['agropecuaria','agroindustria','industria','saneamento'];
-  var params=new URLSearchParams(window.location.search);
-  var origem=params.get('origem');
-  var destino = (origem && validos.indexOf(origem)!==-1) ? '/'+origem : '/';
-  btn.href=destino;
-  btn.textContent='← Voltar';
-  btn.addEventListener('click', function(e){
-    e.preventDefault();
-    var scrollY = sessionStorage.getItem('vertice_scroll_origem');
-    var scrollPage = sessionStorage.getItem('vertice_scroll_page');
-    // Pass scroll position via sessionStorage and navigate
-    if(scrollY && scrollPage && scrollPage === destino){
-      sessionStorage.setItem('vertice_restore_scroll', scrollY);
-    }
-    window.location.href = destino;
+function buildWhatsappLink(message){
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+}
+
+function calcular(){
+  const setor = document.getElementById('c-setor').value;
+  const valorInput = parseFloat(document.getElementById('c-residuo').value);
+  const unidade = document.getElementById('c-unidade').value;
+  const res = document.getElementById('calc-results');
+
+  if(!setor || !valorInput || valorInput <= 0){
+    res.classList.remove('show');
+    ultimoResultado = null;
+    return;
+  }
+
+  const p = SETORES[setor];
+  const residuoKg = unidade === 'm3' ? valorInput * p.dens : valorInput;
+  const svKg = residuoKg * p.sv;
+  const ch4M3 = (svKg * 1000 * p.b0) / 1000000;
+  const biogasM3 = ch4M3 / 0.60;
+  const glpKg = ch4M3 * 0.45;
+  const kwh = ch4M3 * 1.7;
+  const dieselL = ch4M3 * 0.65;
+  const digestatoKg = residuoKg * 0.92;
+
+  ultimoResultado = {
+    setorNome: p.nome,
+    valorInput,
+    unidade,
+    residuoKg,
+    svKg,
+    biogasM3,
+    ch4M3,
+    glpKg,
+    kwh,
+    dieselL,
+    digestatoKg
+  };
+
+  document.getElementById('r-biogas').textContent = fmt(biogasM3);
+  document.getElementById('r-ch4').textContent = fmt(ch4M3);
+  document.getElementById('r-glp').textContent = fmt(glpKg);
+  document.getElementById('r-kwh').textContent = fmt(kwh);
+  document.getElementById('r-diesel').textContent = fmt(dieselL);
+  document.getElementById('r-biofert').textContent = fmt(digestatoKg);
+
+  document.getElementById('resultadoResumo').textContent = `Para ${valorInput.toLocaleString('pt-BR')} ${unidade}/dia de ${p.nome.toLowerCase()}, a estimativa inicial indica cerca de ${fmt(biogasM3)} m³/dia de biogás.`;
+
+  atualizarWhatsappResultado();
+  res.classList.add('show');
+  res.scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+
+function atualizarWhatsappResultado(){
+  const btn = document.getElementById('btnWhatsappResultado');
+  if(!btn) return;
+
+  if(!ultimoResultado){
+    btn.href = buildWhatsappLink('Olá! Vim do simulador da Vértice e quero avaliar o potencial de biogás do meu empreendimento.');
+    return;
+  }
+
+  const r = ultimoResultado;
+  const mensagem = `Olá! Fiz uma simulação no site da Vértice e quero validar se os números fazem sentido para meu caso real.\n\nTipo de resíduo: ${r.setorNome}\nQuantidade informada: ${r.valorInput} ${r.unidade}/dia\nBiogás estimado: ${fmt(r.biogasM3)} m³/dia\nMetano estimado: ${fmt(r.ch4M3)} m³ CH₄/dia\nEquivalência aproximada em GLP: ${fmt(r.glpKg)} kg/dia\nEnergia elétrica equivalente: ${fmt(r.kwh)} kWh/dia\n\nQuero entender se existe viabilidade técnica e econômica para esse caso.`;
+
+  btn.href = buildWhatsappLink(mensagem);
+  btn.target = '_blank';
+  btn.rel = 'noopener noreferrer';
+}
+
+function limpar(){
+  document.getElementById('c-setor').value = '';
+  document.getElementById('c-residuo').value = '';
+  document.getElementById('c-unidade').value = 'kg';
+  document.getElementById('calc-results').classList.remove('show');
+  ultimoResultado = null;
+  atualizarWhatsappResultado();
+}
+
+function setupWhatsappLinks(){
+  document.querySelectorAll('[data-whatsapp-origin]').forEach((link)=>{
+    const message = 'Olá! Acabei de acessar o simulador da Vértice e quero entender se meu empreendimento tem potencial real para biogás.';
+    link.href = buildWhatsappLink(message);
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
   });
+}
+
+function setupBackButton(){
+  const back = document.getElementById('backToSite');
+  if(!back) return;
+
+  back.addEventListener('click', function(e){
+    e.preventDefault();
+    const origemPage = sessionStorage.getItem('vertice_scroll_page') || '/';
+    const origemY = sessionStorage.getItem('vertice_scroll_origem');
+
+    if(origemY){
+      sessionStorage.setItem('vertice_restore_scroll', origemY);
+    }
+
+    window.location.href = origemPage;
+  });
+}
+
+function setupMenu(){
+  const menuToggle = document.getElementById('menuToggle');
+  const menuPanel = document.getElementById('menuPanel');
+  const menuOverlay = document.getElementById('menuOverlay');
+
+  if(!menuToggle || !menuPanel || !menuOverlay) return;
+
+  function openMenu(){
+    menuToggle.classList.add('active');
+    menuPanel.classList.add('active');
+    menuOverlay.classList.add('active');
+    menuToggle.setAttribute('aria-expanded','true');
+    menuPanel.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+  }
+
+  function closeMenu(){
+    menuToggle.classList.remove('active');
+    menuPanel.classList.remove('active');
+    menuOverlay.classList.remove('active');
+    menuToggle.setAttribute('aria-expanded','false');
+    menuPanel.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+  }
+
+  menuToggle.addEventListener('click', function(){
+    menuPanel.classList.contains('active') ? closeMenu() : openMenu();
+  });
+
+  menuOverlay.addEventListener('click', closeMenu);
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeMenu();
+  });
+
+  document.querySelectorAll('.menu-links a').forEach(function(link){
+    link.addEventListener('click', closeMenu);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  const params = new URLSearchParams(window.location.search);
+  const origem = params.get('origem');
+
+  if(origem && SETORES[origem]){
+    document.getElementById('c-setor').value = origem;
+  }
+
+  document.getElementById('btnCalcular').addEventListener('click', calcular);
+  document.getElementById('btnLimpar').addEventListener('click', limpar);
+  document.getElementById('c-residuo').addEventListener('keydown', function(e){
+    if(e.key === 'Enter') calcular();
+  });
+
+  atualizarWhatsappResultado();
+  setupWhatsappLinks();
+  setupBackButton();
+  setupMenu();
 });
-
-
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}});},{threshold:0.1});
-document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
 </script>
-
-<a href="/" class="btn-voltar-flutuante" id="btn-voltar-origin">← Voltar</a>
 </body>
 </html>
