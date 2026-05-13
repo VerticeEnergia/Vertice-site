@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Biogás para Agropecuária | Vértice Consultoria Energética</title>
-<meta name="description" content="Avalie o potencial de biogás em suinocultura, bovinocultura, avicultura e sistemas integrados. EVTE para dejetos, digestato, tecnologia e uso energético na propriedade.">
+<meta name="description" content="Você gasta para tratar o dejeto e ainda paga a conta de energia. Avalie se o biogás faz sentido para sua propriedade.">
 <link rel="canonical" href="https://verticebiogas.com.br/agropecuaria">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -55,7 +55,7 @@ h1 em{font-style:italic;color:var(--green-light);}
 .ci-item:last-child{margin-bottom:0;}
 .ci-icon{color:var(--amber);flex-shrink:0;}
 .ci-item strong{color:var(--text);}
-.pq{margin:2rem 0;padding:1.2rem 1.5rem;background:rgba(233,196,106,0.07);border:1px solid rgba(233,196,106,0.18);border-radius:4px;font-size:0.88rem;color:var(--amber);font-style:italic;line-height:1.6;}
+.pq{margin:2rem 0;padding:1.2rem 1.5rem;background:rgba(233,196,106,0.07);border:1px solid rgba(233,196,106,0.18);border-radius:4px;font-size:0.95rem;color:var(--amber);font-style:italic;line-height:1.6;}
 .bg2{background:var(--dark-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
 .tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:1rem;}
 .tag{font-size:0.68rem;padding:0.2rem 0.7rem;background:rgba(45,106,79,0.2);border:1px solid rgba(64,145,108,0.25);border-radius:20px;color:var(--green-light);}
@@ -70,20 +70,19 @@ h1 em{font-style:italic;color:var(--green-light);}
 .btn-wpp:hover{background:#1ebe5d;transform:translateY(-2px);}
 footer{padding:2rem 2.5rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
 footer p{font-size:0.78rem;color:var(--text-muted);}
-
 .tb-wrap{overflow-x:auto;margin-top:2rem;border:1px solid var(--border);border-radius:8px;background:var(--dark-3);}
-.potencial-table{width:100%;border-collapse:collapse;min-width:760px;}
-.potencial-table th,.potencial-table td{text-align:left;padding:1rem;border-bottom:1px solid var(--border);vertical-align:top;}
+.potencial-table{width:100%;border-collapse:collapse;min-width:600px;}
+.potencial-table th,.potencial-table td{text-align:left;padding:1rem 1.2rem;border-bottom:1px solid var(--border);vertical-align:top;}
 .potencial-table th{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--green-light);font-weight:600;background:rgba(45,106,79,0.16);}
 .potencial-table td{font-size:0.84rem;color:var(--text-muted);line-height:1.6;}
 .potencial-table td strong{color:var(--text);font-weight:500;}
+.potencial-table td .num{font-family:'DM Serif Display',serif;font-size:1.3rem;color:var(--amber);display:block;margin-bottom:0.25rem;line-height:1.1;}
 .note-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem;}
 @media(max-width:760px){.note-grid{grid-template-columns:1fr;}}
 .note{background:rgba(233,196,106,0.06);border:1px solid rgba(233,196,106,0.16);border-radius:8px;padding:1.1rem;font-size:0.82rem;color:var(--text-muted);line-height:1.65;}
 .note strong{color:var(--amber);}
 .faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;margin-top:2rem;}
 @media(max-width:768px){.faq-grid{grid-template-columns:1fr;}}
-
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
 .fi{opacity:0;transform:translateY(20px);transition:opacity 0.75s ease,transform 0.75s ease;}
 .fi.vis{opacity:1;transform:translateY(0);}
@@ -102,115 +101,88 @@ footer p{font-size:0.78rem;color:var(--text-muted);}
   <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1400&q=80&fit=crop" alt="Propriedade rural">
   <div class="hero-sp-inner">
     <div class="eyebrow">Biogás para Agropecuária</div>
-    <h1>Você cria animais,<br>gera dejeto e<br><em>precisa decidir com dados.</em></h1>
-    <p class="lead">O dejeto gerado todos os dias pode ter potencial para produção de biogás, mas a rota de uso depende do manejo, da escala, do tipo de biodigestor e da demanda energética da propriedade. A questão é saber se, no seu caso, o projeto fecha.</p>
+    <h1>Você gasta para se livrar<br>do dejeto. E ainda paga<br><em>a conta de energia.</em></h1>
+    <p class="lead">Todo dia sua propriedade gera dejeto. Todo mês chega a conta de luz, de GLP, de diesel. O biodigestor pode transformar esse ciclo — mas só vale avançar se os números fecharem no seu caso.</p>
     <div class="hero-btns">
-      <a href="/#contato" class="btn-primary">Quero minha pré-análise gratuita</a>
-      <a href="#cadeias" class="btn-ghost">Ver cadeias atendidas</a>
+      <a href="/#contato" class="btn-primary">Quero minha análise gratuita</a>
+      <a href="#potencial" class="btn-ghost">Ver potencial por criação</a>
     </div>
   </div>
 </section>
 
-<!-- O PROBLEMA -->
 <section class="cs bg2" id="problema">
   <div class="ci">
     <div class="two">
       <div class="fi">
-        <div class="sl">O problema do setor</div>
-        <h2 class="st">A agropecuária gera dejeto todos os dias e nem sempre avalia seu potencial energético.</h2>
+        <div class="sl">O problema</div>
+        <h2 class="st">O dejeto custa dinheiro — na gestão e no que ele poderia gerar.</h2>
         <div class="dv"></div>
-        <p class="sb">Criações em escala consomem energia de forma contínua — aquecimento, ventilação, bombas, ordenha, resfriamento, geradores e manejo. Ao mesmo tempo, geram volumes expressivos de dejeto que, muitas vezes, seguem para esterqueiras, lagoas ou armazenamento sem avaliação do potencial de aproveitamento energético.</p>
+        <p class="sb">Esterqueira mal manejada vira multa ambiental, odor e risco de contaminar o lençol freático. Ao mesmo tempo, a propriedade segue comprando energia que poderia estar produzindo.</p>
         <br>
-        <p class="sb">Não é uma decisão simples. O potencial depende de coleta, diluição, teor de sólidos, rotina operacional, tipo de criação, codigestão possível e destino do digestato. Por isso, a análise precisa partir da realidade da propriedade, e não de uma promessa genérica de economia.</p>
-        <div class="pq">"Tenho o resíduo, tenho custo energético e preciso entender se existe escala para transformar isso em projeto."</div>
+        <p class="sb">O biodigestor resolve os dois lados — mas não é solução para todo mundo. O potencial depende do tipo de criação, do volume de dejeto, de como ele é coletado e do que você precisa de energia.</p>
+        <div class="pq">"Tenho dejeto sobrando e conta de energia pesada. Quero saber se existe um projeto que feche."</div>
       </div>
       <div class="fi fi-d2">
         <div class="hb">
-          <h3>Por que isso acontece</h3>
-          <div class="ci-item"><span class="ci-icon">→</span><div><strong>Energia pesa no custo operacional.</strong> GLP, diesel e eletricidade podem pressionar a margem, mas a rota de substituição precisa ser calculada para cada propriedade.</div></div>
-          <div class="ci-item"><span class="ci-icon">→</span><div><strong>A esterqueira mal gerenciada</strong> gera odor, risco de contaminação de lençol freático e pressão de órgãos ambientais. O dejeto que deveria ser ativo vira passivo.</div></div>
-          <div class="ci-item"><span class="ci-icon">→</span><div><strong>A maioria dos produtores não sabe</strong> qual é o potencial metanogênico do próprio dejeto, nem qual tecnologia seria compatível com o manejo existente.</div></div>
-          <div class="ci-item"><span class="ci-icon">→</span><div><strong>O digestato pode ter valor agronômico</strong>, mas sua aplicação depende de análise, manejo, área disponível, logística e exigências ambientais.</div></div>
+          <h3>Por que a maioria não avança</h3>
+          <div class="ci-item"><span class="ci-icon">→</span><div><strong>Não sabe o potencial real.</strong> Sem medir o que o dejeto pode gerar, é impossível calcular se o projeto paga o investimento.</div></div>
+          <div class="ci-item"><span class="ci-icon">→</span><div><strong>Confunde tecnologia com viabilidade.</strong> Existem vários tipos de biodigestor — o certo depende da sua criação, do seu manejo e do que você quer fazer com o gás.</div></div>
+          <div class="ci-item"><span class="ci-icon">→</span><div><strong>O digestato é ignorado.</strong> O que sai do biodigestor tem valor como fertilizante, mas precisa ser manejado — não basta jogar na lavoura sem critério.</div></div>
+          <div class="ci-item"><span class="ci-icon">→</span><div><strong>Falta uma análise honesta.</strong> A maioria das propostas vende equipamento antes de mostrar se o projeto fecha. O estudo de viabilidade existe para evitar isso.</div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- O QUE O BIOGÁS RESOLVE -->
 <section class="cs">
   <div class="ci">
     <div class="fi" style="margin-bottom:3rem;">
-      <div class="sl">O que o biogás resolve</div>
-      <h2 class="st">O biodigestor pode transformar o manejo do dejeto<br>em oportunidade energética.</h2>
+      <div class="sl">O que o biodigestor resolve</div>
+      <h2 class="st">Dois problemas viram uma solução — quando o projeto é bem feito.</h2>
       <div class="dv"></div>
-      <p class="sb" style="max-width:640px;">A digestão anaeróbia converte parte da matéria orgânica do dejeto em biogás. Esse gás pode ser usado em rotas térmicas, elétricas ou de purificação, desde que exista escala, tratamento adequado e demanda compatível.</p>
+      <p class="sb" style="max-width:640px;">O biodigestor transforma o dejeto em biogás e em fertilizante líquido. O gás pode reduzir o que você gasta em energia. O fertilizante pode reduzir o que você gasta em adubo. Mas tudo isso depende de cálculo, não de promessa.</p>
     </div>
     <div class="three">
-      <div class="fc fi">
-        <div class="fi-icon">🔥</div>
-        <div class="ft">Uso térmico do biogás</div>
-        <div class="fd">Aquecimento, água quente e usos térmicos podem ser rotas interessantes quando a propriedade já possui demanda contínua e infraestrutura compatível.</div>
-      </div>
-      <div class="fc fi fi-d2">
-        <div class="fi-icon">⚡</div>
-        <div class="ft">Geração elétrica quando fizer sentido</div>
-        <div class="fd">Com motor-gerador ou cogeração, o biogás pode gerar eletricidade para uso interno, mas a viabilidade depende de vazão de gás, eficiência, operação e manutenção.</div>
-      </div>
-      <div class="fc fi fi-d3">
-        <div class="fi-icon">🌱</div>
-        <div class="ft">Digestato como biofertilizante</div>
-        <div class="fd">O resíduo do biodigestor pode conter nutrientes de interesse agronômico, mas seu uso exige controle de composição, dose, área de aplicação e conformidade ambiental.</div>
-      </div>
-      <div class="fc fi">
-        <div class="fi-icon">♻️</div>
-        <div class="ft">Reduz o passivo ambiental</div>
-        <div class="fd">O biodigestor pode reduzir carga orgânica, odor e pressão sobre o manejo do dejeto, mas não elimina a necessidade de armazenamento, controle e destinação adequada.</div>
-      </div>
-      <div class="fc fi fi-d2">
-        <div class="fi-icon">🌡️</div>
-        <div class="ft">Pode reduzir diesel em alguns casos</div>
-        <div class="fd">Em propriedades com uso recorrente de gerador, o biogás pode ser avaliado como alternativa parcial, dependendo da estabilidade de produção e da demanda elétrica.</div>
-      </div>
-      <div class="fc fi fi-d3">
-        <div class="fi-icon">📊</div>
-        <div class="ft">Retorno mensurável</div>
-        <div class="fd">O retorno precisa ser calculado com base em m³ de biogás, rota de uso, custos de implantação, operação, manutenção e economia real no contexto da propriedade.</div>
-      </div>
+      <div class="fc fi"><div class="fi-icon">🔥</div><div class="ft">Menos GLP e lenha</div><div class="fd">O biogás pode substituir gás de cozinha, aquecimento de água e outros usos térmicos da propriedade — se a produção for suficiente e constante.</div></div>
+      <div class="fc fi fi-d2"><div class="fi-icon">⚡</div><div class="ft">Menos conta de luz</div><div class="fd">Com um gerador acoplado, o biogás pode gerar eletricidade para uso interno. Mas o volume de gás precisa justificar o equipamento.</div></div>
+      <div class="fc fi fi-d3"><div class="fi-icon">🌱</div><div class="ft">Fertilizante líquido</div><div class="fd">O que sai do biodigestor é rico em nutrientes. Pode reduzir o gasto com adubo — desde que analisado e aplicado do jeito certo.</div></div>
+      <div class="fc fi"><div class="fi-icon">♻️</div><div class="ft">Fim do passivo ambiental</div><div class="fd">Esterqueira inadequada é risco de autuação. O biodigestor reduz odor, carga orgânica e pressão dos órgãos de fiscalização.</div></div>
+      <div class="fc fi fi-d2"><div class="fi-icon">🌡️</div><div class="ft">Menos diesel no gerador</div><div class="fd">Em propriedades que dependem de gerador, o biogás pode entrar como alternativa parcial — dependendo da estabilidade de produção.</div></div>
+      <div class="fc fi fi-d3"><div class="fi-icon">📊</div><div class="ft">Retorno calculado</div><div class="fd">O estudo de viabilidade mostra quanto você pode economizar, quanto custa implantar e em quanto tempo o investimento se paga.</div></div>
     </div>
   </div>
 </section>
 
-<!-- CADEIAS -->
 <section class="cs bg2" id="cadeias">
   <div class="ci">
     <div class="fi" style="margin-bottom:3rem;">
-      <div class="sl">Cadeias atendidas</div>
-      <h2 class="st">Qual é o seu sistema produtivo?</h2>
+      <div class="sl">Qual é a sua criação?</div>
+      <h2 class="st">Cada sistema produtivo tem um potencial diferente.</h2>
       <div class="dv"></div>
     </div>
     <div class="two">
       <div class="fi">
         <div class="hb" style="margin-bottom:1.5rem;">
           <h3>🐷 Suinocultura</h3>
-          <p class="sb" style="margin-bottom:1rem;">Dejeto suíno costuma apresentar bom potencial para digestão anaeróbia, especialmente quando há coleta contínua, manejo líquido e regularidade de alimentação do biodigestor.</p>
+          <p class="sb" style="margin-bottom:1rem;">Dejeto suíno é um dos mais ricos em matéria orgânica. Quando a coleta é diária e o manejo é líquido, o potencial tende a ser consistente.</p>
           <div class="tags"><span class="tag">Ciclo completo</span><span class="tag">UPL</span><span class="tag">Terminação</span><span class="tag">Creche</span></div>
         </div>
         <div class="hb">
           <h3>🐄 Bovinocultura</h3>
-          <p class="sb" style="margin-bottom:1rem;">Confinamentos e sistemas leiteiros com coleta concentrada podem apresentar condições favoráveis, desde que a diluição, a logística e o uso do digestato sejam bem definidos.</p>
+          <p class="sb" style="margin-bottom:1rem;">Confinamentos e leiteiras com coleta concentrada podem ter boa base para um projeto, desde que o volume diário e a logística sejam bem definidos.</p>
           <div class="tags"><span class="tag">Confinamento</span><span class="tag">Leite</span><span class="tag">Corte</span><span class="tag">Semiconfinamento</span></div>
         </div>
       </div>
       <div class="fi fi-d2">
         <div class="hb" style="margin-bottom:1.5rem;">
           <h3>🐔 Avicultura</h3>
-          <p class="sb" style="margin-bottom:1rem;">Cama de frango e dejetos de poedeiras podem ter potencial relevante, mas exigem atenção ao teor de sólidos, nitrogênio, diluição e tecnologia adequada.</p>
+          <p class="sb" style="margin-bottom:1rem;">Cama de frango e dejeto de poedeiras têm potencial relevante, mas exigem atenção à umidade, ao nitrogênio e à tecnologia certa para substratos mais sólidos.</p>
           <div class="tags"><span class="tag">Frango de corte</span><span class="tag">Poedeiras</span><span class="tag">Peru</span><span class="tag">Integrado</span></div>
         </div>
         <div class="hb">
           <h3>🌾 Sistemas integrados</h3>
-          <p class="sb" style="margin-bottom:1rem;">Propriedades com mais de uma criação ou integração lavoura-pecuária podem se beneficiar da codigestão, desde que a mistura seja tecnicamente equilibrada e o digestato tenha destino planejado.</p>
+          <p class="sb" style="margin-bottom:1rem;">Propriedades com mais de uma criação podem misturar dejetos para aumentar o potencial — mas a mistura precisa ser calculada para não gerar problema.</p>
           <div class="tags"><span class="tag">ILP</span><span class="tag">ILPF</span><span class="tag">Codigestão</span><span class="tag">Integrado</span></div>
         </div>
       </div>
@@ -218,89 +190,73 @@ footer p{font-size:0.78rem;color:var(--text-muted);}
   </div>
 </section>
 
-<!-- POTENCIAL METANOGÊNICO -->
 <section class="cs" id="potencial">
   <div class="ci">
     <div class="fi" style="margin-bottom:2rem;">
-      <div class="sl">Referências de potencial</div>
-      <h2 class="st">Potencial metanogênico por tipo de resíduo agropecuário.</h2>
+      <div class="sl">Potencial por resíduo</div>
+      <h2 class="st">Quanto biogás o seu resíduo pode gerar?</h2>
       <div class="dv"></div>
-      <p class="sb" style="max-width:720px;">A tabela abaixo serve como referência inicial para entendimento técnico. Ela não substitui análise do resíduo, caracterização laboratorial ou dimensionamento do projeto, mas ajuda o produtor a enxergar por que diferentes dejetos não geram o mesmo resultado.</p>
-    </div>
-    <div class="tb-wrap fi fi-d2">
-      <table class="potencial-table">
-        <thead>
-          <tr><th>Substrato</th><th>Resíduo típico</th><th>B₀ médio de referência</th><th>Observação técnica</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><strong>Dejeto suíno</strong></td><td>Dejeto líquido coletado em granjas, com variação conforme manejo e diluição.</td><td>~290 mL CH₄/g SV</td><td>Costuma ter boa regularidade quando a coleta é contínua e a alimentação do biodigestor é estável.</td></tr>
-          <tr><td><strong>Dejeto bovino</strong></td><td>Esterco de confinamento, leite ou manejo intensivo com coleta concentrada.</td><td>~180 mL CH₄/g SV</td><td>Depende fortemente da dieta, do teor de sólidos, da água de lavagem e da forma de coleta.</td></tr>
-          <tr><td><strong>Cama de frango</strong></td><td>Material com maior teor de sólidos e presença de cama, penas, fezes e umidade variável.</td><td>~250 mL CH₄/g SV</td><td>Exige avaliação de diluição, mistura, nitrogênio e tecnologia compatível com substrato mais concentrado.</td></tr>
-          <tr><td><strong>Codigestão rural</strong></td><td>Mistura de dejetos animais com resíduos agrícolas, restos de processamento ou biomassa local.</td><td>Variável conforme mistura</td><td>Pode melhorar ou prejudicar o desempenho. A proporção precisa ser calculada para evitar desequilíbrios.</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="note-grid fi fi-d3">
-      <div class="note"><strong>O que é B₀?</strong><br>B₀ é o potencial metanogênico: uma referência de quanto metano um substrato pode gerar por grama de sólidos voláteis em condição controlada. Quanto maior o B₀, maior tende a ser o potencial energético do resíduo.</div>
-      <div class="note"><strong>Por que não converter aqui para GLP ou kWh?</strong><br>Porque essa conversão depende da rota escolhida: queima térmica, cogeração, purificação para biometano ou outro uso. O EVTE faz essa conversão depois de entender a demanda real do cliente.</div>
+      <p class="sb" style="max-width:720px;">Seu dejeto tem potencial. O estudo de viabilidade calcula se esse potencial fecha um projeto no seu caso.</p>
+      <div style="margin-top:2rem;">
+        <a href="https://wa.me/5519971315434?text=Olá!%20Tenho%20interesse%20em%20uma%20análise%20gratuita%20de%20biogás%20para%20minha%20propriedade%20rural." class="btn-wpp" target="_blank" style="display:inline-flex;align-items:center;gap:0.6rem;background:#25d366;color:#fff;padding:0.9rem 1.8rem;border-radius:4px;font-size:0.9rem;font-weight:700;text-decoration:none;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Quero saber o número do meu caso →
+        </a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- EVTE AGROPECUÁRIA -->
-<section class="cs bg2" id="evte-agropecuaria">
+<section class="cs bg2" id="como-avaliamos">
   <div class="ci">
     <div class="fi" style="margin-bottom:3rem;">
-      <div class="sl">EVTE para agropecuária</div>
-      <h2 class="st">O estudo começa pelo manejo real da propriedade.</h2>
+      <div class="sl">Como avaliamos</div>
+      <h2 class="st">O estudo começa pelo que existe na sua propriedade.</h2>
       <div class="dv"></div>
-      <p class="sb" style="max-width:720px;">Na agropecuária, não basta perguntar quantos animais existem. O EVTE precisa entender como o dejeto é coletado, se há diluição, qual a rotina de limpeza, onde o digestato poderia ser usado e qual demanda energética realmente existe.</p>
+      <p class="sb" style="max-width:720px;">Não adianta calcular biogás sem entender como o dejeto é coletado, onde ele vai depois e o que a propriedade realmente consome de energia. Por isso o estudo de viabilidade começa pelo que já existe — não por uma planilha genérica.</p>
     </div>
     <div class="three">
-      <div class="fc fi"><div class="fi-icon">01</div><div class="ft">Sistema produtivo</div><div class="fd">Tipo de criação, número de animais, fase produtiva, manejo, coleta de dejeto e regularidade de geração.</div></div>
-      <div class="fc fi fi-d2"><div class="fi-icon">02</div><div class="ft">Substrato e pré-tratamento</div><div class="fd">Sólidos, diluição, mistura com outros resíduos, necessidade de separação, bombeamento ou homogeneização.</div></div>
-      <div class="fc fi fi-d3"><div class="fi-icon">03</div><div class="ft">Tecnologia adequada</div><div class="fd">Comparação entre biodigestores, volume útil, gasômetro, tratamento do biogás, segurança e nível de automação.</div></div>
-      <div class="fc fi"><div class="fi-icon">04</div><div class="ft">Uso do biogás</div><div class="fd">Avaliação de uso térmico, geração elétrica, purificação ou combinação de rotas conforme a demanda do cliente.</div></div>
-      <div class="fc fi fi-d2"><div class="fi-icon">05</div><div class="ft">Digestato</div><div class="fd">Destino agronômico, área disponível, armazenamento, logística, aplicação e cuidados ambientais.</div></div>
-      <div class="fc fi fi-d3"><div class="fi-icon">06</div><div class="ft">Decisão econômica</div><div class="fd">Estimativa de investimento, operação, manutenção, economia potencial e recomendação objetiva de avanço ou não.</div></div>
+      <div class="fc fi"><div class="fi-icon">01</div><div class="ft">Criação e manejo</div><div class="fd">Tipo de animal, número de cabeças, fase produtiva, rotina de coleta e volume diário de dejeto.</div></div>
+      <div class="fc fi fi-d2"><div class="fi-icon">02</div><div class="ft">Substrato e preparo</div><div class="fd">Teor de sólidos, diluição, mistura com outros resíduos, necessidade de separação ou homogeneização.</div></div>
+      <div class="fc fi fi-d3"><div class="fi-icon">03</div><div class="ft">Tecnologia certa</div><div class="fd">Comparação entre tipos de biodigestor, tamanho, gasômetro e nível de controle operacional necessário.</div></div>
+      <div class="fc fi"><div class="fi-icon">04</div><div class="ft">Uso do biogás</div><div class="fd">Análise do que a propriedade consome — e qual rota de uso (térmica, elétrica ou combinada) faz mais sentido.</div></div>
+      <div class="fc fi fi-d2"><div class="fi-icon">05</div><div class="ft">Destino do fertilizante</div><div class="fd">Área disponível, logística de aplicação, frequência e conformidade com as exigências ambientais da região.</div></div>
+      <div class="fc fi fi-d3"><div class="fi-icon">06</div><div class="ft">A resposta final</div><div class="fd">O projeto fecha ou não? O estudo mostra o investimento, a economia estimada e o tempo de retorno — sem enrolação.</div></div>
     </div>
   </div>
 </section>
 
-<!-- FAQ AGROPECUÁRIA -->
-<section class="cs" id="faq-agropecuaria">
+<section class="cs" id="faq">
   <div class="ci">
     <div class="fi" style="margin-bottom:2rem;">
-      <div class="sl">Perguntas do setor</div>
-      <h2 class="st">Dúvidas específicas da agropecuária.</h2>
+      <div class="sl">Perguntas frequentes</div>
+      <h2 class="st">O que os produtores mais perguntam.</h2>
       <div class="dv"></div>
-      <p class="sb" style="max-width:720px;">Aqui o foco é o que muda no campo: tipo de criação, coleta do dejeto, codigestão, digestato, operação diária e exigências ambientais.</p>
     </div>
     <div class="faq-grid">
-      <div class="hb fi"><h3>Todo dejeto animal serve para biodigestor?</h3><p class="sb">Nem sempre. O potencial depende do tipo de animal, dieta, diluição, forma de coleta, teor de sólidos e estabilidade da alimentação do sistema.</p></div>
-      <div class="hb fi fi-d2"><h3>O digestato pode substituir adubo?</h3><p class="sb">Pode contribuir, mas não deve ser tratado como substituição automática. É preciso avaliar composição, dose, área disponível, manejo e exigências ambientais.</p></div>
-      <div class="hb fi"><h3>Posso misturar dejetos de diferentes criações?</h3><p class="sb">Sim, a codigestão pode ser interessante, mas a mistura precisa ser calculada para evitar desequilíbrio, excesso de sólidos ou problemas operacionais.</p></div>
-      <div class="hb fi fi-d2"><h3>A escala da propriedade muda a tecnologia?</h3><p class="sb">Muda bastante. Pequenas, médias e grandes operações podem exigir biodigestores, gasômetros, pré-tratamentos e controles diferentes.</p></div>
-      <div class="hb fi"><h3>O sistema exige operação diária?</h3><p class="sb">Sim. Biodigestores dependem de rotina de alimentação, monitoramento, manejo do digestato e cuidados com segurança do biogás.</p></div>
-      <div class="hb fi fi-d2"><h3>O licenciamento é igual para qualquer propriedade?</h3><p class="sb">Não. Depende do porte, localização, tecnologia, uso do biogás, destino do digestato e exigências do órgão ambiental competente.</p></div>
+      <div class="hb fi"><h3>Todo dejeto serve para biodigestor?</h3><p class="sb">Não. Depende do tipo de animal, da dieta, de como o dejeto é coletado e da regularidade de geração. O estudo avalia isso antes de recomendar qualquer coisa.</p></div>
+      <div class="hb fi fi-d2"><h3>O fertilizante pode substituir adubo?</h3><p class="sb">Pode contribuir bastante, mas não é substituição automática. É preciso analisar o que sai do biodigestor e calibrar a dose para cada área.</p></div>
+      <div class="hb fi"><h3>Posso misturar dejetos de criações diferentes?</h3><p class="sb">Sim — e muitas vezes aumenta o potencial. Mas a mistura precisa ser calculada para não gerar instabilidade no processo.</p></div>
+      <div class="hb fi fi-d2"><h3>O tamanho da propriedade importa?</h3><p class="sb">Importa muito. Propriedades pequenas, médias e grandes precisam de tecnologias e investimentos diferentes. Não existe solução tamanho único.</p></div>
+      <div class="hb fi"><h3>O biodigestor exige operação diária?</h3><p class="sb">Sim. Ele precisa de alimentação regular, monitoramento e cuidados com o gás. Não é um equipamento que funciona sem atenção.</p></div>
+      <div class="hb fi fi-d2"><h3>Precisa de licença ambiental?</h3><p class="sb">Depende do porte, da tecnologia e do que você vai fazer com o biogás e o fertilizante. Cada estado e órgão ambiental tem suas regras.</p></div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
 <section class="ctastrip" id="contato">
   <div class="ctasi fi">
     <div class="sl">Próximo passo</div>
-    <h2>Seu dejeto já está sendo<br>produzido. <em>Agora falta avaliar o potencial.</em></h2>
-    <p>A pré-análise é gratuita. Com informações básicas do sistema produtivo — tipo de criação, número de animais, manejo do dejeto, cidade e principal demanda energética — já é possível indicar se vale avançar para um EVTE completo. <strong>Sem compromisso.</strong></p>
+    <h2>Seu dejeto já está saindo.<br><em>A questão é o que você faz com ele.</em></h2>
+    <p>A análise inicial é gratuita. Diga o tipo de criação, o número de animais, a cidade e o que mais pesa na sua conta de energia. Com isso já dá para saber se vale avançar. <strong>Sem compromisso.</strong></p>
     <div class="ctabtns">
-      <a href="https://wa.me/5519971315434?text=Olá!%20Tenho%20interesse%20em%20uma%20pré-análise%20gratuita%20de%20biogás%20para%20minha%20propriedade%20rural." class="btn-wpp" target="_blank">
+      <a href="https://wa.me/5519971315434?text=Olá!%20Tenho%20interesse%20em%20uma%20análise%20gratuita%20de%20biogás%20para%20minha%20propriedade%20rural." class="btn-wpp" target="_blank">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Falar no WhatsApp
       </a>
       <a href="/" class="btn-ghost">← Voltar ao site</a>
     </div>
-    <p style="margin-top:1.2rem;font-size:0.78rem;color:var(--text-muted);">Pré-análise gratuita · Sem compromisso · Resposta em até 24h</p>
+    <p style="margin-top:1.2rem;font-size:0.78rem;color:var(--text-muted);">Análise gratuita · Sem compromisso · Resposta em até 24h</p>
   </div>
 </section>
 
@@ -308,7 +264,6 @@ footer p{font-size:0.78rem;color:var(--text-muted);}
   <a href="/" class="logo">Vértice<span>.</span></a>
   <p>© 2026 Vértice Consultoria Energética · verticebiogas.com.br</p>
 </footer>
-
 <script>
 const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('vis');obs.unobserve(el.target);}});},{threshold:0.1});
 document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
