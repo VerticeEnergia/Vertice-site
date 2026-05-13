@@ -250,19 +250,14 @@ function abrirPopup(){document.getElementById('popup').classList.add('show');}
 function fecharPopupBtn(){document.getElementById('popup').classList.remove('show');}
 function fecharPopup(e){if(e.target===document.getElementById('popup'))fecharPopupBtn();}
 
-// Dynamic back button — pill flutuante
+// Dynamic back button — lê ?origem= da URL
 (function(){
   var btn=document.getElementById('btn-voltar-origin');
   if(!btn)return;
-  var subpages=['agropecuaria','agroindustria','industria','saneamento'];
-  var ref=document.referrer;
-  var destino='/';
-  if(ref){
-    for(var i=0;i<subpages.length;i++){
-      if(ref.indexOf(subpages[i])!==-1){destino='/'+subpages[i];break;}
-    }
-    try{if(destino==='/'&&new URL(ref).origin===window.location.origin)destino=ref;}catch(e){}
-  }
+  var validos=['agropecuaria','agroindustria','industria','saneamento'];
+  var params=new URLSearchParams(window.location.search);
+  var origem=params.get('origem');
+  var destino = (origem && validos.indexOf(origem)!==-1) ? '/'+origem : '/';
   btn.href=destino;
 })();
 
