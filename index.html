@@ -348,7 +348,7 @@ function gtag_report_form_conversion(){gtag('event','conversion',{'send_to':'AW-
   <div class="nav-actions">
     <a href="#contato" class="nav-cta">Analisar meu potencial →</a>
 
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuPanel">
+    <button type="button" class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuPanel">
       <span></span>
       <span></span>
       <span></span>
@@ -364,8 +364,8 @@ function gtag_report_form_conversion(){gtag('event','conversion',{'send_to':'AW-
 
   <div class="menu-links">
     <a href="/"><strong>Início</strong><span>→</span></a>
-    <a href="/#simulador"><strong>Simulador</strong><span>→</span></a>
-    <a href="/#contato"><strong>Contato</strong><span>→</span></a>
+    <a href="#simulador"><strong>Simulador</strong><span>→</span></a>
+    <a href="#contato"><strong>Contato</strong><span>→</span></a>
     <a href="/agropecuaria"><strong>Agropecuária</strong><span>→</span></a>
     <a href="/industria"><strong>Indústria</strong><span>→</span></a>
     <a href="/agroindustria"><strong>Agroindústria</strong><span>→</span></a>
@@ -872,5 +872,57 @@ Quero entender se meu empreendimento tem potencial para biogás.`;
   setTimeout(()=>window.open(buildWhatsappLink('formulario', txt),'_blank'),500);
 }
 </script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  const menuToggle = document.getElementById('menuToggle');
+  const menuPanel = document.getElementById('menuPanel');
+  const menuOverlay = document.getElementById('menuOverlay');
+
+  if(!menuToggle || !menuPanel || !menuOverlay){
+    console.warn('Menu global não encontrado no HTML.');
+    return;
+  }
+
+  function abrirMenu(){
+    menuToggle.classList.add('active');
+    menuPanel.classList.add('active');
+    menuOverlay.classList.add('active');
+    menuToggle.setAttribute('aria-expanded','true');
+    menuPanel.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function fecharMenu(){
+    menuToggle.classList.remove('active');
+    menuPanel.classList.remove('active');
+    menuOverlay.classList.remove('active');
+    menuToggle.setAttribute('aria-expanded','false');
+    menuPanel.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+
+  menuToggle.addEventListener('click', function(){
+    if(menuPanel.classList.contains('active')){
+      fecharMenu();
+    }else{
+      abrirMenu();
+    }
+  });
+
+  menuOverlay.addEventListener('click', fecharMenu);
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      fecharMenu();
+    }
+  });
+
+  document.querySelectorAll('.menu-links a').forEach(function(link){
+    link.addEventListener('click', fecharMenu);
+  });
+});
+</script>
+
 </body>
 </html>
