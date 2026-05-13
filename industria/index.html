@@ -3,11 +3,10 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Biogás para Indústria | Vértice Consultoria Energética</title>
-<meta name="description" content="Avaliação de potencial de biogás para indústrias alimentícias, laticínios, frigoríficos, cervejarias e processadoras com efluentes orgânicos.">
+<meta name="description" content="Você paga para tratar o efluente e ainda compra energia. Avalie se o biogás faz sentido para sua indústria.">
 <link rel="canonical" href="https://verticebiogas.com.br/industria">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-
 :root{--green:#2d6a4f;--green-light:#40916c;--amber:#e9c46a;--dark:#0d1b12;--dark-2:#162218;--dark-3:#1e2e22;--text:#e8f0ea;--text-muted:#8aab92;--border:rgba(64,145,108,0.2);}
 *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
 body{background:var(--dark);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
@@ -53,22 +52,16 @@ h1 em{font-style:italic;color:var(--green-light);}
 .hb{background:var(--dark-3);border:1px solid rgba(64,145,108,0.3);border-radius:8px;padding:2rem;}
 .hb h3{font-family:'DM Serif Display',serif;font-size:1.2rem;margin-bottom:0.8rem;}
 .hb p{font-size:0.85rem;color:var(--text-muted);line-height:1.65;margin-bottom:0.8rem;}
-.hb p strong{color:var(--text);}
-.hb-note{font-size:0.75rem;color:var(--green-light);font-style:italic;padding-top:0.8rem;border-top:1px solid var(--border);}
 .ci-item{display:flex;gap:0.8rem;margin-bottom:0.9rem;font-size:0.85rem;color:var(--text-muted);line-height:1.6;}
 .ci-item:last-child{margin-bottom:0;}
 .ci-icon{color:var(--amber);flex-shrink:0;}
 .ci-item strong{color:var(--text);}
-.pq{margin:2rem 0;padding:1.2rem 1.5rem;background:rgba(233,196,106,0.07);border:1px solid rgba(233,196,106,0.18);border-radius:4px;font-size:0.88rem;color:var(--amber);font-style:italic;line-height:1.6;}
+.pq{margin:2rem 0;padding:1.2rem 1.5rem;background:rgba(233,196,106,0.07);border:1px solid rgba(233,196,106,0.18);border-radius:4px;font-size:0.95rem;color:var(--amber);font-style:italic;line-height:1.6;}
 .bg2{background:var(--dark-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
 .tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.8rem;}
 .tag{font-size:0.68rem;padding:0.2rem 0.7rem;background:rgba(45,106,79,0.2);border:1px solid rgba(64,145,108,0.25);border-radius:20px;color:var(--green-light);}
 .grid-sub{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;}
 @media(max-width:640px){.grid-sub{grid-template-columns:1fr;}}
-.stat-bar{background:var(--dark-3);border:1px solid var(--border);border-radius:8px;padding:1.5rem;display:flex;gap:1.5rem;align-items:center;}
-.stat-bar-num{font-family:'DM Serif Display',serif;font-size:2rem;color:var(--amber);line-height:1;flex-shrink:0;}
-.stat-bar-desc{font-size:0.82rem;color:var(--text-muted);line-height:1.55;}
-.stat-bar-desc strong{color:var(--text);}
 .ctastrip{padding:5rem 2.5rem;background:var(--dark-2);border-top:1px solid var(--border);}
 .ctasi{max-width:700px;margin:0 auto;text-align:center;}
 .ctasi h2{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.15;margin-bottom:1rem;}
@@ -80,26 +73,24 @@ h1 em{font-style:italic;color:var(--green-light);}
 .btn-wpp:hover{background:#1ebe5d;transform:translateY(-2px);}
 footer{padding:2rem 2.5rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
 footer p{font-size:0.78rem;color:var(--text-muted);}
-
 .tb-wrap{overflow-x:auto;margin-top:2rem;border:1px solid var(--border);border-radius:8px;background:var(--dark-3);}
-.potencial-table{width:100%;border-collapse:collapse;min-width:760px;}
-.potencial-table th,.potencial-table td{text-align:left;padding:1rem;border-bottom:1px solid var(--border);vertical-align:top;}
+.potencial-table{width:100%;border-collapse:collapse;min-width:600px;}
+.potencial-table th,.potencial-table td{text-align:left;padding:1rem 1.2rem;border-bottom:1px solid var(--border);vertical-align:top;}
 .potencial-table th{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--green-light);font-weight:600;background:rgba(45,106,79,0.16);}
 .potencial-table td{font-size:0.84rem;color:var(--text-muted);line-height:1.6;}
 .potencial-table td strong{color:var(--text);font-weight:500;}
+.potencial-table td .num{font-family:'DM Serif Display',serif;font-size:1.3rem;color:var(--amber);display:block;margin-bottom:0.25rem;line-height:1.1;}
 .note-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem;}
 @media(max-width:760px){.note-grid{grid-template-columns:1fr;}}
 .note{background:rgba(233,196,106,0.06);border:1px solid rgba(233,196,106,0.16);border-radius:8px;padding:1.1rem;font-size:0.82rem;color:var(--text-muted);line-height:1.65;}
 .note strong{color:var(--amber);}
 .faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;margin-top:2rem;}
 @media(max-width:768px){.faq-grid{grid-template-columns:1fr;}}
-
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
 .fi{opacity:0;transform:translateY(20px);transition:opacity 0.75s ease,transform 0.75s ease;}
 .fi.vis{opacity:1;transform:translateY(0);}
 .fi-d2{transition-delay:0.15s;}.fi-d3{transition-delay:0.28s;}
 @media(max-width:600px){nav,.hero-sp,.cs,.ctastrip,footer{padding-left:1.2rem;padding-right:1.2rem;}}
-
 </style>
 </head>
 <body>
@@ -113,170 +104,133 @@ footer p{font-size:0.78rem;color:var(--text-muted);}
   <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1400&q=80&fit=crop" alt="Indústria alimentícia">
   <div class="hero-sp-inner">
     <div class="eyebrow">Biogás para Indústria</div>
-    <h1>Você trata efluente,<br>compra energia e<br><em>precisa decidir com dados.</em></h1>
-    <p class="lead">Indústrias alimentícias podem ter potencial para gerar biogás a partir de efluentes e resíduos orgânicos. A rota de uso depende da carga orgânica, da estabilidade do processo, do pré-tratamento e da demanda energética real da planta.</p>
+    <h1>Você paga para tratar<br>o efluente. E ainda compra<br><em>energia por fora.</em></h1>
+    <p class="lead">Laticínios, frigoríficos, cervejarias e processadoras gastam duas vezes: uma para descartar o efluente, outra para pagar a conta de energia. O biodigestor pode conectar esses dois custos — mas só vale avançar se o seu processo fechar.</p>
     <div class="hero-btns">
-      <a href="/#contato" class="btn-primary">Quero minha pré-análise gratuita</a>
-      <a href="#cadeias" class="btn-ghost">Ver cadeias atendidas</a>
+      <a href="/#contato" class="btn-primary">Quero minha análise gratuita</a>
+      <a href="#potencial" class="btn-ghost">Ver potencial por efluente</a>
     </div>
   </div>
 </section>
 
-
-<!-- PROBLEMA -->
 <section class="cs bg2" id="problema">
   <div class="ci">
     <div class="two">
       <div class="fi">
-        <div class="sl">O problema do setor</div>
-        <h2 class="st">A indústria alimentícia trata efluente, compra energia e nem sempre conecta essas duas contas.</h2>
+        <div class="sl">O problema</div>
+        <h2 class="st">Dois custos separados que poderiam ser uma solução.</h2>
         <div class="dv"></div>
-        <p class="sb">Laticínios, frigoríficos, cervejarias e processadoras de alimentos geram efluentes e resíduos com carga orgânica relevante. Esse material costuma entrar na operação como custo de tratamento, adequação ambiental e descarte, enquanto a planta segue comprando energia térmica ou elétrica separadamente.</p>
+        <p class="sb">A indústria alimentícia gera efluente com alto teor orgânico todo turno. Esse efluente entra como custo de tratamento e adequação ambiental — enquanto a planta continua comprando vapor, água quente e eletricidade.</p>
         <br>
-        <p class="sb">O biogás pode ser uma rota interessante quando existe volume, regularidade, composição adequada e demanda energética compatível. Por isso, o EVTE não parte de promessa de substituição, mas de uma pergunta técnica: o resíduo da planta sustenta um projeto viável?</p>
-        <div class="pq">"Tenho efluente, demanda térmica e custo operacional. Falta saber se esses fluxos podem conversar dentro do mesmo projeto."</div>
+        <p class="sb">O biodigestor pode reduzir o custo do tratamento e gerar energia ao mesmo tempo. Mas o projeto precisa respeitar a variação de produção, a qualidade do efluente e o que a planta realmente consome.</p>
+        <div class="pq">"Pago para tratar o efluente e ainda compro energia. Quero saber se esses dois custos podem virar um projeto."</div>
       </div>
       <div class="fi fi-d2">
         <div class="hb">
           <h3>O que precisa ser avaliado</h3>
-          <div class="ci-item"><span class="ci-icon">→</span><div><strong>Carga orgânica do efluente.</strong> DQO, DBO, óleos, graxas e sólidos influenciam diretamente o tipo de tratamento e o potencial de geração de biogás.</div></div>
-          <div class="ci-item"><span class="ci-icon">→</span><div><strong>Variação operacional.</strong> Turnos, limpeza CIP, sazonalidade de produção e picos de lavagem podem alterar a alimentação do biodigestor.</div></div>
-          <div class="ci-item"><span class="ci-icon">→</span><div><strong>Demanda energética real.</strong> Vapor, água quente, caldeira, refrigeração, motores e eletricidade precisam ser analisados antes de definir o uso do biogás.</div></div>
-          <div class="ci-item"><span class="ci-icon">→</span><div><strong>Integração com o tratamento existente.</strong> O biodigestor deve se encaixar na estação de tratamento da planta, e não criar um problema operacional novo.</div></div>
+          <div class="ci-item"><span class="ci-icon">→</span><div><strong>Carga orgânica do efluente.</strong> Quantidade de matéria orgânica, óleos, graxas e sólidos definem o potencial de geração de biogás.</div></div>
+          <div class="ci-item"><span class="ci-icon">→</span><div><strong>Variação operacional.</strong> Turnos, limpeza com produtos químicos, sazonalidade e picos de lavagem podem desestabilizar o biodigestor.</div></div>
+          <div class="ci-item"><span class="ci-icon">→</span><div><strong>Demanda energética real.</strong> Vapor, água quente, caldeira, motores e eletricidade precisam ser mapeados antes de escolher a rota de uso do biogás.</div></div>
+          <div class="ci-item"><span class="ci-icon">→</span><div><strong>Integração com o tratamento existente.</strong> O biodigestor entra na estação de tratamento — não a substitui. Precisa se encaixar no que já existe.</div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- O QUE RESOLVE -->
 <section class="cs">
   <div class="ci">
     <div class="fi" style="margin-bottom:3rem;">
-      <div class="sl">O que o biogás pode resolver</div>
-      <h2 class="st">O efluente industrial pode deixar de ser apenas custo de tratamento.</h2>
+      <div class="sl">O que o biodigestor resolve</div>
+      <h2 class="st">O efluente para de ser só custo.</h2>
       <div class="dv"></div>
-      <p class="sb" style="max-width:720px;">A digestão anaeróbia pode reduzir carga orgânica e gerar biogás, mas a aplicação depende da composição do efluente, da escala, da estabilidade operacional e da demanda energética da indústria.</p>
+      <p class="sb" style="max-width:720px;">A biodigestão reduz a carga orgânica do efluente e gera biogás para uso interno. Mas a rota certa depende do que sua planta gera, do que ela consome e de quanto a operação pode ser controlada.</p>
     </div>
     <div class="three">
-      <div class="fc fi"><div class="fi-icon">♨️</div><div class="ft">Uso térmico no processo</div><div class="fd">O biogás pode ser avaliado para caldeiras, água quente, vapor ou queimadores, desde que a qualidade do gás e a demanda sejam compatíveis.</div></div>
-      <div class="fc fi fi-d2"><div class="fi-icon">⚡</div><div class="ft">Geração elétrica</div><div class="fd">A cogeração pode ser considerada quando há volume de gás, operação regular e consumo elétrico que justifique o equipamento.</div></div>
-      <div class="fc fi fi-d3"><div class="fi-icon">💧</div><div class="ft">Tratamento de efluentes</div><div class="fd">O biodigestor pode reduzir parte da carga orgânica antes das etapas posteriores, apoiando a estação de tratamento existente.</div></div>
-      <div class="fc fi"><div class="fi-icon">🧪</div><div class="ft">Controle de variabilidade</div><div class="fd">O EVTE verifica pH, óleos, graxas, produtos de limpeza, variação de vazão e riscos de inibição.</div></div>
-      <div class="fc fi fi-d2"><div class="fi-icon">📋</div><div class="ft">Base para licenciamento</div><div class="fd">O estudo organiza premissas técnicas e pontos de atenção que podem apoiar discussões posteriores com projetistas e órgãos competentes.</div></div>
-      <div class="fc fi fi-d3"><div class="fi-icon">📊</div><div class="ft">Decisão de investimento</div><div class="fd">O resultado indica se faz sentido avançar, ajustar escopo ou descartar o projeto antes de investir em implantação.</div></div>
+      <div class="fc fi"><div class="fi-icon">♨️</div><div class="ft">Menos gasto com vapor e aquecimento</div><div class="fd">O biogás pode alimentar caldeiras, aquecedores e queimadores — quando a produção de gás é compatível com a demanda da planta.</div></div>
+      <div class="fc fi fi-d2"><div class="fi-icon">⚡</div><div class="ft">Geração de energia elétrica</div><div class="fd">Possível quando há volume de gás regular e consumo elétrico que justifique o investimento em geração.</div></div>
+      <div class="fc fi fi-d3"><div class="fi-icon">💧</div><div class="ft">Menos carga no tratamento</div><div class="fd">O biodigestor reduz a carga orgânica antes das etapas seguintes, aliviando o tratamento e podendo reduzir custos operacionais da estação.</div></div>
+      <div class="fc fi"><div class="fi-icon">🧪</div><div class="ft">Controle de variabilidade</div><div class="fd">O estudo mapeia óleos, graxas, produtos de limpeza e variações de vazão — e define como preparar o efluente antes do biodigestor.</div></div>
+      <div class="fc fi fi-d2"><div class="fi-icon">📋</div><div class="ft">Mais robustez ambiental</div><div class="fd">Um tratamento mais eficiente organiza a planta para exigências de licenciamento e pode reduzir risco de autuação.</div></div>
+      <div class="fc fi fi-d3"><div class="fi-icon">📊</div><div class="ft">Decisão com número na mão</div><div class="fd">O estudo de viabilidade mostra o que o projeto gera, o que custa e se o retorno justifica o investimento — antes de comprar qualquer equipamento.</div></div>
     </div>
   </div>
 </section>
 
-<!-- CADEIAS -->
 <section class="cs bg2" id="cadeias">
   <div class="ci">
-    <div class="fi" style="margin-bottom:3rem;"><div class="sl">Cadeias atendidas</div><h2 class="st">Qual é o seu setor industrial?</h2><div class="dv"></div></div>
+    <div class="fi" style="margin-bottom:3rem;"><div class="sl">Qual é o seu setor?</div><h2 class="st">Cada indústria tem um efluente diferente.</h2><div class="dv"></div></div>
     <div class="two">
       <div class="fi">
-        <div class="hb" style="margin-bottom:1.5rem;"><h3>Laticínios</h3><p>Soro de leite, água de lavagem e efluentes de processo podem ter carga orgânica relevante. O EVTE avalia volume, DQO, sazonalidade, CIP e demanda térmica.</p><div class="tags"><span class="tag">Queijo</span><span class="tag">Iogurte</span><span class="tag">UHT</span><span class="tag">Soro</span></div></div>
-        <div class="hb"><h3>Frigoríficos</h3><p>Efluentes de abate, sangue, gordura e água de lavagem exigem atenção a óleos, graxas, sólidos e pré-tratamento antes da biodigestão.</p><div class="tags"><span class="tag">Bovinos</span><span class="tag">Suínos</span><span class="tag">Aves</span><span class="tag">Abate</span></div></div>
+        <div class="hb" style="margin-bottom:1.5rem;"><h3>Laticínios</h3><p>Soro de leite, água de lavagem e efluentes de processo têm alto potencial — mas o soro puro pode acidificar rápido. O estudo avalia volume, variação e demanda térmica.</p><div class="tags"><span class="tag">Queijo</span><span class="tag">Iogurte</span><span class="tag">UHT</span><span class="tag">Soro</span></div></div>
+        <div class="hb"><h3>Frigoríficos</h3><p>Efluente de abate tem alto potencial, mas óleos, graxas e proteínas exigem pré-tratamento cuidadoso antes do biodigestor.</p><div class="tags"><span class="tag">Bovinos</span><span class="tag">Suínos</span><span class="tag">Aves</span><span class="tag">Abate</span></div></div>
       </div>
       <div class="fi fi-d2">
-        <div class="hb" style="margin-bottom:1.5rem;"><h3>Bebidas e processadoras</h3><p>Cervejarias, sucos e alimentos processados geram efluentes e resíduos com composição variável. A estabilidade da operação é decisiva.</p><div class="tags"><span class="tag">Cerveja</span><span class="tag">Suco</span><span class="tag">Conservas</span><span class="tag">Alimentos</span></div></div>
-        <div class="hb"><h3>Oleaginosas e ingredientes</h3><p>Processamento de soja, palma, girassol e outros insumos pode gerar efluentes e resíduos com potencial de codigestão, mas depende da composição real.</p><div class="tags"><span class="tag">Soja</span><span class="tag">Palma</span><span class="tag">Girassol</span><span class="tag">Canola</span></div></div>
+        <div class="hb" style="margin-bottom:1.5rem;"><h3>Bebidas e processadoras</h3><p>Cervejarias, sucos e alimentos processados têm composição variável. A estabilidade da operação é o que define se o projeto é viável.</p><div class="tags"><span class="tag">Cerveja</span><span class="tag">Suco</span><span class="tag">Conservas</span><span class="tag">Alimentos</span></div></div>
+        <div class="hb"><h3>Oleaginosas e ingredientes</h3><p>Processamento de soja, palma e girassol gera efluentes com potencial de codigestão, mas a composição real precisa ser avaliada.</p><div class="tags"><span class="tag">Soja</span><span class="tag">Palma</span><span class="tag">Girassol</span><span class="tag">Canola</span></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- REFERÊNCIAS TÉCNICAS -->
 <section class="cs" id="potencial">
   <div class="ci">
     <div class="fi" style="margin-bottom:2rem;">
-      <div class="sl">Referências de potencial</div>
-      <h2 class="st">Potencial metanogênico por fluxo industrial.</h2>
+      <div class="sl">Potencial por resíduo</div>
+      <h2 class="st">Quanto biogás o seu resíduo pode gerar?</h2>
       <div class="dv"></div>
-      <p class="sb" style="max-width:720px;">
-        A tabela abaixo apresenta valores de referência da literatura para BMP/B₀. Eles servem para triagem técnica e comparação entre fluxos, não como promessa de produção. No EVTE, esses valores precisam ser ajustados por DQO, sólidos voláteis, óleos e graxas, pH, vazão, sazonalidade e eficiência real do sistema.
-      </p>
-    </div>
-
-    <div class="tb-wrap fi fi-d2">
-      <table class="potencial-table">
-        <thead>
-          <tr>
-            <th>Fluxo industrial</th>
-            <th>Origem típica</th>
-            <th>B₀/BMP de referência</th>
-            <th>Observação técnica</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Soro de leite e efluentes lácteos</strong></td>
-            <td>Laticínios, queijarias, linhas de higienização e efluentes com lactose, gordura e proteína.</td>
-            <td>~340 a 430 mL CH₄/g SV</td>
-            <td>Soro de queijo pode apresentar BMP elevado, mas tem baixa alcalinidade e risco de acidificação. Em efluentes lácteos diluídos, o cálculo deve ser feito também por DQO.</td>
-          </tr>
-          <tr>
-            <td><strong>Efluentes e resíduos de frigorífico</strong></td>
-            <td>Água de lavagem, sangue, gordura, sólidos, conteúdo ruminal e lodo primário.</td>
-            <td>~270 a 350 mL CH₄/g SV; frações ricas em sangue/gordura podem chegar perto de ~500 mL CH₄/g SV</td>
-            <td>O potencial é relevante, mas óleos, graxas, proteínas e nitrogênio podem gerar instabilidade. Pré-tratamento e controle de carga são decisivos.</td>
-          </tr>
-          <tr>
-            <td><strong>Cervejarias e bebidas</strong></td>
-            <td>Bagaço de malte, levedura, lodo e efluentes de lavagem.</td>
-            <td>~264 a 387 mL CH₄/g SV para bagaço de malte; resíduos de cervejaria podem atingir ~462 mL CH₄/g SV</td>
-            <td>O resultado muda conforme a proporção entre bagaço, levedura, efluente líquido e água de limpeza. Separar fluxos evita superestimar o projeto.</td>
-          </tr>
-          <tr>
-            <td><strong>Processadoras de alimentos</strong></td>
-            <td>Resíduos de frutas, vegetais, ingredientes, molhos, conservas e perdas orgânicas de processo.</td>
-            <td>~165 a 496 mL CH₄/g SV para resíduos alimentares; frutas e vegetais: ~288 a 516 mL CH₄/g SV</td>
-            <td>Substratos ricos em carboidratos e lipídios tendem a produzir mais metano, mas variações de composição, acidez e armazenamento mudam o desempenho.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="note-grid fi fi-d3">
-      <div class="note">
-        <strong>O que é B₀/BMP?</strong><br>
-        B₀, ou BMP, é o potencial metanogênico: uma estimativa de quanto metano um substrato pode gerar por unidade de matéria orgânica, normalmente em mL CH₄/g SV ou mL CH₄/g DQO.
-      </div>
-
-      <div class="note">
-        <strong>Como interpretar esses valores?</strong><br>
-        Quanto maior o BMP, maior tende a ser o potencial energético. Mas a produção real depende da vazão, concentração, pré-tratamento, estabilidade biológica e rota de uso do biogás.
+      <p class="sb" style="max-width:720px;">Você paga para tratar o efluente e ainda compra energia. O estudo de viabilidade calcula se dá para resolver os dois com um projeto só.</p>
+      <div style="margin-top:2rem;">
+        <a href="https://wa.me/5519971315434?text=Ol%C3%A1!%20Tenho%20interesse%20em%20uma%20an%C3%A1lise%20gratuita%20de%20biog%C3%A1s%20para%20minha%20ind%C3%BAstria." class="btn-wpp" target="_blank" style="display:inline-flex;align-items:center;gap:0.6rem;background:#25d366;color:#fff;padding:0.9rem 1.8rem;border-radius:4px;font-size:0.9rem;font-weight:700;text-decoration:none;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Quero saber o número do meu caso →
+        </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- EVTE INDÚSTRIA -->
-<section class="cs bg2" id="evte-industria">
+<section class="cs bg2" id="como-avaliamos">
   <div class="ci">
-    <div class="fi" style="margin-bottom:3rem;"><div class="sl">EVTE para indústria</div><h2 class="st">O estudo conecta efluente, processo produtivo e demanda energética.</h2><div class="dv"></div><p class="sb" style="max-width:720px;">Na indústria, o projeto só faz sentido quando o biodigestor conversa com a ETE, com a rotina de produção e com a forma como a planta consome energia.</p></div>
-    <div class="three"><div class="fc fi"><div class="fi-icon">01</div><div class="ft">Mapeamento dos fluxos</div><div class="fd">Identificação de efluentes, resíduos sólidos, vazões, horários de geração e pontos de mistura.</div></div><div class="fc fi fi-d2"><div class="fi-icon">02</div><div class="ft">Caracterização técnica</div><div class="fd">Levantamento de DQO, DBO, sólidos, pH, temperatura, óleos, graxas e possíveis inibidores.</div></div><div class="fc fi fi-d3"><div class="fi-icon">03</div><div class="ft">Pré-tratamento</div><div class="fd">Avaliação de equalização, separação de sólidos, flotação, homogeneização ou ajustes antes do biodigestor.</div></div><div class="fc fi"><div class="fi-icon">04</div><div class="ft">Uso do biogás</div><div class="fd">Comparação entre uso térmico, cogeração, purificação ou combinação de rotas conforme a demanda da planta.</div></div><div class="fc fi fi-d2"><div class="fi-icon">05</div><div class="ft">Integração à ETE</div><div class="fd">Verificação de como o biodigestor se encaixa nas etapas existentes de tratamento e controle ambiental.</div></div><div class="fc fi fi-d3"><div class="fi-icon">06</div><div class="ft">Viabilidade econômica</div><div class="fd">Estimativa de investimento, operação, manutenção, economia potencial e recomendação objetiva de avanço.</div></div></div>
+    <div class="fi" style="margin-bottom:3rem;"><div class="sl">Como avaliamos</div><h2 class="st">O estudo conecta efluente, processo e demanda de energia.</h2><div class="dv"></div><p class="sb" style="max-width:720px;">Na indústria, o projeto só funciona quando o biodigestor se encaixa na estação de tratamento, na rotina de produção e na forma como a planta consome energia.</p></div>
+    <div class="three">
+      <div class="fc fi"><div class="fi-icon">01</div><div class="ft">Mapeamento dos efluentes</div><div class="fd">Quais fluxos existem, em que volume, em que horário e onde se misturam ao longo do turno.</div></div>
+      <div class="fc fi fi-d2"><div class="fi-icon">02</div><div class="ft">Qualidade do efluente</div><div class="fd">Carga orgânica, óleos, graxas, pH, temperatura e o que pode inibir o processo biológico.</div></div>
+      <div class="fc fi fi-d3"><div class="fi-icon">03</div><div class="ft">Preparo antes do biodigestor</div><div class="fd">Equalização, separação de sólidos, flotação e ajustes necessários para estabilizar a alimentação.</div></div>
+      <div class="fc fi"><div class="fi-icon">04</div><div class="ft">Rota de uso do biogás</div><div class="fd">Caldeira, geração elétrica ou combinação — a rota depende do que a planta consome e do que o projeto gera.</div></div>
+      <div class="fc fi fi-d2"><div class="fi-icon">05</div><div class="ft">Integração com a ETE</div><div class="fd">Como o biodigestor entra nas etapas de tratamento existentes sem criar um problema operacional novo.</div></div>
+      <div class="fc fi fi-d3"><div class="fi-icon">06</div><div class="ft">A resposta final</div><div class="fd">Vale avançar ou não? O estudo mostra o investimento, a economia estimada e o tempo de retorno.</div></div>
+    </div>
   </div>
 </section>
 
-<!-- FAQ INDÚSTRIA -->
-<section class="cs" id="faq-industria"><div class="ci"><div class="fi" style="margin-bottom:2rem;"><div class="sl">Perguntas do setor</div><h2 class="st">Dúvidas específicas da indústria alimentícia.</h2><div class="dv"></div><p class="sb" style="max-width:720px;">Aqui o foco é efluente industrial, DQO, pré-tratamento, operação, energia térmica e integração com a estação de tratamento.</p></div><div class="faq-grid"><div class="hb fi"><h3>Todo efluente industrial serve para biodigestor?</h3><p class="sb">Não. É preciso avaliar carga orgânica, pH, óleos, graxas, produtos de limpeza, sólidos e estabilidade da vazão.</p></div><div class="hb fi fi-d2"><h3>O biodigestor substitui a ETE?</h3><p class="sb">Normalmente não. Ele pode ser uma etapa anaeróbia dentro do tratamento, reduzindo carga antes das etapas seguintes.</p></div><div class="hb fi"><h3>O CIP pode atrapalhar o processo?</h3><p class="sb">Pode. Produtos de limpeza, variação de pH e choques de carga precisam ser considerados no projeto e na equalização.</p></div><div class="hb fi fi-d2"><h3>Uso térmico é sempre melhor que geração elétrica?</h3><p class="sb">Depende da demanda da indústria. O EVTE compara rotas e evita escolher tecnologia antes de entender o consumo real.</p></div><div class="hb fi"><h3>É preciso análise laboratorial?</h3><p class="sb">Para um EVTE mais confiável, sim. Dados de DQO, sólidos, óleos e graxas tornam a estimativa muito mais segura.</p></div><div class="hb fi fi-d2"><h3>O projeto pode ajudar no licenciamento?</h3><p class="sb">Pode organizar dados e melhorar a robustez técnica do tratamento, mas não substitui exigências do órgão ambiental.</p></div></div></div></section>
+<section class="cs" id="faq">
+  <div class="ci">
+    <div class="fi" style="margin-bottom:2rem;"><div class="sl">Perguntas frequentes</div><h2 class="st">O que as indústrias mais perguntam.</h2><div class="dv"></div></div>
+    <div class="faq-grid">
+      <div class="hb fi"><h3>Todo efluente industrial serve para biodigestor?</h3><p class="sb">Não. É preciso avaliar a carga orgânica, óleos, graxas, produtos de limpeza e estabilidade da vazão. O estudo define se o seu efluente sustenta o projeto.</p></div>
+      <div class="hb fi fi-d2"><h3>O biodigestor substitui a estação de tratamento?</h3><p class="sb">Não. Ele entra como uma etapa anaeróbia dentro do tratamento, reduzindo a carga orgânica antes das etapas seguintes.</p></div>
+      <div class="hb fi"><h3>A limpeza química da planta atrapalha?</h3><p class="sb">Pode. Produtos de limpeza e variação de pH afetam o processo biológico. O projeto precisa prever equalização para absorver esses picos.</p></div>
+      <div class="hb fi fi-d2"><h3>Aquecimento ou geração elétrica — o que é melhor?</h3><p class="sb">Depende do que sua planta mais consome. O estudo compara as duas rotas antes de recomendar qualquer equipamento.</p></div>
+      <div class="hb fi"><h3>Precisa de análise laboratorial do efluente?</h3><p class="sb">Para um estudo mais confiável, sim. Dados de carga orgânica, óleos e graxas tornam a estimativa muito mais segura e evitam surpresas na implantação.</p></div>
+      <div class="hb fi fi-d2"><h3>O projeto ajuda no licenciamento?</h3><p class="sb">Pode organizar os dados e fortalecer a robustez técnica do tratamento, mas não substitui as exigências do órgão ambiental.</p></div>
+    </div>
+  </div>
+</section>
 
-
-<!-- CTA -->
 <section class="ctastrip" id="contato">
   <div class="ctasi fi">
     <div class="sl">Próximo passo</div>
-    <h2>Dois custos operacionais.<br><em>Uma decisão que precisa ser calculada.</em></h2>
-    <p>A pré-análise é gratuita. Com informações básicas sobre efluente, produção, tratamento atual e consumo energético, já é possível indicar se vale avançar para um EVTE completo. <strong>Sem compromisso.</strong></p>
+    <h2>Dois custos operacionais.<br><em>Uma decisão que precisa de número.</em></h2>
+    <p>A análise inicial é gratuita. Diga o tipo de efluente, o volume gerado, o tratamento atual e o que mais pesa na sua conta de energia. Com isso já dá para saber se vale avançar. <strong>Sem compromisso.</strong></p>
     <div class="ctabtns">
-      <a href="https://wa.me/5519971315434?text=Ol%C3%A1!%20Tenho%20interesse%20em%20uma%20pr%C3%A9-an%C3%A1lise%20gratuita%20de%20biog%C3%A1s%20para%20minha%20ind%C3%BAstria." class="btn-wpp" target="_blank">
+      <a href="https://wa.me/5519971315434?text=Ol%C3%A1!%20Tenho%20interesse%20em%20uma%20an%C3%A1lise%20gratuita%20de%20biog%C3%A1s%20para%20minha%20ind%C3%BAstria." class="btn-wpp" target="_blank">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Falar no WhatsApp
       </a>
       <a href="/" class="btn-ghost">← Voltar ao site</a>
     </div>
-    <p style="margin-top:1.2rem;font-size:0.78rem;color:var(--text-muted);">Pré-análise gratuita · Sem compromisso · Resposta em até 24h</p>
+    <p style="margin-top:1.2rem;font-size:0.78rem;color:var(--text-muted);">Análise gratuita · Sem compromisso · Resposta em até 24h</p>
   </div>
 </section>
 
@@ -284,7 +238,6 @@ footer p{font-size:0.78rem;color:var(--text-muted);}
   <a href="/" class="logo">Vértice<span>.</span></a>
   <p>© 2026 Vértice Consultoria Energética · verticebiogas.com.br</p>
 </footer>
-
 <script>
 const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('vis');obs.unobserve(el.target);}});},{threshold:0.1});
 document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
