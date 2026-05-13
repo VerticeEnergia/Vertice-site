@@ -17,6 +17,10 @@
       "dest": "/agroindustria.html"
     },
     {
+      "src": "/simulador",
+      "dest": "/simulador.html"
+    },
+    {
       "src": "/politica-de-privacidade",
       "dest": "/politica-de-privacidade.html"
     }
