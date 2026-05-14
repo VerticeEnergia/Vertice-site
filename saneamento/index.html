@@ -92,6 +92,35 @@ footer p{font-size:0.78rem;color:var(--text-muted);}
 .fi-d2{transition-delay:0.15s;}.fi-d3{transition-delay:0.28s;}
 @media(max-width:600px){nav,.hero-sp,.cs,.ctastrip,footer{padding-left:1.2rem;padding-right:1.2rem;}}
 
+
+/* AJUSTE COMERCIAL — HERO E BLOCOS VISUAIS */
+.hero-sp{min-height:78vh;display:flex;align-items:flex-end;padding:8rem 2.5rem 5.5rem;position:relative;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.24;filter:saturate(0.75) brightness(0.72);pointer-events:none;}
+.hero-sp::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 74% 30%,rgba(233,196,106,0.14),transparent 32%),linear-gradient(90deg,rgba(13,27,18,0.99) 0%,rgba(13,27,18,0.9) 45%,rgba(13,27,18,0.72) 100%);pointer-events:none;}
+.hero-sp::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,var(--dark) 0%,rgba(13,27,18,0.55) 34%,transparent 70%);pointer-events:none;}
+.hero-sp-inner{position:relative;z-index:1;max-width:1100px;width:100%;display:grid;grid-template-columns:1.08fr 0.82fr;gap:3rem;align-items:end;}
+.hero-copy{max-width:720px;}
+.hero-copy h1{max-width:760px;text-shadow:0 14px 36px rgba(0,0,0,0.45);}
+.hero-copy h1 em{color:var(--amber);}
+.hero-note{font-size:0.94rem;color:var(--text);line-height:1.65;max-width:620px;margin:-0.6rem 0 1.8rem;padding:0.9rem 1.05rem;border-left:3px solid var(--amber);background:rgba(233,196,106,0.08);border-radius:0 6px 6px 0;opacity:0;animation:fadeUp 0.7s 0.68s forwards;}
+.hero-visual{position:relative;min-height:330px;border:1px solid rgba(233,196,106,0.18);border-radius:16px;background:linear-gradient(135deg,rgba(30,46,34,0.82),rgba(13,27,18,0.72));box-shadow:0 24px 70px rgba(0,0,0,0.34);backdrop-filter:blur(8px);overflow:hidden;opacity:0;animation:fadeUp 0.7s 0.75s forwards;}
+.hero-visual::before{content:'';position:absolute;inset:-40% -20% auto auto;width:340px;height:340px;background:radial-gradient(circle,rgba(64,145,108,0.22),transparent 68%);}
+.hero-visual-inner{position:relative;z-index:1;min-height:330px;padding:1.5rem;display:flex;flex-direction:column;justify-content:space-between;}
+.visual-kicker{font-size:0.64rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--green-light);font-weight:600;margin-bottom:0.55rem;}
+.visual-title{font-family:'DM Serif Display',serif;font-size:1.9rem;line-height:1.08;color:var(--text);max-width:310px;}
+.visual-title em{font-style:italic;color:var(--amber);}
+.flow{display:flex;flex-direction:column;gap:0.75rem;}
+.flow-card{background:rgba(22,34,24,0.82);border:1px solid rgba(64,145,108,0.22);border-radius:10px;padding:1rem;}
+.flow-card span{display:block;font-size:0.66rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green-light);font-weight:600;margin-bottom:0.3rem;}
+.flow-card strong{font-size:0.84rem;line-height:1.45;color:var(--text);font-weight:500;}
+.bg-photo{position:relative;overflow:hidden;background:var(--dark-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.bg-photo::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(22,34,24,0.96),rgba(22,34,24,0.88)),url('https://images.unsplash.com/photo-1581093458791-9d09a5df1433?w=1600&q=80&fit=crop') center/cover;opacity:0.95;pointer-events:none;}
+.bg-photo .ci{position:relative;z-index:1;}
+.pq{font-style:normal;color:var(--text);background:rgba(233,196,106,0.08);}
+.hb h3{color:var(--text);}
+@media(max-width:900px){.hero-sp-inner{grid-template-columns:1fr;gap:2rem;}.hero-visual{min-height:260px;}.hero-visual-inner{min-height:230px;}.visual-title{font-size:1.45rem;}}
+@media(max-width:620px){.hero-sp{min-height:auto;padding-top:7rem;padding-bottom:4.5rem;}.hero-visual{display:none;}.hero-copy h1{font-size:2.35rem;}.hero-note{font-size:0.86rem;}}
+
 /* MENU GLOBAL FIXO */
 .nav-actions{display:flex;align-items:center;gap:0.9rem;}
 .menu-toggle{width:42px;height:38px;border:1px solid var(--border);background:rgba(22,34,24,0.92);border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer;transition:all 0.2s;z-index:1002;}
@@ -148,39 +177,56 @@ footer p{font-size:0.78rem;color:var(--text-muted);}
   <div class="menu-foot">Acesse rapidamente as áreas de atuação, o simulador e o contato da Vértice.</div>
 </aside>
 
+
 <section class="hero-sp">
-  <img src="https://images.unsplash.com/photo-1581093458791-9d09a5df1433?w=1400&q=80&fit=crop" alt="Estação de tratamento de esgoto">
+  <img class="hero-bg" src="https://images.unsplash.com/photo-1581093458791-9d09a5df1433?w=1800&q=80&fit=crop" alt="Estrutura de saneamento e tratamento de efluentes">
   <div class="hero-sp-inner">
-    <div class="eyebrow">Biogás para Saneamento</div>
-    <h1>Sua operação pode já<br>estar gerando biogás.<br><em>E queimando sem aproveitar.</em></h1>
-    <p class="lead">ETEs, aterros e centrais de resíduos orgânicos produzem metano como parte do processo. Na maioria das operações, esse gás é queimado ou simplesmente liberado. A questão é: existe condição técnica e econômica para capturar e usar?</p>
-    <div class="hero-btns">
-      <a href="/#contato" class="btn-primary">Quero minha análise gratuita</a>
-      <a href="#operacoes" class="btn-ghost">Ver tipos de operação</a>
+    <div class="hero-copy">
+      <div class="eyebrow">Biogás para Saneamento</div>
+      <h1>O gás pode já estar sendo gerado.<br><em>A dúvida é se vale aproveitar.</em></h1>
+      <p class="lead">ETEs, aterros e centrais de resíduos podem produzir metano como parte da própria operação. Muitas vezes esse gás é queimado, perdido ou tratado apenas como obrigação ambiental.</p>
+      <p class="hero-note">A Vértice analisa se faz sentido capturar, tratar e usar esse biogás para reduzir custo, emissão e desperdício energético.</p>
+      <div class="hero-btns">
+        <a href="/#contato" class="btn-primary">Quero minha análise gratuita</a>
+        <a href="#operacoes" class="btn-ghost">Ver tipos de operação</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-visual-inner">
+        <div>
+          <div class="visual-kicker">Leitura inicial</div>
+          <div class="visual-title">Do gás perdido ao <em>uso com retorno</em></div>
+        </div>
+        <div class="flow">
+          <div class="flow-card"><span>01 · Geração</span><strong>Existe biogás suficiente e com regularidade?</strong></div>
+          <div class="flow-card"><span>02 · Tratamento</span><strong>O gás precisa de limpeza antes de virar energia?</strong></div>
+          <div class="flow-card"><span>03 · Decisão</span><strong>Vale usar, queimar melhor ou deixar para outra fase?</strong></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="cs bg2" id="problema">
+<section class="cs bg-photo" id="problema">
   <div class="ci">
     <div class="two">
       <div class="fi">
-        <div class="sl">O problema</div>
-        <h2 class="st">O gás já existe. O que falta é a decisão de aproveitá-lo.</h2>
+        <div class="sl">O ponto central</div>
+        <h2 class="st">No saneamento, o biogás costuma aparecer como problema. Ele também pode virar oportunidade.</h2>
         <div class="dv"></div>
-        <p class="sb">Em ETEs com tratamento anaeróbio, o metano é gerado como subproduto do próprio processo de tratamento. Em aterros, ele vem da decomposição dos resíduos. Em centrais de resíduos orgânicos, pode ser produzido de forma intensa.</p>
+        <p class="sb">Em uma ETE, em um aterro ou em uma central de resíduos, o metano não surge por acaso. Ele nasce da decomposição da matéria orgânica que já faz parte da operação.</p>
         <br>
-        <p class="sb">Na maioria dos casos, esse gás é queimado na tocha ou perdido para a atmosfera. Não porque o aproveitamento seja impossível — mas porque ninguém calculou se compensa capturar, tratar e usar.</p>
-        <div class="pq">"O gás pode já estar sendo gerado. A questão é saber se existe base técnica e econômica para aproveitá-lo."</div>
+        <p class="sb">A pergunta comercial é simples: esse gás tem volume, qualidade e uso possível para pagar o investimento de captação, tratamento e aproveitamento?</p>
       </div>
       <div class="fi fi-d2">
         <div class="hb">
-          <h3>Por que o potencial é perdido</h3>
-          <div class="ci-item"><span class="ci-icon">→</span><div><strong>Gás tratado como obrigação.</strong> Em muitas operações, o biogás é visto como algo a controlar — não como insumo com valor energético.</div></div>
-          <div class="ci-item"><span class="ci-icon">→</span><div><strong>Qualidade do gás varia.</strong> Umidade, gás sulfídrico e impurezas podem exigir tratamento antes do uso. Ignorar isso gera problema nos equipamentos.</div></div>
-          <div class="ci-item"><span class="ci-icon">→</span><div><strong>Escala e demanda nem sempre casam.</strong> Produzir biogás é uma coisa. Ter onde usar — e justificar o investimento — é outra.</div></div>
-          <div class="ci-item"><span class="ci-icon">→</span><div><strong>Contratos e responsabilidade técnica.</strong> Concessões e PPPs precisam definir quem opera, quem investe e como o projeto se encaixa nas metas do contrato.</div></div>
+          <h3>O que precisa ficar claro</h3>
+          <div class="ci-item"><span class="ci-icon">→</span><div><strong>Tem gás suficiente?</strong> Sem volume e regularidade, o projeto dificilmente fecha.</div></div>
+          <div class="ci-item"><span class="ci-icon">→</span><div><strong>O gás presta para uso?</strong> Umidade, H₂S e impurezas mudam custo e segurança.</div></div>
+          <div class="ci-item"><span class="ci-icon">→</span><div><strong>Existe consumo próximo?</strong> Energia elétrica, calor ou outro uso precisam conversar com a produção.</div></div>
+          <div class="ci-item"><span class="ci-icon">→</span><div><strong>O contrato permite?</strong> Em concessões e PPPs, responsabilidade, investimento e benefício precisam estar claros.</div></div>
         </div>
+        <div class="pq">O objetivo não é forçar um projeto de biogás. É descobrir se o gás que já existe merece ser aproveitado.</div>
       </div>
     </div>
   </div>
@@ -189,30 +235,30 @@ footer p{font-size:0.78rem;color:var(--text-muted);}
 <section class="cs">
   <div class="ci">
     <div class="fi" style="margin-bottom:3rem;">
-      <div class="sl">O que o aproveitamento resolve</div>
-      <h2 class="st">Capturar o biogás é o começo. Usar bem é o que fecha a conta.</h2>
+      <div class="sl">O que pode virar resultado</div>
+      <h2 class="st">Capturar o biogás é só o começo. O valor aparece quando existe uso claro.</h2>
       <div class="dv"></div>
-      <p class="sb" style="max-width:720px;">O aproveitamento energético no saneamento depende de captação, tratamento do gás, regularidade de produção, demanda interna e arranjo institucional da operação.</p>
+      <p class="sb" style="max-width:720px;">O aproveitamento no saneamento pode reduzir custo de operação, melhorar indicadores ambientais e evitar desperdício. Mas a rota precisa ser simples, segura e compatível com a realidade da operação.</p>
     </div>
     <div class="three">
-      <div class="fc fi"><div class="fi-icon">⚡</div><div class="ft">Geração de energia elétrica</div><div class="fd">Possível em operações com produção regular e consumo elétrico interno compatível. Pode reduzir o custo de energia da própria ETE ou aterro.</div></div>
-      <div class="fc fi fi-d2"><div class="fi-icon">♨️</div><div class="ft">Uso térmico</div><div class="fd">O calor pode ser aproveitado em processos específicos, como aquecimento de digestores ou apoio operacional, quando fizer sentido.</div></div>
-      <div class="fc fi fi-d3"><div class="fi-icon">🌫️</div><div class="ft">Menos emissão de metano</div><div class="fd">Capturar e usar o metano reduz emissões e pode gerar créditos de carbono, dependendo da metodologia e do mercado disponível.</div></div>
-      <div class="fc fi"><div class="fi-icon">🧪</div><div class="ft">Tratamento do gás</div><div class="fd">Gás sulfídrico, umidade e impurezas precisam ser removidos antes de motores ou caldeiras. Ignorar isso danifica equipamentos.</div></div>
-      <div class="fc fi fi-d2"><div class="fi-icon">📉</div><div class="ft">Redução de custo operacional</div><div class="fd">Quando a energia gerada ou economizada compensa o investimento e a manutenção, o aproveitamento reduz o custo de operar a instalação.</div></div>
-      <div class="fc fi fi-d3"><div class="fi-icon">📋</div><div class="ft">Base para contratos e metas</div><div class="fd">O estudo de viabilidade organiza dados para decisões em concessões, PPPs, indicadores de sustentabilidade e planejamento de longo prazo.</div></div>
+      <div class="fc fi"><div class="fi-icon">⚡</div><div class="ft">Energia para a própria operação</div><div class="fd">O biogás pode gerar eletricidade e reduzir parte do consumo da ETE, aterro ou central de resíduos.</div></div>
+      <div class="fc fi fi-d2"><div class="fi-icon">🔥</div><div class="ft">Uso térmico quando fizer sentido</div><div class="fd">Em alguns casos, o gás pode ser usado para aquecimento, apoio operacional ou processos próximos.</div></div>
+      <div class="fc fi fi-d3"><div class="fi-icon">🌫️</div><div class="ft">Menos metano desperdiçado</div><div class="fd">Capturar e usar o gás reduz emissões e pode fortalecer metas ambientais e de sustentabilidade.</div></div>
+      <div class="fc fi"><div class="fi-icon">🧪</div><div class="ft">Tratamento correto do gás</div><div class="fd">Antes de motores ou caldeiras, é preciso remover umidade, H₂S e impurezas que danificam equipamentos.</div></div>
+      <div class="fc fi fi-d2"><div class="fi-icon">📉</div><div class="ft">Redução de custo operacional</div><div class="fd">A conta só fecha quando a economia gerada compensa investimento, manutenção e operação do sistema.</div></div>
+      <div class="fc fi fi-d3"><div class="fi-icon">📋</div><div class="ft">Base para decisão pública ou privada</div><div class="fd">O estudo ajuda concessionárias, prefeituras e operadores a decidir com número, não com promessa.</div></div>
     </div>
   </div>
 </section>
 
 <section class="cs bg2" id="operacoes">
   <div class="ci">
-    <div class="fi" style="margin-bottom:3rem;"><div class="sl">Qual é a sua operação?</div><h2 class="st">Cada tipo de operação tem um perfil diferente.</h2><div class="dv"></div></div>
+    <div class="fi" style="margin-bottom:3rem;"><div class="sl">Qual é a sua operação?</div><h2 class="st">Cada sistema gera biogás de um jeito diferente.</h2><div class="dv"></div><p class="sb" style="max-width:720px;">O mesmo conceito muda bastante quando sai de uma ETE para um aterro, uma central de orgânicos ou uma concessão. Por isso, a análise precisa partir da operação real.</p></div>
     <div class="grid-sub">
-      <div class="hb fi"><h3>ETEs com reator anaeróbio</h3><p>Estações com tratamento anaeróbio geram biogás como subproduto. O estudo avalia captação, vazão, qualidade do gás e uso interno.</p><div class="tags"><span class="tag">UASB</span><span class="tag">ETE</span><span class="tag">Municipal</span></div></div>
-      <div class="hb fi fi-d2"><h3>Aterros sanitários</h3><p>A produção de biogás segue uma curva ao longo do tempo — depende da massa disposta, da idade dos resíduos e da eficiência dos drenos de captação.</p><div class="tags"><span class="tag">RSU</span><span class="tag">Aterro</span><span class="tag">Drenos</span></div></div>
-      <div class="hb fi"><h3>Centrais com fração orgânica</h3><p>Quando a fração orgânica é separada na fonte, o potencial de biogás é muito maior — mas a qualidade da coleta define a viabilidade do processo.</p><div class="tags"><span class="tag">FORSU</span><span class="tag">Triagem</span><span class="tag">Compostagem</span></div></div>
-      <div class="hb fi fi-d2"><h3>Concessões e PPPs</h3><p>Operadores podem avaliar o biogás como estratégia de redução de custo operacional e melhoria de indicadores de desempenho e sustentabilidade.</p><div class="tags"><span class="tag">Concessão</span><span class="tag">PPP</span><span class="tag">OPEX</span></div></div>
+      <div class="hb fi"><h3>ETEs com reator anaeróbio</h3><p>O biogás pode já estar sendo produzido no tratamento. A análise olha captação, vazão, composição do gás e uso interno possível.</p><div class="tags"><span class="tag">UASB</span><span class="tag">ETE</span><span class="tag">Operação municipal</span></div></div>
+      <div class="hb fi fi-d2"><h3>Aterros sanitários</h3><p>O gás depende da massa aterrada, idade dos resíduos, umidade, drenos e eficiência de captação. Nem todo aterro justifica energia.</p><div class="tags"><span class="tag">RSU</span><span class="tag">Aterro</span><span class="tag">Drenos</span></div></div>
+      <div class="hb fi"><h3>Centrais com resíduos orgânicos</h3><p>Quando a fração orgânica é bem separada, o potencial cresce. O desafio está na coleta, triagem, contaminação e rotina de alimentação.</p><div class="tags"><span class="tag">FORSU</span><span class="tag">Orgânicos</span><span class="tag">Triagem</span></div></div>
+      <div class="hb fi fi-d2"><h3>Concessões e PPPs</h3><p>O biogás pode entrar como estratégia de redução de OPEX e melhoria de indicadores, desde que o arranjo contratual permita.</p><div class="tags"><span class="tag">Concessão</span><span class="tag">PPP</span><span class="tag">Indicadores</span></div></div>
     </div>
   </div>
 </section>
@@ -220,47 +266,46 @@ footer p{font-size:0.78rem;color:var(--text-muted);}
 <section class="cs" id="potencial">
   <div class="ci">
     <div class="fi" style="margin-bottom:2rem;">
-      <div class="sl">Potencial por resíduo</div>
-      <h2 class="st">Quanto biogás o seu resíduo pode gerar?</h2>
+      <div class="sl">Primeira noção</div>
+      <h2 class="st">Quer entender o que esse gás poderia virar?</h2>
       <div class="dv"></div>
-      <p class="sb" style="max-width:720px;">Sua operação pode estar gerando biogás sem aproveitar. O estudo de viabilidade calcula se compensa mudar isso.</p>
+      <p class="sb" style="max-width:720px;">O simulador dá uma primeira ideia. Para decidir de verdade, é preciso cruzar produção de gás, qualidade, tratamento necessário, consumo interno e custo de implantação.</p>
       <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;align-items:center;">
         <a href="/simulador.html?origem=saneamento" class="btn-ghost" style="display:inline-flex;align-items:center;gap:0.5rem;">Simular meu potencial →</a>
-        <a href="https://wa.me/5519971315434?text=Ol%C3%A1!%20Tenho%20interesse%20em%20uma%20an%C3%A1lise%20gratuita%20de%20biog%C3%A1s%20para%20saneamento." class="btn-wpp" target="_blank" style="display:inline-flex;align-items:center;gap:0.6rem;background:#25d366;color:#fff;padding:0.9rem 1.8rem;border-radius:4px;font-size:0.9rem;font-weight:700;text-decoration:none;"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Falar no WhatsApp</a>
+        <a href="https://wa.me/5519971315434?text=Ol%C3%A1!%20Tenho%20interesse%20em%20uma%20an%C3%A1lise%20gratuita%20de%20biog%C3%A1s%20para%20saneamento." class="btn-wpp" target="_blank" style="display:inline-flex;align-items:center;gap:0.6rem;background:#25d366;color:#fff;padding:0.9rem 1.8rem;border-radius:4px;font-size:0.9rem;font-weight:700;text-decoration:none;">Falar no WhatsApp</a>
       </div>
-      <p style="margin-top:0.8rem;font-size:0.78rem;color:var(--text-muted);">A simulação dá uma ideia. O WhatsApp transforma número em projeto.</p>
+      <p style="margin-top:0.8rem;font-size:0.78rem;color:var(--text-muted);">A simulação dá uma ideia. A análise mostra se faz sentido avançar.</p>
     </div>
   </div>
 </section>
 
 <section class="cs bg2" id="como-avaliamos">
   <div class="ci">
-    <div class="fi" style="margin-bottom:3rem;"><div class="sl">Como avaliamos</div><h2 class="st">O estudo parte da operação existente.</h2><div class="dv"></div><p class="sb" style="max-width:720px;">No saneamento, o projeto precisa respeitar a estrutura da ETE, do aterro ou da concessão — e o que os contratos e indicadores permitem fazer.</p></div>
+    <div class="fi" style="margin-bottom:3rem;"><div class="sl">Como avaliamos</div><h2 class="st">O estudo começa pela operação que já existe.</h2><div class="dv"></div><p class="sb" style="max-width:720px;">No saneamento, a solução precisa respeitar a ETE, o aterro, a central, o contrato e a rotina operacional. A Vértice organiza esses dados para responder se o aproveitamento fecha.</p></div>
     <div class="three">
-      <div class="fc fi"><div class="fi-icon">01</div><div class="ft">Diagnóstico da operação</div><div class="fd">Tipo de tratamento, porte, vazões, geração de lodo, captação existente e rotina operacional.</div></div>
-      <div class="fc fi fi-d2"><div class="fi-icon">02</div><div class="ft">Produção de biogás</div><div class="fd">Estimativa ou medição de vazão, composição, variação ao longo do tempo e principais contaminantes.</div></div>
-      <div class="fc fi fi-d3"><div class="fi-icon">03</div><div class="ft">Tratamento do gás</div><div class="fd">Remoção de gás sulfídrico, umidade e impurezas — o que é necessário antes de qualquer uso energético.</div></div>
-      <div class="fc fi"><div class="fi-icon">04</div><div class="ft">Rota de uso</div><div class="fd">Geração elétrica, uso térmico, queima controlada ou purificação — a rota depende da produção e da demanda local.</div></div>
-      <div class="fc fi fi-d2"><div class="fi-icon">05</div><div class="ft">Arranjo institucional</div><div class="fd">Quem opera, quem investe, como se encaixa nos contratos de concessão e nas metas da operação.</div></div>
-      <div class="fc fi fi-d3"><div class="fi-icon">06</div><div class="ft">A resposta final</div><div class="fd">Vale capturar e usar ou não? O estudo mostra o investimento, a economia estimada e o tempo de retorno.</div></div>
+      <div class="fc fi"><div class="fi-icon">01</div><div class="ft">Diagnóstico da operação</div><div class="fd">Tipo de sistema, porte, vazão, lodo, captação existente, queima atual e rotina operacional.</div></div>
+      <div class="fc fi fi-d2"><div class="fi-icon">02</div><div class="ft">Produção de biogás</div><div class="fd">Estimativa ou leitura de vazão, composição, variação diária e principais contaminantes.</div></div>
+      <div class="fc fi fi-d3"><div class="fi-icon">03</div><div class="ft">Tratamento necessário</div><div class="fd">Avaliação de umidade, gás sulfídrico, segurança, corrosão e preparo do gás para uso.</div></div>
+      <div class="fc fi"><div class="fi-icon">04</div><div class="ft">Uso possível</div><div class="fd">Geração elétrica, uso térmico, queima controlada, purificação ou apenas melhoria da captação.</div></div>
+      <div class="fc fi fi-d2"><div class="fi-icon">05</div><div class="ft">Conta econômica e institucional</div><div class="fd">Investimento, operação, manutenção, contratos, responsabilidades e economia possível.</div></div>
+      <div class="fc fi fi-d3"><div class="fi-icon">06</div><div class="ft">Decisão final</div><div class="fd">Vale aproveitar agora, preparar a operação ou descartar por enquanto? O estudo mostra o caminho.</div></div>
     </div>
   </div>
 </section>
 
 <section class="cs" id="faq">
   <div class="ci">
-    <div class="fi" style="margin-bottom:2rem;"><div class="sl">Perguntas frequentes</div><h2 class="st">O que as operações de saneamento mais perguntam.</h2><div class="dv"></div></div>
+    <div class="fi" style="margin-bottom:2rem;"><div class="sl">Perguntas frequentes</div><h2 class="st">O que costuma travar a decisão.</h2><div class="dv"></div></div>
     <div class="faq-grid">
-      <div class="hb fi"><h3>Toda ETE com reator anaeróbio consegue aproveitar o biogás?</h3><p class="sb">Não automaticamente. Captação, vazão, qualidade do gás e demanda energética precisam ser avaliados. O potencial existe, mas o aproveitamento depende de infraestrutura.</p></div>
-      <div class="hb fi fi-d2"><h3>O biogás de aterro é constante ao longo do tempo?</h3><p class="sb">Não. Ele segue uma curva — começa baixo, cresce com a decomposição e vai caindo ao longo dos anos. O projeto precisa considerar essa variação.</p></div>
-      <div class="hb fi"><h3>O gás sulfídrico é um problema sério?</h3><p class="sb">Sim. Corrói motores, tubulações e equipamentos. Por isso o tratamento do gás precisa ser parte do projeto — não um detalhe.</p></div>
-      <div class="hb fi fi-d2"><h3>O aproveitamento reduz o custo operacional?</h3><p class="sb">Pode reduzir — quando a energia gerada ou economizada compensa o investimento e a manutenção. O estudo mostra se esse equilíbrio existe no seu caso.</p></div>
-      <div class="hb fi"><h3>Biometano faz sentido em ETE ou aterro?</h3><p class="sb">Para operações de maior escala, pode fazer sentido. Mas purificar o gás exige investimento e mercado definido. O estudo compara as rotas antes de recomendar.</p></div>
-      <div class="hb fi fi-d2"><h3>O estudo substitui o projeto executivo?</h3><p class="sb">Não. Ele define se vale avançar e qual caminho seguir. O projeto executivo e o licenciamento vêm depois, se o estudo recomendar avanço.</p></div>
+      <div class="hb fi"><h3>Toda ETE consegue usar biogás?</h3><p class="sb">Não. O gás precisa ter volume, captação e qualidade suficientes. Em alguns casos, melhorar a queima já é o primeiro passo.</p></div>
+      <div class="hb fi fi-d2"><h3>O biogás de aterro é constante?</h3><p class="sb">Não. Ele muda com o tempo. A produção cresce, estabiliza e depois cai, por isso a análise precisa olhar a curva do aterro.</p></div>
+      <div class="hb fi"><h3>O H₂S é tão problemático assim?</h3><p class="sb">Sim. Ele corrói motores, tubulações e equipamentos. Não dá para pensar em uso energético sem prever tratamento do gás.</p></div>
+      <div class="hb fi fi-d2"><h3>O projeto reduz custo de operação?</h3><p class="sb">Pode reduzir, mas só quando a energia economizada paga investimento, manutenção e equipe envolvida.</p></div>
+      <div class="hb fi"><h3>Biometano vale a pena?</h3><p class="sb">Pode valer em grande escala, mas exige purificação, compressão, mercado consumidor e investimento maior.</p></div>
+      <div class="hb fi fi-d2"><h3>O estudo substitui projeto executivo?</h3><p class="sb">Não. O estudo responde se vale avançar e qual rota faz sentido. O projeto executivo vem depois.</p></div>
     </div>
   </div>
 </section>
-
 <section class="ctastrip" id="contato">
   <div class="ctasi fi">
     <div class="sl">Próximo passo</div>
