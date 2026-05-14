@@ -338,10 +338,29 @@ window.dataLayer=window.dataLayer||[];
 function gtag(){dataLayer.push(arguments);}
 gtag('js',new Date());
 gtag('config','AW-18148435351');
-function gtag_report_form_conversion(){
-  if(typeof gtag==='function'){
-    gtag('event','conversion',{'send_to':'AW-18148435351/ikWACKnw0akcEJfL7M1D','value':1.0,'currency':'BRL'});
-    gtag('event','form_submit_evte',{'event_category':'lead','event_label':'formulario_contato'});
+
+// ─── CONVERSÃO DE CONTATO (clique no WhatsApp) ───────────────────────────────
+// ID atualizado para a ação "Contacto" criada em 14/05/2026
+const CONVERSION_ID = 'AW-18148435351/0BXwCJj3ha0cEJfL7M1D';
+
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') { window.location = url; }
+  };
+  gtag('event', 'conversion', {
+    'send_to': CONVERSION_ID,
+    'value': 1.0,
+    'currency': 'BRL',
+    'event_callback': callback
+  });
+  return false;
+}
+
+// Mantida por compatibilidade — agora aponta pro ID correto
+function gtag_report_form_conversion() {
+  if (typeof gtag === 'function') {
+    gtag('event', 'conversion', {'send_to': CONVERSION_ID, 'value': 1.0, 'currency': 'BRL'});
+    gtag('event', 'form_submit_evte', {'event_category': 'lead', 'event_label': 'formulario_contato'});
   }
 }
 </script>
@@ -530,7 +549,6 @@ function gtag_report_form_conversion(){
         <div class="step"><div class="step-n">05</div><div><h3>Recomendação final</h3><p>Avançar, ajustar dados, mudar rota tecnológica ou descartar por enquanto.</p></div></div>
       </div>
     </div>
-
     <aside class="evte-box fi fi-d2">
       <div class="report-mockup" aria-label="Exemplo visual do relatório de viabilidade">
         <div class="report-page">
@@ -691,7 +709,7 @@ function gtag_report_form_conversion(){
     <div class="footer-col">
       <h4>Contato</h4>
       <p>E-mail: biogasvertice@gmail.com</p>
-      <p>WhatsApp: disponível pelos botões do site</p>
+      <p>WhatsApp: (19) 97131-5434</p>
       <p>Atendimento técnico a empreendimentos no Brasil.</p>
     </div>
     <div class="footer-col">
@@ -715,69 +733,75 @@ const WHATSAPP_MESSAGES = {
   contato: 'Olá! Vim do site da Vértice e quero iniciar uma pré-análise gratuita sobre o potencial de biogás do meu empreendimento.',
   formulario: 'Olá! Preenchi o formulário no site da Vértice e quero conversar sobre o potencial de biogás do meu empreendimento.'
 };
-function buildWhatsappLink(origin, customMessage){
+
+function buildWhatsappLink(origin, customMessage) {
   const message = customMessage || WHATSAPP_MESSAGES[origin] || WHATSAPP_MESSAGES.contato;
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
-function trackSiteEvent(eventName, params = {}){
-  if(typeof gtag === 'function'){gtag('event', eventName, params);}
+
+function trackSiteEvent(eventName, params = {}) {
+  if (typeof gtag === 'function') { gtag('event', eventName, params); }
   window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({event:eventName,...params});
+  window.dataLayer.push({event: eventName, ...params});
 }
-function trackWhatsappClick(origin){
-  if(typeof gtag === 'function'){
-    gtag('event','conversion',{send_to:'AW-18148435351/ikWACKnw0akcEJfL7M1D',value:1.0,currency:'BRL'});
-  }
-  trackSiteEvent('click_whatsapp',{event_category:'lead',event_label:origin,origem:origin});
+
+function trackWhatsappClick(origin) {
+  // Dispara conversão "Contacto" no Google Ads
+  gtag_report_conversion();
+  trackSiteEvent('click_whatsapp', {event_category: 'lead', event_label: origin, origem: origin});
 }
-function setupWhatsappLinks(){
-  document.querySelectorAll('[data-whatsapp-origin]').forEach((link)=>{
+
+function setupWhatsappLinks() {
+  document.querySelectorAll('[data-whatsapp-origin]').forEach((link) => {
     const origin = link.getAttribute('data-whatsapp-origin');
     link.setAttribute('href', buildWhatsappLink(origin));
-    link.setAttribute('target','_blank');
-    link.setAttribute('rel','noopener noreferrer');
-    link.addEventListener('click',()=>trackWhatsappClick(origin));
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+    link.addEventListener('click', () => trackWhatsappClick(origin));
   });
 }
-function enviarFormulario(){
-  const nome=document.getElementById('f-nome').value.trim();
-  const tel=document.getElementById('f-tel').value.trim();
-  const setor=document.getElementById('f-setor').value;
-  if(!nome || !tel || !setor){alert('Por favor, preencha nome, WhatsApp e setor.');return;}
+
+function enviarFormulario() {
+  const nome = document.getElementById('f-nome').value.trim();
+  const tel = document.getElementById('f-tel').value.trim();
+  const setor = document.getElementById('f-setor').value;
+  if (!nome || !tel || !setor) { alert('Por favor, preencha nome, WhatsApp e setor.'); return; }
+
   gtag_report_form_conversion();
-  trackSiteEvent('formulario_enviado',{event_category:'lead',event_label:'formulario_contato',setor:setor});
-  const txt=`Olá! Preenchi o formulário no site da Vértice e quero iniciar uma pré-análise gratuita de biogás.\n\n*Nome:* ${nome}\n*WhatsApp:* ${tel}\n*Setor:* ${setor}\n\nQuero entender se meu empreendimento tem potencial para biogás antes de qualquer investimento.`;
-  document.getElementById('form-content').style.display='none';
-  document.getElementById('form-success').style.display='block';
-  setTimeout(()=>window.open(buildWhatsappLink('formulario', txt),'_blank'),450);
+  trackSiteEvent('formulario_enviado', {event_category: 'lead', event_label: 'formulario_contato', setor: setor});
+
+  const txt = `Olá! Preenchi o formulário no site da Vértice e quero iniciar uma pré-análise gratuita de biogás.\n\n*Nome:* ${nome}\n*WhatsApp:* ${tel}\n*Setor:* ${setor}\n\nQuero entender se meu empreendimento tem potencial para biogás antes de qualquer investimento.`;
+  document.getElementById('form-content').style.display = 'none';
+  document.getElementById('form-success').style.display = 'block';
+  setTimeout(() => window.open(buildWhatsappLink('formulario', txt), '_blank'), 450);
 }
 
-document.addEventListener('DOMContentLoaded', function(){
+document.addEventListener('DOMContentLoaded', function () {
   setupWhatsappLinks();
 
-  const obs=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}});
-  },{threshold:0.1});
-  document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); } });
+  }, {threshold: 0.1});
+  document.querySelectorAll('.fi').forEach(el => obs.observe(el));
 
-  const menuToggle=document.getElementById('menuToggle');
-  const menuPanel=document.getElementById('menuPanel');
-  const menuOverlay=document.getElementById('menuOverlay');
-  if(!menuToggle || !menuPanel || !menuOverlay){return;}
-  function abrirMenu(){
-    menuToggle.classList.add('active');menuPanel.classList.add('active');menuOverlay.classList.add('active');
-    menuToggle.setAttribute('aria-expanded','true');menuPanel.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
+  const menuToggle = document.getElementById('menuToggle');
+  const menuPanel = document.getElementById('menuPanel');
+  const menuOverlay = document.getElementById('menuOverlay');
+  if (!menuToggle || !menuPanel || !menuOverlay) { return; }
+
+  function abrirMenu() {
+    menuToggle.classList.add('active'); menuPanel.classList.add('active'); menuOverlay.classList.add('active');
+    menuToggle.setAttribute('aria-expanded', 'true'); menuPanel.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden';
   }
-  function fecharMenu(){
-    menuToggle.classList.remove('active');menuPanel.classList.remove('active');menuOverlay.classList.remove('active');
-    menuToggle.setAttribute('aria-expanded','false');menuPanel.setAttribute('aria-hidden','true');document.body.style.overflow='';
+  function fecharMenu() {
+    menuToggle.classList.remove('active'); menuPanel.classList.remove('active'); menuOverlay.classList.remove('active');
+    menuToggle.setAttribute('aria-expanded', 'false'); menuPanel.setAttribute('aria-hidden', 'true'); document.body.style.overflow = '';
   }
-  menuToggle.addEventListener('click',()=>menuPanel.classList.contains('active') ? fecharMenu() : abrirMenu());
-  menuOverlay.addEventListener('click',fecharMenu);
-  document.addEventListener('keydown',(e)=>{if(e.key==='Escape')fecharMenu();});
-  document.querySelectorAll('.menu-links a').forEach(link=>link.addEventListener('click',fecharMenu));
+  menuToggle.addEventListener('click', () => menuPanel.classList.contains('active') ? fecharMenu() : abrirMenu());
+  menuOverlay.addEventListener('click', fecharMenu);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') fecharMenu(); });
+  document.querySelectorAll('.menu-links a').forEach(link => link.addEventListener('click', fecharMenu));
 });
 </script>
 </body>
 </html>
-
