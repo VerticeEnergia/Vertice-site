@@ -427,16 +427,38 @@ function setupBackButton(){
   const back = document.getElementById('backToSite');
   if(!back) return;
 
+  const params = new URLSearchParams(window.location.search);
+  const origem = params.get('origem') || 'home';
+
+  const destinos = {
+    home: {url:'/', label:'← Voltar para o site principal'},
+    agropecuaria: {url:'/agropecuaria', label:'← Voltar para Agropecuária'},
+    industria: {url:'/industria', label:'← Voltar para Indústria'},
+    agroindustria: {url:'/agroindustria', label:'← Voltar para Agroindústria'},
+    saneamento: {url:'/saneamento', label:'← Voltar para Saneamento'}
+  };
+
+  const destino = destinos[origem] || destinos.home;
+
+  back.href = destino.url;
+  back.textContent = destino.label;
+
   back.addEventListener('click', function(e){
     e.preventDefault();
-    const origemPage = sessionStorage.getItem('vertice_scroll_page') || '/';
-    const origemY = sessionStorage.getItem('vertice_scroll_origem');
 
-    if(origemY){
-      sessionStorage.setItem('vertice_restore_scroll', origemY);
+    const paginaSalva = sessionStorage.getItem('vertice_scroll_page');
+    const scrollSalvo = sessionStorage.getItem('vertice_scroll_origem');
+
+    if(scrollSalvo && paginaSalva === destino.url){
+      sessionStorage.setItem('vertice_restore_scroll', scrollSalvo);
+    } else {
+      sessionStorage.removeItem('vertice_restore_scroll');
     }
 
-    window.location.href = origemPage;
+    sessionStorage.removeItem('vertice_scroll_page');
+    sessionStorage.removeItem('vertice_scroll_origem');
+
+    window.location.href = destino.url;
   });
 }
 
@@ -484,8 +506,17 @@ document.addEventListener('DOMContentLoaded', function(){
   const params = new URLSearchParams(window.location.search);
   const origem = params.get('origem');
 
+  const origemParaResiduo = {
+    agropecuaria: 'suino',
+    industria: 'laticinios',
+    agroindustria: 'agroindustria',
+    saneamento: 'saneamento'
+  };
+
   if(origem && SETORES[origem]){
     document.getElementById('c-setor').value = origem;
+  } else if(origem && origemParaResiduo[origem]){
+    document.getElementById('c-setor').value = origemParaResiduo[origem];
   }
 
   document.getElementById('btnCalcular').addEventListener('click', calcular);
