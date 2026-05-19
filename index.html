@@ -1,389 +1,962 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vértice Consultoria Energética | Viabilidade de Biogás para Resíduos Orgânicos</title>
-<meta name="description" content="Descubra se o resíduo orgânico do seu empreendimento pode virar economia com biogás. Pré-análise gratuita e estudos de viabilidade para agropecuária, indústria, agroindústria e saneamento.">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://verticebiogas.com.br/">
-<meta property="og:title" content="Vértice Consultoria Energética | Biogás que começa pela viabilidade">
-<meta property="og:description" content="Antes de investir em biodigestor, descubra se seu resíduo tem volume, composição e escala para gerar economia real.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://verticebiogas.com.br/">
-<meta property="og:locale" content="pt_BR">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --green:#2d6a4f;
-  --green-light:#40916c;
-  --green-soft:#74c69d;
-  --green-pale:#d8f3dc;
-  --amber:#e9c46a;
-  --orange:#e76f51;
-  --dark:#0d1b12;
-  --dark-2:#162218;
-  --dark-3:#1e2e22;
-  --text:#e8f0ea;
-  --text-muted:#a9bdad;
-  --border:rgba(64,145,108,0.22);
-  --shadow:0 22px 60px rgba(0,0,0,0.32);
-}
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{background:var(--dark);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
-body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.045'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:0.5;}
-a{color:inherit;}
-strong{font-weight:600;color:var(--text);}
-h2,h3,h4{color:var(--text);}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.1rem 2.5rem;display:flex;justify-content:space-between;align-items:center;background:rgba(13,27,18,0.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);}
-.logo{font-family:'DM Serif Display',serif;font-size:1.28rem;letter-spacing:0.02em;text-decoration:none;color:var(--text);}
-.logo span{color:var(--amber);}
-.nav-actions{display:flex;align-items:center;gap:0.9rem;}
-.nav-cta{background:var(--amber);color:var(--dark);padding:0.58rem 1.25rem;border-radius:4px;font-size:0.82rem;font-weight:700;text-decoration:none;letter-spacing:0.03em;transition:all 0.2s;}
-.nav-cta:hover{background:#f5d585;transform:translateY(-1px);}
-.menu-toggle{width:42px;height:38px;border:1px solid var(--border);background:rgba(22,34,24,0.94);border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer;transition:all 0.2s;z-index:1002;}
-.menu-toggle:hover{border-color:var(--green-light);}
-.menu-toggle span{width:20px;height:2px;background:var(--text);border-radius:999px;transition:all 0.25s;}
-.menu-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-.menu-toggle.active span:nth-child(2){opacity:0;}
-.menu-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-.menu-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.58);z-index:998;opacity:0;pointer-events:none;transition:opacity 0.25s;}
-.menu-overlay.active{opacity:1;pointer-events:auto;}
-.menu-panel{position:fixed;top:0;right:0;width:min(390px,88vw);height:100vh;background:rgba(13,27,18,0.985);border-left:1px solid var(--border);z-index:999;transform:translateX(100%);transition:transform 0.28s ease;box-shadow:-12px 0 40px rgba(0,0,0,0.42);padding:6.5rem 2rem 2rem;overflow-y:auto;}
-.menu-panel.active{transform:translateX(0);}
-.menu-kicker,.section-label{font-size:0.68rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--green-light);margin-bottom:0.85rem;}
-.menu-title{font-family:'DM Serif Display',serif;font-size:1.85rem;line-height:1.1;margin-bottom:1.4rem;}
-.menu-title em{font-style:italic;color:var(--amber);}
-.menu-links{display:flex;flex-direction:column;gap:0.65rem;}
-.menu-links a{display:flex;justify-content:space-between;align-items:center;gap:1rem;text-decoration:none;color:var(--text-muted);padding:0.9rem 0;border-bottom:1px solid rgba(64,145,108,0.16);font-size:0.95rem;transition:color 0.2s,padding-left 0.2s;}
-.menu-links a:hover{color:var(--text);padding-left:0.25rem;}
-.menu-links a strong{font-weight:500;}
-.menu-links a span{color:var(--amber);}
-.menu-foot{margin-top:2rem;padding:1rem;background:var(--dark-2);border:1px solid var(--border);border-radius:6px;font-size:0.78rem;line-height:1.6;color:var(--text-muted);}
+  <title>Vértice Consultoria Energética | Biogás para resíduos orgânicos</title>
+  <meta name="description" content="Pré-análise gratuita para empreendimentos que geram resíduos orgânicos e querem avaliar se existe potencial real para produzir e usar biogás.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://verticebiogas.com.br/">
 
-/* GLOBAL */
-section{position:relative;z-index:1;}
-.container{max-width:1120px;margin:0 auto;}
-.section-title{font-family:'DM Serif Display',serif;font-size:clamp(1.85rem,4vw,3.05rem);line-height:1.12;margin-bottom:1.1rem;color:#f6fbf7;text-shadow:0 2px 22px rgba(0,0,0,0.22);}
-.section-title em{font-style:italic;color:var(--green-pale);}
-.section-label{color:var(--amber);}
-.section-body{font-size:1rem;color:var(--text-muted);line-height:1.75;max-width:640px;}
-.divider{width:48px;height:2px;background:var(--amber);margin:1.35rem 0;}
-.btn-primary,.btn-secondary,.btn-ghost{display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;text-decoration:none;border-radius:4px;font-size:0.9rem;line-height:1;font-weight:700;letter-spacing:0.03em;transition:all 0.22s;}
-.btn-primary{background:var(--amber);color:var(--dark);padding:0.95rem 1.75rem;box-shadow:0 16px 30px rgba(233,196,106,0.12);}
-.btn-primary:hover{background:#f5d585;transform:translateY(-2px);}
-.btn-secondary{border:1px solid var(--border);color:var(--text);padding:0.92rem 1.65rem;background:rgba(22,34,24,0.45);}
-.btn-secondary:hover{border-color:var(--green-light);transform:translateY(-2px);}
-.btn-ghost{color:var(--amber);padding:0.5rem 0;}
-.btn-ghost:hover{color:#f5d585;transform:translateX(3px);}
-.fi{opacity:0;transform:translateY(22px);transition:opacity 0.75s ease,transform 0.75s ease;}
-.fi.vis{opacity:1;transform:translateY(0);}
-.fi-d2{transition-delay:0.14s;}.fi-d3{transition-delay:0.28s;}
+  <meta property="og:title" content="Vértice Consultoria Energética | Biogás para resíduos orgânicos">
+  <meta property="og:description" content="Descubra se seu resíduo orgânico tem escala, constância e uso energético para virar biogás.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://verticebiogas.com.br/">
+  <meta property="og:locale" content="pt_BR">
 
-/* WHATSAPP FIXO */
-.wpp-fixo{position:fixed;right:1.2rem;bottom:1.2rem;z-index:300;background:#25d366;color:#fff;text-decoration:none;border-radius:999px;padding:0.85rem 1.15rem;font-size:0.84rem;font-weight:800;letter-spacing:0.02em;display:flex;align-items:center;gap:0.55rem;box-shadow:0 8px 30px rgba(0,0,0,0.35);transition:transform 0.2s,background 0.2s;}
-.wpp-fixo:hover{background:#1ebe5d;transform:translateY(-2px);}
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-/* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;padding:8rem 2.5rem 5rem;overflow:hidden;}
-.hero::after{content:'';position:absolute;top:-18%;right:-12%;width:700px;height:700px;background:radial-gradient(circle,rgba(45,106,79,0.26) 0%,transparent 68%);pointer-events:none;}
-.hero-img{position:absolute;top:0;right:0;width:58%;height:100%;object-fit:cover;opacity:0.19;-webkit-mask-image:linear-gradient(to left,rgba(0,0,0,1) 0%,transparent 96%);mask-image:linear-gradient(to left,rgba(0,0,0,1) 0%,transparent 96%);pointer-events:none;z-index:0;filter:saturate(0.9) contrast(1.05);}
-.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.2fr 0.8fr;gap:3.5rem;align-items:center;}
-.hero-eyebrow{font-size:0.75rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--amber);margin-bottom:1.3rem;opacity:0;animation:fadeUp 0.8s 0.15s forwards;}
-.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2.45rem,5.6vw,4.8rem);line-height:1.04;max-width:880px;margin-bottom:1.35rem;opacity:0;animation:fadeUp 0.8s 0.3s forwards;}
-.hero h1 em{font-style:italic;color:var(--green-pale);}
-.hero-sub{font-size:1.04rem;color:var(--text-muted);max-width:620px;line-height:1.74;margin-bottom:1.35rem;opacity:0;animation:fadeUp 0.8s 0.45s forwards;}
-.hero-proof{font-size:0.95rem;color:var(--text);font-weight:600;max-width:650px;margin-bottom:2.2rem;padding:0.95rem 1.1rem;border-left:3px solid var(--amber);background:rgba(233,196,106,0.09);border-radius:0 6px 6px 0;opacity:0;animation:fadeUp 0.8s 0.58s forwards;}
-.hero-cta{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:fadeUp 0.8s 0.7s forwards;}
-.hero-card{background:linear-gradient(135deg,rgba(30,46,34,0.95),rgba(22,34,24,0.92));border:1px solid rgba(64,145,108,0.28);border-radius:14px;padding:1.7rem;box-shadow:var(--shadow);opacity:0;animation:fadeUp 0.8s 0.85s forwards;}
-.hero-card-title{font-family:'DM Serif Display',serif;font-size:1.45rem;line-height:1.15;margin-bottom:1rem;}
-.hero-card-list{display:flex;flex-direction:column;gap:0.9rem;margin-bottom:1.2rem;}
-.hero-card-item{display:flex;gap:0.75rem;align-items:flex-start;color:var(--text-muted);font-size:0.86rem;line-height:1.5;}
-.hero-card-item span{color:var(--amber);font-weight:800;line-height:1.2;}
-.hero-card-note{padding-top:1rem;border-top:1px solid var(--border);font-size:0.78rem;color:var(--text-muted);line-height:1.55;}
+  <style>
+    :root{
+      --green:#2d6a4f;
+      --green-light:#40916c;
+      --amber:#e9c46a;
+      --orange:#e76f51;
+      --dark:#0d1b12;
+      --dark-2:#162218;
+      --dark-3:#1e2e22;
+      --text:#e8f0ea;
+      --muted:#9eb6a5;
+      --soft:#cfe0d4;
+      --border:rgba(64,145,108,0.25);
+      --shadow:0 24px 80px rgba(0,0,0,0.42);
+    }
 
-/* PROBLEM / VALUE */
-.problem{
-  background:
-    linear-gradient(90deg,rgba(13,27,18,0.96) 0%,rgba(13,27,18,0.88) 52%,rgba(22,34,24,0.76) 100%),
-    url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1600&q=80&fit=crop");
-  background-size:cover;
-  background-position:center;
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
-  padding:6rem 2.5rem;
-  overflow:hidden;
-}
-.problem::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 82% 20%,rgba(45,106,79,0.18),transparent 42%);pointer-events:none;}
-.problem .container{position:relative;z-index:1;}
-.problem-grid{display:grid;grid-template-columns:0.95fr 1.05fr;gap:4rem;align-items:center;}
-.problem-kicker{font-size:0.98rem;color:var(--text);font-weight:600;line-height:1.65;margin-top:1rem;max-width:620px;padding:0.9rem 1rem;border-left:3px solid var(--amber);background:rgba(233,196,106,0.08);border-radius:0 6px 6px 0;}
-.problem-kicker span{color:var(--amber);}
-.stat-block{display:grid;grid-template-columns:1fr;gap:1rem;}
-.stat{padding:1.25rem 1.35rem;background:rgba(30,46,34,0.86);backdrop-filter:blur(8px);border:1px solid rgba(64,145,108,0.26);border-radius:9px;position:relative;overflow:hidden;transition:border-color 0.3s,transform 0.3s;}
-.stat:hover{border-color:rgba(233,196,106,0.42);transform:translateY(-3px);}
-.stat::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--amber);}
-.stat.danger::before{background:var(--orange);}
-.stat.green::before{background:var(--green-light);}
-.stat-num{display:flex;align-items:center;gap:0.55rem;font-family:'DM Serif Display',serif;font-size:1.12rem;margin-bottom:0.42rem;color:var(--text);}
-.stat-num small{font-family:'DM Sans',sans-serif;font-size:0.66rem;color:var(--amber);letter-spacing:0.12em;text-transform:uppercase;font-weight:800;}
-.stat.danger .stat-num{color:#ffd6cc;}
-.stat.green .stat-num{color:var(--green-pale);}
-.stat-desc{font-size:0.82rem;color:var(--text-muted);line-height:1.58;}
-.stat-desc strong{color:#ffffff;font-weight:700;}
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
 
-/* SETORES */
-.setores{padding:6rem 2.5rem;}
-.setores-header{display:flex;justify-content:space-between;gap:2rem;align-items:end;margin-bottom:2.6rem;}
-.setores-header .section-body{max-width:520px;}
-.setor-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;}
-.setor-card{background:linear-gradient(180deg,var(--dark-2),rgba(22,34,24,0.72));border:1px solid var(--border);border-radius:10px;padding:1.4rem;text-decoration:none;color:inherit;transition:border-color 0.25s,transform 0.25s,background 0.25s;min-height:250px;display:flex;flex-direction:column;}
-.setor-card:hover{border-color:rgba(233,196,106,0.48);transform:translateY(-4px);background:linear-gradient(180deg,var(--dark-3),rgba(22,34,24,0.78));}
-.setor-icon{font-size:1.65rem;margin-bottom:1rem;}
-.setor-card h3{font-family:'DM Serif Display',serif;font-size:1.35rem;margin-bottom:0.7rem;}
-.setor-card p{font-size:0.82rem;color:var(--text-muted);line-height:1.62;margin-bottom:1.1rem;}
-.setor-card .tag-row{display:flex;gap:0.35rem;flex-wrap:wrap;margin-top:auto;}
-.tag{font-size:0.62rem;color:var(--green-soft);border:1px solid rgba(64,145,108,0.22);background:rgba(45,106,79,0.14);padding:0.16rem 0.5rem;border-radius:999px;}
-.setor-link{font-size:0.78rem;color:var(--amber);font-weight:700;margin-top:0.95rem;}
+    html{
+      scroll-behavior:smooth;
+    }
 
-/* IMAGE QUOTE */
-.image-quote{width:100%;overflow:hidden;max-height:410px;position:relative;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
-.image-quote img{width:100%;height:410px;object-fit:cover;display:block;filter:brightness(0.45) saturate(0.78);}
-.image-quote div{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:2rem;background:radial-gradient(circle at center,rgba(0,0,0,0.12),rgba(0,0,0,0.3));}
-.image-quote p{font-family:'DM Serif Display',serif;font-size:clamp(1.55rem,3.5vw,2.75rem);line-height:1.18;max-width:790px;text-shadow:0 2px 24px rgba(0,0,0,0.72);}
-.image-quote em{font-style:italic;color:var(--green-pale);}
+    body{
+      background:var(--dark);
+      color:var(--text);
+      font-family:'DM Sans',sans-serif;
+      font-weight:300;
+      overflow-x:hidden;
+    }
 
-/* SIMULADOR */
-.simulator{background:var(--dark-2);border-bottom:1px solid var(--border);padding:6rem 2.5rem;overflow:hidden;}
-.simulator-card{background:linear-gradient(135deg,var(--dark-3) 0%,rgba(45,106,79,0.18) 100%);border:1px solid rgba(233,196,106,0.18);border-radius:14px;padding:2.6rem;display:grid;grid-template-columns:1.25fr 0.75fr;gap:2.4rem;align-items:center;position:relative;overflow:hidden;}
-.simulator-card::before{content:'';position:absolute;right:-10%;top:-30%;width:420px;height:420px;background:radial-gradient(circle,rgba(233,196,106,0.13) 0%,transparent 68%);pointer-events:none;}
-.simulator-card>*{position:relative;z-index:1;}
-.simulator-card .lead{font-family:'DM Serif Display',serif;font-size:clamp(1.35rem,3vw,2rem);line-height:1.15;color:var(--text);margin:1rem 0;max-width:680px;}
-.simulator-card .lead em{font-style:italic;color:var(--amber);}
-.simulator-card p{font-size:0.94rem;color:var(--text-muted);line-height:1.75;max-width:680px;}
-.simulator-actions{display:flex;flex-direction:column;gap:0.85rem;align-items:stretch;}
-.simulator-actions a{width:100%;text-align:center;}
-.sim-note{margin-top:1rem;font-size:0.75rem;color:var(--text-muted);line-height:1.55;padding-left:1rem;border-left:2px solid rgba(233,196,106,0.45);}
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events:none;
+      z-index:0;
+      opacity:0.45;
+    }
 
-/* RISCO */
-.risk{padding:6rem 2.5rem;}
-.risk-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:4rem;align-items:start;}
-.risk-list{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-.risk-item{background:var(--dark-2);border:1px solid var(--border);border-radius:9px;padding:1.25rem;}
-.risk-item span{display:inline-flex;width:26px;height:26px;border-radius:50%;background:rgba(233,196,106,0.12);color:var(--amber);align-items:center;justify-content:center;font-weight:800;margin-bottom:0.8rem;}
-.risk-item h3{font-size:0.88rem;margin-bottom:0.45rem;}
-.risk-item p{font-size:0.79rem;color:var(--text-muted);line-height:1.55;}
+    a{
+      color:inherit;
+    }
 
-/* EVTE */
-.evte{background:var(--dark-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:6rem 2.5rem;}
-.evte-inner{display:grid;grid-template-columns:1.05fr 0.95fr;gap:4.5rem;align-items:start;}
-.evte-steps{margin-top:2rem;}
-.step{display:flex;gap:1.3rem;padding:1.25rem 0;border-bottom:1px solid var(--border);}
-.step:last-child{border-bottom:none;}
-.step-n{font-family:'DM Serif Display',serif;font-size:2rem;color:rgba(233,196,106,0.23);min-width:2rem;line-height:1;}
-.step h3{font-size:0.92rem;font-weight:700;margin-bottom:0.3rem;}
-.step p{font-size:0.82rem;color:var(--text-muted);line-height:1.6;}
-.evte-box{position:sticky;top:7rem;background:var(--dark-3);border:1px solid var(--border);border-radius:12px;padding:2rem;box-shadow:var(--shadow);}
-.report-mockup{margin:0 0 1.4rem;background:linear-gradient(135deg,rgba(233,196,106,0.08),rgba(64,145,108,0.08));border:1px solid rgba(233,196,106,0.18);border-radius:10px;padding:1rem;display:grid;grid-template-columns:92px 1fr;gap:1rem;align-items:center;}
-.report-page{background:#edf3ee;color:#162218;border-radius:6px;padding:0.75rem;min-height:120px;box-shadow:0 12px 28px rgba(0,0,0,0.22);display:flex;flex-direction:column;justify-content:space-between;}
-.report-page-top{display:flex;justify-content:space-between;align-items:center;font-size:0.48rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#2d6a4f;}
-.report-page-title{font-family:'DM Serif Display',serif;font-size:0.92rem;line-height:1.05;margin-top:0.7rem;color:#0d1b12;}
-.report-page-lines{display:flex;flex-direction:column;gap:0.22rem;margin-top:0.6rem;}
-.report-page-lines span{display:block;height:4px;border-radius:999px;background:rgba(45,106,79,0.22);}
-.report-page-lines span:nth-child(1){width:82%;}.report-page-lines span:nth-child(2){width:64%;}.report-page-lines span:nth-child(3){width:72%;}
-.report-bars{display:flex;align-items:end;gap:0.18rem;height:26px;margin-top:0.7rem;}
-.report-bars span{width:100%;border-radius:2px 2px 0 0;background:#40916c;}
-.report-bars span:nth-child(1){height:45%;}.report-bars span:nth-child(2){height:70%;}.report-bars span:nth-child(3){height:55%;}.report-bars span:nth-child(4){height:90%;background:#e9c46a;}
-.report-mockup-text strong{display:block;font-size:0.9rem;margin-bottom:0.35rem;}
-.report-mockup-text p{font-size:0.78rem;color:var(--text-muted);line-height:1.55;margin-bottom:0.65rem;}
-.report-pill-row{display:flex;flex-wrap:wrap;gap:0.35rem;}
-.report-pill{font-size:0.62rem;color:var(--amber);border:1px solid rgba(233,196,106,0.22);background:rgba(233,196,106,0.06);border-radius:999px;padding:0.18rem 0.5rem;}
-.evte-item{display:flex;gap:0.8rem;margin-bottom:0.95rem;align-items:flex-start;}
-.evte-check{color:var(--green-soft);font-weight:800;flex-shrink:0;margin-top:1px;}
-.evte-item p{font-size:0.82rem;color:var(--text-muted);line-height:1.6;}
-.evte-separator{border:none;border-top:1px solid var(--border);margin:1.4rem 0;}
-.evte-note{font-size:0.78rem;color:var(--text-muted);line-height:1.55;}
-.evte-note span{color:var(--amber);font-weight:700;}
+    img{
+      max-width:100%;
+      display:block;
+    }
 
-/* PROCESS / FAQ */
-.process{padding:6rem 2.5rem;}
-.process-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:4rem;align-items:start;}
-.process-cards{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-.process-card{background:var(--dark-2);border:1px solid var(--border);border-radius:9px;padding:1.25rem;}
-.process-num{font-family:'DM Serif Display',serif;font-size:1.55rem;color:var(--amber);line-height:1;margin-bottom:0.8rem;}
-.process-card h3{font-size:0.9rem;margin-bottom:0.4rem;}
-.process-card p{font-size:0.79rem;color:var(--text-muted);line-height:1.58;}
-.honesty-box{margin-top:1.2rem;padding:1.2rem;background:linear-gradient(135deg,rgba(233,196,106,0.1),rgba(45,106,79,0.12));border:1px solid rgba(233,196,106,0.24);border-radius:8px;}
-.honesty-box strong{display:block;color:var(--amber);font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.45rem;}
-.honesty-box p{font-size:0.84rem;color:var(--text-muted);line-height:1.65;}
+    .container{
+      width:min(1160px, calc(100% - 2rem));
+      margin:0 auto;
+      position:relative;
+      z-index:2;
+    }
 
-.faq{background:var(--dark-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:5.5rem 2.5rem;}
-.faq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem;}
-.faq-item{background:var(--dark-3);border:1px solid var(--border);border-radius:9px;padding:1.25rem;}
-.faq-item h3{font-size:0.9rem;margin-bottom:0.55rem;}
-.faq-item p{font-size:0.8rem;color:var(--text-muted);line-height:1.6;}
+    nav{
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      z-index:100;
+      padding:1rem 2.5rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      background:rgba(13,27,18,0.88);
+      border-bottom:1px solid var(--border);
+      backdrop-filter:blur(16px);
+    }
 
-/* ABOUT */
-.about{padding:6rem 2.5rem;}
-.about-grid{display:grid;grid-template-columns:1.45fr 0.75fr;gap:2rem;align-items:stretch;}
-.about-main,.about-profile,.case-box{background:var(--dark-2);border:1px solid var(--border);border-radius:12px;padding:2rem;}
-.about-main h2{font-family:'DM Serif Display',serif;font-size:clamp(1.75rem,3.4vw,2.8rem);line-height:1.12;margin-bottom:1rem;max-width:770px;}
-.about-main p{font-size:0.94rem;color:var(--text-muted);line-height:1.75;max-width:760px;margin-bottom:1.35rem;}
-.about-points{display:grid;grid-template-columns:repeat(3,1fr);gap:0.8rem;}
-.about-point{background:var(--dark-3);border:1px solid var(--border);border-radius:8px;padding:1rem;}
-.about-point span{display:block;font-family:'DM Serif Display',serif;color:var(--amber);font-size:1.08rem;margin-bottom:0.35rem;}
-.about-point strong{display:block;font-size:0.82rem;margin-bottom:0.35rem;}
-.about-point p{font-size:0.74rem;line-height:1.45;margin:0;}
-.about-profile{display:flex;flex-direction:column;justify-content:space-between;gap:1rem;}
-.about-profile img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 22%;border-radius:10px;border:1px solid var(--border);background:var(--dark-3);}
-.about-profile-text{border-top:1px solid var(--border);padding-top:1rem;}
-.about-profile-text strong{display:block;font-size:0.95rem;margin-bottom:0.35rem;}
-.about-profile-text span{display:block;font-size:0.72rem;color:var(--green-light);letter-spacing:0.08em;text-transform:uppercase;line-height:1.45;}
-.case-box{grid-column:1 / -1;}
-.case-label{font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--green-light);margin-bottom:0.5rem;font-weight:600;}
-.case-title{font-size:0.83rem;font-weight:500;color:var(--text);margin-bottom:1rem;line-height:1.5;max-width:780px;}
-.case-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:0.8rem;margin-bottom:1rem;}
-.case-metric{background:var(--dark-3);border:1px solid var(--border);border-radius:8px;padding:1rem;}
-.case-metric-num{font-family:'DM Serif Display',serif;font-size:1.28rem;color:var(--amber);line-height:1;margin-bottom:0.25rem;}
-.case-metric-label{font-size:0.65rem;color:var(--text-muted);line-height:1.4;}
-.case-conclusion{font-size:0.74rem;color:var(--green-light);padding-top:0.8rem;border-top:1px solid var(--border);font-style:italic;}
+    .logo{
+      font-family:'DM Serif Display',serif;
+      font-size:1.35rem;
+      text-decoration:none;
+      letter-spacing:0.02em;
+    }
 
-/* CONTACT */
-.contact{background:var(--dark-2);border-top:1px solid var(--border);padding:7rem 2.5rem;overflow:hidden;}
-.contact::before{content:'';position:absolute;top:-20%;left:50%;transform:translateX(-50%);width:650px;height:420px;background:radial-gradient(ellipse,rgba(45,106,79,0.19) 0%,transparent 70%);pointer-events:none;}
-.contact-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
-.contact h2{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4.5vw,3.2rem);line-height:1.1;margin-bottom:1rem;}
-.contact h2 em{font-style:italic;color:var(--green-pale);}
-.contact-text{font-size:0.96rem;color:var(--text-muted);line-height:1.75;margin-bottom:1.5rem;max-width:580px;}
-.contact-items{display:flex;flex-direction:column;gap:0.9rem;margin-bottom:2rem;}
-.contact-item{display:flex;gap:0.8rem;align-items:center;font-size:0.83rem;color:var(--text-muted);}
-.contact-dot{width:6px;height:6px;background:var(--amber);border-radius:50%;flex-shrink:0;}
-.btn-wpp{background:#25d366;color:#fff;padding:0.86rem 1.55rem;border-radius:4px;font-size:0.88rem;font-weight:800;text-decoration:none;letter-spacing:0.04em;transition:all 0.25s;display:inline-flex;align-items:center;gap:0.6rem;}
-.btn-wpp:hover{background:#1ebe5d;transform:translateY(-2px);}
-.form-card{background:var(--dark-3);border:1px solid var(--border);border-radius:12px;padding:2.35rem;box-shadow:var(--shadow);}
-.form-card h3{font-family:'DM Serif Display',serif;font-size:1.35rem;margin-bottom:0.45rem;}
-.form-card>p{font-size:0.8rem;color:var(--text-muted);margin-bottom:1.8rem;line-height:1.55;}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-.form-group{margin-bottom:1.2rem;}
-.form-group label{display:block;font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.5rem;}
-.form-group input,.form-group select,.form-group textarea{width:100%;background:var(--dark-2);border:1px solid var(--border);border-radius:4px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:300;padding:0.75rem 1rem;transition:border-color 0.2s;appearance:none;-webkit-appearance:none;}
-.form-group select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238aab92' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem;cursor:pointer;}
-.form-group select option{background:#1e2e22;}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--green-light);background:rgba(64,145,108,0.05);}
-.form-group input::placeholder{color:rgba(147,173,153,0.5);}
-.btn-submit{width:100%;background:var(--amber);color:var(--dark);border:none;cursor:pointer;padding:1rem 2rem;border-radius:4px;font-size:0.9rem;font-weight:800;font-family:'DM Sans',sans-serif;letter-spacing:0.04em;transition:all 0.2s;margin-top:0.2rem;}
-.btn-submit:hover{background:#f5d585;transform:translateY(-2px);}
-.form-success{display:none;text-align:center;padding:2rem;}
-.form-success .success-icon{font-size:2.5rem;margin-bottom:1rem;color:var(--green-soft);}
-.form-success h4{font-family:'DM Serif Display',serif;font-size:1.3rem;margin-bottom:0.5rem;}
-.form-success p{font-size:0.85rem;color:var(--text-muted);line-height:1.6;}
-.form-note{margin-top:1rem;font-size:0.73rem;color:var(--text-muted);text-align:center;line-height:1.5;}
+    .logo span{
+      color:var(--amber);
+    }
 
-/* FOOTER */
-footer.site-footer{padding:3.5rem 2.5rem 2rem;border-top:1px solid var(--border);background:var(--dark);display:block;position:relative;z-index:1;}
-.footer-inner{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:2rem;align-items:start;}
-.footer-brand p,.footer-col p,.footer-small{font-size:0.78rem;color:var(--text-muted);line-height:1.65;}
-.footer-brand .logo{display:inline-block;margin-bottom:0.8rem;}
-.footer-col h4{font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--green-light);margin-bottom:0.8rem;}
-.footer-col a{display:inline-block;color:var(--text-muted);font-size:0.82rem;text-decoration:none;margin-bottom:0.45rem;transition:color 0.2s;}
-.footer-col a:hover{color:var(--amber);}
-.footer-lgpd{margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border);}
-.footer-bottom{max-width:1120px;margin:2rem auto 0;padding-top:1.2rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;}
-.footer-bottom p{font-size:0.74rem;color:var(--text-muted);line-height:1.5;}
+    .nav-actions{
+      display:flex;
+      align-items:center;
+      gap:0.8rem;
+    }
 
-@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+    .nav-cta{
+      text-decoration:none;
+      color:var(--dark);
+      background:var(--amber);
+      padding:0.65rem 1rem;
+      border-radius:999px;
+      font-size:0.82rem;
+      font-weight:700;
+      transition:0.2s ease;
+    }
 
-@media(max-width:980px){
-  .hero-grid,.problem-grid,.risk-grid,.evte-inner,.process-grid,.contact-grid{grid-template-columns:1fr;gap:2.7rem;}
-  .hero-card,.evte-box{position:relative;top:auto;}
-  .setor-cards{grid-template-columns:1fr 1fr;}
-  .about-grid{grid-template-columns:1fr;}
-  .about-profile{display:grid;grid-template-columns:120px 1fr;align-items:center;}
-  .about-profile img{aspect-ratio:4/5;}
-  .about-profile-text{border-top:none;border-left:1px solid var(--border);padding-top:0;padding-left:1rem;}
-}
-@media(max-width:760px){
-  nav{padding:1rem 1.25rem;}
-  .nav-cta{display:none;}
-  .hero,.problem,.setores,.simulator,.risk,.evte,.process,.faq,.about,.contact,footer.site-footer{padding-left:1.2rem;padding-right:1.2rem;}
-  .hero{padding-top:7rem;}
-  .hero-img{width:100%;opacity:0.12;-webkit-mask-image:none;mask-image:none;}
-  .hero-cta{flex-direction:column;align-items:stretch;}
-  .hero-cta a{width:100%;}
-  .hero-card{padding:1.25rem;}
-  .setores-header{display:block;}
-  .setor-cards,.risk-list,.process-cards,.faq-grid,.simulator-card,.case-metrics,.footer-inner{grid-template-columns:1fr;}
-  .simulator-card{padding:1.6rem;}
-  .report-mockup{grid-template-columns:1fr;}
-  .about-points{grid-template-columns:1fr;}
-  .form-row{grid-template-columns:1fr;}
-  .footer-bottom{align-items:flex-start;flex-direction:column;}
-  .wpp-fixo{left:1rem;right:1rem;justify-content:center;bottom:0.9rem;}
-  .contact{padding-bottom:6rem;}
-  footer.site-footer{padding-bottom:6rem;}
-}
-@media(max-width:480px){
-  .section-title{font-size:clamp(1.65rem,8vw,2rem);}
-  .hero h1{font-size:clamp(2.1rem,11vw,2.8rem);}
-  .about-profile{grid-template-columns:88px 1fr;gap:0.9rem;}
-  .about-main,.about-profile,.case-box,.form-card{padding:1.25rem;}
-}
-</style>
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18148435351"></script>
-<script>
-window.dataLayer=window.dataLayer||[];
-function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());
-gtag('config','AW-18148435351');
+    .nav-cta:hover{
+      transform:translateY(-1px);
+      filter:brightness(1.05);
+    }
 
-// ─── CONVERSÃO DE CONTATO (clique no WhatsApp) ───────────────────────────────
-// ID atualizado para a ação "Contacto" criada em 14/05/2026
-const CONVERSION_ID = 'AW-18148435351/0BXwCJj3ha0cEJfL7M1D';
+    .menu-toggle{
+      width:44px;
+      height:44px;
+      border-radius:50%;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,0.04);
+      cursor:pointer;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      gap:5px;
+    }
 
-function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') { window.location = url; }
-  };
-  gtag('event', 'conversion', {
-    'send_to': CONVERSION_ID,
-    'value': 1.0,
-    'currency': 'BRL',
-    'event_callback': callback
-  });
-  return false;
-}
+    .menu-toggle span{
+      width:17px;
+      height:2px;
+      background:var(--text);
+      border-radius:3px;
+      transition:0.2s ease;
+    }
 
-// Mantida por compatibilidade — agora aponta pro ID correto
-function gtag_report_form_conversion() {
-  if (typeof gtag === 'function') {
-    gtag('event', 'conversion', {'send_to': CONVERSION_ID, 'value': 1.0, 'currency': 'BRL'});
-    gtag('event', 'form_submit_evte', {'event_category': 'lead', 'event_label': 'formulario_contato'});
-  }
-}
-</script>
+    .menu-toggle.active span:nth-child(1){
+      transform:translateY(7px) rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2){
+      opacity:0;
+    }
+
+    .menu-toggle.active span:nth-child(3){
+      transform:translateY(-7px) rotate(-45deg);
+    }
+
+    .menu-overlay{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.48);
+      z-index:150;
+      opacity:0;
+      pointer-events:none;
+      transition:0.25s ease;
+    }
+
+    .menu-overlay.active{
+      opacity:1;
+      pointer-events:auto;
+    }
+
+    .menu-panel{
+      position:fixed;
+      top:0;
+      right:0;
+      width:min(420px,92vw);
+      height:100vh;
+      z-index:160;
+      background:linear-gradient(180deg,var(--dark-2),#0b160f);
+      border-left:1px solid var(--border);
+      padding:6.2rem 1.4rem 1.4rem;
+      transform:translateX(100%);
+      transition:0.28s ease;
+      box-shadow:var(--shadow);
+    }
+
+    .menu-panel.active{
+      transform:translateX(0);
+    }
+
+    .menu-kicker{
+      font-size:0.75rem;
+      text-transform:uppercase;
+      letter-spacing:0.18em;
+      color:var(--amber);
+      font-weight:800;
+      margin-bottom:0.85rem;
+    }
+
+    .menu-title{
+      font-family:'DM Serif Display',serif;
+      font-size:2rem;
+      line-height:1;
+      margin-bottom:1.35rem;
+    }
+
+    .menu-links{
+      display:grid;
+      gap:0.7rem;
+    }
+
+    .menu-links a{
+      text-decoration:none;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0.95rem 1rem;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,0.035);
+      border-radius:18px;
+      color:var(--soft);
+      transition:0.2s ease;
+    }
+
+    .menu-links a:hover{
+      border-color:var(--amber);
+      transform:translateX(-3px);
+    }
+
+    .menu-foot{
+      color:var(--muted);
+      font-size:0.86rem;
+      line-height:1.5;
+      margin-top:1rem;
+    }
+
+    .wpp-fixo{
+      position:fixed;
+      right:1.25rem;
+      bottom:1.25rem;
+      z-index:120;
+      background:#25D366;
+      color:#06120a;
+      font-weight:800;
+      text-decoration:none;
+      padding:0.8rem 1.05rem;
+      border-radius:999px;
+      box-shadow:0 18px 45px rgba(0,0,0,0.35);
+      display:flex;
+      align-items:center;
+      gap:0.45rem;
+      font-size:0.86rem;
+    }
+
+    .hero{
+      min-height:100vh;
+      position:relative;
+      display:flex;
+      align-items:center;
+      padding:8.5rem 0 4rem;
+      overflow:hidden;
+    }
+
+    .hero-img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      filter:saturate(0.85) brightness(0.52);
+      transform:scale(1.02);
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at 74% 40%,rgba(64,145,108,0.24),transparent 32%),
+        linear-gradient(90deg,rgba(13,27,18,0.97),rgba(13,27,18,0.72),rgba(13,27,18,0.2));
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.1fr 0.9fr;
+      gap:3.5rem;
+      align-items:center;
+    }
+
+    .eyebrow,
+    .section-label{
+      font-size:0.75rem;
+      text-transform:uppercase;
+      letter-spacing:0.18em;
+      color:var(--amber);
+      font-weight:800;
+      margin-bottom:0.85rem;
+    }
+
+    h1{
+      font-family:'DM Serif Display',serif;
+      font-size:clamp(3rem,6.5vw,6.1rem);
+      line-height:0.88;
+      letter-spacing:-0.06em;
+      max-width:850px;
+      margin-bottom:1.35rem;
+    }
+
+    h1 em,
+    .section-title em,
+    .contact h2 em{
+      color:var(--amber);
+      font-style:italic;
+    }
+
+    .hero-lead{
+      color:var(--soft);
+      font-size:clamp(1.05rem,2vw,1.32rem);
+      line-height:1.45;
+      max-width:690px;
+      margin-bottom:1rem;
+    }
+
+    .hero-note{
+      color:var(--muted);
+      line-height:1.65;
+      max-width:620px;
+      margin-bottom:1.8rem;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:0.85rem;
+      flex-wrap:wrap;
+      margin-bottom:1.3rem;
+    }
+
+    .btn-primary,
+    .btn-secondary,
+    .btn-wpp,
+    .btn-submit{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:0.5rem;
+      border:none;
+      cursor:pointer;
+      text-decoration:none;
+      border-radius:999px;
+      padding:0.95rem 1.25rem;
+      font-family:'DM Sans',sans-serif;
+      font-weight:800;
+      font-size:0.92rem;
+      transition:0.2s ease;
+    }
+
+    .btn-primary,
+    .btn-submit{
+      background:var(--amber);
+      color:var(--dark);
+    }
+
+    .btn-secondary{
+      background:rgba(255,255,255,0.06);
+      color:var(--text);
+      border:1px solid var(--border);
+    }
+
+    .btn-wpp{
+      background:#25D366;
+      color:#06120a;
+    }
+
+    .btn-primary:hover,
+    .btn-secondary:hover,
+    .btn-wpp:hover,
+    .btn-submit:hover{
+      transform:translateY(-2px);
+      filter:brightness(1.05);
+    }
+
+    .pills{
+      display:flex;
+      flex-wrap:wrap;
+      gap:0.55rem;
+    }
+
+    .pills span{
+      border:1px solid rgba(233,196,106,0.24);
+      background:rgba(233,196,106,0.08);
+      color:var(--soft);
+      padding:0.45rem 0.7rem;
+      border-radius:999px;
+      font-size:0.78rem;
+      font-weight:600;
+    }
+
+    .hero-card{
+      background:linear-gradient(180deg,rgba(22,34,24,0.95),rgba(13,27,18,0.88));
+      border:1px solid var(--border);
+      border-radius:28px;
+      padding:1.35rem;
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(14px);
+    }
+
+    .card-label{
+      color:var(--amber);
+      font-size:0.74rem;
+      text-transform:uppercase;
+      letter-spacing:0.16em;
+      font-weight:800;
+      margin-bottom:0.6rem;
+    }
+
+    .card-title{
+      font-family:'DM Serif Display',serif;
+      font-size:2rem;
+      line-height:1;
+      margin-bottom:0.8rem;
+    }
+
+    .mini-list{
+      display:grid;
+      gap:0.75rem;
+      margin-top:1rem;
+    }
+
+    .mini-list div{
+      display:grid;
+      grid-template-columns:auto 1fr;
+      gap:0.75rem;
+      padding:0.85rem;
+      border:1px solid rgba(255,255,255,0.07);
+      background:rgba(255,255,255,0.04);
+      border-radius:18px;
+    }
+
+    .mini-list span{
+      color:var(--amber);
+      font-weight:900;
+    }
+
+    .mini-list strong{
+      display:block;
+      color:#fff;
+      margin-bottom:0.15rem;
+    }
+
+    .mini-list p{
+      color:var(--muted);
+      font-size:0.88rem;
+      line-height:1.45;
+    }
+
+    .cs{
+      position:relative;
+      z-index:1;
+      padding:5.5rem 0;
+    }
+
+    .bg2{
+      background:linear-gradient(180deg,rgba(22,34,24,0.62),rgba(13,27,18,0));
+    }
+
+    .section-title{
+      font-family:'DM Serif Display',serif;
+      font-size:clamp(2.2rem,4vw,4rem);
+      line-height:0.98;
+      letter-spacing:-0.04em;
+      margin-bottom:1rem;
+    }
+
+    .section-body{
+      color:var(--muted);
+      font-size:1.03rem;
+      line-height:1.7;
+      max-width:760px;
+    }
+
+    .divider{
+      width:70px;
+      height:2px;
+      background:var(--amber);
+      margin:1.1rem 0 1.4rem;
+    }
+
+    .problem-grid,
+    .process-grid,
+    .contact-grid{
+      display:grid;
+      grid-template-columns:0.9fr 1.1fr;
+      gap:3rem;
+      align-items:start;
+    }
+
+    .stat-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:1rem;
+    }
+
+    .stat,
+    .process-card{
+      border:1px solid var(--border);
+      background:rgba(255,255,255,0.035);
+      border-radius:22px;
+      padding:1.1rem;
+    }
+
+    .stat-num{
+      font-family:'DM Serif Display',serif;
+      color:var(--amber);
+      font-size:2rem;
+      line-height:1;
+      margin-bottom:0.6rem;
+    }
+
+    .stat h3,
+    .process-card h3{
+      font-size:1.05rem;
+      margin-bottom:0.4rem;
+      color:#fff;
+    }
+
+    .stat p,
+    .process-card p{
+      color:var(--muted);
+      line-height:1.5;
+      font-size:0.92rem;
+    }
+
+    .sector-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:1rem;
+    }
+
+    .sector-card{
+      min-height:300px;
+      position:relative;
+      overflow:hidden;
+      border-radius:26px;
+      border:1px solid var(--border);
+      background:var(--dark-2);
+      text-decoration:none;
+      transition:0.25s ease;
+    }
+
+    .sector-card:hover{
+      transform:translateY(-6px);
+      border-color:var(--amber);
+    }
+
+    .sector-card img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      filter:saturate(0.85) brightness(0.52);
+      transition:0.25s ease;
+    }
+
+    .sector-card:hover img{
+      transform:scale(1.04);
+      filter:saturate(1) brightness(0.58);
+    }
+
+    .sector-card::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg,rgba(13,27,18,0.08),rgba(13,27,18,0.94));
+    }
+
+    .sector-content{
+      position:absolute;
+      inset:auto 0 0;
+      z-index:2;
+      padding:1.2rem;
+    }
+
+    .sector-content h3{
+      font-family:'DM Serif Display',serif;
+      font-size:1.75rem;
+      line-height:1;
+      margin-bottom:0.45rem;
+    }
+
+    .sector-content p{
+      color:var(--soft);
+      font-size:0.9rem;
+      line-height:1.45;
+      margin-bottom:0.85rem;
+    }
+
+    .tag-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:0.35rem;
+    }
+
+    .tag{
+      border:1px solid rgba(233,196,106,0.24);
+      background:rgba(233,196,106,0.1);
+      color:var(--soft);
+      padding:0.32rem 0.52rem;
+      border-radius:999px;
+      font-size:0.72rem;
+    }
+
+    .strip{
+      background:linear-gradient(120deg,rgba(233,196,106,0.1),rgba(64,145,108,0.12));
+      border-top:1px solid var(--border);
+      border-bottom:1px solid var(--border);
+    }
+
+    .strip-card{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:2rem;
+      align-items:center;
+    }
+
+    .contact{
+      position:relative;
+      z-index:1;
+      padding:5.5rem 0;
+      background:linear-gradient(180deg,rgba(64,145,108,0.14),rgba(13,27,18,0));
+    }
+
+    .contact h2{
+      font-family:'DM Serif Display',serif;
+      font-size:clamp(2.4rem,4.5vw,4.4rem);
+      line-height:0.95;
+      letter-spacing:-0.04em;
+      margin-bottom:1rem;
+    }
+
+    .contact-text{
+      color:var(--soft);
+      font-size:1.08rem;
+      line-height:1.65;
+      margin-bottom:1.3rem;
+      max-width:650px;
+    }
+
+    .contact-items{
+      display:grid;
+      gap:0.65rem;
+      margin:1.3rem 0;
+    }
+
+    .contact-item{
+      display:flex;
+      align-items:flex-start;
+      gap:0.65rem;
+      color:var(--muted);
+      line-height:1.45;
+    }
+
+    .contact-dot{
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:var(--amber);
+      margin-top:0.45rem;
+      flex:0 0 auto;
+    }
+
+    .form-card{
+      background:linear-gradient(180deg,rgba(22,34,24,0.96),rgba(13,27,18,0.9));
+      border:1px solid var(--border);
+      border-radius:28px;
+      padding:1.35rem;
+      box-shadow:var(--shadow);
+    }
+
+    .form-card h3{
+      font-family:'DM Serif Display',serif;
+      font-size:2rem;
+      line-height:1;
+      margin-bottom:0.5rem;
+    }
+
+    .form-card > p{
+      color:var(--muted);
+      line-height:1.55;
+      margin-bottom:1rem;
+    }
+
+    .form-row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:0.8rem;
+    }
+
+    .form-group{
+      display:grid;
+      gap:0.35rem;
+      margin-bottom:0.8rem;
+    }
+
+    label{
+      font-size:0.78rem;
+      color:var(--soft);
+      font-weight:800;
+    }
+
+    input,
+    select,
+    textarea{
+      width:100%;
+      border:1px solid var(--border);
+      border-radius:16px;
+      background:rgba(255,255,255,0.05);
+      color:var(--text);
+      padding:0.9rem 0.95rem;
+      font-family:'DM Sans',sans-serif;
+      outline:none;
+    }
+
+    select option{
+      background:var(--dark-2);
+      color:var(--text);
+    }
+
+    textarea{
+      min-height:92px;
+      resize:vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus{
+      border-color:var(--amber);
+    }
+
+    .btn-submit{
+      width:100%;
+      margin-top:0.3rem;
+    }
+
+    .form-note{
+      color:var(--muted);
+      font-size:0.82rem;
+      line-height:1.45;
+      margin-top:0.8rem;
+    }
+
+    .form-success{
+      display:none;
+      text-align:center;
+      padding:2rem 1rem;
+    }
+
+    .success-icon{
+      width:54px;
+      height:54px;
+      border-radius:50%;
+      background:var(--green-light);
+      display:grid;
+      place-items:center;
+      margin:0 auto 0.8rem;
+      font-weight:900;
+      font-size:1.5rem;
+    }
+
+    .form-success h4{
+      font-size:1.2rem;
+      margin-bottom:0.35rem;
+    }
+
+    .form-success p{
+      color:var(--muted);
+      line-height:1.55;
+    }
+
+    .site-footer{
+      position:relative;
+      z-index:1;
+      border-top:1px solid var(--border);
+      padding:2.2rem 0 1.5rem;
+      background:#09110c;
+    }
+
+    .footer-inner{
+      width:min(1160px, calc(100% - 2rem));
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:1.4fr 0.8fr 0.8fr;
+      gap:2rem;
+    }
+
+    .footer-brand p,
+    .footer-col p,
+    .footer-col a,
+    .footer-bottom{
+      color:var(--muted);
+      font-size:0.9rem;
+      line-height:1.6;
+    }
+
+    .footer-col h4{
+      margin-bottom:0.7rem;
+      color:#fff;
+    }
+
+    .footer-col a{
+      text-decoration:none;
+    }
+
+    .footer-col a:hover{
+      color:var(--amber);
+    }
+
+    .footer-lgpd{
+      margin-top:0.8rem;
+      padding:0.7rem;
+      border:1px solid rgba(255,255,255,0.07);
+      border-radius:14px;
+      background:rgba(255,255,255,0.03);
+    }
+
+    .footer-small{
+      font-size:0.82rem !important;
+    }
+
+    .footer-bottom{
+      width:min(1160px, calc(100% - 2rem));
+      margin:1.4rem auto 0;
+      padding-top:1rem;
+      border-top:1px solid rgba(255,255,255,0.07);
+      display:flex;
+      justify-content:space-between;
+      gap:1rem;
+    }
+
+    .fi{
+      opacity:0;
+      transform:translateY(18px);
+      transition:0.55s ease;
+    }
+
+    .fi.show{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    .fi-d2{
+      transition-delay:0.12s;
+    }
+
+    @media(max-width:960px){
+      nav{
+        padding:0.9rem 1rem;
+      }
+
+      .nav-cta{
+        display:none;
+      }
+
+      .hero{
+        padding-top:7.5rem;
+      }
+
+      .hero-grid,
+      .problem-grid,
+      .process-grid,
+      .contact-grid,
+      .footer-inner{
+        grid-template-columns:1fr;
+      }
+
+      .hero-card{
+        display:none;
+      }
+
+      .stat-grid,
+      .sector-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .strip-card{
+        grid-template-columns:1fr;
+      }
+
+      .footer-bottom{
+        flex-direction:column;
+      }
+    }
+
+    @media(max-width:640px){
+      h1{
+        font-size:3.1rem;
+      }
+
+      .cs,
+      .contact{
+        padding:4rem 0;
+      }
+
+      .stat-grid,
+      .sector-grid,
+      .form-row{
+        grid-template-columns:1fr;
+      }
+
+      .sector-card{
+        min-height:270px;
+      }
+
+      .wpp-fixo{
+        left:1rem;
+        right:1rem;
+        justify-content:center;
+        bottom:1rem;
+      }
+
+      .menu-panel{
+        padding-top:5.6rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
+
 <nav>
   <a href="/" class="logo">Vértice<span>.</span></a>
+
   <div class="nav-actions">
-    <a href="#contato" class="nav-cta">Analisar meu potencial →</a>
+    <a href="#contato" class="nav-cta">Receber pré-análise →</a>
+
     <button type="button" class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuPanel">
-      <span></span><span></span><span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
   </div>
 </nav>
 
 <div class="menu-overlay" id="menuOverlay"></div>
+
 <aside class="menu-panel" id="menuPanel" aria-hidden="true">
   <div class="menu-kicker">Navegação</div>
+
   <div class="menu-title">Todas as páginas da <em>Vértice</em></div>
+
   <div class="menu-links">
     <a href="/"><strong>Início</strong><span>→</span></a>
     <a href="/simulador.html"><strong>Simulador</strong><span>→</span></a>
-    <a href="#evte"><strong>Estudo de viabilidade</strong><span>→</span></a>
+    <a href="#setores"><strong>Setores atendidos</strong><span>→</span></a>
     <a href="#contato"><strong>Contato</strong><span>→</span></a>
     <a href="/agropecuaria"><strong>Agropecuária</strong><span>→</span></a>
     <a href="/industria"><strong>Indústria</strong><span>→</span></a>
@@ -391,259 +964,231 @@ function gtag_report_form_conversion() {
     <a href="/saneamento"><strong>Saneamento</strong><span>→</span></a>
     <a href="/politica-de-privacidade.html"><strong>Política de privacidade</strong><span>→</span></a>
   </div>
-  <div class="menu-foot">Use o menu para acessar rapidamente o simulador, os setores atendidos e o formulário de pré-análise.</div>
+
+  <div class="menu-foot">
+    Use o menu para acessar rapidamente os setores, o simulador e o formulário de pré-análise.
+  </div>
 </aside>
 
-<a href="https://wa.me/5519971315434" class="wpp-fixo" data-whatsapp-origin="flutuante">
-  <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-  Analisar meu potencial
-</a>
+<a href="#" class="wpp-fixo" data-whatsapp-direct>Pré-análise no WhatsApp</a>
 
 <section class="hero">
-  <img class="hero-img" src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1400&q=80&fit=crop" alt="Vista aérea de área produtiva com vegetação e campo">
+  <img class="hero-img" src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1800&q=80&fit=crop" alt="Vista aérea de área produtiva">
+
   <div class="container hero-grid">
-    <div>
-      <div class="hero-eyebrow">Consultoria em biogás para decisão de investimento</div>
-      <h1>Antes de comprar um biodigestor, descubra se o seu resíduo <em>realmente paga a conta.</em></h1>
-      <p class="hero-sub">A Vértice analisa resíduos orgânicos, escala de geração e consumo energético para mostrar se existe potencial real de economia com biogás, antes de qualquer investimento em equipamento.</p>
-      <p class="hero-proof">Você pode estar tratando o resíduo como custo, quando parte dele pode virar energia, economia e decisão estratégica.</p>
-      <div class="hero-cta">
-        <a href="#contato" class="btn-primary">Fazer pré-análise gratuita →</a>
-        <a href="/simulador.html" class="btn-secondary">Simular meu potencial</a>
+    <div class="fi show">
+      <div class="eyebrow">Biogás para decisão de investimento</div>
+
+      <h1>Seu resíduo orgânico pode ser custo. <em>Ou pode virar economia.</em></h1>
+
+      <p class="hero-lead">
+        A Vértice ajuda empresas, propriedades rurais, restaurantes, agroindústrias e operações de saneamento a descobrir se existe viabilidade real para produzir e usar biogás.
+      </p>
+
+      <p class="hero-note">
+        Antes de comprar equipamento ou pedir orçamento de biodigestor, analisamos resíduo, escala e consumo de energia.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#contato" class="btn-primary">Receber pré-análise gratuita →</a>
+        <a href="/simulador.html" class="btn-secondary">Testar no simulador</a>
+      </div>
+
+      <div class="pills">
+        <span>Resíduo recorrente</span>
+        <span>Gasto energético</span>
+        <span>Decisão com números</span>
       </div>
     </div>
-    <aside class="hero-card">
-      <div class="hero-card-title">O que a pré-análise responde?</div>
-      <div class="hero-card-list">
-        <div class="hero-card-item"><span>✓</span><p>Seu volume de resíduo parece suficiente para justificar uma análise completa?</p></div>
-        <div class="hero-card-item"><span>✓</span><p>Qual rota faz mais sentido: calor, eletricidade, biometano ou apenas gestão do resíduo?</p></div>
-        <div class="hero-card-item"><span>✓</span><p>Vale avançar para estudo técnico ou é melhor descartar por enquanto?</p></div>
+
+    <aside class="hero-card fi fi-d2 show">
+      <div class="card-label">Filtro técnico inicial</div>
+
+      <div class="card-title">O caso tem chance real?</div>
+
+      <p class="section-body">
+        A pré-análise olha quatro pontos simples antes de qualquer estudo pago.
+      </p>
+
+      <div class="mini-list">
+        <div>
+          <span>01</span>
+          <p><strong>Volume e frequência</strong>O resíduo precisa ter escala e constância mínima.</p>
+        </div>
+
+        <div>
+          <span>02</span>
+          <p><strong>Uso para o gás</strong>GLP, calor, diesel, eletricidade ou outra demanda real.</p>
+        </div>
+
+        <div>
+          <span>03</span>
+          <p><strong>Manejo possível</strong>Coleta, segregação e operação influenciam a tecnologia.</p>
+        </div>
+
+        <div>
+          <span>04</span>
+          <p><strong>Conta econômica</strong>A economia precisa justificar o próximo passo.</p>
+        </div>
       </div>
-      <div class="hero-card-note">A primeira conversa é gratuita e serve para separar oportunidade real de ideia que ainda não fecha.</div>
     </aside>
   </div>
 </section>
 
-<section class="problem">
+<section class="cs">
   <div class="container problem-grid">
     <div class="fi">
       <div class="section-label">A conta esquecida</div>
-      <h2 class="section-title">Seu resíduo pode estar virando custo duas vezes.</h2>
+
+      <h2 class="section-title">Você pode estar pagando duas vezes pelo mesmo resíduo.</h2>
+
       <div class="divider"></div>
-      <p class="section-body">Você paga para comprar energia. E, muitas vezes, também paga para lidar com o resíduo que sobra da operação.</p>
-      <p class="problem-kicker">A Vértice olha para essas duas contas juntas e responde: <span>existe chance real de economia com biogás?</span></p>
+
+      <p class="section-body">
+        Muitos empreendimentos pagam para comprar energia e também pagam para armazenar, tratar ou destinar resíduos orgânicos. A Vértice cruza essas duas contas e mostra se há potencial para biogás.
+      </p>
     </div>
-    <div class="stat-block fi fi-d2">
-      <div class="stat danger">
-        <div class="stat-num"><small>01</small> O que sobra</div>
-        <div class="stat-desc">Restos orgânicos, dejetos, lodos e efluentes geralmente são tratados como problema. Mas parte disso pode carregar energia.</div>
-      </div>
-      <div class="stat green">
-        <div class="stat-num"><small>02</small> O que você gasta</div>
-        <div class="stat-desc">GLP, diesel, eletricidade e calor pesam no caixa. O biogás pode ajudar a reduzir uma parte dessa dependência.</div>
-      </div>
+
+    <div class="stat-grid fi fi-d2">
       <div class="stat">
-        <div class="stat-num"><small>03</small> O que a Vértice faz</div>
-        <div class="stat-desc">Antes de pensar em comprar biodigestor, colocamos os números na mesa para ver se o projeto faz sentido. <strong>Simples assim.</strong></div>
+        <div class="stat-num">01</div>
+        <h3>Resíduo</h3>
+        <p>Restos alimentares, dejetos, efluentes, lodos e subprodutos podem carregar energia.</p>
+      </div>
+
+      <div class="stat">
+        <div class="stat-num">02</div>
+        <h3>Consumo</h3>
+        <p>GLP, energia elétrica, diesel, vapor ou calor podem abrir espaço para uso do biogás.</p>
+      </div>
+
+      <div class="stat">
+        <div class="stat-num">03</div>
+        <h3>Decisão</h3>
+        <p>O objetivo é saber se vale avançar, ajustar dados ou não investir agora.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="setores" id="setores">
+<section class="cs bg2" id="setores">
   <div class="container">
-    <div class="setores-header fi">
-      <div>
-        <div class="section-label">Onde atuamos</div>
-        <h2 class="section-title">Biogás faz sentido quando resíduo e consumo de energia se encontram.</h2>
-      </div>
-      <p class="section-body">Cada setor exige uma leitura diferente. O potencial depende do tipo de resíduo, da frequência de geração, da operação e da forma como a energia será usada.</p>
-    </div>
-    <div class="setor-cards fi fi-d2">
-      <a href="/agropecuaria" class="setor-card">
-        <div class="setor-icon">🐷</div>
-        <h3>Agropecuária</h3>
-        <p>Dejetos, esterco e resíduos da criação animal podem gerar biogás e biofertilizante, dependendo da escala e do manejo.</p>
-        <div class="tag-row"><span class="tag">Suínos</span><span class="tag">Bovinos</span><span class="tag">Aves</span></div>
-        <div class="setor-link">Ver setor →</div>
-      </a>
-      <a href="/industria" class="setor-card">
-        <div class="setor-icon">🏭</div>
-        <h3>Indústria</h3>
-        <p>Efluentes e resíduos orgânicos industriais podem virar oportunidade energética quando há consumo constante de calor ou energia.</p>
-        <div class="tag-row"><span class="tag">Laticínios</span><span class="tag">Frigoríficos</span><span class="tag">Alimentos</span></div>
-        <div class="setor-link">Ver setor →</div>
-      </a>
-      <a href="/agroindustria" class="setor-card">
-        <div class="setor-icon">🌾</div>
-        <h3>Agroindústria</h3>
-        <p>Vinhaça, manipueira e efluentes de processamento precisam ser analisados com atenção à sazonalidade e à logística.</p>
-        <div class="tag-row"><span class="tag">Etanol</span><span class="tag">Fecularias</span><span class="tag">Processamento</span></div>
-        <div class="setor-link">Ver setor →</div>
-      </a>
-      <a href="/saneamento" class="setor-card">
-        <div class="setor-icon">💧</div>
-        <h3>Saneamento</h3>
-        <p>Lodos, efluentes e biogás de sistemas existentes podem deixar de ser apenas custo operacional.</p>
-        <div class="tag-row"><span class="tag">ETEs</span><span class="tag">Aterros</span><span class="tag">Concessões</span></div>
-        <div class="setor-link">Ver setor →</div>
-      </a>
-    </div>
-  </div>
-</section>
+    <div class="fi" style="margin-bottom:2rem;">
+      <div class="section-label">Clientes certos</div>
 
-<div class="image-quote">
-  <img src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=1600&q=80&fit=crop" alt="Estrutura industrial relacionada a energia e tratamento">
-  <div><p>O biodigestor não inventa energia.<br><em>Ele captura parte do potencial que já estava no resíduo.</em></p></div>
-</div>
+      <h2 class="section-title">Onde o biogás pode fazer sentido.</h2>
 
-<section class="simulator" id="simulador">
-  <div class="container">
-    <div class="simulator-card fi">
-      <div>
-        <div class="section-label">Simulador gratuito</div>
-        <h2 class="section-title">Faça uma conta rápida com o resíduo que você gera.</h2>
-        <p class="lead">Em poucos segundos, você vê uma estimativa do que esse resíduo poderia gerar em <em>biogás e energia</em>.</p>
-        <p>Escolha o tipo de resíduo, informe uma quantidade aproximada e veja um resultado inicial. Não precisa entender os cálculos: a ideia é só ter uma primeira noção do tamanho da oportunidade.</p>
-        <div class="sim-note">Depois disso, a Vértice pode avaliar com mais cuidado se esse potencial realmente se paga no seu caso.</div>
-      </div>
-      <div class="simulator-actions">
-        <a href="/simulador.html" class="btn-primary">Fazer a conta agora →</a>
-        <a href="#contato" class="btn-secondary">Quero ajuda para avaliar</a>
-      </div>
+      <p class="section-body">
+        Cada setor tem uma lógica diferente de resíduo, operação e uso energético.
+      </p>
     </div>
-  </div>
-</section>
 
-<section class="risk">
-  <div class="container risk-grid">
-    <div class="fi">
-      <div class="section-label">Antes do investimento</div>
-      <h2 class="section-title">Comprar sem estudar pode transformar uma boa ideia em prejuízo.</h2>
-      <div class="divider"></div>
-      <p class="section-body">Projetos de biogás não falham apenas por causa da tecnologia. Muitas vezes falham porque a conta foi feita tarde demais, depois que o equipamento já foi escolhido.</p>
-    </div>
-    <div class="risk-list fi fi-d2">
-      <div class="risk-item"><span>1</span><h3>Produção superestimada</h3><p>O gás esperado no papel pode não aparecer na operação real.</p></div>
-      <div class="risk-item"><span>2</span><h3>Tecnologia inadequada</h3><p>Nem todo resíduo combina com qualquer tipo de biodigestor.</p></div>
-      <div class="risk-item"><span>3</span><h3>Uso energético mal definido</h3><p>Gerar biogás não basta. É preciso saber onde ele será aproveitado.</p></div>
-      <div class="risk-item"><span>4</span><h3>Retorno financeiro incerto</h3><p>Sem análise econômica, o investimento pode não fechar.</p></div>
-    </div>
-  </div>
-</section>
+    <div class="sector-grid fi fi-d2">
+      <a href="/agropecuaria" class="sector-card">
+        <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=900&q=80&fit=crop" alt="Agropecuária">
 
-<section class="evte" id="evte">
-  <div class="container evte-inner">
-    <div>
-      <div class="fi">
-        <div class="section-label">O serviço</div>
-        <h2 class="section-title">Estudo de viabilidade para decidir com segurança.</h2>
-        <div class="divider"></div>
-        <p class="section-body">O EVTE organiza as informações essenciais para responder se o aproveitamento do biogás faz sentido para o seu caso. A sigla é técnica, mas o objetivo é simples: ajudar você a decidir antes de investir.</p>
-      </div>
-      <div class="evte-steps fi fi-d2">
-        <div class="step"><div class="step-n">01</div><div><h3>Leitura do resíduo</h3><p>Tipo, quantidade, frequência de geração, variações e características operacionais.</p></div></div>
-        <div class="step"><div class="step-n">02</div><div><h3>Potencial de biogás</h3><p>Estimativa de produção de biogás e metano com premissas coerentes para o setor.</p></div></div>
-        <div class="step"><div class="step-n">03</div><div><h3>Uso da energia</h3><p>Comparação com GLP, energia elétrica, diesel, calor de processo ou outras rotas possíveis.</p></div></div>
-        <div class="step"><div class="step-n">04</div><div><h3>Viabilidade econômica</h3><p>Investimento estimado, economia potencial, retorno e sensibilidade das premissas.</p></div></div>
-        <div class="step"><div class="step-n">05</div><div><h3>Recomendação final</h3><p>Avançar, ajustar dados, mudar rota tecnológica ou descartar por enquanto.</p></div></div>
-      </div>
-    </div>
-    <aside class="evte-box fi fi-d2">
-      <div class="report-mockup" aria-label="Exemplo visual do relatório de viabilidade">
-        <div class="report-page">
-          <div class="report-page-top"><span>Vértice</span><span>EVTE</span></div>
-          <div>
-            <div class="report-page-title">Relatório de viabilidade</div>
-            <div class="report-page-lines"><span></span><span></span><span></span></div>
-            <div class="report-bars"><span></span><span></span><span></span><span></span></div>
+        <div class="sector-content">
+          <h3>Agropecuária</h3>
+          <p>Dejetos animais e manejo rural.</p>
+
+          <div class="tag-row">
+            <span class="tag">Suínos</span>
+            <span class="tag">Bovinos</span>
+            <span class="tag">Aves</span>
           </div>
         </div>
-        <div class="report-mockup-text">
-          <strong>Um documento para decidir.</strong>
-          <p>Produção estimada, uso energético, tecnologia indicada, retorno e próximos passos.</p>
-          <div class="report-pill-row"><span class="report-pill">Biogás</span><span class="report-pill">Economia</span><span class="report-pill">Payback</span><span class="report-pill">Risco</span></div>
+      </a>
+
+      <a href="/industria" class="sector-card">
+        <img src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=900&q=80&fit=crop" alt="Indústria">
+
+        <div class="sector-content">
+          <h3>Indústria</h3>
+          <p>Efluentes e resíduos orgânicos industriais.</p>
+
+          <div class="tag-row">
+            <span class="tag">Alimentos</span>
+            <span class="tag">Laticínios</span>
+          </div>
         </div>
-      </div>
-      <div class="evte-item"><div class="evte-check">✓</div><p><strong>Relatório técnico</strong> com premissas, estimativas, cenários e recomendação.</p></div>
-      <div class="evte-item"><div class="evte-check">✓</div><p><strong>Estimativa energética</strong> para entender o que o biogás poderia substituir.</p></div>
-      <div class="evte-item"><div class="evte-check">✓</div><p><strong>Análise econômica</strong> com foco em investimento, economia e retorno.</p></div>
-      <div class="evte-item"><div class="evte-check">✓</div><p><strong>Apresentação dos resultados</strong> para explicar os números e o melhor próximo passo.</p></div>
-      <hr class="evte-separator">
-      <p class="evte-note">Prazo médio: <span>20 a 35 dias</span> após coleta dos dados necessários.</p>
-      <hr class="evte-separator">
-      <a href="#contato" class="btn-primary" style="width:100%;">Solicitar pré-análise →</a>
-    </aside>
+      </a>
+
+      <a href="/agroindustria" class="sector-card">
+        <img src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=900&q=80&fit=crop" alt="Agroindústria">
+
+        <div class="sector-content">
+          <h3>Agroindústria</h3>
+          <p>Subprodutos, efluentes e sazonalidade.</p>
+
+          <div class="tag-row">
+            <span class="tag">Etanol</span>
+            <span class="tag">Processamento</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/saneamento" class="sector-card">
+        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=900&q=80&fit=crop" alt="Saneamento">
+
+        <div class="sector-content">
+          <h3>Saneamento</h3>
+          <p>Lodos, ETEs, aterros e concessões.</p>
+
+          <div class="tag-row">
+            <span class="tag">ETEs</span>
+            <span class="tag">Aterros</span>
+          </div>
+        </div>
+      </a>
+    </div>
   </div>
 </section>
 
-<section class="process" id="como-funciona">
+<section class="cs strip">
+  <div class="container strip-card fi">
+    <div>
+      <div class="section-label">Como funciona</div>
+
+      <h2 class="section-title">Três passos. Sem enrolação.</h2>
+
+      <p class="section-body">
+        Você envia dados básicos, a Vértice faz uma leitura inicial e você recebe uma direção objetiva.
+      </p>
+    </div>
+
+    <a href="#contato" class="btn-primary">Começar pré-análise →</a>
+  </div>
+</section>
+
+<section class="cs">
   <div class="container process-grid">
     <div class="fi">
-      <div class="section-label">Como funciona</div>
-      <h2 class="section-title">Você não precisa chegar com tudo pronto.</h2>
+      <div class="section-label">Antes de investir</div>
+
+      <h2 class="section-title">O erro caro é comprar cedo demais.</h2>
+
       <div class="divider"></div>
-      <p class="section-body">A pré-análise existe para começar simples. Com algumas informações básicas, já dá para entender se há potencial mínimo para um estudo completo.</p>
-      <div class="honesty-box">
-        <strong>Compromisso técnico</strong>
-        <p>Se o caso não indicar viabilidade mínima, a recomendação será não avançar para um estudo pago naquele momento.</p>
-      </div>
-    </div>
-    <div class="process-cards fi fi-d2">
-      <div class="process-card"><div class="process-num">01</div><h3>Você envia dados básicos</h3><p>Tipo de resíduo, quantidade aproximada, cidade e principal gasto energético.</p></div>
-      <div class="process-card"><div class="process-num">02</div><h3>Fazemos uma leitura inicial</h3><p>Comparamos seu caso com parâmetros técnicos e possibilidades de uso.</p></div>
-      <div class="process-card"><div class="process-num">03</div><h3>Validamos o caminho</h3><p>Entendemos se há rota provável de aproveitamento do biogás.</p></div>
-      <div class="process-card"><div class="process-num">04</div><h3>Você recebe uma direção</h3><p>Avançar para EVTE, ajustar dados ou descartar a ideia por enquanto.</p></div>
-    </div>
-  </div>
-</section>
 
-<section class="faq" id="faq">
-  <div class="container">
-    <div class="fi">
-      <div class="section-label">Perguntas frequentes</div>
-      <h2 class="section-title">Dúvidas comuns antes da primeira conversa.</h2>
-      <p class="section-body">O objetivo é reduzir incerteza logo no começo, sem exigir que você já domine a parte técnica do biogás.</p>
+      <p class="section-body">
+        O estudo vem antes do fornecedor e antes da compra. Assim você evita produção superestimada, tecnologia errada e uso energético indefinido.
+      </p>
     </div>
-    <div class="faq-grid fi fi-d2">
-      <div class="faq-item"><h3>A pré-análise é gratuita?</h3><p>Sim. Ela serve para entender escala, resíduo e consumo energético antes de qualquer proposta paga.</p></div>
-      <div class="faq-item"><h3>E se não for viável?</h3><p>Melhor descobrir cedo. A recomendação pode ser não investir agora ou buscar mais dados.</p></div>
-      <div class="faq-item"><h3>O EVTE substitui projeto executivo?</h3><p>Não. Ele vem antes, para orientar a decisão de investimento e os próximos passos.</p></div>
-      <div class="faq-item"><h3>Quanto custa o estudo?</h3><p>Depende do porte, dados disponíveis e profundidade necessária. A proposta vem depois da pré-análise.</p></div>
-      <div class="faq-item"><h3>Preciso ter análise laboratorial?</h3><p>Não para a primeira conversa. Ela pode ser solicitada depois, se o caso avançar.</p></div>
-      <div class="faq-item"><h3>Meus dados ficam protegidos?</h3><p>Sim. Os dados são usados apenas para análise técnica e contato comercial.</p></div>
-    </div>
-  </div>
-</section>
 
-<section class="about" id="sobre">
-  <div class="container about-grid">
-    <div class="about-main fi">
-      <div class="section-label">Quem conduz a análise</div>
-      <h2>Consultoria técnica, mas com foco em decisão prática.</h2>
-      <p>A Vértice nasceu para aproximar o potencial do biogás da realidade de quem gera resíduo e precisa decidir com segurança. O trabalho começa pela pergunta certa: o seu caso tem escala, demanda e retorno para justificar investimento?</p>
-      <div class="about-points">
-        <div class="about-point"><span>01</span><strong>Dados reais</strong><p>Resíduo, operação e consumo energético.</p></div>
-        <div class="about-point"><span>02</span><strong>Viabilidade</strong><p>Potencial, rota de uso e retorno.</p></div>
-        <div class="about-point"><span>03</span><strong>Decisão</strong><p>Avançar, ajustar ou não investir.</p></div>
+    <div class="stat-grid fi fi-d2">
+      <div class="process-card">
+        <h3>1. Envie os dados</h3>
+        <p>Tipo de empreendimento, resíduo, quantidade e gasto energético.</p>
       </div>
-    </div>
-    <aside class="about-profile fi fi-d2">
-      <img src="/foto-vinicius.jpg" alt="Foto de Vinicius Amadeu Zacatei" onerror="this.style.display='none';">
-      <div class="about-profile-text">
-        <strong>Vinicius Amadeu Zacatei</strong>
-        <span>Engenharia Ambiental · Biogás · Viabilidade energética</span>
+
+      <div class="process-card">
+        <h3>2. Receba a leitura</h3>
+        <p>Uma avaliação inicial do potencial técnico e econômico.</p>
       </div>
-    </aside>
-    <div class="case-box fi fi-d3">
-      <div class="case-label">Base aplicada</div>
-      <div class="case-title">Experiência aplicada em estudo de viabilidade para resíduo orgânico de Restaurante Universitário, com modelagem de produção, equivalência energética e análise econômica.</div>
-      <div class="case-metrics">
-        <div class="case-metric"><div class="case-metric-num">~43 kg</div><div class="case-metric-label">resíduo orgânico estimado por dia</div></div>
-        <div class="case-metric"><div class="case-metric-num">~25 m³</div><div class="case-metric-label">CH₄ estimado em ciclo de 14 dias</div></div>
-        <div class="case-metric"><div class="case-metric-num">EVTE</div><div class="case-metric-label">estrutura usada para decisão de investimento</div></div>
+
+      <div class="process-card">
+        <h3>3. Decida o próximo passo</h3>
+        <p>Avançar para EVTE, ajustar dados ou descartar por enquanto.</p>
       </div>
-      <div class="case-conclusion">✓ Base técnica aplicada para estruturação dos estudos da Vértice.</div>
     </div>
   </div>
 </section>
@@ -652,47 +1197,103 @@ function gtag_report_form_conversion() {
   <div class="container contact-grid">
     <div class="fi">
       <div class="section-label">Próximo passo</div>
+
       <h2>Quer saber se o seu resíduo pode virar <em>economia real?</em></h2>
-      <p class="contact-text">Envie algumas informações básicas. A conversa inicial é gratuita e serve para entender se existe potencial antes de qualquer proposta de estudo completo.</p>
+
+      <p class="contact-text">
+        A primeira conversa é gratuita e serve para entender se existe potencial mínimo antes de qualquer proposta de estudo completo.
+      </p>
+
       <div class="contact-items">
-        <div class="contact-item"><div class="contact-dot"></div>Conversa inicial gratuita e sem compromisso</div>
         <div class="contact-item"><div class="contact-dot"></div>Foco em resíduo, escala e gasto energético</div>
-        <div class="contact-item"><div class="contact-dot"></div>Direção objetiva: avançar, ajustar ou descartar por enquanto</div>
+        <div class="contact-item"><div class="contact-dot"></div>Direção objetiva: avançar, ajustar ou descartar</div>
         <div class="contact-item"><div class="contact-dot"></div>Atendimento técnico a empreendimentos no Brasil</div>
       </div>
-      <a href="https://wa.me/5519971315434" class="btn-wpp" data-whatsapp-origin="contato">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Falar direto no WhatsApp
-      </a>
+
+      <a href="#" class="btn-wpp" data-whatsapp-direct>Falar direto no WhatsApp</a>
     </div>
+
     <div class="fi fi-d2">
       <div class="form-card">
         <h3>Solicitar pré-análise gratuita</h3>
-        <p>Preencha os dados básicos. O WhatsApp abrirá com uma mensagem pronta para iniciar a conversa.</p>
+
+        <p>
+          Preencha os dados básicos. O WhatsApp abrirá com uma mensagem pronta e mais fácil de responder.
+        </p>
+
         <div id="form-content">
-          <div class="form-row">
-            <div class="form-group"><label for="f-nome">Nome</label><input type="text" id="f-nome" placeholder="Seu nome" required></div>
-            <div class="form-group"><label for="f-tel">WhatsApp</label><input type="tel" id="f-tel" placeholder="(XX) XXXXX-XXXX" required></div>
-          </div>
-          <div class="form-group">
-            <label for="f-setor">Setor</label>
-            <select id="f-setor" required>
-              <option value="" disabled selected>Selecione seu setor</option>
-              <option>Agropecuária</option>
-              <option>Indústria alimentícia</option>
-              <option>Agroindústria</option>
-              <option>Saneamento</option>
-              <option>Restaurante / gerador de resíduo alimentar</option>
-              <option>Outro</option>
-            </select>
-          </div>
-          <button type="button" class="btn-submit" onclick="enviarFormulario()">Iniciar pré-análise pelo WhatsApp →</button>
-          <p class="form-note">Sem compromisso. A primeira conversa serve para entender se há potencial mínimo.</p>
+          <form id="lead-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" placeholder="Seu nome" required>
+              </div>
+
+              <div class="form-group">
+                <label for="tel">WhatsApp</label>
+                <input type="tel" id="tel" placeholder="(XX) XXXXX-XXXX" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="setor">Tipo de empreendimento</label>
+
+                <select id="setor" required>
+                  <option value="" disabled selected>Selecione seu setor</option>
+                  <option>Agropecuária</option>
+                  <option>Indústria alimentícia</option>
+                  <option>Agroindústria</option>
+                  <option>Saneamento</option>
+                  <option>Restaurante / gerador de resíduo alimentar</option>
+                  <option>Outro empreendimento</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="cidade">Cidade / Estado</label>
+                <input type="text" id="cidade" placeholder="Ex.: Rio Claro/SP">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="residuo">Principal resíduo gerado</label>
+              <input type="text" id="residuo" placeholder="Ex.: restos de alimento, dejeto suíno, lodo, efluente">
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="quantidade">Quantidade aproximada</label>
+                <input type="text" id="quantidade" placeholder="Ex.: 200 kg/dia ou 5 m³/dia">
+              </div>
+
+              <div class="form-group">
+                <label for="energia">Gasto energético principal</label>
+                <input type="text" id="energia" placeholder="Ex.: GLP, diesel, energia elétrica, vapor">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="obs">Observação rápida</label>
+              <textarea id="obs" placeholder="Conte algo importante sobre sua operação, se quiser."></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Iniciar pré-análise pelo WhatsApp →</button>
+
+            <p class="form-note">
+              Sem compromisso. A primeira conversa serve para entender se há potencial mínimo.
+            </p>
+          </form>
         </div>
+
         <div class="form-success" id="form-success">
           <div class="success-icon">✓</div>
+
           <h4>Mensagem preparada!</h4>
-          <p>O WhatsApp foi aberto com sua mensagem preenchida para iniciar a pré-análise.</p>
+
+          <p>
+            O WhatsApp foi aberto com sua mensagem preenchida para iniciar a pré-análise.
+          </p>
         </div>
       </div>
     </div>
@@ -703,15 +1304,23 @@ function gtag_report_form_conversion() {
   <div class="footer-inner">
     <div class="footer-brand">
       <a href="/" class="logo">Vértice<span>.</span></a>
+
       <p>Consultoria em biogás, biometano e viabilidade energética de resíduos orgânicos.</p>
-      <div class="footer-lgpd"><p class="footer-small">As informações enviadas pelo site são utilizadas apenas para contato e pré-análise inicial.</p></div>
+
+      <div class="footer-lgpd">
+        <p class="footer-small">
+          As informações enviadas pelo site são utilizadas apenas para contato e pré-análise inicial.
+        </p>
+      </div>
     </div>
+
     <div class="footer-col">
       <h4>Contato</h4>
       <p>E-mail: biogasvertice@gmail.com</p>
       <p>WhatsApp: (19) 97131-5434</p>
       <p>Atendimento técnico a empreendimentos no Brasil.</p>
     </div>
+
     <div class="footer-col">
       <h4>Canais e informações</h4>
       <a href="https://instagram.com/verticebionews" target="_blank" rel="noopener noreferrer">@verticebionews</a><br>
@@ -719,6 +1328,7 @@ function gtag_report_form_conversion() {
       <a href="#contato">Solicitar pré-análise gratuita</a>
     </div>
   </div>
+
   <div class="footer-bottom">
     <p>© 2026 Vértice Consultoria Energética · verticebiogas.com.br</p>
     <p>Biogás · Biometano · Estudo de viabilidade · Resíduos orgânicos</p>
@@ -726,82 +1336,103 @@ function gtag_report_form_conversion() {
 </footer>
 
 <script>
-const WHATSAPP_NUMBER = '5519971315434';
-const WHATSAPP_MESSAGES = {
-  flutuante: 'Olá! Vim do site da Vértice e quero entender se meu empreendimento tem potencial para biogás.',
-  hero: 'Olá! Vim do site da Vértice e quero entender se meu empreendimento tem potencial para biogás.',
-  contato: 'Olá! Vim do site da Vértice e quero iniciar uma pré-análise gratuita sobre o potencial de biogás do meu empreendimento.',
-  formulario: 'Olá! Preenchi o formulário no site da Vértice e quero conversar sobre o potencial de biogás do meu empreendimento.'
-};
+  const WHATSAPP_NUMBER = "5519971315434";
 
-function buildWhatsappLink(origin, customMessage) {
-  const message = customMessage || WHATSAPP_MESSAGES[origin] || WHATSAPP_MESSAGES.contato;
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-}
+  function openWhatsApp(message){
+    const encoded = encodeURIComponent(message);
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`, "_blank");
+  }
 
-function trackSiteEvent(eventName, params = {}) {
-  if (typeof gtag === 'function') { gtag('event', eventName, params); }
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({event: eventName, ...params});
-}
+  function directMessage(){
+    return `Olá, vim pelo site da Vértice e quero entender se meu empreendimento tem potencial para biogás.
 
-function trackWhatsappClick(origin) {
-  // Dispara conversão "Contacto" no Google Ads
-  gtag_report_conversion();
-  trackSiteEvent('click_whatsapp', {event_category: 'lead', event_label: origin, origem: origin});
-}
+Tipo de empreendimento:
+Cidade:
+Resíduo gerado:
+Quantidade aproximada:
+Gasto energético principal:`;
+  }
 
-function setupWhatsappLinks() {
-  document.querySelectorAll('[data-whatsapp-origin]').forEach((link) => {
-    const origin = link.getAttribute('data-whatsapp-origin');
-    link.setAttribute('href', buildWhatsappLink(origin));
-    link.setAttribute('target', '_blank');
-    link.setAttribute('rel', 'noopener noreferrer');
-    link.addEventListener('click', () => trackWhatsappClick(origin));
+  document.querySelectorAll("[data-whatsapp-direct]").forEach(button => {
+    button.addEventListener("click", function(event){
+      event.preventDefault();
+      openWhatsApp(directMessage());
+    });
   });
-}
 
-function enviarFormulario() {
-  const nome = document.getElementById('f-nome').value.trim();
-  const tel = document.getElementById('f-tel').value.trim();
-  const setor = document.getElementById('f-setor').value;
-  if (!nome || !tel || !setor) { alert('Por favor, preencha nome, WhatsApp e setor.'); return; }
+  const form = document.getElementById("lead-form");
 
-  gtag_report_form_conversion();
-  trackSiteEvent('formulario_enviado', {event_category: 'lead', event_label: 'formulario_contato', setor: setor});
+  if(form){
+    form.addEventListener("submit", function(event){
+      event.preventDefault();
 
-  const txt = `Olá! Preenchi o formulário no site da Vértice e quero iniciar uma pré-análise gratuita de biogás.\n\n*Nome:* ${nome}\n*WhatsApp:* ${tel}\n*Setor:* ${setor}\n\nQuero entender se meu empreendimento tem potencial para biogás antes de qualquer investimento.`;
-  document.getElementById('form-content').style.display = 'none';
-  document.getElementById('form-success').style.display = 'block';
-  setTimeout(() => window.open(buildWhatsappLink('formulario', txt), '_blank'), 450);
-}
+      const nome = document.getElementById("nome").value.trim();
+      const tel = document.getElementById("tel").value.trim();
+      const setor = document.getElementById("setor").value.trim();
+      const cidade = document.getElementById("cidade").value.trim();
+      const residuo = document.getElementById("residuo").value.trim();
+      const quantidade = document.getElementById("quantidade").value.trim();
+      const energia = document.getElementById("energia").value.trim();
+      const obs = document.getElementById("obs").value.trim();
 
-document.addEventListener('DOMContentLoaded', function () {
-  setupWhatsappLinks();
+      if(!nome || !tel || !setor){
+        alert("Preencha pelo menos nome, WhatsApp e tipo de empreendimento.");
+        return;
+      }
 
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); } });
-  }, {threshold: 0.1});
-  document.querySelectorAll('.fi').forEach(el => obs.observe(el));
+      const message = `Olá, vim pelo site da Vértice e gostaria de uma pré-análise gratuita para biogás.
 
-  const menuToggle = document.getElementById('menuToggle');
-  const menuPanel = document.getElementById('menuPanel');
-  const menuOverlay = document.getElementById('menuOverlay');
-  if (!menuToggle || !menuPanel || !menuOverlay) { return; }
+Nome: ${nome}
+WhatsApp: ${tel}
+Tipo de empreendimento: ${setor}
+Cidade/Estado: ${cidade || "não informado"}
+Principal resíduo: ${residuo || "não informado"}
+Quantidade aproximada: ${quantidade || "não informado"}
+Gasto energético principal: ${energia || "não informado"}
+Observação: ${obs || "não informado"}
 
-  function abrirMenu() {
-    menuToggle.classList.add('active'); menuPanel.classList.add('active'); menuOverlay.classList.add('active');
-    menuToggle.setAttribute('aria-expanded', 'true'); menuPanel.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden';
+Quero entender se existe potencial técnico e econômico para aproveitar esse resíduo.`;
+
+      document.getElementById("form-content").style.display = "none";
+      document.getElementById("form-success").style.display = "block";
+
+      openWhatsApp(message);
+    });
   }
-  function fecharMenu() {
-    menuToggle.classList.remove('active'); menuPanel.classList.remove('active'); menuOverlay.classList.remove('active');
-    menuToggle.setAttribute('aria-expanded', 'false'); menuPanel.setAttribute('aria-hidden', 'true'); document.body.style.overflow = '';
+
+  const menuToggle = document.getElementById("menuToggle");
+  const menuPanel = document.getElementById("menuPanel");
+  const menuOverlay = document.getElementById("menuOverlay");
+
+  function toggleMenu(forceClose){
+    const willOpen = forceClose ? false : !menuPanel.classList.contains("active");
+
+    menuPanel.classList.toggle("active", willOpen);
+    menuOverlay.classList.toggle("active", willOpen);
+    menuToggle.classList.toggle("active", willOpen);
+
+    menuToggle.setAttribute("aria-expanded", String(willOpen));
+    menuPanel.setAttribute("aria-hidden", String(!willOpen));
   }
-  menuToggle.addEventListener('click', () => menuPanel.classList.contains('active') ? fecharMenu() : abrirMenu());
-  menuOverlay.addEventListener('click', fecharMenu);
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') fecharMenu(); });
-  document.querySelectorAll('.menu-links a').forEach(link => link.addEventListener('click', fecharMenu));
-});
+
+  menuToggle.addEventListener("click", () => toggleMenu());
+  menuOverlay.addEventListener("click", () => toggleMenu(true));
+
+  document.querySelectorAll(".menu-links a").forEach(link => {
+    link.addEventListener("click", () => toggleMenu(true));
+  });
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.12});
+
+  document.querySelectorAll(".fi").forEach(el => observer.observe(el));
 </script>
+
 </body>
 </html>
