@@ -123,7 +123,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:2.
   </div>
   <div class="menu-foot">Acesse os setores, o simulador e o formulário de diagnóstico.</div>
 </aside>
-<a href="#" class="wpp-fixo" data-whatsapp-direct>Diagnóstico no WhatsApp</a>
+<a href="#contato" class="wpp-fixo">Solicitar diagnóstico →</a>
 
 <section class="hero">
   <img class="hero-img" src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1800&q=80&fit=crop" alt="Infraestrutura de saneamento">
@@ -207,7 +207,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:2.
         <div class="contact-item"><div class="contact-dot"></div>Se não viabilizar agora, você recebe a razão técnica</div>
       </div>
       <div class="cta-pair">
-        <a href="#" class="btn-wpp" data-whatsapp-direct>Falar no WhatsApp</a>
+        <a href="#" class="btn-wpp" id="btn-wpp-lateral">Sinalizar interesse pelo WhatsApp</a>
         <a href="mailto:biogasvertice@gmail.com" class="btn-secondary">Enviar e-mail</a>
       </div>
     </div>
@@ -219,7 +219,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:2.
           <form id="lead-form">
             <div class="form-row">
               <div class="form-group"><label for="nome">Nome</label><input type="text" id="nome" placeholder="Seu nome" required></div>
-              <div class="form-group"><label for="tel">WhatsApp</label><input type="tel" id="tel" placeholder="(XX) XXXXX-XXXX" required></div>
+              <div class="form-group"><label for="tel">Telefone para contato</label><input type="tel" id="tel" placeholder="(XX) XXXXX-XXXX" required></div>
             </div>
             <div class="form-row">
               <div class="form-group"><label for="cidade">Cidade / Estado</label><input type="text" id="cidade" placeholder="Ex.: Pirassununga/SP"></div>
@@ -231,7 +231,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:2.
             </div>
             <div class="form-group"><label for="obs">Observação</label><textarea id="obs" placeholder="Conte algo sobre a operação ou a infraestrutura existente, se quiser."></textarea></div>
             <div class="submit-pair">
-              <button type="submit" class="btn-form-primary" id="btn-wpp-submit">Enviar pelo WhatsApp →</button>
+              <button type="submit" class="btn-form-primary" id="btn-wpp-submit">Solicitar retorno por telefone →</button>
               <button type="submit" class="btn-form-secondary" id="btn-email-submit">Enviar por e-mail</button>
             </div>
             <p class="form-note">Primeira conversa sem compromisso. Retorno em até 24h.</p>
@@ -266,12 +266,12 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:2.
 <script>
 const WHATSAPP="5519971315434",EMAIL="biogasvertice@gmail.com",SETOR=document.body.dataset.setor||"Saneamento";
 function abreWpp(msg){window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`,"_blank")}
-function msgDireta(){return `Olá, vim pela página de ${SETOR} da Vértice e quero entender se meu sistema tem potencial para aproveitamento de biogás.\n\nTipo de sistema:\nCidade:\nFonte do biogás/lodo/efluente:\nEscala aproximada:\nUso energético desejado:`}
-document.querySelectorAll("[data-whatsapp-direct]").forEach(el=>el.addEventListener("click",e=>{e.preventDefault();abreWpp(msgDireta())}));
+function msgInteresse(){return `Olá, vim pela página de Saneamento da Vértice. Tenho interesse em avaliar o aproveitamento do biogás da minha ETE ou aterro. Aguardo contato por telefone.`}
+const btnLateral=document.getElementById("btn-wpp-lateral");if(btnLateral){btnLateral.addEventListener("click",e=>{e.preventDefault();abreWpp(msgInteresse())})}
 const form=document.getElementById("lead-form");let canal="whatsapp";
 document.getElementById("btn-wpp-submit").addEventListener("click",()=>canal="whatsapp");
 document.getElementById("btn-email-submit").addEventListener("click",()=>canal="email");
-if(form){form.addEventListener("submit",e=>{e.preventDefault();const nome=document.getElementById("nome").value.trim(),tel=document.getElementById("tel").value.trim(),cidade=document.getElementById("cidade").value.trim(),residuo=document.getElementById("residuo").value.trim(),quantidade=document.getElementById("quantidade").value.trim(),energia=document.getElementById("energia").value.trim(),obs=document.getElementById("obs").value.trim();if(!nome||!tel){alert("Preencha pelo menos nome e WhatsApp.");return}const texto=`Olá, vim pela página de ${SETOR} da Vértice e gostaria de um diagnóstico inicial para biogás.\n\nNome: ${nome}\nWhatsApp: ${tel}\nCidade/Estado: ${cidade||"não informado"}\nSistema/fonte: ${residuo||"não informado"}\nEscala aproximada: ${quantidade||"não informado"}\nUso energético desejado: ${energia||"não informado"}\nObservação: ${obs||"não informado"}\n\nQuero entender se existe potencial técnico e econômico para aproveitamento energético.`;if(canal==="email"){window.location.href=`mailto:${EMAIL}?subject=${encodeURIComponent(`Diagnóstico biogás — ${SETOR} — ${nome}`)}&body=${encodeURIComponent(texto)}`}else{abreWpp(texto)}document.getElementById("form-content").style.display="none";document.getElementById("form-success").style.display="block"})}
+if(form){form.addEventListener("submit",e=>{e.preventDefault();const nome=document.getElementById("nome").value.trim(),tel=document.getElementById("tel").value.trim(),cidade=document.getElementById("cidade").value.trim(),residuo=document.getElementById("residuo").value.trim(),quantidade=document.getElementById("quantidade").value.trim(),energia=document.getElementById("energia").value.trim(),obs=document.getElementById("obs").value.trim();if(!nome||!tel){alert("Preencha pelo menos nome e telefone.");return}const texto=`Olá, vim pela página de ${SETOR} da Vértice e gostaria de um diagnóstico inicial para biogás.\n\nNome: ${nome}\nTelefone para retorno: ${tel}\nCidade/Estado: ${cidade||"não informado"}\nSistema/fonte: ${residuo||"não informado"}\nEscala aproximada: ${quantidade||"não informado"}\nUso energético desejado: ${energia||"não informado"}\nObservação: ${obs||"não informado"}\n\nAguardo contato por telefone para conversar sobre o projeto.`;if(canal==="email"){window.location.href=`mailto:${EMAIL}?subject=${encodeURIComponent(`Diagnóstico biogás — ${SETOR} — ${nome}`)}&body=${encodeURIComponent(texto)}`}else{abreWpp(texto)}document.getElementById("form-content").style.display="none";document.getElementById("form-success").style.display="block"})}
 const toggle=document.getElementById("menuToggle"),panel=document.getElementById("menuPanel"),overlay=document.getElementById("menuOverlay");
 function toggleMenu(f){const a=f?false:!panel.classList.contains("active");panel.classList.toggle("active",a);overlay.classList.toggle("active",a);toggle.classList.toggle("active",a);toggle.setAttribute("aria-expanded",String(a));panel.setAttribute("aria-hidden",String(!a))}
 toggle.addEventListener("click",()=>toggleMenu());overlay.addEventListener("click",()=>toggleMenu(true));document.querySelectorAll(".menu-links a").forEach(a=>a.addEventListener("click",()=>toggleMenu(true)));
