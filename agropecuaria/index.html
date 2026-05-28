@@ -145,7 +145,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:2.
   <div class="menu-foot">Acesse os setores, o simulador e o formulário de diagnóstico.</div>
 </aside>
 
-<a href="#" class="wpp-fixo" data-whatsapp-direct>Diagnóstico no WhatsApp</a>
+<a href="#contato" class="wpp-fixo">Solicitar diagnóstico →</a>
 
 <!-- HERO -->
 <section class="hero">
@@ -247,7 +247,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:2.
         <div class="contact-item"><div class="contact-dot"></div>Se não viabilizar agora, você recebe a razão técnica</div>
       </div>
       <div class="cta-pair">
-        <a href="#" class="btn-wpp" data-whatsapp-direct>Falar no WhatsApp</a>
+        <a href="#" class="btn-wpp" id="btn-wpp-lateral">Sinalizar interesse pelo WhatsApp</a>
         <a href="mailto:biogasvertice@gmail.com" class="btn-secondary">Enviar e-mail</a>
       </div>
     </div>
@@ -261,7 +261,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:2.
           <form id="lead-form">
             <div class="form-row">
               <div class="form-group"><label for="nome">Nome</label><input type="text" id="nome" placeholder="Seu nome" required></div>
-              <div class="form-group"><label for="tel">WhatsApp</label><input type="tel" id="tel" placeholder="(XX) XXXXX-XXXX" required></div>
+              <div class="form-group"><label for="tel">Telefone para contato</label><input type="tel" id="tel" placeholder="(XX) XXXXX-XXXX" required></div>
             </div>
             <div class="form-row">
               <div class="form-group"><label for="cidade">Cidade / Estado</label><input type="text" id="cidade" placeholder="Ex.: Rio Claro/SP"></div>
@@ -273,7 +273,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:2.
             </div>
             <div class="form-group"><label for="obs">Observação</label><textarea id="obs" placeholder="Conte algo sobre o manejo ou a operação, se quiser."></textarea></div>
             <div class="submit-pair">
-              <button type="submit" class="btn-form-primary" id="btn-wpp-submit">Enviar pelo WhatsApp →</button>
+              <button type="submit" class="btn-form-primary" id="btn-wpp-submit">Solicitar retorno por telefone →</button>
               <button type="submit" class="btn-form-secondary" id="btn-email-submit">Enviar por e-mail</button>
             </div>
             <p class="form-note">Primeira conversa sem compromisso. Retorno em até 24h.</p>
@@ -313,11 +313,12 @@ const SETOR    = document.body.dataset.setor || "Agropecuária";
 
 function abreWpp(msg){ window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`,"_blank"); }
 
-function msgDireta(){
-  return `Olá, vim pela página de ${SETOR} da Vértice e quero entender se minha propriedade tem potencial para biogás.\n\nTipo de criação:\nCidade:\nDejeto gerado:\nQuantidade aproximada:\nGasto energético principal:`;
+function msgInteresse(){
+  return `Olá, vim pela página de Agropecuária da Vértice. Tenho interesse em avaliar o potencial de biogás do meu dejeto animal. Aguardo contato por telefone.`;
 }
 
-document.querySelectorAll("[data-whatsapp-direct]").forEach(el => el.addEventListener("click", e => { e.preventDefault(); abreWpp(msgDireta()); }));
+const btnLateral = document.getElementById("btn-wpp-lateral");
+if(btnLateral){ btnLateral.addEventListener("click", e => { e.preventDefault(); abreWpp(msgInteresse()); }); }
 
 const form = document.getElementById("lead-form");
 let canal = "whatsapp";
@@ -334,19 +335,19 @@ if(form){
     const quantidade= document.getElementById("quantidade").value.trim();
     const energia   = document.getElementById("energia").value.trim();
     const obs       = document.getElementById("obs").value.trim();
-    if(!nome || !tel){ alert("Preencha pelo menos nome e WhatsApp."); return; }
+    if(!nome || !tel){ alert("Preencha pelo menos nome e telefone."); return; }
     const texto =
 `Olá, vim pela página de ${SETOR} da Vértice e gostaria de um diagnóstico inicial para biogás.
 
 Nome: ${nome}
-WhatsApp: ${tel}
+Telefone para retorno: ${tel}
 Cidade/Estado: ${cidade||"não informado"}
 Criação/dejeto: ${residuo||"não informado"}
 Quantidade aproximada: ${quantidade||"não informado"}
 Gasto energético principal: ${energia||"não informado"}
 Observação: ${obs||"não informado"}
 
-Quero entender se existe potencial técnico e econômico para aproveitar esse dejeto.`;
+Aguardo contato por telefone para conversar sobre o projeto.`;
     if(canal === "email"){
       window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(`Diagnóstico biogás — ${SETOR} — ${nome}`)}&body=${encodeURIComponent(texto)}`;
     } else { abreWpp(texto); }
