@@ -216,28 +216,30 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:2.
       <div class="form-card">
         <h3 style="font-family:'DM Serif Display',serif;font-size:1.9rem;line-height:1;margin-bottom:.5rem;">Solicitar diagnóstico inicial</h3>
         <p>Preencha os dados básicos e escolha como prefere receber o retorno.</p>
-        <div id="form-content">
+                <div id="form-content">
           <form id="lead-form">
-            <div class="form-row">
-              <div class="form-group"><label for="nome">Nome</label><input type="text" id="nome" placeholder="Seu nome" required></div>
-              <div class="form-group"><label for="tel">Telefone para contato</label><input type="tel" id="tel" placeholder="(XX) XXXXX-XXXX" required></div>
+            <div class="form-group"><label for="nome">Nome</label><input type="text" id="nome" placeholder="Seu nome" required></div>
+            <div class="form-group"><label for="tel">Telefone para contato</label><input type="tel" id="tel" placeholder="(XX) XXXXX-XXXX" required></div>
+            <div class="form-group">
+              <label for="setor">Tipo de indústria</label>
+              <select id="setor" required>
+                <option value="" disabled selected>Selecione o tipo de indústria</option>
+                  <option>Laticínio</option>
+                  <option>Frigorífico</option>
+                  <option>Bebidas / cervejaria</option>
+                  <option>Oleaginosas</option>
+                  <option>Outra indústria alimentícia</option>
+              </select>
             </div>
-            <div class="form-row">
-              <div class="form-group"><label for="cidade">Cidade / Estado</label><input type="text" id="cidade" placeholder="Ex.: Campinas/SP"></div>
-              <div class="form-group"><label for="residuo">Resíduo / efluente</label><input type="text" id="residuo" placeholder="Ex.: efluente lácteo, resíduo de abate"></div>
-            </div>
-            <div class="form-row">
-              <div class="form-group"><label for="quantidade">Quantidade aproximada</label><input type="text" id="quantidade" placeholder="Ex.: 5 m³/dia ou 2 t/dia"></div>
-              <div class="form-group"><label for="energia">Gasto energético principal</label><input type="text" id="energia" placeholder="Ex.: vapor, GLP, energia elétrica"></div>
-            </div>
-            <div class="form-group"><label for="obs">Observação</label><textarea id="obs" placeholder="Conte algo sobre a operação ou o tratamento atual, se quiser."></textarea></div>
             <div class="submit-pair">
               <button type="submit" class="btn-form-primary" id="btn-wpp-submit">Solicitar retorno por telefone →</button>
               <button type="submit" class="btn-form-secondary" id="btn-email-submit">Enviar por e-mail</button>
             </div>
-            <p class="form-note">Primeira conversa sem compromisso. Retorno em até 24h.</p>
+            <p class="form-note">Após o envio, nossa equipe entra em contato por telefone em até 24 horas úteis.</p>
           </form>
         </div>
+
+</div>
         <div class="form-success" id="form-success">
           <div class="success-icon">✓</div>
           <h4>Dados enviados.</h4>
@@ -273,7 +275,7 @@ if(btnLateral){btnLateral.addEventListener("click",e=>{e.preventDefault();abreWp
 const form=document.getElementById("lead-form");let canal="whatsapp";
 document.getElementById("btn-wpp-submit").addEventListener("click",()=>canal="whatsapp");
 document.getElementById("btn-email-submit").addEventListener("click",()=>canal="email");
-if(form){form.addEventListener("submit",e=>{e.preventDefault();const nome=document.getElementById("nome").value.trim(),tel=document.getElementById("tel").value.trim(),cidade=document.getElementById("cidade").value.trim(),residuo=document.getElementById("residuo").value.trim(),quantidade=document.getElementById("quantidade").value.trim(),energia=document.getElementById("energia").value.trim(),obs=document.getElementById("obs").value.trim();if(!nome||!tel){alert("Preencha pelo menos nome e telefone.");return}const texto=`Olá, vim pela página de ${SETOR} da Vértice e gostaria de um diagnóstico inicial para biogás.\n\nNome: ${nome}\nTelefone para retorno: ${tel}\nCidade/Estado: ${cidade||"não informado"}\nResíduo/efluente: ${residuo||"não informado"}\nQuantidade aproximada: ${quantidade||"não informado"}\nGasto energético principal: ${energia||"não informado"}\nObservação: ${obs||"não informado"}\n\nAguardo contato por telefone para conversar sobre o projeto.`;if(canal==="email"){window.location.href=`mailto:${EMAIL}?subject=${encodeURIComponent(`Diagnóstico biogás — ${SETOR} — ${nome}`)}&body=${encodeURIComponent(texto)}`}else{abreWpp(texto)}document.getElementById("form-content").style.display="none";document.getElementById("form-success").style.display="block"})}
+if(form){form.addEventListener("submit",e=>{e.preventDefault();const nome=document.getElementById("nome").value.trim(),tel=document.getElementById("tel").value.trim(),setor=document.getElementById("setor").value.trim();if(!nome||!tel||!setor){alert("Preencha nome, telefone e tipo.");return}const texto=`Olá, vim pela página de Indústria da Vértice e gostaria de um diagnóstico inicial para biogás.\n\nNome: ${nome}\nTelefone para retorno: ${tel}\nTipo: ${setor}\n\nAguardo contato por telefone para conversar sobre o projeto.`;if(canal==="email"){window.location.href=`mailto:${EMAIL}?subject=${encodeURIComponent(`Diagnóstico biogás — ${setor} — ${nome}`)}&body=${encodeURIComponent(texto)}`}else if(typeof abreWpp==="function"){abreWpp(texto)}else{openWhatsApp(texto)}document.getElementById("form-content").style.display="none";document.getElementById("form-success").style.display="block"})}
 const toggle=document.getElementById("menuToggle"),panel=document.getElementById("menuPanel"),overlay=document.getElementById("menuOverlay");
 function toggleMenu(f){const a=f?false:!panel.classList.contains("active");panel.classList.toggle("active",a);overlay.classList.toggle("active",a);toggle.classList.toggle("active",a);toggle.setAttribute("aria-expanded",String(a));panel.setAttribute("aria-hidden",String(!a))}
 toggle.addEventListener("click",()=>toggleMenu());overlay.addEventListener("click",()=>toggleMenu(true));document.querySelectorAll(".menu-links a").forEach(a=>a.addEventListener("click",()=>toggleMenu(true)));
