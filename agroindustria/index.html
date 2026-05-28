@@ -63,7 +63,7 @@
   <div class="menu-foot">Acesse os setores, o simulador e o formulário de pré-análise.</div>
 </aside>
 
-<a href="#" class="wpp-fixo" data-whatsapp-direct>Pré-análise no WhatsApp</a>
+<a href="#contato" class="wpp-fixo">Solicitar diagnóstico →</a>
 
 <section class="hero">
   <img class="hero-img" src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=1800&q=80&fit=crop" alt="Estrutura agroindustrial">
@@ -148,19 +148,19 @@
         <div class="contact-item"><div class="contact-dot"></div>Quantidade e período de geração</div>
         <div class="contact-item"><div class="contact-dot"></div>Consumo energético que pode ser comparado</div>
       </div>
-      <a href="#" class="btn-wpp" data-whatsapp-direct>Falar direto no WhatsApp</a>
+      <a href="#" class="btn-wpp" id="btn-wpp-lateral">Sinalizar interesse pelo WhatsApp</a>
     </div>
 
     <div class="fi fi-d2">
       <div class="form-card">
         <h3>Solicitar pré-análise gratuita</h3>
-        <p>Preencha os dados básicos. O WhatsApp abrirá com uma mensagem pronta.</p>
+        <p>Preencha os dados básicos. Nossa equipe entra em contato por telefone.</p>
 
         <div id="form-content">
           <form id="lead-form">
             <div class="form-row">
               <div class="form-group"><label for="nome">Nome</label><input type="text" id="nome" required></div>
-              <div class="form-group"><label for="tel">WhatsApp</label><input type="tel" id="tel" required></div>
+              <div class="form-group"><label for="tel">Telefone para contato</label><input type="tel" id="tel" required></div>
             </div>
 
             <div class="form-row">
@@ -174,8 +174,8 @@
             </div>
 
             <div class="form-group"><label for="obs">Observação rápida</label><textarea id="obs" placeholder="Conte sobre sazonalidade, safra ou rotina de geração, se quiser."></textarea></div>
-            <button type="submit" class="btn-submit">Iniciar pré-análise pelo WhatsApp →</button>
-            <p class="form-note">Sem compromisso. A primeira conversa serve para entender se há potencial mínimo.</p>
+            <button type="submit" class="btn-submit">Solicitar retorno por telefone →</button>
+            <p class="form-note">Após o envio, nossa equipe entra em contato por telefone em até 24 horas úteis.</p>
           </form>
         </div>
 
@@ -202,7 +202,7 @@
   const WHATSAPP_NUMBER="5519971315434";
   const PAGE_SETOR=document.body.dataset.setor||"Agroindústria";
   function openWhatsApp(message){window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,"_blank")}
-  function directMessage(){return `Olá, vim pela página de ${PAGE_SETOR} da Vértice e quero entender se minha agroindústria tem potencial para biogás.
+  function msgInteresse(){return `Olá, vim pela página de Agroindústria da Vértice. Tenho interesse em avaliar o potencial de biogás do meu resíduo agroindustrial. Aguardo contato por telefone.`} da Vértice e quero entender se minha agroindústria tem potencial para biogás.
 
 Tipo de agroindústria:
 Cidade:
@@ -210,19 +210,19 @@ Subproduto ou resíduo gerado:
 Quantidade aproximada:
 Período de geração:
 Gasto energético principal:`}
-  document.querySelectorAll("[data-whatsapp-direct]").forEach(btn=>btn.addEventListener("click",e=>{e.preventDefault();openWhatsApp(directMessage())}));
+  const btnLateral=document.getElementById("btn-wpp-lateral");if(btnLateral){btnLateral.addEventListener("click",e=>{e.preventDefault();openWhatsApp(msgInteresse())})}
   const form=document.getElementById("lead-form");
-  if(form){form.addEventListener("submit",e=>{e.preventDefault();const nome=document.getElementById("nome").value.trim();const tel=document.getElementById("tel").value.trim();const cidade=document.getElementById("cidade").value.trim();const residuo=document.getElementById("residuo").value.trim();const quantidade=document.getElementById("quantidade").value.trim();const energia=document.getElementById("energia").value.trim();const obs=document.getElementById("obs").value.trim();if(!nome||!tel){alert("Preencha pelo menos nome e WhatsApp.");return}const message=`Olá, vim pela página de ${PAGE_SETOR} da Vértice e gostaria de uma pré-análise gratuita.
+  if(form){form.addEventListener("submit",e=>{e.preventDefault();const nome=document.getElementById("nome").value.trim();const tel=document.getElementById("tel").value.trim();const cidade=document.getElementById("cidade").value.trim();const residuo=document.getElementById("residuo").value.trim();const quantidade=document.getElementById("quantidade").value.trim();const energia=document.getElementById("energia").value.trim();const obs=document.getElementById("obs").value.trim();if(!nome||!tel){alert("Preencha pelo menos nome e telefone.");return}const message=`Olá, vim pela página de ${PAGE_SETOR} da Vértice e gostaria de uma pré-análise gratuita.
 
 Nome: ${nome}
-WhatsApp: ${tel}
+Telefone para retorno: ${tel}
 Cidade/Estado: ${cidade||"não informado"}
 Subproduto/resíduo: ${residuo||"não informado"}
 Quantidade aproximada: ${quantidade||"não informado"}
 Gasto energético principal: ${energia||"não informado"}
 Observação: ${obs||"não informado"}
 
-Quero entender se existe potencial técnico e econômico para aproveitar esse resíduo.`;document.getElementById("form-content").style.display="none";document.getElementById("form-success").style.display="block";openWhatsApp(message)})}
+Aguardo contato por telefone para conversar sobre o projeto.`;document.getElementById("form-content").style.display="none";document.getElementById("form-success").style.display="block";openWhatsApp(message)})}
   const menuToggle=document.getElementById("menuToggle"),menuPanel=document.getElementById("menuPanel"),menuOverlay=document.getElementById("menuOverlay");function toggleMenu(forceClose){const willOpen=forceClose?false:!menuPanel.classList.contains("active");menuPanel.classList.toggle("active",willOpen);menuOverlay.classList.toggle("active",willOpen);menuToggle.classList.toggle("active",willOpen)}menuToggle.addEventListener("click",()=>toggleMenu());menuOverlay.addEventListener("click",()=>toggleMenu(true));document.querySelectorAll(".menu-links a").forEach(a=>a.addEventListener("click",()=>toggleMenu(true)));
   const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("show");observer.unobserve(entry.target)}})},{threshold:.12});document.querySelectorAll(".fi").forEach(el=>observer.observe(el));
 </script>
