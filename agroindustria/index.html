@@ -156,28 +156,32 @@
         <h3>Solicitar pré-análise gratuita</h3>
         <p>Preencha os dados básicos. Nossa equipe entra em contato por telefone.</p>
 
-        <div id="form-content">
+                <div id="form-content">
           <form id="lead-form">
-            <div class="form-row">
-              <div class="form-group"><label for="nome">Nome</label><input type="text" id="nome" required></div>
-              <div class="form-group"><label for="tel">Telefone para contato</label><input type="tel" id="tel" required></div>
+            <div class="form-group"><label for="nome">Nome</label><input type="text" id="nome" placeholder="Seu nome" required></div>
+            <div class="form-group"><label for="tel">Telefone para contato</label><input type="tel" id="tel" placeholder="(XX) XXXXX-XXXX" required></div>
+            <div class="form-group">
+              <label for="setor">Tipo de agroindústria</label>
+              <select id="setor" required>
+                <option value="" disabled selected>Selecione o tipo de agroindústria</option>
+                  <option>Fecularia / mandioca</option>
+                  <option>Usina de cana / etanol</option>
+                  <option>Processadora de frutas</option>
+                  <option>Cervejaria</option>
+                  <option>Beneficiadora de café</option>
+                  <option>Biodiesel</option>
+                  <option>Outra agroindústria</option>
+              </select>
             </div>
-
-            <div class="form-row">
-              <div class="form-group"><label for="cidade">Cidade / Estado</label><input type="text" id="cidade"></div>
-              <div class="form-group"><label for="residuo">Subproduto / resíduo</label><input type="text" id="residuo" placeholder="Ex.: vinhaça, manipueira, efluente"></div>
+            <div class="submit-pair">
+              <button type="submit" class="btn-form-primary" id="btn-wpp-submit">Solicitar retorno por telefone →</button>
+              <button type="submit" class="btn-form-secondary" id="btn-email-submit">Enviar por e-mail</button>
             </div>
-
-            <div class="form-row">
-              <div class="form-group"><label for="quantidade">Quantidade aproximada</label><input type="text" id="quantidade" placeholder="Ex.: 10 m³/dia, 5 t/dia"></div>
-              <div class="form-group"><label for="energia">Gasto energético principal</label><input type="text" id="energia" placeholder="Ex.: vapor, GLP, energia elétrica"></div>
-            </div>
-
-            <div class="form-group"><label for="obs">Observação rápida</label><textarea id="obs" placeholder="Conte sobre sazonalidade, safra ou rotina de geração, se quiser."></textarea></div>
-            <button type="submit" class="btn-submit">Solicitar retorno por telefone →</button>
             <p class="form-note">Após o envio, nossa equipe entra em contato por telefone em até 24 horas úteis.</p>
           </form>
         </div>
+
+</div>
 
         <div class="form-success" id="form-success">
           <div class="success-icon">✓</div>
@@ -212,17 +216,7 @@ Período de geração:
 Gasto energético principal:`}
   const btnLateral=document.getElementById("btn-wpp-lateral");if(btnLateral){btnLateral.addEventListener("click",e=>{e.preventDefault();openWhatsApp(msgInteresse())})}
   const form=document.getElementById("lead-form");
-  if(form){form.addEventListener("submit",e=>{e.preventDefault();const nome=document.getElementById("nome").value.trim();const tel=document.getElementById("tel").value.trim();const cidade=document.getElementById("cidade").value.trim();const residuo=document.getElementById("residuo").value.trim();const quantidade=document.getElementById("quantidade").value.trim();const energia=document.getElementById("energia").value.trim();const obs=document.getElementById("obs").value.trim();if(!nome||!tel){alert("Preencha pelo menos nome e telefone.");return}const message=`Olá, vim pela página de ${PAGE_SETOR} da Vértice e gostaria de uma pré-análise gratuita.
-
-Nome: ${nome}
-Telefone para retorno: ${tel}
-Cidade/Estado: ${cidade||"não informado"}
-Subproduto/resíduo: ${residuo||"não informado"}
-Quantidade aproximada: ${quantidade||"não informado"}
-Gasto energético principal: ${energia||"não informado"}
-Observação: ${obs||"não informado"}
-
-Aguardo contato por telefone para conversar sobre o projeto.`;document.getElementById("form-content").style.display="none";document.getElementById("form-success").style.display="block";openWhatsApp(message)})}
+  if(form){form.addEventListener("submit",e=>{e.preventDefault();const nome=document.getElementById("nome").value.trim(),tel=document.getElementById("tel").value.trim(),setor=document.getElementById("setor").value.trim();if(!nome||!tel||!setor){alert("Preencha nome, telefone e tipo.");return}const texto=`Olá, vim pela página de Agroindústria da Vértice e gostaria de uma pré-análise gratuita.\n\nNome: ${nome}\nTelefone para retorno: ${tel}\nTipo: ${setor}\n\nAguardo contato por telefone para conversar sobre o projeto.`;if(canal==="email"){window.location.href=`mailto:${EMAIL}?subject=${encodeURIComponent(`Diagnóstico biogás — ${setor} — ${nome}`)}&body=${encodeURIComponent(texto)}`}else if(typeof abreWpp==="function"){abreWpp(texto)}else{openWhatsApp(texto)})}
   const menuToggle=document.getElementById("menuToggle"),menuPanel=document.getElementById("menuPanel"),menuOverlay=document.getElementById("menuOverlay");function toggleMenu(forceClose){const willOpen=forceClose?false:!menuPanel.classList.contains("active");menuPanel.classList.toggle("active",willOpen);menuOverlay.classList.toggle("active",willOpen);menuToggle.classList.toggle("active",willOpen)}menuToggle.addEventListener("click",()=>toggleMenu());menuOverlay.addEventListener("click",()=>toggleMenu(true));document.querySelectorAll(".menu-links a").forEach(a=>a.addEventListener("click",()=>toggleMenu(true)));
   const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("show");observer.unobserve(entry.target)}})},{threshold:.12});document.querySelectorAll(".fi").forEach(el=>observer.observe(el));
 </script>
