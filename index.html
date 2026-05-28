@@ -341,7 +341,7 @@ h1 em, .section-title em, .contact h2 em { color:var(--amber); font-style:italic
   background:var(--amber); flex:0 0 auto; margin-top:.36rem;
 }
 
-/* ─── MERCADO (por que existe) ─── */
+/* ─── MERCADO ─── */
 .market-grid {
   display:grid; grid-template-columns:repeat(3,1fr);
   gap:1rem; margin-top:1.5rem;
@@ -381,7 +381,7 @@ h1 em, .section-title em, .contact h2 em { color:var(--amber); font-style:italic
 .deliverable h4 { font-size:.92rem; color:#fff; margin-bottom:.3rem; }
 .deliverable p { color:var(--muted); font-size:.82rem; line-height:1.5; }
 
-/* ─── PROCESSO 5 PASSOS ─── */
+/* ─── PROCESSO ─── */
 .steps-list { display:grid; gap:1px; margin-top:1.5rem; }
 .step-row {
   display:grid; grid-template-columns:auto 1fr;
@@ -444,7 +444,7 @@ h1 em, .section-title em, .contact h2 em { color:var(--amber); font-style:italic
   border-radius:999px; font-size:.7rem;
 }
 
-/* ─── FAIXA PROVOCATIVA ─── */
+/* ─── STRIP ─── */
 .strip-strong {
   background:linear-gradient(120deg,rgba(233,196,106,.1),rgba(64,145,108,.12));
   border-top:1px solid var(--border); border-bottom:1px solid var(--border);
@@ -477,6 +477,24 @@ h1 em, .section-title em, .contact h2 em { color:var(--amber); font-style:italic
 .contact-dot { width:8px; height:8px; border-radius:50%; background:var(--amber); margin-top:.38rem; flex:0 0 auto; }
 .cta-pair { display:flex; gap:.7rem; flex-wrap:wrap; }
 
+/* NOVO: hint retorno por telefone */
+.wpp-hint {
+  font-size:.82rem;
+  color:var(--muted);
+  line-height:1.5;
+  margin-top:.55rem;
+  display:flex;
+  align-items:flex-start;
+  gap:.45rem;
+}
+.wpp-hint::before {
+  content:"↩";
+  color:var(--amber);
+  font-size:.9rem;
+  flex-shrink:0;
+  margin-top:.02rem;
+}
+
 /* ─── FORM ─── */
 .form-card {
   background:linear-gradient(180deg,rgba(22,34,24,.97),rgba(13,27,18,.92));
@@ -485,9 +503,14 @@ h1 em, .section-title em, .contact h2 em { color:var(--amber); font-style:italic
 }
 .form-card h3 {
   font-family:'DM Serif Display',serif;
-  font-size:1.9rem; line-height:1; margin-bottom:.5rem;
+  font-size:1.9rem; line-height:1; margin-bottom:.3rem;
 }
-.form-card > p { color:var(--muted); line-height:1.55; margin-bottom:1rem; font-size:.9rem; }
+.form-subtitle {
+  color:var(--muted);
+  font-size:.88rem;
+  line-height:1.5;
+  margin-bottom:1rem;
+}
 .form-row { display:grid; grid-template-columns:1fr 1fr; gap:.8rem; }
 .form-group { display:grid; gap:.35rem; margin-bottom:.8rem; }
 label { font-size:.77rem; color:var(--soft); font-weight:800; }
@@ -504,7 +527,7 @@ input:focus, select:focus, textarea:focus { border-color:var(--amber); }
 .submit-pair { display:grid; grid-template-columns:1fr 1fr; gap:.7rem; margin-top:.2rem; }
 .btn-form-primary {
   width:100%; padding:.95rem 1rem;
-  background:var(--amber); color:var(--dark);
+  background:#25D366; color:#06120a;
   border:none; border-radius:999px; cursor:pointer;
   font-family:'DM Sans',sans-serif;
   font-weight:800; font-size:.88rem;
@@ -521,7 +544,10 @@ input:focus, select:focus, textarea:focus { border-color:var(--amber); }
 .btn-form-primary:hover, .btn-form-secondary:hover {
   transform:translateY(-2px); filter:brightness(1.08);
 }
-.form-note { color:var(--muted); font-size:.8rem; line-height:1.45; margin-top:.8rem; text-align:center; }
+.form-note {
+  color:var(--muted); font-size:.8rem;
+  line-height:1.45; margin-top:.8rem; text-align:center;
+}
 
 .form-success { display:none; text-align:center; padding:2rem 1rem; }
 .success-icon {
@@ -561,6 +587,12 @@ input:focus, select:focus, textarea:focus { border-color:var(--amber); }
   padding-top:1rem;
   border-top:1px solid rgba(255,255,255,.07);
   display:flex; justify-content:space-between; gap:1rem;
+}
+.footer-wpp-hint {
+  font-size:.78rem;
+  color:var(--muted);
+  opacity:.75;
+  margin-top:.2rem;
 }
 
 /* ─── ANIMAÇÕES ─── */
@@ -627,7 +659,8 @@ input:focus, select:focus, textarea:focus { border-color:var(--amber); }
   <div class="menu-foot">Acesse rapidamente os setores, o simulador e o diagnóstico inicial.</div>
 </aside>
 
-<a href="#" class="wpp-fixo" data-whatsapp-direct>Diagnóstico no WhatsApp</a>
+<!-- ALTERAÇÃO 1: botão fixo → âncora para o formulário, não abre zap direto -->
+<a href="#contato" class="wpp-fixo">Solicitar diagnóstico →</a>
 
 <!-- ═════════════════════ HERO ═════════════════════ -->
 <section class="hero">
@@ -638,22 +671,17 @@ input:focus, select:focus, textarea:focus { border-color:var(--amber); }
   <div class="container hero-grid">
     <div class="fi show">
       <div class="eyebrow">Consultoria integradora em biogás</div>
-
       <h1>Antes de comprar um biodigestor, <em>entenda o caminho.</em></h1>
-
       <p class="hero-lead">
         Biogás depende de resíduo, escala, operação, uso energético, tecnologia e fornecedor. A Vértice organiza essa decisão antes de qualquer compra — para que você compare o que precisa ser comparado.
       </p>
-
       <p class="hero-note">
         Fornecedor de biodigestor vende biodigestor. Fornecedor de motogerador vende motogerador. A Vértice ajuda você a conectar as partes com dados do seu caso específico.
       </p>
-
       <div class="hero-actions">
         <a href="#contato" class="btn-primary">Solicitar diagnóstico inicial →</a>
         <a href="/simulador.html" class="btn-secondary">Testar no simulador</a>
       </div>
-
       <div class="pills">
         <span>Diagnóstico sem compromisso</span>
         <span>Análise técnico-econômica</span>
@@ -669,26 +697,11 @@ input:focus, select:focus, textarea:focus { border-color:var(--amber); }
         Cinco pontos que precisam conversar antes de qualquer investimento em biogás.
       </p>
       <div class="mini-list">
-        <div>
-          <span>01</span>
-          <p><strong>Resíduo e escala</strong>Tipo, volume, frequência e características do substrato disponível.</p>
-        </div>
-        <div>
-          <span>02</span>
-          <p><strong>Uso energético</strong>GLP, eletricidade, diesel ou calor — o destino do biogás define a rota.</p>
-        </div>
-        <div>
-          <span>03</span>
-          <p><strong>Tecnologia aplicável</strong>Nem todo resíduo pede a mesma solução. Rotas comparadas sem parcialidade.</p>
-        </div>
-        <div>
-          <span>04</span>
-          <p><strong>Análise econômica</strong>CAPEX, OPEX, payback e sensibilidade com dados reais do seu caso.</p>
-        </div>
-        <div>
-          <span>05</span>
-          <p><strong>Próximos passos orientados</strong>Leitura de propostas, triagem de fornecedores e organização da implantação.</p>
-        </div>
+        <div><span>01</span><p><strong>Resíduo e escala</strong>Tipo, volume, frequência e características do substrato disponível.</p></div>
+        <div><span>02</span><p><strong>Uso energético</strong>GLP, eletricidade, diesel ou calor — o destino do biogás define a rota.</p></div>
+        <div><span>03</span><p><strong>Tecnologia aplicável</strong>Nem todo resíduo pede a mesma solução. Rotas comparadas sem parcialidade.</p></div>
+        <div><span>04</span><p><strong>Análise econômica</strong>CAPEX, OPEX, payback e sensibilidade com dados reais do seu caso.</p></div>
+        <div><span>05</span><p><strong>Próximos passos orientados</strong>Leitura de propostas, triagem de fornecedores e organização da implantação.</p></div>
       </div>
     </aside>
   </div>
@@ -701,21 +714,12 @@ input:focus, select:focus, textarea:focus { border-color:var(--amber); }
       <div class="section-label">O problema de começo errado</div>
       <h2 class="section-title">A maioria dos projetos começa pelo <em>equipamento.</em></h2>
       <div class="divider"></div>
-      <p class="section-body">
-        Primeiro vem o orçamento do biodigestor. Depois tentam encaixar o resíduo, a operação e a conta econômica. O resultado é uma proposta sem premissas definidas, impossível de comparar com outras.
-      </p>
-      <p class="section-body" style="margin-top:.9rem;">
-        O erro caro é começar pelo equipamento antes de entender o que o resíduo sustenta, qual tecnologia faz sentido para a escala e qual uso energético fecha a conta.
-      </p>
-      <p class="section-body" style="margin-top:.9rem;">
-        Nem todo resíduo justifica um projeto agora. Saber isso cedo também é economia.
-      </p>
+      <p class="section-body">Primeiro vem o orçamento do biodigestor. Depois tentam encaixar o resíduo, a operação e a conta econômica. O resultado é uma proposta sem premissas definidas, impossível de comparar com outras.</p>
+      <p class="section-body" style="margin-top:.9rem;">O erro caro é começar pelo equipamento antes de entender o que o resíduo sustenta, qual tecnologia faz sentido para a escala e qual uso energético fecha a conta.</p>
+      <p class="section-body" style="margin-top:.9rem;">Nem todo resíduo justifica um projeto agora. Saber isso cedo também é economia.</p>
     </div>
-
     <div class="fi fi-d2">
-      <p style="color:var(--soft); font-size:.88rem; text-transform:uppercase; letter-spacing:.14em; font-weight:700; margin-bottom:.9rem;">
-        Biogás depende de tudo isso ao mesmo tempo
-      </p>
+      <p style="color:var(--soft); font-size:.88rem; text-transform:uppercase; letter-spacing:.14em; font-weight:700; margin-bottom:.9rem;">Biogás depende de tudo isso ao mesmo tempo</p>
       <div class="problem-list">
         <div class="problem-item"><div class="problem-dot"></div>Tipo e composição do resíduo</div>
         <div class="problem-item"><div class="problem-dot"></div>Volume e frequência de geração</div>
@@ -737,57 +741,18 @@ input:focus, select:focus, textarea:focus { border-color:var(--amber); }
     <div class="fi" style="margin-bottom:2rem;">
       <div class="section-label">Entregáveis concretos</div>
       <h2 class="section-title">O que você recebe ao trabalhar <em>com a Vértice.</em></h2>
-      <p class="section-body">
-        Não apenas um relatório para decidir sozinho. Uma leitura orientada do caminho mais seguro para o seu projeto.
-      </p>
+      <p class="section-body">Não apenas um relatório para decidir sozinho. Uma leitura orientada do caminho mais seguro para o seu projeto.</p>
     </div>
-
     <div class="deliverables-grid fi fi-d2">
-      <div class="deliverable">
-        <div class="deliverable-num">01</div>
-        <h4>Diagnóstico inicial do potencial</h4>
-        <p>Leitura técnica do resíduo, estimativa de geração de biogás e análise de escala mínima viável.</p>
-      </div>
-      <div class="deliverable">
-        <div class="deliverable-num">02</div>
-        <h4>Estimativa de substituição energética</h4>
-        <p>Quanto de GLP, diesel ou energia elétrica o projeto pode substituir — com os dados da sua operação.</p>
-      </div>
-      <div class="deliverable">
-        <div class="deliverable-num">03</div>
-        <h4>Matriz de rotas tecnológicas</h4>
-        <p>Comparação entre caminhos possíveis: uso térmico, geração elétrica, biometano, tratamento de resíduo, modelos modulares.</p>
-      </div>
-      <div class="deliverable">
-        <div class="deliverable-num">04</div>
-        <h4>Análise econômica detalhada</h4>
-        <p>CAPEX, OPEX, payback, análise de sensibilidade e condições em que o projeto fecha ou não fecha.</p>
-      </div>
-      <div class="deliverable">
-        <div class="deliverable-num">05</div>
-        <h4>Triagem de fornecedores compatíveis</h4>
-        <p>Indicação de empresas com oferta compatível com a tecnologia e a escala definidas no estudo.</p>
-      </div>
-      <div class="deliverable">
-        <div class="deliverable-num">06</div>
-        <h4>Leitura crítica de propostas</h4>
-        <p>Apoio para entender e comparar propostas comerciais que partem das mesmas premissas.</p>
-      </div>
-      <div class="deliverable">
-        <div class="deliverable-num">07</div>
-        <h4>Riscos e limitações identificados</h4>
-        <p>O que pode comprometer o projeto, variáveis sensíveis e pontos de atenção antes do investimento.</p>
-      </div>
-      <div class="deliverable">
-        <div class="deliverable-num">08</div>
-        <h4>Plano de próximos passos</h4>
-        <p>O que fazer depois do estudo — na ordem certa, sem queimar etapa.</p>
-      </div>
-      <div class="deliverable">
-        <div class="deliverable-num">09</div>
-        <h4>Quando não avançar</h4>
-        <p>Se o projeto não viabiliza agora, você recebe a razão técnica e o que precisaria mudar para mudar o resultado.</p>
-      </div>
+      <div class="deliverable"><div class="deliverable-num">01</div><h4>Diagnóstico inicial do potencial</h4><p>Leitura técnica do resíduo, estimativa de geração de biogás e análise de escala mínima viável.</p></div>
+      <div class="deliverable"><div class="deliverable-num">02</div><h4>Estimativa de substituição energética</h4><p>Quanto de GLP, diesel ou energia elétrica o projeto pode substituir — com os dados da sua operação.</p></div>
+      <div class="deliverable"><div class="deliverable-num">03</div><h4>Matriz de rotas tecnológicas</h4><p>Comparação entre caminhos possíveis: uso térmico, geração elétrica, biometano, tratamento de resíduo, modelos modulares.</p></div>
+      <div class="deliverable"><div class="deliverable-num">04</div><h4>Análise econômica detalhada</h4><p>CAPEX, OPEX, payback, análise de sensibilidade e condições em que o projeto fecha ou não fecha.</p></div>
+      <div class="deliverable"><div class="deliverable-num">05</div><h4>Triagem de fornecedores compatíveis</h4><p>Indicação de empresas com oferta compatível com a tecnologia e a escala definidas no estudo.</p></div>
+      <div class="deliverable"><div class="deliverable-num">06</div><h4>Leitura crítica de propostas</h4><p>Apoio para entender e comparar propostas comerciais que partem das mesmas premissas.</p></div>
+      <div class="deliverable"><div class="deliverable-num">07</div><h4>Riscos e limitações identificados</h4><p>O que pode comprometer o projeto, variáveis sensíveis e pontos de atenção antes do investimento.</p></div>
+      <div class="deliverable"><div class="deliverable-num">08</div><h4>Plano de próximos passos</h4><p>O que fazer depois do estudo — na ordem certa, sem queimar etapa.</p></div>
+      <div class="deliverable"><div class="deliverable-num">09</div><h4>Quando não avançar</h4><p>Se o projeto não viabiliza agora, você recebe a razão técnica e o que precisaria mudar para mudar o resultado.</p></div>
     </div>
   </div>
 </section>
@@ -799,47 +764,14 @@ input:focus, select:focus, textarea:focus { border-color:var(--amber); }
       <div class="section-label">Como funciona</div>
       <h2 class="section-title">Cinco etapas. <em>Da dúvida à decisão.</em></h2>
       <div class="divider"></div>
-      <p class="section-body">
-        O processo começa com dados básicos e avança conforme o potencial se confirma. Você não é empurrado para o próximo passo — cada etapa tem uma entrega clara.
-      </p>
+      <p class="section-body">O processo começa com dados básicos e avança conforme o potencial se confirma. Você não é empurrado para o próximo passo — cada etapa tem uma entrega clara.</p>
     </div>
-
     <div class="steps-list fi fi-d2">
-      <div class="step-row">
-        <div class="step-index">01</div>
-        <div class="step-body">
-          <h3>Diagnóstico inicial</h3>
-          <p>Você envia dados básicos sobre resíduo, quantidade, operação e consumo energético. A Vértice faz uma leitura inicial sem custo e sem compromisso.</p>
-        </div>
-      </div>
-      <div class="step-row">
-        <div class="step-index">02</div>
-        <div class="step-body">
-          <h3>Leitura técnica da oportunidade</h3>
-          <p>Avaliação do potencial mínimo e identificação do que precisa ser respondido antes de avançar — inclusive se a escala atual já sustenta um projeto.</p>
-        </div>
-      </div>
-      <div class="step-row">
-        <div class="step-index">03</div>
-        <div class="step-body">
-          <h3>Estudo técnico-econômico</h3>
-          <p>Análise completa com potencial de biogás, uso energético, rotas tecnológicas possíveis, CAPEX, OPEX, payback e análise de sensibilidade.</p>
-        </div>
-      </div>
-      <div class="step-row">
-        <div class="step-index">04</div>
-        <div class="step-body">
-          <h3>Rotas e fornecedores orientados</h3>
-          <p>Comparação entre caminhos tecnológicos e triagem de fornecedores compatíveis com a rota e a escala definidas no estudo.</p>
-        </div>
-      </div>
-      <div class="step-row">
-        <div class="step-index">05</div>
-        <div class="step-body">
-          <h3>Apoio à decisão final</h3>
-          <p>Leitura de propostas comerciais recebidas, apoio na comparação entre fornecedores e organização da fase de implantação.</p>
-        </div>
-      </div>
+      <div class="step-row"><div class="step-index">01</div><div class="step-body"><h3>Diagnóstico inicial</h3><p>Você envia dados básicos sobre resíduo, quantidade, operação e consumo energético. A Vértice faz uma leitura inicial sem custo e sem compromisso.</p></div></div>
+      <div class="step-row"><div class="step-index">02</div><div class="step-body"><h3>Leitura técnica da oportunidade</h3><p>Avaliação do potencial mínimo e identificação do que precisa ser respondido antes de avançar — inclusive se a escala atual já sustenta um projeto.</p></div></div>
+      <div class="step-row"><div class="step-index">03</div><div class="step-body"><h3>Estudo técnico-econômico</h3><p>Análise completa com potencial de biogás, uso energético, rotas tecnológicas possíveis, CAPEX, OPEX, payback e análise de sensibilidade.</p></div></div>
+      <div class="step-row"><div class="step-index">04</div><div class="step-body"><h3>Rotas e fornecedores orientados</h3><p>Comparação entre caminhos tecnológicos e triagem de fornecedores compatíveis com a rota e a escala definidas no estudo.</p></div></div>
+      <div class="step-row"><div class="step-index">05</div><div class="step-body"><h3>Apoio à decisão final</h3><p>Leitura de propostas comerciais recebidas, apoio na comparação entre fornecedores e organização da fase de implantação.</p></div></div>
     </div>
   </div>
 </section>
@@ -850,62 +782,24 @@ input:focus, select:focus, textarea:focus { border-color:var(--amber); }
     <div class="fi" style="margin-bottom:2rem;">
       <div class="section-label">Onde atendemos</div>
       <h2 class="section-title">Cada setor tem uma <em>lógica diferente.</em></h2>
-      <p class="section-body">
-        Resíduo, operação e uso energético mudam muito entre agropecuária, indústria, agroindústria e saneamento. A análise precisa partir do contexto real de cada operação.
-      </p>
+      <p class="section-body">Resíduo, operação e uso energético mudam muito entre agropecuária, indústria, agroindústria e saneamento. A análise precisa partir do contexto real de cada operação.</p>
     </div>
-
     <div class="sector-grid fi fi-d2">
       <a href="/agropecuaria" class="sector-card">
         <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=900&q=80&fit=crop" alt="Agropecuária">
-        <div class="sector-content">
-          <h3>Agropecuária</h3>
-          <p class="sector-doubt">"Tenho dejeto animal. Quanto isso gera? Compensa investir?"</p>
-          <div class="tag-row">
-            <span class="tag">Suínos</span>
-            <span class="tag">Bovinos</span>
-            <span class="tag">Aves</span>
-          </div>
-        </div>
+        <div class="sector-content"><h3>Agropecuária</h3><p class="sector-doubt">"Tenho dejeto animal. Quanto isso gera? Compensa investir?"</p><div class="tag-row"><span class="tag">Suínos</span><span class="tag">Bovinos</span><span class="tag">Aves</span></div></div>
       </a>
-
       <a href="/industria" class="sector-card">
         <img src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=900&q=80&fit=crop" alt="Indústria">
-        <div class="sector-content">
-          <h3>Indústria</h3>
-          <p class="sector-doubt">"Pago pra tratar o efluente e pago pra comprar energia. Existe saída?"</p>
-          <div class="tag-row">
-            <span class="tag">Alimentos</span>
-            <span class="tag">Laticínios</span>
-            <span class="tag">Frigoríficos</span>
-          </div>
-        </div>
+        <div class="sector-content"><h3>Indústria</h3><p class="sector-doubt">"Pago pra tratar o efluente e pago pra comprar energia. Existe saída?"</p><div class="tag-row"><span class="tag">Alimentos</span><span class="tag">Laticínios</span><span class="tag">Frigoríficos</span></div></div>
       </a>
-
       <a href="/agroindustria" class="sector-card">
         <img src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=900&q=80&fit=crop" alt="Agroindústria">
-        <div class="sector-content">
-          <h3>Agroindústria</h3>
-          <p class="sector-doubt">"Volume expressivo, mas sazonalidade alta. Qual rota faz sentido?"</p>
-          <div class="tag-row">
-            <span class="tag">Etanol</span>
-            <span class="tag">Fecularias</span>
-            <span class="tag">Processadoras</span>
-          </div>
-        </div>
+        <div class="sector-content"><h3>Agroindústria</h3><p class="sector-doubt">"Volume expressivo, mas sazonalidade alta. Qual rota faz sentido?"</p><div class="tag-row"><span class="tag">Etanol</span><span class="tag">Fecularias</span><span class="tag">Processadoras</span></div></div>
       </a>
-
       <a href="/saneamento" class="sector-card">
         <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=900&q=80&fit=crop" alt="Saneamento">
-        <div class="sector-content">
-          <h3>Saneamento</h3>
-          <p class="sector-doubt">"A ETE já produz biogás. Como capturar e transformar em economia real?"</p>
-          <div class="tag-row">
-            <span class="tag">ETEs</span>
-            <span class="tag">Aterros</span>
-            <span class="tag">Concessões</span>
-          </div>
-        </div>
+        <div class="sector-content"><h3>Saneamento</h3><p class="sector-doubt">"A ETE já produz biogás. Como capturar e transformar em economia real?"</p><div class="tag-row"><span class="tag">ETEs</span><span class="tag">Aterros</span><span class="tag">Concessões</span></div></div>
       </a>
     </div>
   </div>
@@ -915,14 +809,8 @@ input:focus, select:focus, textarea:focus { border-color:var(--amber); }
 <section class="cs strip-strong">
   <div class="container strip-inner fi">
     <div>
-      <div class="strip-quote">
-        Antes de pedir três orçamentos, descubra <em>o que você deveria estar comparando.</em>
-      </div>
-      <p class="strip-sub">
-        Cada fornecedor pode considerar uma escala, eficiência, tecnologia e operação diferentes.
-        Comparar propostas sem premissas iguais leva a decisões erradas — não por má-fé, mas por falta de uma base comum.
-        O diagnóstico da Vértice define essa base antes de qualquer negociação.
-      </p>
+      <div class="strip-quote">Antes de pedir três orçamentos, descubra <em>o que você deveria estar comparando.</em></div>
+      <p class="strip-sub">Cada fornecedor pode considerar uma escala, eficiência, tecnologia e operação diferentes. Comparar propostas sem premissas iguais leva a decisões erradas — não por má-fé, mas por falta de uma base comum. O diagnóstico da Vértice define essa base antes de qualquer negociação.</p>
     </div>
     <a href="#contato" class="btn-primary">Solicitar diagnóstico →</a>
   </div>
@@ -933,10 +821,12 @@ input:focus, select:focus, textarea:focus { border-color:var(--amber); }
   <div class="container two-col">
     <div class="fi">
       <div class="section-label">Próximo passo</div>
-      <h2>Descubra o que o seu resíduo <em>sustenta de verdade.</em></h2>
+      <!-- ALTERAÇÃO 2: título reformulado -->
+      <h2>Vamos conversar sobre <em>o seu projeto.</em></h2>
 
+      <!-- ALTERAÇÃO 3: texto reformulado — explicita retorno por telefone -->
       <p class="contact-text">
-        A primeira conversa é sem compromisso. Com dados básicos da sua operação já é possível dizer se há potencial mínimo e o que precisa ser respondido antes de avançar.
+        Preencha o formulário com os dados básicos da sua operação. Nossa equipe entra em contato por telefone para entender o projeto e verificar o potencial de viabilidade.
       </p>
 
       <div class="contact-items">
@@ -947,16 +837,19 @@ input:focus, select:focus, textarea:focus { border-color:var(--amber); }
         <div class="contact-item"><div class="contact-dot"></div>Se não viabilizar agora, você recebe a razão técnica</div>
       </div>
 
+      <!-- ALTERAÇÃO 4: botão WhatsApp lateral — sinaliza interesse, pede retorno por telefone -->
       <div class="cta-pair">
-        <a href="#" class="btn-wpp" data-whatsapp-direct>Falar no WhatsApp</a>
+        <a href="#" class="btn-wpp" id="btn-wpp-lateral">Sinalizar interesse pelo WhatsApp</a>
         <a href="mailto:biogasvertice@gmail.com" class="btn-email-outline">Enviar e-mail</a>
       </div>
+      <p class="wpp-hint">Envie uma mensagem curta e nossa equipe retorna por ligação em até 24 horas úteis.</p>
     </div>
 
     <div class="fi fi-d2">
       <div class="form-card">
         <h3>Solicitar diagnóstico inicial</h3>
-        <p>Preencha os dados básicos e escolha como prefere receber o retorno.</p>
+        <!-- ALTERAÇÃO 5: subtítulo explícito sobre retorno por telefone -->
+        <p class="form-subtitle">Preencha os dados básicos. Nossa equipe entra em contato por telefone.</p>
 
         <div id="form-content">
           <form id="lead-form">
@@ -966,7 +859,8 @@ input:focus, select:focus, textarea:focus { border-color:var(--amber); }
                 <input type="text" id="nome" placeholder="Seu nome" required>
               </div>
               <div class="form-group">
-                <label for="tel">WhatsApp</label>
+                <!-- ALTERAÇÃO 6: label do campo de telefone deixa claro que é para retorno -->
+                <label for="tel">Telefone para contato</label>
                 <input type="tel" id="tel" placeholder="(XX) XXXXX-XXXX" required>
               </div>
             </div>
@@ -1007,20 +901,22 @@ input:focus, select:focus, textarea:focus { border-color:var(--amber); }
             </div>
 
             <div class="form-group">
-              <label for="obs">Observação</label>
+              <label for="obs">Observação (opcional)</label>
               <textarea id="obs" placeholder="Conte algo relevante sobre a operação, se quiser."></textarea>
             </div>
 
+            <!-- ALTERAÇÃO 7: botão primário — "Solicitar retorno por telefone" -->
             <div class="submit-pair">
               <button type="submit" class="btn-form-primary" id="btn-wpp-submit">
-                Enviar pelo WhatsApp →
+                Solicitar retorno por telefone →
               </button>
               <button type="submit" class="btn-form-secondary" id="btn-email-submit">
                 Enviar por e-mail
               </button>
             </div>
 
-            <p class="form-note">Primeira conversa sem compromisso. Retorno em até 24h.</p>
+            <!-- ALTERAÇÃO 8: nota reformulada — deixa explícito o retorno por telefone -->
+            <p class="form-note">Após o envio, nossa equipe entra em contato por telefone em até 24 horas úteis.</p>
           </form>
         </div>
 
@@ -1048,7 +944,9 @@ input:focus, select:focus, textarea:focus { border-color:var(--amber); }
     <div class="footer-col">
       <h4>Contato</h4>
       <p>biogasvertice@gmail.com</p>
-      <p>WhatsApp: (19) 97131-5434</p>
+      <!-- ALTERAÇÃO 9: número do WhatsApp no rodapé com mensagem pré-preenchida pedindo retorno por ligação -->
+      <a href="https://wa.me/5519971315434?text=Olá%2C+tenho+interesse+em+um+diagnóstico+de+biogás.+Aguardo+contato+por+telefone." target="_blank" rel="noopener noreferrer" style="margin-top:.3rem;">WhatsApp: (19) 97131-5434</a>
+      <p class="footer-wpp-hint">Envie uma mensagem e retornamos por ligação.</p>
       <p style="margin-top:.4rem;">Atendimento técnico a empreendimentos em todo o Brasil.</p>
     </div>
 
@@ -1076,19 +974,16 @@ function abreWpp(msg){
   window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`, "_blank");
 }
 
-function msgDireta(){
-  return `Olá, vim pelo site da Vértice e quero entender se meu empreendimento tem potencial para biogás.
-
-Tipo de empreendimento:
-Cidade:
-Resíduo gerado:
-Quantidade aproximada:
-Gasto energético principal:`;
+// ALTERAÇÃO 10: mensagem do botão lateral — curta, sinaliza interesse, pede retorno por telefone
+function msgInteresse(){
+  return `Olá, vim pelo site da Vértice e tenho interesse em um diagnóstico de biogás. Aguardo contato por telefone.`;
 }
 
-document.querySelectorAll("[data-whatsapp-direct]").forEach(el => {
-  el.addEventListener("click", e => { e.preventDefault(); abreWpp(msgDireta()); });
-});
+// Botão lateral "Sinalizar interesse pelo WhatsApp"
+const btnWppLateral = document.getElementById("btn-wpp-lateral");
+if(btnWppLateral){
+  btnWppLateral.addEventListener("click", e => { e.preventDefault(); abreWpp(msgInteresse()); });
+}
 
 // ─── Formulário ───
 const form = document.getElementById("lead-form");
@@ -1101,25 +996,26 @@ if(form){
   form.addEventListener("submit", e => {
     e.preventDefault();
 
-    const nome      = document.getElementById("nome").value.trim();
-    const tel       = document.getElementById("tel").value.trim();
-    const setor     = document.getElementById("setor").value.trim();
-    const cidade    = document.getElementById("cidade").value.trim();
-    const residuo   = document.getElementById("residuo").value.trim();
-    const quantidade= document.getElementById("quantidade").value.trim();
-    const energia   = document.getElementById("energia").value.trim();
-    const obs       = document.getElementById("obs").value.trim();
+    const nome       = document.getElementById("nome").value.trim();
+    const tel        = document.getElementById("tel").value.trim();
+    const setor      = document.getElementById("setor").value.trim();
+    const cidade     = document.getElementById("cidade").value.trim();
+    const residuo    = document.getElementById("residuo").value.trim();
+    const quantidade = document.getElementById("quantidade").value.trim();
+    const energia    = document.getElementById("energia").value.trim();
+    const obs        = document.getElementById("obs").value.trim();
 
     if(!nome || !tel || !setor){
-      alert("Preencha pelo menos nome, WhatsApp e tipo de empreendimento.");
+      alert("Preencha pelo menos nome, telefone e tipo de empreendimento.");
       return;
     }
 
+    // ALTERAÇÃO 11: mensagem do formulário via WhatsApp — pede retorno por telefone
     const texto =
 `Olá, vim pelo site da Vértice e gostaria de um diagnóstico inicial para biogás.
 
 Nome: ${nome}
-WhatsApp: ${tel}
+Telefone para retorno: ${tel}
 Tipo de empreendimento: ${setor}
 Cidade/Estado: ${cidade || "não informado"}
 Principal resíduo: ${residuo || "não informado"}
@@ -1127,7 +1023,7 @@ Quantidade aproximada: ${quantidade || "não informado"}
 Gasto energético principal: ${energia || "não informado"}
 Observação: ${obs || "não informado"}
 
-Quero entender se existe potencial técnico e econômico para aproveitar esse resíduo.`;
+Aguardo contato por telefone para conversar sobre o projeto.`;
 
     if(canal === "email"){
       const assunto = encodeURIComponent(`Diagnóstico biogás — ${setor} — ${nome}`);
