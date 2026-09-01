@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://verticebiogas.com.br/sitemap.xml

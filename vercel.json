@@ -1,28 +1,10 @@
 {
-  "routes": [
-    {
-      "src": "/agropecuaria",
-      "dest": "/agropecuaria.html"
-    },
-    {
-      "src": "/industria",
-      "dest": "/industria.html"
-    },
-    {
-      "src": "/saneamento",
-      "dest": "/saneamento.html"
-    },
-    {
-      "src": "/agroindustria",
-      "dest": "/agroindustria.html"
-    },
-    {
-      "src": "/simulador",
-      "dest": "/simulador.html"
-    },
-    {
-      "src": "/politica-de-privacidade",
-      "dest": "/politica-de-privacidade.html"
-    }
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/saneamento", "destination": "/", "permanent": true },
+    { "source": "/agropecuaria", "destination": "/", "permanent": true },
+    { "source": "/agroindustria", "destination": "/", "permanent": true },
+    { "source": "/industria", "destination": "/", "permanent": true }
   ]
 }
