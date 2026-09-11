@@ -1,114 +1,988 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Projeto de Biogás e Biodigestor | Vértice Biogás</title>
-  <meta name="description" content="Descubra se o biodigestor vale a pena para sua operação. A Vértice atua no estudo, projeto, implantação, partida e suporte inicial em todo o Brasil.">
-  <link rel="canonical" href="https://verticebiogas.com.br/">
-  <meta property="og:title" content="Seu resíduo pode virar energia. O investimento fecha?"><meta property="og:description" content="Avaliação, projeto e acompanhamento de sistemas de biogás do início à operação."><meta property="og:type" content="website"><meta property="og:url" content="https://verticebiogas.com.br/">
-  <link rel="stylesheet" href="/styles.css">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KVW7XSDNES"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-KVW7XSDNES');</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Vértice Biogás","url":"https://verticebiogas.com.br/","telephone":"+55 19 97131-5434","email":"biogasvertice@gmail.com","areaServed":"BR","description":"Consultoria e engenharia para projetos de biogás e biodigestores, do estudo à implantação e operação inicial."}</script>
-</head>
-<body class="home-funnel" data-page="página inicial">
-<a class="skip" href="#conteudo">Pular para o conteúdo</a>
-<header class="nav"><div class="container nav-inner">
-  <a class="brand" href="/">Vértice<span>.</span></a>
-  <nav class="nav-links" aria-label="Navegação principal"><a href="#solucao">O que resolvemos</a><a href="#seu-momento">Seu momento</a><a href="#decisao">Como funciona</a><a href="#duvidas">Dúvidas</a></nav>
-  <a class="nav-cta" href="#contato">Falar com um consultor</a><button class="menu-btn" aria-label="Abrir menu" aria-expanded="false">☰</button>
-</div></header>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Vértice Consultoria Ambiental | Biogás, Resíduos e Carbono</title>
+<link rel="canonical" href="https://verticebiogas.com.br/"/>
+<meta property="og:title" content="Vértice Consultoria Ambiental"/>
+<meta property="og:description" content="Soluções em biogás, gestão de resíduos e carbono para sua operação."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://verticebiogas.com.br/"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KVW7XSDNES"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-KVW7XSDNES');</script>
+<meta name="description" content="Consultoria ambiental em biogás, gestão de resíduos, inventário de GEE, descarbonização e atributos ambientais."/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
 
-<main id="conteudo">
-  <section class="hero hero-decision">
-    <img class="hero-image" src="https://upload.wikimedia.org/wikipedia/commons/6/69/Planta_de_Biog%C3%A1s_San_Pedro_Verde.jpg" alt="Planta real de biogás em operação no meio rural" fetchpriority="high">
-    <div class="container hero-grid">
-      <div>
-        <p class="eyebrow">Consultoria em biogás e biodigestores</p>
-        <h1>O resíduo custa dinheiro. A energia também. Resolva os dois no <em>mesmo projeto.</em></h1>
-        <p class="lead">A Vértice ajuda sua empresa ou propriedade a tratar melhor os resíduos e aproveitar o potencial de energia, sem começar pela compra de um equipamento.</p>
-        <div class="hero-actions"><a class="btn btn-primary" href="#contato">Quero falar com a Vértice</a><a class="btn btn-secondary" data-whatsapp="topo do site" href="#">Conversar pelo WhatsApp</a></div>
-        <div class="hero-note"><span>Primeira conversa sem custo</span><span>Atendimento em todo o Brasil</span><span>Do estudo ao sistema funcionando</span></div>
+:root{
+  --ink:#0b1712; --muted:#65716a; --paper:#f5f2ea; --paper2:#ece6da; --white:#fff;
+  --green:#0d4a33; --green2:#1d6c48; --acid:#b8db72;
+  --earth:#6a432d; --sand:#d8b282;
+  --blue:#0c4963; --sky:#9bcddd;
+  --line:rgba(11,23,18,.14); --dark:#08130e;
+  --shadow:0 28px 80px rgba(10,24,17,.14);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"DM Sans",system-ui,sans-serif;color:var(--ink);background:#fff}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.shell{width:min(1240px,calc(100% - 44px));margin:auto}
+.top{position:sticky;top:0;z-index:60;background:rgba(250,249,245,.94);backdrop-filter:blur(18px);border-bottom:1px solid rgba(11,23,18,.08)}
+.topin{height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+.brand{display:flex;align-items:center;gap:12px;cursor:pointer}
+.brandmark{width:38px;height:32px;position:relative}
+.brandmark i{position:absolute;bottom:0;background:var(--green);transform:skew(-28deg);border-radius:2px}
+.brandmark i:nth-child(1){width:11px;height:31px;left:4px}
+.brandmark i:nth-child(2){width:11px;height:22px;left:20px}
+.brandword{font-family:Manrope,sans-serif;font-size:19px;font-weight:800;letter-spacing:.04em;line-height:1}
+.brandword small{display:block;font-size:7px;letter-spacing:.2em;margin-top:5px;color:#637168}
+.mainnav{display:flex;align-items:center;gap:22px}
+.mainnav button{border:0;background:transparent;color:#445149;cursor:pointer;font-size:13px;font-weight:700;padding:28px 0 24px;position:relative}
+.mainnav button:after{content:"";position:absolute;left:0;right:100%;height:2px;bottom:18px;background:var(--green);transition:.25s}
+.mainnav button:hover:after,.mainnav button.active:after{right:0}
+.mainnav button.active{color:var(--green)}
+.navcta{border:0;background:var(--green);color:#fff;border-radius:999px;padding:12px 18px;font-weight:800;cursor:pointer}
+.mob{display:none;border:0;background:transparent;font-size:24px;cursor:pointer}
+.page{display:none;animation:fade .35s ease}
+.page.active{display:block}
+@keyframes fade{from{opacity:.2;transform:translateY(5px)}to{opacity:1;transform:none}}
+.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.22em;font-weight:800;opacity:.72;margin-bottom:18px}
+.btnrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:28px}
+.pill{border:0;border-radius:999px;padding:13px 20px;background:var(--acid);color:#102016;font-weight:800;cursor:pointer}
+.pill.dark{background:var(--green);color:#fff}
+.pill.light{background:#fff;color:var(--ink)}
+.pill.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.32)}
+.sectiontitle{font-family:Manrope,sans-serif;font-size:clamp(38px,4.6vw,62px);line-height:.98;letter-spacing:-.05em;margin:0}
+.subcopy{font-size:17px;line-height:1.7;color:var(--muted)}
+/* HOME */
+.hero-home{min-height:690px;background:#0a1812;color:#fff;position:relative;overflow:hidden}
+.hero-home:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 32% 22%,rgba(184,219,114,.13),transparent 28%),linear-gradient(90deg,#091711 0 47%,rgba(9,23,17,.82) 68%,rgba(9,23,17,.18));z-index:1}
+.hero-home-grid{position:relative;z-index:2;display:grid;grid-template-columns:.95fr 1.05fr;min-height:690px;align-items:center}
+.hcopy{padding:72px 0}
+.hcopy h1{font-family:Manrope,sans-serif;font-size:clamp(52px,6.1vw,86px);line-height:.92;letter-spacing:-.055em;margin:0 0 24px;max-width:760px}
+.hcopy h1 em{font-style:normal;font-size:.48em;display:block;line-height:1.08;margin-top:14px;letter-spacing:-.03em;font-weight:600}
+.statement{font-size:clamp(20px,2vw,28px);color:var(--acid);font-weight:700;margin:0 0 16px}
+.intro{font-size:17px;line-height:1.65;color:rgba(255,255,255,.76);max-width:650px}
+.collage{height:100%;min-height:690px;position:relative}
+.photo{position:absolute;background-size:cover;background-position:center;box-shadow:var(--shadow)}
+.photo.a{width:59%;height:52%;right:0;top:0;border-radius:0 0 0 34px;background-image:linear-gradient(rgba(0,0,0,.12),rgba(0,0,0,.12)),url("https://images.unsplash.com/photo-1786913507786-f0d6bf11b2ed?auto=format&fit=crop&q=84&w=1800")}
+.photo.b{width:52%;height:48%;left:4%;bottom:4%;border-radius:30px;background-image:linear-gradient(rgba(0,0,0,.12),rgba(0,0,0,.12)),url("https://images.unsplash.com/photo-1736977591945-6a62f3d621ca?auto=format&fit=crop&q=84&w=1600")}
+.photo.c{width:38%;height:37%;right:4%;bottom:10%;border-radius:30px;background-image:linear-gradient(rgba(0,0,0,.08),rgba(0,0,0,.08)),url("https://images.unsplash.com/photo-1782768189797-43cd18e3c831?auto=format&fit=crop&q=84&w=1400")}
+.hero-key{position:absolute;right:4%;top:42%;z-index:4;width:220px;padding:18px 0 18px 22px;border-left:1px solid rgba(255,255,255,.38);background:linear-gradient(90deg,rgba(7,23,16,.28),transparent);backdrop-filter:blur(4px)}
+.hero-key small{display:block;text-transform:uppercase;letter-spacing:.18em;font-size:9px;opacity:.6;margin-bottom:7px}
+.hero-key strong{display:block;font-family:Manrope;font-size:18px;line-height:1.15}
+.ribbon{background:var(--acid);overflow:hidden}
+.ticker{display:flex;gap:42px;white-space:nowrap;padding:13px 0;font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.16em;animation:tick 25s linear infinite}
+@keyframes tick{to{transform:translateX(-50%)}}
+.home-offer{padding:96px 0;background:#f7f5ef}
+.offerhead{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;align-items:end;margin-bottom:48px}
+.offerhead p{margin:0;font-size:18px;line-height:1.7;color:var(--muted)}
+.offergrid{display:grid;grid-template-columns:1.25fr .9fr .9fr;gap:16px}
+.offer{min-height:360px;position:relative;overflow:hidden;border-radius:30px;padding:28px;color:#fff;display:flex;flex-direction:column;justify-content:space-between;cursor:pointer;box-shadow:var(--shadow)}
+.offer:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.74))}
+.offer>*{position:relative;z-index:2}
+.offer.bio{background:url("https://images.unsplash.com/photo-1786913507786-f0d6bf11b2ed?auto=format&fit=crop&q=84&w=1600") center/cover}
+.offer.res{background:url("https://images.unsplash.com/photo-1736977591945-6a62f3d621ca?auto=format&fit=crop&q=84&w=1600") center/cover}
+.offer.car{background:url("https://images.unsplash.com/photo-1782768189797-43cd18e3c831?auto=format&fit=crop&q=84&w=1600") center/cover}
+.offer small{font-size:10px;text-transform:uppercase;letter-spacing:.16em;font-weight:800}
+.offer h3{font-family:Manrope;font-size:32px;line-height:1.03;margin:0 0 10px}
+.offer p{font-size:14px;color:rgba(255,255,255,.78);margin:0 0 16px}
+.offer .mini{display:flex;gap:8px;flex-wrap:wrap}
+.offer .mini span{font-size:10px;border:1px solid rgba(255,255,255,.26);padding:6px 9px;border-radius:999px;background:rgba(0,0,0,.12)}
+.commercial{padding:96px 0;background:#fff}
+.commercial-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:72px}
+.processline{border-top:1px solid var(--line)}
+.processrow{display:grid;grid-template-columns:74px 1fr 180px;gap:24px;padding:24px 0;border-bottom:1px solid var(--line);align-items:center}
+.processrow .n{font-family:Manrope;font-weight:800;color:#7a857f}
+.processrow b{font-size:18px}
+.processrow span{font-size:13px;color:var(--muted);text-align:right}
+.leadbox{padding:28px;border:1px solid var(--line);border-radius:24px;background:var(--paper);position:sticky;top:110px;height:max-content}
+.leadbox h3{font-family:Manrope;font-size:28px;line-height:1.05;margin:0 0 12px}
+.leadbox p{color:var(--muted);font-size:14px;line-height:1.6}
+.leadchoices{display:grid;gap:9px;margin-top:18px}
+.leadchoices button{border:1px solid var(--line);background:#fff;border-radius:14px;padding:14px 15px;text-align:left;font-weight:700;cursor:pointer}
+.leadchoices button:hover{border-color:var(--green);color:var(--green)}
+/* BIOGAS - technical / engineering */
+.bio-hero{min-height:640px;background:linear-gradient(90deg,rgba(6,20,14,.94),rgba(6,20,14,.38)),url("https://images.unsplash.com/photo-1786913507786-f0d6bf11b2ed?auto=format&fit=crop&q=86&w=2200") center/cover;color:#fff;position:relative;overflow:hidden}
+.bio-hero:after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(90deg,transparent 45%,#000)}
+.bio-wrap{min-height:640px;display:flex;align-items:center;position:relative;z-index:2}
+.bio-copy{max-width:760px}
+.bio-copy h1,.res-copy h1,.car-copy h1{font-family:Manrope;font-size:clamp(52px,6vw,82px);line-height:.94;letter-spacing:-.055em;margin:0 0 18px}
+.bio-copy .lead,.res-copy .lead,.car-copy .lead{font-size:24px;color:var(--acid);font-weight:700;margin-bottom:12px}
+.bio-copy p,.res-copy p,.car-copy p{font-size:17px;line-height:1.65;color:rgba(255,255,255,.78);max-width:650px}
+.techbar{position:absolute;bottom:28px;right:0;display:flex;gap:8px}
+.techbar a{font-size:10px;text-transform:uppercase;letter-spacing:.13em;padding:9px 12px;border:1px solid rgba(255,255,255,.22);border-radius:999px;background:rgba(0,0,0,.12)}
+.bio-blueprint{padding:92px 0;background:#f3f7f3}
+.bluegrid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.bluepanel{background:#0b261b;color:#fff;border-radius:28px;padding:30px;min-height:460px;position:relative;overflow:hidden}
+.bluepanel:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:36px 36px}
+.scheme{position:relative;z-index:2;margin-top:34px;display:grid;gap:26px}
+.scheme-row{display:grid;grid-template-columns:72px 1fr;gap:14px;align-items:center}
+.scheme-icon{width:56px;height:56px;border:1px solid rgba(255,255,255,.3);border-radius:50%;display:grid;place-items:center}
+.scheme-row b{display:block;margin-bottom:4px}
+.scheme-row span{font-size:13px;color:rgba(255,255,255,.65)}
+.deliverables{border-top:1px solid var(--line)}
+.deliver{padding:18px 0;border-bottom:1px solid var(--line)}
+.deliver b{display:block;font-size:18px;margin-bottom:5px}
+.deliver p{margin:0;color:var(--muted);font-size:14px}
+.bio-cta{padding:64px 0;background:var(--green);color:#fff}
+.bio-cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+.bio-cta h2{font-family:Manrope;font-size:38px;line-height:1.05;margin:0}
+.bio-actions{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap}
+/* RESIDUES - operational / flow */
+.res-hero{min-height:610px;background:#2b190f;color:#fff;position:relative;overflow:hidden}
+.res-hero-grid{display:grid;grid-template-columns:.9fr 1.1fr;min-height:610px}
+.res-copy{display:flex;flex-direction:column;justify-content:center;padding:70px 0}
+.res-visual{position:relative;background:url("https://images.unsplash.com/photo-1736977591945-6a62f3d621ca?auto=format&fit=crop&q=86&w=1900") center/cover}
+.res-visual:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#2b190f 0,rgba(43,25,15,.2) 45%,rgba(43,25,15,.04))}
+.res-tag{position:absolute;right:7%;top:12%;z-index:2;background:#fff;color:#24160f;padding:16px 18px;border-radius:4px;box-shadow:var(--shadow);transform:rotate(2deg);font-size:12px;max-width:210px}
+.res-tag b{display:block;font-size:18px;margin-bottom:4px}
+.res-operations{padding:92px 0;background:#fbfaf7}
+.res-flow{display:grid;grid-template-columns:220px 1fr;gap:50px}
+.res-rail{position:sticky;top:110px;height:max-content}
+.res-rail button{display:block;width:100%;text-align:left;border:0;background:transparent;padding:12px 0;border-bottom:1px solid var(--line);font-weight:700;cursor:pointer}
+.res-main{display:grid;gap:18px}
+.res-block{padding:26px;border-left:5px solid var(--earth);background:#fff;box-shadow:0 12px 34px rgba(70,45,29,.08)}
+.res-block h3{font-family:Manrope;font-size:24px;margin:0 0 8px}
+.res-block p{color:var(--muted);margin:0 0 14px}
+.res-block .deliverable{font-size:12px;text-transform:uppercase;letter-spacing:.1em;font-weight:800;color:var(--earth)}
+.res-sales{padding:90px 0;background:#eadfce}
+.res-sales-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px}
+.res-sales h2{font-family:Manrope;font-size:46px;line-height:1;letter-spacing:-.04em;margin:0 0 18px}
+.res-menu{display:grid;gap:10px}
+.res-menu button{border:0;background:#fff;padding:16px 18px;text-align:left;font-weight:800;cursor:pointer;box-shadow:0 8px 18px rgba(80,51,30,.08)}
+/* CARBON - analytical / circular */
+.car-hero{min-height:620px;background:linear-gradient(115deg,#061b27,#0c4963);color:#fff;position:relative;overflow:hidden}
+.car-hero:after{content:"";position:absolute;width:640px;height:640px;border:1px solid rgba(255,255,255,.12);border-radius:50%;right:-150px;top:-60px;box-shadow:0 0 0 90px rgba(255,255,255,.025),0 0 0 180px rgba(255,255,255,.018)}
+.car-wrap{min-height:620px;display:grid;grid-template-columns:1fr .8fr;gap:60px;align-items:center;position:relative;z-index:2}
+.car-copy{max-width:760px}
+.car-orbit{position:relative;height:420px}
+.ring{position:absolute;border:1px solid rgba(255,255,255,.22);border-radius:50%;display:grid;place-items:center;text-align:center}
+.r1{width:390px;height:390px;right:0;top:10px}
+.r2{width:275px;height:275px;right:57px;top:67px}
+.r3{width:155px;height:155px;right:117px;top:127px;background:rgba(155,205,221,.1)}
+.r3 strong{font-family:Manrope;font-size:24px}
+.orbit-label{position:absolute;font-size:10px;text-transform:uppercase;letter-spacing:.12em;font-weight:800}
+.ol1{right:295px;top:40px}.ol2{right:8px;top:118px}.ol3{right:65px;bottom:42px}.ol4{right:300px;bottom:72px}
+.car-metrics{padding:92px 0;background:#f4f8fa}
+.car-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px}
+.emission-stack{display:grid;gap:8px;margin-top:32px}
+.scope{padding:18px 22px;background:#fff;border:1px solid rgba(12,73,99,.14)}
+.scope:nth-child(1){width:100%}.scope:nth-child(2){width:82%}.scope:nth-child(3){width:64%}
+.scope b{display:block;color:var(--blue);margin-bottom:4px}
+.scope span{font-size:13px;color:var(--muted)}
+.car-services{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.car-service{padding:22px;border-radius:22px;background:#fff;border:1px solid rgba(12,73,99,.13)}
+.car-service b{display:block;font-size:17px;margin-bottom:6px}
+.car-service span{font-size:13px;color:var(--muted);line-height:1.55}
+.car-market{padding:86px 0;background:#071a24;color:#fff}
+.car-market-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.car-market h2{font-family:Manrope;font-size:46px;line-height:1;letter-spacing:-.04em;margin:0 0 18px}
+.market-list{border-top:1px solid rgba(255,255,255,.14)}
+.market-row{padding:17px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+.market-row b{display:block;margin-bottom:4px}
+.market-row span{font-size:13px;color:rgba(255,255,255,.62)}
+/* CROSS NAV / FOOTER */
+.cross{padding:80px 0;background:#0a1712;color:#fff}
+.crosshead{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:30px}
+.crosshead h2{font-family:Manrope;font-size:38px;line-height:1;margin:0}
+.crosshead p{max-width:530px;color:rgba(255,255,255,.65);margin:0}
+.crosslinks{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(255,255,255,.15)}
+.crosslink{padding:28px 18px 28px 0;border-right:1px solid rgba(255,255,255,.15);cursor:pointer}
+.crosslink:last-child{border-right:0;padding-left:22px}
+.crosslink:nth-child(2){padding-left:22px}
+.crosslink small{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.crosslink b{display:block;font-family:Manrope;font-size:23px;margin-top:8px}
+.crosslink span{display:block;color:var(--acid);margin-top:10px;font-weight:800}
+.footer{padding:38px 0;background:#050d09;color:#b9c3bd}
+.footin{display:flex;justify-content:space-between;gap:40px;align-items:center;font-size:12px}
+.footlinks{display:flex;gap:15px;flex-wrap:wrap}
+.footlinks button{border:0;background:transparent;color:#b9c3bd;cursor:pointer}
+@media(max-width:980px){
+ section[style*='padding:92px'] .shell > div{grid-template-columns:1fr!important}
+ .mainnav{display:none}.mob{display:block}.navcta{display:none}
+ .hero-home-grid,.offerhead,.commercial-grid,.bluegrid,.res-hero-grid,.res-flow,.res-sales-grid,.car-wrap,.car-grid,.car-market-grid{grid-template-columns:1fr}
+ .collage{min-height:520px}
+ .offergrid{grid-template-columns:1fr}
+ .processrow{grid-template-columns:60px 1fr}
+ .processrow span{grid-column:2;text-align:left}
+ .techbar{display:none}
+ .bio-cta-grid{grid-template-columns:1fr}.bio-actions{justify-content:flex-start}
+ .res-visual{min-height:420px}.res-rail{position:static}
+ .car-orbit{height:360px}.r1{width:330px;height:330px}.r2{width:230px;height:230px;right:50px}.r3{width:130px;height:130px;right:100px}
+ .crosslinks{grid-template-columns:1fr}.crosslink{border-right:0!important;border-bottom:1px solid rgba(255,255,255,.15);padding-left:0!important}
+}
+@media(max-width:620px){
+ .shell{width:min(100% - 28px,1240px)} .topin{height:66px}
+ .hcopy{padding:62px 0 44px}.hero-home-grid{min-height:auto}.collage{min-height:420px}
+ .photo.a{width:74%;height:48%}.photo.b{width:60%;height:45%;left:0}.photo.c{width:42%;height:34%;right:0}.hero-key{width:170px;right:0;top:44%}
+ .home-offer,.commercial,.bio-blueprint,.res-operations,.res-sales,.car-metrics,.car-market{padding:64px 0}
+ .bio-hero,.bio-wrap{min-height:560px}.res-hero,.res-hero-grid{min-height:560px}.car-hero,.car-wrap{min-height:580px}
+ .car-services{grid-template-columns:1fr}.car-orbit{display:none}
+ .crosshead,.footin{flex-direction:column;align-items:flex-start}.cross{padding:58px 0}
+}
+
+/* =========================
+   V5 — RESÍDUOS: linguagem física / operacional
+   ========================= */
+.res5-hero{
+  min-height:650px;background:#2a190f;color:#fff;position:relative;overflow:hidden;
+}
+.res5-grid{
+  min-height:650px;display:grid;grid-template-columns:.88fr 1.12fr;align-items:stretch;
+}
+.res5-copy{
+  padding:82px 54px 82px 0;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:3;
+}
+.res5-copy h1{
+  font-family:Manrope;font-size:clamp(52px,6vw,84px);line-height:.92;letter-spacing:-.055em;margin:0 0 18px
+}
+.res5-copy .lead{font-size:24px;color:#e0b07e;font-weight:700;margin-bottom:12px}
+.res5-copy p{font-size:17px;line-height:1.65;color:rgba(255,255,255,.76);max-width:610px}
+.res5-scene{
+  position:relative;min-height:650px;
+  background:
+    linear-gradient(90deg,#2a190f 0%,rgba(42,25,15,.58) 18%,rgba(42,25,15,.08) 45%),
+    url("https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&q=86&w=2200") center/cover;
+}
+.res5-scene:after{
+  content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 62%,rgba(22,12,7,.72))
+}
+.res5-ticket{
+  position:absolute;z-index:4;background:#f4ead9;color:#2a190f;padding:15px 17px;width:190px;
+  box-shadow:0 18px 40px rgba(0,0,0,.25);font-size:12px;line-height:1.35
+}
+.res5-ticket b{display:block;font-family:Manrope;font-size:17px;margin-bottom:4px}
+.res5-ticket.t1{right:8%;top:12%;transform:rotate(3deg)}
+.res5-ticket.t2{left:16%;bottom:15%;transform:rotate(-2deg);background:#d7b184}
+.res5-stamp{
+  position:absolute;right:7%;bottom:8%;z-index:4;width:115px;height:115px;border:2px solid rgba(255,255,255,.58);
+  border-radius:50%;display:grid;place-items:center;text-align:center;text-transform:uppercase;letter-spacing:.11em;
+  font-size:10px;font-weight:800;transform:rotate(-10deg);background:rgba(0,0,0,.14);backdrop-filter:blur(4px)
+}
+
+.res5-map{padding:92px 0;background:#f7f1e8}
+.res5-map-head{display:grid;grid-template-columns:.75fr 1.25fr;gap:70px;align-items:end;margin-bottom:56px}
+.res5-map-head p{margin:0;color:var(--muted);font-size:17px;line-height:1.7}
+.res5-route{position:relative;padding:22px 0 0}
+.res5-route:before{
+  content:"";position:absolute;left:0;right:0;top:62px;height:3px;background:#b88b61
+}
+.res5-route-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.res5-stop{position:relative;padding-top:0}
+.res5-node{
+  width:82px;height:82px;border-radius:50%;border:3px solid #b88b61;background:#f7f1e8;display:grid;place-items:center;
+  font-family:Manrope;font-weight:800;font-size:13px;position:relative;z-index:2
+}
+.res5-stop:nth-child(even) .res5-node{background:#6a432d;color:#fff;border-color:#6a432d}
+.res5-stop h3{font-family:Manrope;font-size:20px;margin:22px 0 7px}
+.res5-stop p{font-size:13px;line-height:1.55;color:var(--muted);margin:0}
+
+.res5-services{padding:92px 0;background:#fff}
+.res5-services-grid{display:grid;grid-template-columns:.68fr 1.32fr;gap:62px}
+.res5-aside{position:sticky;top:110px;height:max-content}
+.res5-aside h2{font-family:Manrope;font-size:42px;line-height:1.03;letter-spacing:-.04em;margin:0 0 16px}
+.res5-aside p{color:var(--muted);line-height:1.65}
+.res5-aside .pill{margin-top:12px;background:#6a432d;color:#fff}
+.res5-list{border-top:1px solid var(--line)}
+.res5-line{
+  display:grid;grid-template-columns:70px 1fr 180px;gap:22px;align-items:start;padding:25px 0;border-bottom:1px solid var(--line)
+}
+.res5-line .n{font-family:Manrope;font-weight:800;color:#9a765a}
+.res5-line h3{font-family:Manrope;font-size:22px;margin:0 0 6px}
+.res5-line p{margin:0;color:var(--muted);font-size:14px;line-height:1.55}
+.res5-line button{border:0;background:#f0e7dc;color:#5c3826;border-radius:999px;padding:10px 13px;font-weight:800;cursor:pointer;font-size:12px}
+
+.res5-output{padding:88px 0;background:#2a190f;color:#fff}
+.res5-output-grid{display:grid;grid-template-columns:1fr .9fr;gap:60px;align-items:center}
+.res5-paper{
+  background:#f6efe5;color:#25170f;padding:32px 34px;position:relative;box-shadow:0 25px 60px rgba(0,0,0,.25);
+  transform:rotate(-1.2deg)
+}
+.res5-paper:before,.res5-paper:after{
+  content:"";position:absolute;left:0;right:0;height:10px;
+  background:linear-gradient(135deg,transparent 7px,#f6efe5 0) 0 0/14px 14px repeat-x
+}
+.res5-paper:before{top:-10px;transform:rotate(180deg)} .res5-paper:after{bottom:-10px}
+.res5-paper h3{font-family:Manrope;font-size:27px;margin:0 0 17px}
+.res5-paper ul{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.res5-paper li{padding-bottom:10px;border-bottom:1px dashed rgba(42,25,15,.23)}
+.res5-output-copy h2{font-family:Manrope;font-size:46px;line-height:1.02;letter-spacing:-.04em;margin:0 0 18px}
+.res5-output-copy p{color:rgba(255,255,255,.7);line-height:1.7}
+
+/* =========================
+   V5 — CARBONO: linguagem de dados / estratégia
+   ========================= */
+.car5-hero{
+  min-height:660px;background:#061a25;color:#fff;position:relative;overflow:hidden
+}
+.car5-hero:before{
+  content:"CO₂e";position:absolute;right:-1vw;bottom:-8vh;font-family:Manrope;font-weight:800;
+  font-size:min(28vw,420px);letter-spacing:-.09em;color:rgba(255,255,255,.035);line-height:.7
+}
+.car5-grid{min-height:660px;display:grid;grid-template-columns:.95fr 1.05fr;align-items:center;gap:60px;position:relative;z-index:2}
+.car5-copy h1{font-family:Manrope;font-size:clamp(50px,5.7vw,80px);line-height:.94;letter-spacing:-.055em;margin:0 0 19px}
+.car5-copy .lead{font-size:23px;color:#9bcddd;font-weight:700;margin-bottom:12px}
+.car5-copy p{font-size:17px;line-height:1.65;color:rgba(255,255,255,.76);max-width:610px}
+.car5-board{
+  height:470px;position:relative;border-left:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14);
+  background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);
+  background-size:58px 58px
+}
+.car5-line{
+  position:absolute;left:3%;right:4%;bottom:10%;height:70%;overflow:visible
+}
+.car5-line svg{width:100%;height:100%;overflow:visible}
+.car5-point{position:absolute;width:12px;height:12px;border-radius:50%;background:#9bcddd;box-shadow:0 0 0 7px rgba(155,205,221,.12)}
+.car5-point.p1{left:8%;bottom:20%}.car5-point.p2{left:35%;bottom:44%}.car5-point.p3{left:62%;bottom:38%}.car5-point.p4{right:7%;bottom:68%}
+.car5-note{position:absolute;font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.6)}
+.cn1{left:5%;bottom:12%}.cn2{left:31%;bottom:51%}.cn3{left:57%;bottom:30%}.cn4{right:2%;bottom:77%}
+.car5-index{
+  position:absolute;right:8px;top:5px;padding:12px 14px;border:1px solid rgba(255,255,255,.17);
+  font-size:11px;color:rgba(255,255,255,.65);background:rgba(255,255,255,.035)
+}
+
+.car5-story{padding:94px 0;background:#eef5f7}
+.car5-story-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:68px;align-items:start}
+.car5-story h2{font-family:Manrope;font-size:48px;line-height:1.02;letter-spacing:-.045em;margin:0 0 18px}
+.car5-story p{color:var(--muted);line-height:1.7}
+.car5-scopes{margin-top:34px}
+.car5-scope{margin-bottom:12px}
+.car5-scope-head{display:flex;justify-content:space-between;gap:15px;font-size:12px;font-weight:800;color:#376276}
+.car5-bar{height:18px;background:#dbe8ed;margin-top:7px;overflow:hidden}
+.car5-fill{height:100%;background:#0c4963}.f1{width:100%}.f2{width:77%}.f3{width:56%}
+.car5-canvas{
+  background:#fff;border:1px solid rgba(12,73,99,.12);min-height:480px;padding:30px;position:relative;overflow:hidden
+}
+.car5-canvas:before{
+  content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(12,73,99,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(12,73,99,.045) 1px,transparent 1px);
+  background-size:42px 42px
+}
+.car5-path{position:relative;z-index:2;display:grid;gap:26px;margin-top:8px}
+.car5-path-row{display:grid;grid-template-columns:110px 1fr;gap:20px;align-items:start}
+.car5-path-tag{font-family:Manrope;font-size:11px;text-transform:uppercase;letter-spacing:.13em;color:#517789;padding-top:5px}
+.car5-path-row h3{font-family:Manrope;font-size:22px;margin:0 0 6px}
+.car5-path-row p{font-size:13px;margin:0;color:var(--muted);line-height:1.55}
+
+.car5-offers{padding:90px 0;background:#fff}
+.car5-offer-head{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:end;margin-bottom:42px}
+.car5-offer-head p{margin:0;color:var(--muted);line-height:1.65}
+.car5-lanes{border-top:1px solid rgba(12,73,99,.17)}
+.car5-lane{
+  display:grid;grid-template-columns:80px 1fr 1fr 165px;gap:22px;padding:25px 0;border-bottom:1px solid rgba(12,73,99,.17);align-items:center
+}
+.car5-lane .num{font-family:Manrope;color:#628395;font-weight:800}
+.car5-lane h3{font-family:Manrope;font-size:21px;margin:0}
+.car5-lane p{font-size:13px;color:var(--muted);margin:0;line-height:1.55}
+.car5-lane button{border:0;background:#e6f0f3;color:#0c4963;border-radius:999px;padding:10px 13px;font-size:12px;font-weight:800;cursor:pointer}
+
+.car5-market{padding:90px 0;background:#061a25;color:#fff;position:relative;overflow:hidden}
+.car5-market:after{content:"";position:absolute;width:480px;height:480px;border:1px solid rgba(255,255,255,.08);border-radius:50%;right:-120px;top:-190px;box-shadow:0 0 0 80px rgba(255,255,255,.018),0 0 0 160px rgba(255,255,255,.012)}
+.car5-market-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;position:relative;z-index:2}
+.car5-market h2{font-family:Manrope;font-size:47px;line-height:1.02;letter-spacing:-.045em;margin:0 0 18px}
+.car5-market p{color:rgba(255,255,255,.68);line-height:1.7}
+.car5-steps{border-top:1px solid rgba(255,255,255,.15)}
+.car5-step{padding:19px 0;border-bottom:1px solid rgba(255,255,255,.15);display:grid;grid-template-columns:65px 1fr;gap:15px}
+.car5-step .num{font-family:Manrope;color:#9bcddd;font-weight:800}
+.car5-step b{display:block;margin-bottom:4px}
+.car5-step span{font-size:13px;color:rgba(255,255,255,.6)}
+
+@media(max-width:980px){
+  .res5-grid,.res5-map-head,.res5-services-grid,.res5-output-grid,.car5-grid,.car5-story-grid,.car5-offer-head,.car5-market-grid{grid-template-columns:1fr}
+  .res5-copy{padding-right:0}.res5-scene{min-height:480px}
+  .res5-route:before{display:none}.res5-route-grid{grid-template-columns:1fr 1fr}
+  .res5-aside{position:static}
+  .res5-line{grid-template-columns:60px 1fr}.res5-line button{grid-column:2;width:max-content}
+  .car5-board{height:380px}
+  .car5-lane{grid-template-columns:60px 1fr}.car5-lane p{grid-column:2}.car5-lane button{grid-column:2;width:max-content}
+}
+@media(max-width:620px){
+  .res5-hero,.res5-grid,.car5-hero,.car5-grid{min-height:560px}
+  .res5-copy{padding:64px 0 44px}.res5-scene{min-height:360px}
+  .res5-ticket{width:160px;font-size:11px}.res5-ticket.t1{top:8%;right:4%}.res5-ticket.t2{left:5%;bottom:10%}
+  .res5-route-grid{grid-template-columns:1fr}.res5-node{width:64px;height:64px}
+  .res5-map,.res5-services,.res5-output,.car5-story,.car5-offers,.car5-market{padding:64px 0}
+  .car5-board{height:300px}.car5-line{height:62%}
+  .car5-path-row{grid-template-columns:1fr}.car5-path-tag{padding-top:0}
+}
+
+
+/* ========= V6: funnel-first commercial layouts ========= */
+.funnel-strip{padding:26px 0;background:#fff;border-bottom:1px solid var(--line)}
+.funnel-strip .shell{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.funnel-step{padding:0 22px;border-right:1px solid var(--line)}
+.funnel-step:last-child{border-right:0}
+.funnel-step small{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:#7a877f;font-weight:800}
+.funnel-step b{display:block;font-family:Manrope;font-size:16px;margin-top:5px}
+
+.problem-section{padding:88px 0;background:#fff}
+.problem-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:start}
+.problem-copy h2{font-family:Manrope;font-size:clamp(38px,4.5vw,58px);line-height:1;letter-spacing:-.045em;margin:0 0 18px}
+.problem-copy p{font-size:17px;line-height:1.7;color:var(--muted)}
+.problem-list{border-top:1px solid var(--line)}
+.problem-item{display:grid;grid-template-columns:42px 1fr;gap:16px;padding:22px 0;border-bottom:1px solid var(--line)}
+.problem-item .markn{font-family:Manrope;font-size:12px;font-weight:800;color:#8b978f}
+.problem-item b{display:block;font-size:17px;margin-bottom:4px}
+.problem-item span{font-size:14px;line-height:1.55;color:var(--muted)}
+
+.solution-band{padding:82px 0;background:#f6f4ee}
+.solution-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.solution-grid h2{font-family:Manrope;font-size:clamp(40px,4.5vw,58px);line-height:1;letter-spacing:-.045em;margin:0 0 18px}
+.solution-grid p{font-size:17px;line-height:1.7;color:var(--muted)}
+.solution-checks{display:grid;gap:14px}
+.solution-check{display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:start}
+.solution-check i{width:24px;height:24px;border-radius:50%;background:var(--green);color:#fff;font-style:normal;display:grid;place-items:center;font-size:12px}
+.solution-check b{display:block;margin-bottom:3px}
+.solution-check span{font-size:13px;color:var(--muted);line-height:1.5}
+
+.offer-section{padding:90px 0;background:#fff}
+.offer-section h2{font-family:Manrope;font-size:46px;line-height:1;letter-spacing:-.04em;margin:0 0 12px}
+.offer-section .leadtext{color:var(--muted);max-width:760px;font-size:17px;line-height:1.7}
+.offer-table{margin-top:34px;border-top:1px solid var(--line)}
+.offer-row{display:grid;grid-template-columns:1.1fr 1.5fr .7fr;gap:26px;padding:24px 0;border-bottom:1px solid var(--line);align-items:center}
+.offer-row h3{font-family:Manrope;font-size:20px;margin:0}
+.offer-row p{margin:0;color:var(--muted);font-size:14px;line-height:1.55}
+.offer-row button{justify-self:end;border:0;background:var(--green);color:#fff;padding:11px 15px;border-radius:999px;font-weight:800;cursor:pointer}
+
+.fit-section{padding:78px 0;background:#0c1712;color:#fff}
+.fit-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px}
+.fit-grid h2{font-family:Manrope;font-size:42px;line-height:1;letter-spacing:-.04em;margin:0}
+.fit-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fit-item{border-top:1px solid rgba(255,255,255,.16);padding:15px 0;color:rgba(255,255,255,.75)}
+.fit-item b{display:block;color:#fff;margin-bottom:4px}
+
+.sales-cta{padding:78px 0;background:var(--green);color:#fff}
+.sales-cta.alt-earth{background:#5c3826}
+.sales-cta.alt-blue{background:#0b4259}
+.sales-cta-grid{display:grid;grid-template-columns:1fr .8fr;gap:50px;align-items:center}
+.sales-cta h2{font-family:Manrope;font-size:44px;line-height:1.03;letter-spacing:-.045em;margin:0 0 14px}
+.sales-cta p{margin:0;color:rgba(255,255,255,.72);font-size:16px;line-height:1.65}
+.sales-cta-actions{display:grid;gap:10px}
+.sales-cta-actions button{border:0;background:#fff;color:var(--ink);padding:14px 18px;border-radius:999px;font-weight:800;cursor:pointer;text-align:center}
+.sales-cta-actions button.secondary{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.4)}
+
+.bio-proof{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(255,255,255,.16);border-bottom:1px solid rgba(255,255,255,.16);margin-top:34px}
+.bio-proof div{padding:18px 20px;border-right:1px solid rgba(255,255,255,.16)}
+.bio-proof div:last-child{border-right:0}
+.bio-proof b{display:block;font-family:Manrope;font-size:20px;margin-bottom:4px}
+.bio-proof span{font-size:12px;color:rgba(255,255,255,.65)}
+
+.res6-hero{
+  min-height:650px;background:
+  linear-gradient(90deg,rgba(35,20,12,.96),rgba(35,20,12,.74) 48%,rgba(35,20,12,.18)),
+  url("https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&q=86&w=2200") center/cover;color:#fff
+}
+.res6-wrap{min-height:650px;display:flex;align-items:center}
+.res6-copy{max-width:700px}
+.res6-copy h1{font-family:Manrope;font-size:clamp(52px,6vw,82px);line-height:.93;letter-spacing:-.055em;margin:0 0 18px}
+.res6-copy .lead{font-size:24px;color:#e0b07e;font-weight:700;margin-bottom:12px}
+.res6-copy p{font-size:17px;line-height:1.65;color:rgba(255,255,255,.78)}
+.res6-signals{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}
+.res6-signals span{font-size:11px;border:1px solid rgba(255,255,255,.24);padding:8px 10px;border-radius:999px;background:rgba(0,0,0,.15)}
+
+.car6-hero{
+  min-height:650px;background:
+  linear-gradient(90deg,rgba(4,21,30,.95),rgba(4,21,30,.68) 50%,rgba(4,21,30,.15)),
+  url("https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=86&w=2200") center/cover;color:#fff
+}
+.car6-wrap{min-height:650px;display:flex;align-items:center}
+.car6-copy{max-width:720px}
+.car6-copy h1{font-family:Manrope;font-size:clamp(50px,5.8vw,80px);line-height:.94;letter-spacing:-.055em;margin:0 0 18px}
+.car6-copy .lead{font-size:24px;color:#a8d7e7;font-weight:700;margin-bottom:12px}
+.car6-copy p{font-size:17px;line-height:1.65;color:rgba(255,255,255,.78)}
+.car6-visual{
+  margin-top:28px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.18);
+  border:1px solid rgba(255,255,255,.18);max-width:650px
+}
+.car6-visual div{background:rgba(7,32,44,.64);padding:15px}
+.car6-visual small{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.13em;color:rgba(255,255,255,.55)}
+.car6-visual b{display:block;margin-top:4px}
+
+.inventory-photo{
+  min-height:440px;border-radius:24px;overflow:hidden;position:relative;
+  background:
+  linear-gradient(180deg,rgba(3,20,28,.08),rgba(3,20,28,.6)),
+  url("https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&q=86&w=1800") center/cover;
+  box-shadow:var(--shadow)
+}
+.inventory-photo .caption{position:absolute;left:24px;right:24px;bottom:22px;color:#fff}
+.inventory-photo .caption small{display:block;text-transform:uppercase;letter-spacing:.15em;font-size:9px;opacity:.7}
+.inventory-photo .caption b{display:block;font-family:Manrope;font-size:26px;line-height:1.08;margin-top:6px}
+
+@media(max-width:980px){
+ .funnel-strip .shell,.problem-grid,.solution-grid,.fit-grid,.sales-cta-grid{grid-template-columns:1fr}
+ .funnel-step{border-right:0;border-bottom:1px solid var(--line);padding:12px 0}
+ .offer-row{grid-template-columns:1fr}.offer-row button{justify-self:start}
+ .fit-list{grid-template-columns:1fr}
+ .bio-proof{grid-template-columns:1fr}.bio-proof div{border-right:0;border-bottom:1px solid rgba(255,255,255,.16)}
+}
+
+</style>
+<style>
+:focus-visible{outline:3px solid #1d6c48;outline-offset:4px}
+@media(max-width:980px){
+ .topin{position:relative}
+ .mainnav.open{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#faf9f5;padding:12px 20px;box-shadow:0 12px 24px rgba(0,0,0,.15);max-height:75vh;overflow:auto}
+ .mainnav.open button{text-align:left;padding:16px 0;font-size:16px}
+ .mainnav.open button:after{bottom:8px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+ <div class="shell topin">
+  <div class="brand" onclick="go('home')">
+   <span class="brandmark"><i></i><i></i></span>
+   <span class="brandword">VÉRTICE<small>CONSULTORIA AMBIENTAL</small></span>
+  </div>
+  <nav class="mainnav" id="mainnav" aria-label="Navegação principal">
+   <button data-page="home" class="active" onclick="go('home')">Início</button>
+   <button data-page="biogas" onclick="go('biogas')">Biogás</button>
+   <button data-page="residuos" onclick="go('residuos')">Gestão de Resíduos</button>
+   <button data-page="carbono" onclick="go('carbono')">Carbono & Atributos</button>
+  </nav>
+  <button class="navcta" onclick="wa('Olá, conheci o site da Vértice e quero entender qual solução faz mais sentido para minha operação.')">Fale com a Vértice</button>
+  <button class="mob" onclick="toggleMenu()" aria-label="Abrir menu" aria-controls="mainnav" aria-expanded="false">☰</button>
+ </div>
+</header>
+
+<main>
+
+<!-- HOME -->
+<section id="home" class="page active">
+ <div class="hero-home">
+  <div class="shell hero-home-grid">
+   <div class="hcopy">
+    <div class="eyebrow">Soluções ambientais que fazem sentido na prática</div>
+    <h1>VÉRTICE<em>CONSULTORIA AMBIENTAL</em></h1>
+    <div class="statement">Resíduos. Energia. Carbono.</div>
+    <p class="intro">Ajudamos produtores rurais, agroindústrias, indústrias, empreendimentos e serviços a resolver problemas com resíduos, reduzir desperdícios, aproveitar energia e entender melhor suas emissões.</p>
+    <div class="btnrow">
+      <button class="pill" onclick="document.getElementById('ofertas').scrollIntoView()">Ver o que fazemos ↓</button>
+      <button class="pill ghost" onclick="wa('Olá, quero apresentar minha operação e entender como a Vértice pode me ajudar.')">Apresentar minha operação</button>
+    </div>
+   </div>
+   <div class="collage">
+    <div class="photo a"></div><div class="photo b"></div><div class="photo c"></div>
+    <div class="hero-key"><small>Uma consultoria. Três frentes.</small><strong>Gestão ambiental que pode avançar até energia e carbono.</strong></div>
+   </div>
+  </div>
+ </div>
+
+ <div class="ribbon"><div class="ticker">PRODUTORES RURAIS · AGROINDÚSTRIAS · INDÚSTRIAS · EMPREENDIMENTOS · CONDOMÍNIOS · SERVIÇOS · PRODUTORES RURAIS · AGROINDÚSTRIAS · INDÚSTRIAS · EMPREENDIMENTOS ·</div></div>
+
+ <section class="home-offer" id="ofertas">
+  <div class="shell">
+   <div class="offerhead">
+    <h2 class="sectiontitle">O que a Vértice faz por você.</h2>
+    <p>Você pode contratar um serviço específico ou juntar mais de uma frente. Primeiro entendemos o seu problema; depois montamos a solução certa para a sua realidade.</p>
+   </div>
+   <div class="offergrid">
+    <article class="offer bio" onclick="go('biogas')">
+      <small>Vertente principal</small>
+      <div><h3>Projetos de Biogás</h3><p>Avaliamos se o biodigestor vale a pena, estimamos o potencial de biogás, ajudamos a definir o sistema e acompanhamos fornecedores, implantação e início da operação.</p><div class="mini"><span>Resíduos orgânicos</span><span>Biodigestores</span><span>Energia</span><span>Digestato</span></div></div>
+    </article>
+    <article class="offer res" onclick="go('residuos')">
+      <small>Gestão e conformidade</small>
+      <div><h3>Gestão de Resíduos</h3><p>PGRS, organização da rotina, controle dos resíduos, destinação correta e busca por formas de reduzir custos e aproveitar melhor os materiais.</p><div class="mini"><span>PGRS</span><span>MTR</span><span>Destinação</span></div></div>
+    </article>
+    <article class="offer car" onclick="go('carbono')">
+      <small>Descarbonização</small>
+      <div><h3>Carbono & Atributos</h3><p>Inventário de emissões, diagnóstico de onde sua operação mais emite, plano de redução e avaliação de créditos, certificados e outros instrumentos ambientais.</p><div class="mini"><span>GEE</span><span>Carbono</span><span>Atributos</span></div></div>
+    </article>
+   </div>
+  </div>
+ </section>
+
+ <section class="commercial">
+  <div class="shell commercial-grid">
+   <aside class="leadbox">
+    <div class="eyebrow" style="color:#64746b">Quero resolver um problema</div>
+    <h3>O que está acontecendo na sua operação?</h3>
+    <p>Escolha o problema mais próximo da sua realidade. O WhatsApp já abre com a mensagem certa para agilizar o primeiro contato.</p>
+    <div class="leadchoices">
+      <button onclick="wa('Olá, quero avaliar o potencial de biogás da minha propriedade ou operação. Posso enviar informações sobre os resíduos gerados.')">Tenho resíduos orgânicos e quero avaliar biogás —</button>
+      <button onclick="wa('Olá, preciso elaborar, revisar ou melhorar o PGRS e a gestão de resíduos da minha operação.')">Preciso de PGRS ou gestão de resíduos —</button>
+      <button onclick="wa('Olá, quero fazer um inventário de emissões de GEE e entender os próximos passos para descarbonização.')">Quero fazer inventário de GEE —</button>
+      <button onclick="wa('Olá, quero avaliar créditos de carbono, certificados de origem ou outros atributos ambientais aplicáveis à minha operação.')">Quero avaliar créditos ou atributos ambientais —</button>
+    </div>
+   </aside>
+
+   <div>
+    <div class="eyebrow" style="color:#617169">Da primeira conversa à entrega</div>
+    <h2 class="sectiontitle" style="margin-bottom:34px">Como a gente trabalha com você.</h2>
+    <div class="processline">
+      <div class="processrow"><div class="n">01</div><b>Contato inicial</b><span>Você conta o que está acontecendo e o que quer resolver.</span></div>
+      <div class="processrow"><div class="n">02</div><b>Diagnóstico preliminar</b><span>Entendemos sua operação, os dados disponíveis e o que realmente precisa ser feito.</span></div>
+      <div class="processrow"><div class="n">03</div><b>Proposta técnica e comercial</b><span>Você recebe uma proposta clara, com etapas, entregas e valores.</span></div>
+      <div class="processrow"><div class="n">04</div><b>Execução</b><span>Fazemos os levantamentos, cálculos, planos, projetos e acompanhamentos combinados.</span></div>
+      <div class="processrow"><div class="n">05</div><b>Entrega e próximos passos</b><span>Você recebe o material final e a orientação do que fazer em seguida.</span></div>
+    </div>
+   </div>
+  </div>
+ </section>
+</section>
+
+<!-- BIOGAS -->
+<section id="biogas" class="page">
+  <section class="bio-hero">
+    <div class="shell bio-wrap">
+      <div class="bio-copy">
+        <div class="eyebrow">Vértice · Vertente principal</div>
+        <h1>Biogás</h1>
+        <div class="lead">Você já paga para lidar com o resíduo. E ainda paga energia por fora?</div>
+        <p>Se sua propriedade ou empresa gera esterco, efluentes ou outros resíduos orgânicos, um biodigestor pode atacar os dois problemas ao mesmo tempo: tratar melhor o resíduo e gerar biogás para uso na própria operação.</p>
+        <div class="btnrow">
+          <button class="pill" onclick="wa('Olá, gero resíduos orgânicos e quero saber se um biodigestor pode reduzir meus custos e gerar energia. Posso enviar tipo de resíduo, quantidade e consumo de energia.')">Quero saber se vale a pena</button>
+          <button class="pill ghost" onclick="wa('Olá, já tenho um biodigestor ou projeto em andamento e quero apoio técnico para melhorar, dimensionar ou implantar o sistema.')">Já tenho biodigestor ou projeto</button>
+        </div>
+        <div class="bio-proof">
+          <div><b>Resíduo</b><span>tratamento e manejo mais organizado</span></div>
+          <div><b>Energia</b><span>biogás para substituir parte do consumo</span></div>
+          <div><b>Operação</b><span>projeto pensado para a realidade do cliente</span></div>
+        </div>
       </div>
     </div>
-    <p class="photo-credit hero-credit">Imagem ilustrativa de instalação real · Casa Rosada / Wikimedia Commons · CC BY 2.5 AR</p>
   </section>
 
-  <div class="trustbar"><div class="container trust-grid"><div class="trust-item"><strong>Consultoria técnica</strong><span>Decisão independente de fornecedor</span></div><div class="trust-item"><strong>Foco produtivo</strong><span>Médio e grande porte, sem excluir pequenos</span></div><div class="trust-item"><strong>Trabalho completo</strong><span>Estudo, projeto e implantação</span></div><div class="trust-item"><strong>Até funcionar</strong><span>Partida e apoio no começo</span></div></div></div>
-
-  <section id="solucao" class="dual-section"><div class="container">
-    <div class="section-head"><p class="kicker">Dois lados do mesmo problema</p><h2>O biodigestor só faz sentido quando melhora o resíduo e também entrega <em>valor para a operação.</em></h2></div>
-    <div class="editorial-dual">
-      <article><span>01 · Resíduo</span><h3>Tratar melhor o que a operação gera</h3><p>O projeto começa pelo problema real: volume, manejo, custo e dificuldade de dar destino ao resíduo.</p></article>
-      <article><span>02 · Energia</span><h3>Transformar parte desse problema em valor</h3><p>Quando existe potencial, o mesmo projeto pode reduzir gastos e aproveitar melhor o que já está dentro da operação.</p></article>
+  <section class="funnel-strip">
+    <div class="shell">
+      <div class="funnel-step"><small>01 · problema</small><b>Resíduo gerando custo ou dificuldade</b></div>
+      <div class="funnel-step"><small>02 · diagnóstico</small><b>Ver se existe potencial real</b></div>
+      <div class="funnel-step"><small>03 · solução</small><b>Definir o biodigestor adequado</b></div>
+      <div class="funnel-step"><small>04 · resultado</small><b>Energia, tratamento e melhor aproveitamento</b></div>
     </div>
-    <div class="technology-brief"><div><span>Como funciona</span><h3>A tecnologia, sem complicar</h3></div><p>O biodigestor cria um ambiente controlado para tratar a matéria orgânica e formar biogás. O tipo de sistema, os cuidados antes do biodigestor e a forma de aproveitar esse resultado mudam conforme o resíduo e a rotina de cada operação. Por isso, a Vértice entende o caso antes de indicar qualquer equipamento.</p></div>
-    <div class="section-cta"><p><strong>A consultoria da Vértice junta esses dois lados</strong> e mostra se o projeto pode funcionar no seu caso.</p><a class="btn btn-primary" href="#contato">Quero avaliar minha operação</a></div>
-  </div></section>
+  </section>
 
-  <section class="process-photos" aria-label="Do resíduo à energia"><figure><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/The%20cows%2C%20whose%20manure%20produces%20the%20biogas.%20%283092942747%29.jpg" alt="Gado em instalação onde os dejetos são coletados para produção de biogás" loading="lazy"><figcaption><span>01 · O problema começa aqui</span><strong>O resíduo já faz parte da rotina.</strong><p>Antes de falar em equipamento, é preciso entender o que a operação gera e como esse material é manejado.</p></figcaption></figure><div class="process-arrow" aria-hidden="true">→</div><figure><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Engine%20to%20generate%20elecricity%20and%20heat%20from%20biogas%20%28CHP%20unit%20%28combined%20heat%20and%20power%29%29%20%283092936251%29.jpg" alt="Motor real que gera eletricidade e calor a partir do biogás" loading="lazy"><figcaption><span>02 · O valor aparece aqui</span><strong>O biogás precisa servir à operação.</strong><p>A energia é uma das saídas possíveis quando estudo, projeto e rotina trabalham juntos.</p></figcaption></figure><p class="process-credit">Imagens ilustrativas de instalações reais · SuSanA Secretariat / Wikimedia Commons · CC BY 2.0</p></section>
-
-  <section id="seu-momento" class="moment-section"><div class="container">
-    <div class="section-head"><p class="kicker">Comece pelo seu problema</p><h2>Em qual destas situações você <em>está agora?</em></h2><p>O próximo passo muda conforme o que já foi decidido. Escolha a situação mais parecida com a sua.</p></div>
-    <div class="moment-list">
-      <a href="/estudo-viabilidade-biogas/"><span>01</span><div><small>Ainda estou na dúvida</small><h3>Biodigestor vale a pena aqui?</h3><p>Descubra se existe oportunidade antes de gastar com equipamento.</p></div><b>Ver estudo de viabilidade →</b></a>
-      <a href="/consultoria-biogas/"><span>02</span><div><small>Já recebi uma proposta</small><h3>Como sei se estão me oferecendo a solução certa?</h3><p>Tenha uma segunda opinião técnica antes de decidir.</p></div><b>Ver consultoria →</b></a>
-      <a href="/projeto-biodigestor/"><span>03</span><div><small>Decidi avançar</small><h3>Agora preciso transformar a ideia em projeto.</h3><p>Defina o que será cotado e construído com mais segurança.</p></div><b>Ver projetos →</b></a>
-      <a href="/implantacao-biogas/"><span>04</span><div><small>O sistema está saindo do papel</small><h3>Quem acompanha e ajuda a fazer funcionar?</h3><p>Conte com apoio na implantação, partida e começo da operação.</p></div><b>Ver implantação →</b></a>
-    </div>
-    <div class="section-cta"><p>Não sabe em qual etapa está? <strong>Conte o que já foi feito e a Vértice indica o próximo passo.</strong></p><a class="btn btn-primary" href="#contato">Falar com a consultoria</a></div>
-  </div></section>
-
-  <section id="setores" class="sector-brief muted-section"><div class="container split sector-split">
-    <div class="split-copy"><p class="kicker">Onde o biogás se encaixa</p><h2>O mesmo princípio, com soluções diferentes para <em>cada operação.</em></h2><p>Não existe um biodigestor “para todo mundo”. A consultoria entende primeiro como o resíduo aparece e qual problema o projeto precisa resolver.</p><a class="btn btn-primary" href="#contato">Ver se funciona no meu setor</a></div>
-    <div><figure class="sector-photo sector-operation"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/20110419-RD-LSC-0910%20-%20REAP%20Grant%20-%20Cow%20Powered%20Farm.jpg" alt="Interior claro de free stall com vacas leiteiras e corredor central de manejo" loading="lazy"><figcaption><strong>A solução começa na rotina.</strong> Em um free stall, por exemplo, o projeto precisa conversar com os animais, o manejo dos dejetos e o uso de energia da propriedade.</figcaption></figure><div class="sector-lines">
-      <article><span>Campo</span><div><h3>Suínos, bovinos e aves</h3><p>Os dejetos deixam de ser apenas um problema de manejo e podem trabalhar a favor da propriedade.</p></div></article>
-      <article><span>Agroindústria</span><div><h3>Frigoríficos, laticínios e usinas</h3><p>Resíduos e efluentes podem virar parte de uma solução de tratamento e economia.</p></div></article>
-      <article><span>Indústria</span><div><h3>Alimentos e processos orgânicos</h3><p>A solução é pensada para entrar na rotina sem atrapalhar a produção.</p></div></article>
-    </div></div>
-  </div></section>
-
-  <section id="decisao" class="decision-section"><div class="container">
-    <div class="section-head"><p class="kicker">Como a Vértice conduz</p><h2>Você avança por etapas e sabe o que está <em>comprando em cada uma.</em></h2><p>A consultoria acompanha a decisão do começo ao fim, sem obrigar você a contratar tudo de uma vez.</p></div>
-    <div class="decision-gates">
-      <article data-gate="1"><div class="gate-copy"><small>Etapa 1</small><h3>Entender o seu problema</h3><p>Resíduo, gasto e objetivo da operação.</p><p class="gate-output"><strong>Resultado:</strong> problema enquadrado, etapa indicada e lista dos dados necessários.</p></div><a class="gate-cta" href="#contato">Falar sobre meu caso →</a></article>
-      <article data-gate="2"><div class="gate-copy"><small>Etapa 2</small><h3>Descobrir se vale a pena</h3><p>Uma resposta clara antes do investimento maior.</p><p class="gate-output"><strong>Resultado:</strong> estimativa preliminar, caminhos possíveis e indicação para avançar, ajustar ou esperar.</p></div><a class="gate-cta" href="/estudo-viabilidade-biogas/">Ver o estudo de viabilidade →</a></article>
-      <article data-gate="3"><div class="gate-copy"><small>Etapa 3</small><h3>Preparar o projeto certo</h3><p>O trabalho necessário para pedir preço e construir.</p><p class="gate-output"><strong>Resultado:</strong> definição técnica para aprovar, pedir propostas, comparar fornecedores e preparar a construção.</p></div><a class="gate-cta" href="/projeto-biodigestor/">Conhecer os projetos →</a></article>
-      <article data-gate="4"><div class="gate-copy"><small>Etapa 4</small><h3>Acompanhar até funcionar</h3><p>Implantação, partida e apoio nos primeiros passos.</p><p class="gate-output"><strong>Resultado:</strong> conferência do instalado, orientação da partida e apoio nos primeiros ajustes.</p></div><a class="gate-cta" href="/implantacao-biogas/">Ver implantação e partida →</a></article>
-    </div>
-    <div class="section-cta"><p><strong>Você entra na etapa em que está.</strong> A Vértice não faz você recomeçar do zero.</p><a class="btn btn-primary" href="#contato">Descobrir minha próxima etapa</a></div>
-  </div></section>
-
-  <section id="duvidas"><div class="container"><div class="section-head"><p class="kicker">Dúvidas de quem está decidindo</p><h2>Respostas curtas antes do <em>primeiro contato.</em></h2></div><div class="faq">
-    <details><summary>Quanto custa um biodigestor rural?</summary><p>Não existe um preço certo sem entender a operação. A Vértice ajuda a definir primeiro o que você realmente precisa cotar.</p></details>
-    <details><summary>Biodigestor vale a pena?</summary><p>Pode valer quando resolve o problema do resíduo e também cria economia. A consultoria verifica isso antes da compra.</p></details>
-    <details><summary>A primeira avaliação é gratuita?</summary><p>Sim. Ela serve para conhecer sua operação e dizer se faz sentido avançar para um trabalho mais completo.</p></details>
-    <details><summary>Preciso contratar todas as etapas?</summary><p>Não. Estudo, projeto, apoio à implantação, partida e suporte podem ser contratados separadamente.</p></details>
-    <details><summary>Pequenos produtores podem solicitar avaliação?</summary><p>Sim. Não há tamanho mínimo fixo. A solução e a profundidade da análise são ajustadas à realidade da operação.</p></details>
-    <details><summary>Vocês vendem biodigestores?</summary><p>Não. A Vértice é a consultoria técnica do cliente. Ajudamos a estudar, projetar, comparar opções e acompanhar a implantação.</p></details>
-  </div></div></section>
-
-  <section class="contact" id="contato"><div class="container contact-grid">
-    <div class="contact-copy"><p class="kicker">Seu próximo passo</p><h2>Quer tratar melhor o resíduo, gerar economia ou fazer <em>as duas coisas?</em></h2><p>Na primeira conversa, você conta como o resíduo aparece, como a energia é usada e o que já foi decidido. A Vértice organiza o cenário e indica se o próximo passo é viabilidade, revisão de proposta, projeto ou acompanhamento da implantação.</p><div class="contract-start"><p>Como a contratação começa</p><ol><li><span>1</span><div><strong>Você conta o que já sabe</strong><small>A conversa inicial não tem custo e você não precisa chegar com tudo pronto.</small></div></li><li><span>2</span><div><strong>A Vértice define o escopo</strong><small>Fica claro qual etapa faz sentido e quais dados serão necessários.</small></div></li><li><span>3</span><div><strong>Você recebe a proposta</strong><small>A contratação começa após sua aprovação e somente para a etapa necessária.</small></div></li></ol></div><a class="btn btn-secondary" data-whatsapp="contato direto" href="#">Prefiro explicar pelo WhatsApp</a></div>
-    <div class="form-card"><div id="form-content"><h3>Quero falar com a consultoria</h3><p>Preencha com o que já sabe. A Vértice organiza o restante na conversa.</p><form id="lead-form">
-      <input class="honeypot" type="text" name="website" tabindex="-1" autocomplete="off">
-      <div class="form-grid">
-        <div class="field"><label for="name">Seu nome *</label><input id="name" name="name" autocomplete="name" required></div>
-        <div class="field"><label for="phone">WhatsApp/telefone *</label><input id="phone" name="phone" type="tel" autocomplete="tel" minlength="10" placeholder="(00) 00000-0000" required></div>
-        <div class="field"><label for="location">Cidade e estado *</label><input id="location" name="location" placeholder="Ex.: Toledo, PR" required></div>
-        <div class="field"><label for="operation">Sua operação *</label><select id="operation" name="operation" required><option value="">Selecione</option><option>Suinocultura</option><option>Bovinocultura</option><option>Avicultura</option><option>Frigorífico ou abatedouro</option><option>Laticínio</option><option>Usina ou agroindústria</option><option>Indústria de alimentos</option><option>Outra operação rural ou industrial</option></select></div>
-        <div class="field"><label for="waste">Principal resíduo *</label><input id="waste" name="waste" placeholder="Ex.: dejeto suíno, soro, vinhaça" required></div>
-        <div class="field"><label for="volume">Volume aproximado</label><input id="volume" name="volume" placeholder="Ex.: 20 m³/dia ou 2.000 animais"></div>
-        <div class="field full"><label for="goal">O que mais preocupa hoje? *</label><select id="goal" name="goal" required><option value="">Selecione</option><option>Melhorar o tratamento ou manejo do resíduo</option><option>Reduzir gastos com energia</option><option>Resolver o resíduo e gerar economia</option><option>Avaliar uma proposta que já recebi</option><option>Fazer o sistema existente funcionar melhor</option></select></div>
-        <div class="field full"><label for="stage">Qual frase descreve seu momento? *</label><select id="stage" name="stage" required><option value="">Selecione</option><option>Quero saber se vale a pena investir</option><option>Já recebi uma proposta e quero avaliá-la</option><option>Preciso de estudo de viabilidade</option><option>Preciso de projeto básico ou executivo</option><option>Vou implantar ou já estou implantando</option><option>Preciso dar partida ou estabilizar o sistema</option></select></div>
-        <fieldset class="field full contact-choice"><legend>Como prefere continuar? *</legend><div class="choice"><label><input type="radio" name="contact_method" value="whatsapp" checked> Continuar no WhatsApp</label><label><input type="radio" name="contact_method" value="ligacao"> Quero receber ligação</label></div></fieldset>
-        <div class="field full" id="call-time-wrap" hidden><label for="call-time">Melhor dia e horário para ligação *</label><input id="call-time" name="call_time" placeholder="Ex.: terça, das 14h às 17h"></div>
-        <div class="field full"><label for="details">O que você quer decidir?</label><textarea id="details" name="details" placeholder="Ex.: recebi uma proposta e quero saber se o sistema atende minha granja."></textarea></div>
+  <section class="problem-section">
+    <div class="shell problem-grid">
+      <div class="problem-copy">
+        <div class="eyebrow" style="color:#617169">Quando vale olhar para biogás</div>
+        <h2>O biodigestor começa com uma dor — não com o equipamento.</h2>
+        <p>Antes de falar de modelo, volume ou fornecedor, a Vértice olha para o problema que existe hoje. É isso que define se o projeto faz sentido.</p>
       </div>
-      <button class="btn btn-primary" type="submit">Enviar dados para avaliação →</button><p class="privacy">Ao enviar, você autoriza o contato sobre esta solicitação. Consulte a <a href="/politica-de-privacidade.html">Política de Privacidade</a>.</p>
-    </form></div><div class="success" id="form-success"><div class="success-mark">✓</div><h3>Mensagem preparada.</h3><p>Confirme o envio no WhatsApp para a Vértice receber seus dados.</p></div></div>
-  </div></section>
+      <div class="problem-list">
+        <div class="problem-item"><div class="markn">01</div><div><b>Muito resíduo orgânico para manejar</b><span>Esterco, efluentes, restos de produção ou outros materiais gerados de forma contínua.</span></div></div>
+        <div class="problem-item"><div class="markn">02</div><div><b>Conta de energia ou combustível pesa na operação</b><span>GLP, eletricidade, lenha ou outro combustível com consumo relevante.</span></div></div>
+        <div class="problem-item"><div class="markn">03</div><div><b>Você não sabe se o resíduo tem valor energético</b><span>Falta transformar quantidade de resíduo em uma estimativa de biogás e uso possível.</span></div></div>
+        <div class="problem-item"><div class="markn">04</div><div><b>Recebeu propostas muito diferentes de fornecedores</b><span>Precisa de uma leitura técnica independente antes de investir.</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="solution-band">
+    <div class="shell solution-grid">
+      <div>
+        <div class="eyebrow" style="color:#617169">Nossa solução</div>
+        <h2>A Vértice transforma o resíduo em um projeto que você consegue decidir se vale investir.</h2>
+        <p>Primeiro avaliamos o potencial. Depois montamos o cenário técnico e econômico. Se fizer sentido, avançamos para projeto, fornecedores, implantação e partida.</p>
+      </div>
+      <div class="solution-checks">
+        <div class="solution-check"><i>1</i><div><b>Triagem de potencial</b><span>Uma primeira análise para saber se existe escala e condição para avançar.</span></div></div>
+        <div class="solution-check"><i>2</i><div><b>Viabilidade técnico-econômica</b><span>Quanto pode gerar, onde usar, quanto pode economizar e quais premissas sustentam o projeto.</span></div></div>
+        <div class="solution-check"><i>3</i><div><b>Projeto e dimensionamento</b><span>Definição do sistema e da capacidade adequada à operação.</span></div></div>
+        <div class="solution-check"><i>4</i><div><b>Fornecedor e implantação</b><span>Comparação técnica de propostas e acompanhamento até o início da operação.</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="offer-section">
+    <div class="shell">
+      <div class="eyebrow" style="color:#617169">O que você pode contratar</div>
+      <h2>Serviços de Biogás e Biodigestores</h2>
+      <p class="leadtext">Você não precisa contratar tudo de uma vez. Dá para começar por uma análise inicial e só avançar se os números fizerem sentido.</p>
+      <div class="offer-table">
+        <div class="offer-row"><h3>Estudo de potencial</h3><p>Estimativa inicial de produção de biogás e leitura do uso possível dentro da operação.</p><button onclick="wa('Olá, quero contratar um estudo inicial de potencial de biogás para minha propriedade ou empresa.')">Pedir proposta</button></div>
+        <div class="offer-row"><h3>Viabilidade técnico-econômica</h3><p>Cenários de produção, uso energético, investimento e retorno esperado.</p><button onclick="wa('Olá, quero solicitar proposta para estudo de viabilidade técnico-econômica de biodigestor.')">Pedir proposta</button></div>
+        <div class="offer-row"><h3>Projeto e dimensionamento</h3><p>Definição do arranjo, capacidade e requisitos técnicos do biodigestor.</p><button onclick="wa('Olá, quero orçamento para projeto e dimensionamento de biodigestor.')">Pedir proposta</button></div>
+        <div class="offer-row"><h3>Avaliação de fornecedores</h3><p>Comparação técnica de tecnologias e propostas comerciais.</p><button onclick="wa('Olá, recebi propostas de fornecedores de biodigestor e quero uma avaliação técnica independente.')">Avaliar propostas</button></div>
+        <div class="offer-row"><h3>Acompanhamento de implantação</h3><p>Suporte técnico durante execução, partida e primeiros ajustes.</p><button onclick="wa('Olá, quero apoio técnico para acompanhar a implantação e partida de um biodigestor.')">Falar com a Vértice</button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fit-section">
+    <div class="shell fit-grid">
+      <h2>Esse serviço costuma fazer sentido para quem...</h2>
+      <div class="fit-list">
+        <div class="fit-item"><b>Cria animais</b>e gera esterco de forma contínua.</div>
+        <div class="fit-item"><b>Processa alimentos</b>e gera resíduos ou efluentes orgânicos.</div>
+        <div class="fit-item"><b>Tem alto consumo de energia ou combustível</b>e quer avaliar substituição parcial.</div>
+        <div class="fit-item"><b>Quer investir em biodigestor</b>mas precisa validar tecnicamente antes.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sales-cta">
+    <div class="shell sales-cta-grid">
+      <div>
+        <h2>Tem resíduo orgânico? Descubra se ele pode pagar parte da sua energia.</h2>
+        <p>Você manda as informações básicas da operação e a conversa já começa no ponto certo.</p>
+      </div>
+      <div class="sales-cta-actions">
+        <button onclick="wa('Olá, quero fazer uma avaliação inicial de biodigestor. Gero resíduos orgânicos e posso informar quantidade, frequência e consumo de energia.')">Avaliar meu caso agora</button>
+        <button class="secondary" onclick="wa('Olá, quero falar com a Vértice sobre um projeto de biogás e entender qual seria o primeiro passo.')">Falar com a Vértice</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="cross"><div class="shell"><div class="crosshead"><h2>Biogás pode conectar as outras frentes.</h2><p>Gestão de resíduos organiza a origem. Carbono ajuda a medir e valorizar parte dos resultados.</p></div><div class="crosslinks">
+    <div class="crosslink" onclick="go('home')"><small>Visão geral</small><b>Início</b><span>voltar ao hub</span></div>
+    <div class="crosslink" onclick="go('residuos')"><small>Complementar</small><b>Gestão de Resíduos</b><span>explorar</span></div>
+    <div class="crosslink" onclick="go('carbono')"><small>Complementar</small><b>Carbono & Atributos</b><span>explorar</span></div>
+  </div></div></div>
+</section>
+
+<!-- RESIDUES -->
+<section id="residuos" class="page">
+  <section class="res6-hero">
+    <div class="shell res6-wrap">
+      <div class="res6-copy">
+        <div class="eyebrow">Vértice · Gestão de Resíduos</div>
+        <h1>Gestão de<br>Resíduos</h1>
+        <div class="lead">Seu resíduo está organizado — ou só está sendo retirado?</div>
+        <p>Quando ninguém sabe exatamente o que é gerado, quanto custa, para onde vai e como comprovar a destinação, o resíduo vira risco e despesa escondida. A Vértice organiza esse fluxo.</p>
+        <div class="res6-signals"><span>PGRS desatualizado</span><span>MTRs espalhados</span><span>fornecedores sem revisão</span><span>custos de destinação</span></div>
+        <div class="btnrow">
+          <button class="pill" style="background:#d8b282;color:#2a190f" onclick="wa('Olá, preciso elaborar ou revisar meu PGRS e quero entender o escopo do serviço.')">Preciso de PGRS</button>
+          <button class="pill ghost" onclick="wa('Olá, quero organizar a gestão dos resíduos da minha operação, incluindo controle e destinação.')">Quero organizar a gestão</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="funnel-strip">
+    <div class="shell">
+      <div class="funnel-step"><small>01 · problema</small><b>Falta de controle e rastreabilidade</b></div>
+      <div class="funnel-step"><small>02 · diagnóstico</small><b>Mapear o fluxo real do resíduo</b></div>
+      <div class="funnel-step"><small>03 · solução</small><b>PGRS + rotina de gestão</b></div>
+      <div class="funnel-step"><small>04 · resultado</small><b>Conformidade, menos risco e melhor destinação</b></div>
+    </div>
+  </section>
+
+  <section class="problem-section">
+    <div class="shell problem-grid">
+      <div class="problem-copy">
+        <div class="eyebrow" style="color:#86644b">O problema mais comum</div>
+        <h2>O documento existe. A gestão não.</h2>
+        <p>Muita operação tem PGRS, mas não tem rotina clara. A Vértice entra justamente nesse espaço entre “ter o documento” e “fazer funcionar”.</p>
+      </div>
+      <div class="problem-list">
+        <div class="problem-item"><div class="markn">01</div><div><b>PGRS antigo ou genérico</b><span>Não reflete mais os resíduos, volumes ou destinos atuais.</span></div></div>
+        <div class="problem-item"><div class="markn">02</div><div><b>Documentos e MTRs sem organização</b><span>Comprovar a destinação vira uma corrida quando alguém pede.</span></div></div>
+        <div class="problem-item"><div class="markn">03</div><div><b>Destinação cara ou pouco revisada</b><span>Fornecedores antigos continuam sendo usados sem comparação de alternativas.</span></div></div>
+        <div class="problem-item"><div class="markn">04</div><div><b>Resíduo com potencial sendo descartado</b><span>Material reciclável, reaproveitável ou orgânico pode estar saindo como custo.</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="solution-band">
+    <div class="shell solution-grid">
+      <div>
+        <div class="eyebrow" style="color:#86644b">Nossa solução</div>
+        <h2>A gente organiza o fluxo inteiro, não só o PGRS.</h2>
+        <p>O serviço pode começar no documento, mas evolui para diagnóstico, controles, MTRs, revisão de fornecedores e oportunidades de valorização.</p>
+      </div>
+      <div class="solution-checks">
+        <div class="solution-check"><i>1</i><div><b>Mapear</b><span>Entender o que é gerado, onde, quanto e como é armazenado.</span></div></div>
+        <div class="solution-check"><i>2</i><div><b>Regularizar</b><span>Montar ou revisar o PGRS e os procedimentos necessários.</span></div></div>
+        <div class="solution-check"><i>3</i><div><b>Controlar</b><span>Organizar documentos, MTRs, indicadores e responsabilidades.</span></div></div>
+        <div class="solution-check"><i>4</i><div><b>Melhorar</b><span>Rever destinos, fornecedores e formas de reduzir ou aproveitar resíduos.</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="offer-section">
+    <div class="shell">
+      <div class="eyebrow" style="color:#86644b">Serviços</div>
+      <h2>O que você pode contratar</h2>
+      <p class="leadtext">O escopo é montado conforme o problema. Dá para contratar só um PGRS ou uma organização mais completa da gestão.</p>
+      <div class="offer-table">
+        <div class="offer-row"><h3>PGRS</h3><p>Elaboração, revisão ou atualização do plano conforme a realidade da operação.</p><button style="background:#6a432d" onclick="wa('Olá, quero solicitar proposta para elaboração ou revisão de PGRS.')">Pedir proposta</button></div>
+        <div class="offer-row"><h3>Diagnóstico de resíduos</h3><p>Mapeamento dos tipos, volumes, armazenamento, transporte e destinos atuais.</p><button style="background:#6a432d" onclick="wa('Olá, quero fazer um diagnóstico dos resíduos gerados na minha operação.')">Avaliar operação</button></div>
+        <div class="offer-row"><h3>Controle e rastreabilidade</h3><p>Organização de MTRs, registros, indicadores e rotina de acompanhamento.</p><button style="background:#6a432d" onclick="wa('Olá, quero organizar MTRs, registros e rastreabilidade dos resíduos.')">Organizar controles</button></div>
+        <div class="offer-row"><h3>Destinação e fornecedores</h3><p>Revisão de alternativas de coleta, tratamento, reciclagem e destinação.</p><button style="background:#6a432d" onclick="wa('Olá, quero revisar fornecedores e alternativas de destinação dos meus resíduos.')">Revisar destinos</button></div>
+        <div class="offer-row"><h3>Redução e valorização</h3><p>Busca por redução, reaproveitamento, reciclagem e uso energético quando aplicável.</p><button style="background:#6a432d" onclick="wa('Olá, quero avaliar oportunidades de redução e valorização dos resíduos da minha operação.')">Buscar oportunidades</button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sales-cta alt-earth">
+    <div class="shell sales-cta-grid">
+      <div>
+        <h2>Se hoje você não consegue explicar o caminho de cada resíduo em poucos minutos, vale organizar.</h2>
+        <p>Conte como funciona hoje e a Vértice indica se o primeiro passo é PGRS, diagnóstico ou gestão completa.</p>
+      </div>
+      <div class="sales-cta-actions">
+        <button onclick="wa('Olá, quero explicar como funciona hoje a gestão de resíduos da minha operação e entender o que preciso organizar.')">Explicar minha situação</button>
+        <button class="secondary" onclick="wa('Olá, quero solicitar uma proposta para serviço de gestão de resíduos.')">Pedir proposta</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="cross"><div class="shell"><div class="crosshead"><h2>Resíduo bem gerido pode abrir outras oportunidades.</h2><p>Se houver fração orgânica, Biogás pode entrar. Se houver redução mensurável de emissões, Carbono também.</p></div><div class="crosslinks">
+    <div class="crosslink" onclick="go('home')"><small>Visão geral</small><b>Início</b><span>voltar ao hub</span></div>
+    <div class="crosslink" onclick="go('biogas')"><small>Valorização energética</small><b>Biogás</b><span>explorar</span></div>
+    <div class="crosslink" onclick="go('carbono')"><small>Descarbonização</small><b>Carbono & Atributos</b><span>explorar</span></div>
+  </div></div></div>
+</section>
+
+<!-- CARBON -->
+<section id="carbono" class="page">
+  <section class="car6-hero">
+    <div class="shell car6-wrap">
+      <div class="car6-copy">
+        <div class="eyebrow">Vértice · Carbono & Atributos Ambientais</div>
+        <h1>Carbono &<br>Atributos Ambientais</h1>
+        <div class="lead">Sua operação emite. A questão é: você sabe quanto, onde e o que fazer com isso?</div>
+        <p>O inventário de GEE transforma consumo de combustíveis, energia, processos e outras fontes em um diagnóstico claro. Depois disso, fica muito mais fácil decidir onde reduzir e se existe alguma oportunidade em créditos ou certificados.</p>
+        <div class="car6-visual">
+          <div><small>passo 1</small><b>Medir</b></div>
+          <div><small>passo 2</small><b>Priorizar</b></div>
+          <div><small>passo 3</small><b>Reduzir</b></div>
+        </div>
+        <div class="btnrow">
+          <button class="pill" style="background:#a8d7e7;color:#06202d" onclick="wa('Olá, quero fazer um inventário de emissões de GEE e entender quais dados preciso reunir.')">Quero medir minhas emissões</button>
+          <button class="pill ghost" onclick="wa('Olá, quero saber se créditos de carbono ou certificados ambientais fazem sentido para minha operação.')">Quero avaliar créditos ou certificados</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="funnel-strip">
+    <div class="shell">
+      <div class="funnel-step"><small>01 · problema</small><b>Você não sabe onde mais emite</b></div>
+      <div class="funnel-step"><small>02 · diagnóstico</small><b>Inventário de GEE</b></div>
+      <div class="funnel-step"><small>03 · solução</small><b>Plano de redução e evidências</b></div>
+      <div class="funnel-step"><small>04 · oportunidade</small><b>Créditos e atributos, quando fizer sentido</b></div>
+    </div>
+  </section>
+
+  <section class="problem-section">
+    <div class="shell problem-grid">
+      <div class="problem-copy">
+        <div class="eyebrow" style="color:#517789">O problema</div>
+        <h2>Sem medir, a empresa não sabe onde reduzir — e muito menos o que pode comprovar.</h2>
+        <p>O inventário é o ponto de partida para sair do discurso genérico de sustentabilidade e chegar em decisões concretas.</p>
+      </div>
+      <div class="problem-list">
+        <div class="problem-item"><div class="markn">01</div><div><b>Clientes ou matriz começaram a pedir dados de emissões</b><span>E a operação ainda não tem uma base organizada.</span></div></div>
+        <div class="problem-item"><div class="markn">02</div><div><b>Você quer reduzir emissões, mas não sabe por onde começar</b><span>Sem saber as fontes principais, qualquer plano vira chute.</span></div></div>
+        <div class="problem-item"><div class="markn">03</div><div><b>Quer avaliar crédito de carbono cedo demais</b><span>Antes de mercado e certificação, é preciso entender o caso e a elegibilidade.</span></div></div>
+        <div class="problem-item"><div class="markn">04</div><div><b>Tem projetos de eficiência, biogás ou energia renovável</b><span>Mas ainda não mensurou o impacto climático dessas ações.</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="solution-band">
+    <div class="shell solution-grid">
+      <div class="inventory-photo">
+        <div class="caption"><small>inventário de GEE</small><b>Dados da operação transformados em decisão.</b></div>
+      </div>
+      <div>
+        <div class="eyebrow" style="color:#517789">Nossa solução</div>
+        <h2>Primeiro medimos. Depois mostramos onde agir.</h2>
+        <p>O inventário organiza as fontes e deixa claro o peso de cada uma. A partir daí, dá para montar um plano de redução, preparar reportes e avaliar oportunidades ambientais com muito mais segurança.</p>
+        <div class="solution-checks">
+          <div class="solution-check"><i>1</i><div><b>Levantamento de dados</b><span>Combustíveis, energia, processos, transporte e outras fontes relevantes.</span></div></div>
+          <div class="solution-check"><i>2</i><div><b>Cálculo e inventário</b><span>Organização das emissões conforme o escopo contratado.</span></div></div>
+          <div class="solution-check"><i>3</i><div><b>Leitura dos maiores emissores</b><span>Identificação de onde está a maior oportunidade de redução.</span></div></div>
+          <div class="solution-check"><i>4</i><div><b>Próximos passos</b><span>Plano de redução, verificação, créditos ou atributos, quando aplicável.</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="offer-section">
+    <div class="shell">
+      <div class="eyebrow" style="color:#517789">Serviços</div>
+      <h2>Você pode começar pequeno e avançar por etapas.</h2>
+      <p class="leadtext">Nem todo cliente precisa de um projeto completo de descarbonização logo de início. Muitas vezes o melhor primeiro passo é simplesmente medir direito.</p>
+      <div class="offer-table">
+        <div class="offer-row"><h3>Inventário de GEE</h3><p>Levantamento, cálculo e organização das emissões da operação.</p><button style="background:#0c4963" onclick="wa('Olá, quero solicitar proposta para inventário de emissões de GEE.')">Pedir proposta</button></div>
+        <div class="offer-row"><h3>Pegada de carbono</h3><p>Cálculo das emissões de uma operação, atividade ou produto conforme o objetivo definido.</p><button style="background:#0c4963" onclick="wa('Olá, quero avaliar o escopo para cálculo de pegada de carbono.')">Avaliar escopo</button></div>
+        <div class="offer-row"><h3>Plano de redução</h3><p>Leitura das principais fontes e construção de ações para reduzir emissões.</p><button style="background:#0c4963" onclick="wa('Olá, quero montar um plano de redução de emissões para minha operação.')">Montar plano</button></div>
+        <div class="offer-row"><h3>Preparação para verificação</h3><p>Organização de dados e evidências para futura verificação independente.</p><button style="background:#0c4963" onclick="wa('Olá, preciso preparar meu inventário e documentos para uma futura verificação independente.')">Preparar dados</button></div>
+        <div class="offer-row"><h3>Créditos e atributos ambientais</h3><p>Avaliação inicial para entender se existe caminho real para créditos, certificados ou outros mecanismos.</p><button style="background:#0c4963" onclick="wa('Olá, quero uma avaliação inicial sobre créditos de carbono ou atributos ambientais aplicáveis ao meu caso.')">Avaliar oportunidade</button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fit-section">
+    <div class="shell fit-grid">
+      <h2>Esse serviço costuma fazer sentido quando...</h2>
+      <div class="fit-list">
+        <div class="fit-item"><b>Um cliente, banco ou matriz pede dados de emissões</b>e você ainda não tem inventário.</div>
+        <div class="fit-item"><b>Você quer reduzir custos e emissões</b>mas precisa saber onde está o maior impacto.</div>
+        <div class="fit-item"><b>Já implantou eficiência, energia renovável ou biogás</b>e quer mensurar o efeito climático.</div>
+        <div class="fit-item"><b>Quer avaliar créditos ou certificados</b>sem cair em promessa comercial vazia.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sales-cta alt-blue">
+    <div class="shell sales-cta-grid">
+      <div>
+        <h2>Quer começar pelo inventário? A gente te diz quais dados separar.</h2>
+        <p>Você apresenta o tipo de operação e o objetivo. A Vértice orienta o escopo e envia a proposta adequada.</p>
+      </div>
+      <div class="sales-cta-actions">
+        <button onclick="wa('Olá, quero começar um inventário de GEE. Minha operação é do setor ______ e quero entender os dados necessários e o escopo.')">Começar inventário</button>
+        <button class="secondary" onclick="wa('Olá, quero conversar sobre carbono, emissões e possíveis atributos ambientais para minha operação.')">Falar com a Vértice</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="cross"><div class="shell"><div class="crosshead"><h2>Carbono fecha a visão integrada.</h2><p>Reduzir resíduos e gerar energia renovável pode diminuir emissões. É aí que as três frentes se conectam.</p></div><div class="crosslinks">
+    <div class="crosslink" onclick="go('home')"><small>Visão geral</small><b>Início</b><span>voltar ao hub</span></div>
+    <div class="crosslink" onclick="go('biogas')"><small>Energia renovável</small><b>Biogás</b><span>explorar</span></div>
+    <div class="crosslink" onclick="go('residuos')"><small>Origem e gestão</small><b>Gestão de Resíduos</b><span>explorar</span></div>
+  </div></div></div>
+</section>
+
 </main>
 
-<footer><div class="container footer-grid"><div><a class="brand" href="/">Vértice<span>.</span></a><p>Consultoria e engenharia em biogás e biodigestores, do estudo à operação inicial.</p><p class="image-disclaimer">As fotografias são imagens ilustrativas de instalações reais do setor e não representam obras executadas pela Vértice.</p></div><div><h3>Escolha seu momento</h3><div class="footer-links"><a href="/estudo-viabilidade-biogas/">Quero saber se vale a pena</a><a href="/consultoria-biogas/">Quero avaliar uma decisão</a><a href="/projeto-biodigestor/">Preciso de projeto</a><a href="/implantacao-biogas/">Vou implantar ou partir</a></div></div><div><h3>Contato</h3><div class="footer-links"><a href="mailto:biogasvertice@gmail.com">biogasvertice@gmail.com</a><a data-whatsapp="rodapé" href="#">WhatsApp: (19) 97131-5434</a><a href="/politica-de-privacidade.html">Política de Privacidade</a><a href="/creditos-imagens.html">Créditos das imagens</a></div></div></div><div class="container footer-bottom"><span>© <span data-year></span> Vértice Biogás.</span><span>CNPJ 64.337.089/0001-69 · Cidade-base: Leme/SP</span><span>Atendimento em todo o Brasil.</span></div></footer>
-<a class="floating" data-whatsapp="botão flutuante" href="#">WhatsApp · Avaliar minha operação</a><script src="/script.js" defer></script>
-</body></html>
+<footer class="footer">
+ <div class="shell footin">
+  <div><strong style="color:#fff">VÉRTICE</strong><br/>Consultoria Ambiental · Resíduos. Energia. Carbono.</div>
+  <div class="footlinks"><button onclick="go('home')">Início</button><button onclick="go('biogas')">Biogás</button><button onclick="go('residuos')">Resíduos</button><button onclick="go('carbono')">Carbono</button></div>
+  <div><a href="/politica-de-privacidade.html">Política de privacidade</a></div>
+ </div>
+</footer>
+
+<script>
+const phone='5519971315434';
+const order=['home','biogas','residuos','carbono'];
+
+function wa(message){
+  window.open('https://wa.me/'+phone+'?text='+encodeURIComponent(message),'_blank','noopener,noreferrer');
+}
+function go(id){
+  if(!order.includes(id)) return;
+  document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
+  const p=document.getElementById(id); if(p) p.classList.add('active');
+  document.querySelectorAll('.mainnav button').forEach(x=>x.classList.toggle('active',x.dataset.page===id));
+  history.replaceState(null,'','#'+id);
+  toggleMenu(false);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function toggleMenu(force){
+  const nav=document.querySelector('.mainnav');
+  const open=typeof force==='boolean'?force:!nav.classList.contains('open');
+  nav.classList.toggle('open',open);
+  const button=document.querySelector('.mob');
+  button.setAttribute('aria-expanded',String(open));
+  button.setAttribute('aria-label',open?'Fechar menu':'Abrir menu');
+}
+document.addEventListener('keydown',event=>{if(event.key==='Escape') toggleMenu(false);});
+window.addEventListener('hashchange',()=>{if(order.includes(location.hash.slice(1))) go(location.hash.slice(1));});
+window.addEventListener('load',()=>{
+  const h=location.hash.replace('#','');
+  if(order.includes(h)) go(h);
+});
+</script>
+</body>
+</html>
